@@ -1,0 +1,69 @@
+# ═══════════════════════════════════════════════════════════════════════════════
+# CARVanta CD — Continuous Deployment
+# ═══════════════════════════════════════════════════════════════════════════════
+# Builds and pushes Docker images on merge to main.
+# Configure your container registry and deployment target.
+
+name: CD
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    name: Build & Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Build production images
+      - name: Build API image
+        run: docker build -t carvanta-api:${{ github.sha }} .
+
+      - name: Build Frontend image
+        run: docker build -t carvanta-frontend:${{ github.sha }} -f Dockerfile.frontend .
+
+      # Tag as latest
+      - name: Tag latest
+        run: |
+          docker tag carvanta-api:${{ github.sha }} carvanta-api:latest
+          docker tag carvanta-frontend:${{ github.sha }} carvanta-frontend:latest
+
+      # ── Push to registry (configure your registry) ─────────────────────
+      # Uncomment and configure for your registry:
+      #
+      # - name: Login to Container Registry
+      #   uses: docker/login-action@v3
+      #   with:
+      #     registry: ghcr.io
+      #     username: ${{ github.actor }}
+      #     password: ${{ secrets.GITHUB_TOKEN }}
+      #
+      # - name: Push images
+      #   run: |
+      #     docker push ghcr.io/${{ github.repository }}/api:${{ github.sha }}
+      #     docker push ghcr.io/${{ github.repository }}/frontend:${{ github.sha }}
+      #     docker push ghcr.io/${{ github.repository }}/api:latest
+      #     docker push ghcr.io/${{ github.repository }}/frontend:latest
+
+      # ── Deploy (configure your deployment target) ──────────────────────
+      # Uncomment for your cloud provider:
+      #
+      # AWS ECS:
+      # - name: Deploy to ECS
+      #   uses: aws-actions/amazon-ecs-deploy-task-definition@v1
+      #
+      # Azure Container Apps:
+      # - name: Deploy to Azure
+      #   uses: azure/container-apps-deploy-action@v1
+      #
+      # Railway / Render / Fly.io:
+      # - name: Deploy
+      #   run: flyctl deploy --app carvanta
+
+      - name: Deployment summary
+        run: |
+          echo "✓ Built carvanta-api:${{ github.sha }}"
+          echo "✓ Built carvanta-frontend:${{ github.sha }}"
+          echo "→ Configure registry push and deployment target in this workflow"

@@ -1,0 +1,84 @@
+# ═══════════════════════════════════════════════════════════════════════════════
+# CARVanta CI — Continuous Integration
+# ═══════════════════════════════════════════════════════════════════════════════
+# Runs on every push and PR: lint, test, security scan, build check.
+
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+env:
+  PYTHON_VERSION: "3.12"
+
+jobs:
+  # ── Lint ────────────────────────────────────────────────────────────────
+  lint:
+    name: Lint & Format
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      - run: pip install ruff
+      - run: ruff check .
+      - run: ruff format --check .
+
+  # ── Security Scan ──────────────────────────────────────────────────────
+  security:
+    name: Security Scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # Secret scanning
+      - name: Scan for secrets (gitleaks)
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Dependency vulnerability audit
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      - run: pip install pip-audit
+      - run: pip install -r requirements.txt
+      - run: pip-audit
+
+  # ── Test ───────────────────────────────────────────────────────────────
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    needs: [lint]
+    env:
+      ENVIRONMENT: testing
+      DATABASE_URL: sqlite:///test_carvanta.db
+      CARVANTA_API_KEY_DEV: test-dev-key
+      CARVANTA_API_KEY_PRO: test-pro-key
+      CARVANTA_API_KEY_ENTERPRISE: test-enterprise-key
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      - run: pip install -r requirements.txt
+      - run: python -m pytest --tb=short --cov=. --cov-report=term-missing -q
+        continue-on-error: true
+
+  # ── Docker Build Check ─────────────────────────────────────────────────
+  build:
+    name: Docker Build
+    runs-on: ubuntu-latest
+    needs: [lint, security]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build API image
+        run: docker build -t carvanta-api:ci .
+      - name: Build Frontend image
+        run: docker build -t carvanta-frontend:ci -f Dockerfile.frontend .

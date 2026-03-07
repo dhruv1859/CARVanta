@@ -1,0 +1,40 @@
+# ═══════════════════════════════════════════════════════════════════════════════
+# CARVanta — Local Development Docker Compose
+# ═══════════════════════════════════════════════════════════════════════════════
+# Uses SQLite instead of PostgreSQL for zero-dependency local dev.
+# Usage: docker-compose -f docker-compose.dev.yml up --build
+# ═══════════════════════════════════════════════════════════════════════════════
+
+services:
+  # ── CARVanta API Server (SQLite mode) ────────────────────────────────────
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      ENVIRONMENT: development
+      DATABASE_URL: sqlite:///data/carvanta.db
+      API_HOST: 0.0.0.0
+      API_PORT: 8001
+      CORS_ORIGINS: "*"
+      CARVANTA_API_KEY_DEV: carvanta-dev-key-001
+      CARVANTA_API_KEY_PRO: carvanta-pro-key-001
+      CARVANTA_API_KEY_ENTERPRISE: carvanta-enterprise-001
+    volumes:
+      - .:/app
+    ports:
+      - "8001:8001"
+
+  # ── CARVanta Streamlit Frontend ──────────────────────────────────────────
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    environment:
+      API_BASE_URL: http://api:8001
+    volumes:
+      - .:/app
+    ports:
+      - "8501:8501"
+    depends_on:
+      - api
