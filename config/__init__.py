@@ -1,0 +1,21 @@
+"""CARVanta config package – re-exports key settings."""
+
+from config.settings import (
+    BASE_DIR,
+    DATA_DIR,
+    MODEL_DIR,
+    BIOMARKER_DATABASE_PATH,
+    LEGACY_DATABASE_PATH,
+    MODEL_PATH,
+    API_HOST,
+    API_PORT,
+    CVS_WEIGHTS,
+    COMPOSITE_WEIGHTS,
+    TIER_THRESHOLDS,
+    DECISION_THRESHOLDS,
+    CONFIDENCE_THRESHOLDS,
+    MAX_NORMAL_EXPRESSION,
+    MIN_TUMOR_THRESHOLD,
+    SAFETY_RISK_EXPONENT,
+    FEATURE_NAMES,
+)

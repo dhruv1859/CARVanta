@@ -1,0 +1,27 @@
+{
+  "name": "CARVanta — CAR-T Viability Platform",
+  "short_name": "CARVanta",
+  "description": "AI-Augmented Biomarker Intelligence Platform for CAR-T Cell Therapy Target Assessment",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B1120",
+  "theme_color": "#3B82F6",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "/carvanta-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/carvanta-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["medical", "health", "science"],
+  "lang": "en",
+  "dir": "ltr"
+}
