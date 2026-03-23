@@ -1,0 +1,137 @@
+/* ═══════════════════════════════════════════════════════════
+   Snapshot Button — Floating capture button + toast
+   ═══════════════════════════════════════════════════════════ */
+
+.snapshot-container {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+}
+
+/* ─── Button ─── */
+
+.snapshot-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.06);
+
+    /* Default idle state */
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    color: #fff;
+}
+
+.snapshot-btn:hover:not(:disabled) {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 8px 30px rgba(79, 70, 229, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.snapshot-btn:active:not(:disabled) {
+    transform: translateY(0) scale(0.98);
+}
+
+.snapshot-btn:disabled {
+    cursor: wait;
+    opacity: 0.85;
+}
+
+.snapshot-btn.capturing {
+    background: linear-gradient(135deg, #d97706, #f59e0b);
+}
+
+.snapshot-btn.done {
+    background: linear-gradient(135deg, #059669, #10b981);
+}
+
+.snapshot-btn.error {
+    background: linear-gradient(135deg, #dc2626, #ef4444);
+}
+
+.snapshot-icon {
+    font-size: 16px;
+    line-height: 1;
+}
+
+.snapshot-icon.spin {
+    animation: snapshot-spin 1s linear infinite;
+}
+
+@keyframes snapshot-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.snapshot-label {
+    white-space: nowrap;
+}
+
+/* ─── Toast Notification ─── */
+
+.snapshot-toast {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 20px;
+    background: rgba(16, 185, 129, 0.12);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    border-radius: 14px;
+    color: #d1fae5;
+    min-width: 260px;
+    max-width: 400px;
+    animation: snapshot-toast-in 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes snapshot-toast-in {
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.snapshot-toast-icon {
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.snapshot-toast-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.snapshot-toast-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #34d399;
+    letter-spacing: 0.02em;
+}
+
+.snapshot-toast-path {
+    font-size: 11px;
+    font-family: 'Courier New', monospace;
+    color: #a7f3d0;
+    opacity: 0.9;
+    word-break: break-all;
+    line-height: 1.4;
+}

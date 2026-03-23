@@ -1,0 +1,446 @@
+/* ═══════════════════════════════════════════════════════════
+   CARVanta — Molecular Pipeline Visualization Animations
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── DNA Helix ───────────────────────────────────────────── */
+.dna-helix {
+    position: relative;
+    width: 60px;
+    height: 80px;
+}
+
+.dna-strand {
+    position: absolute;
+    width: 4px;
+    height: 100%;
+    border-radius: 2px;
+}
+
+.dna-strand-left {
+    left: 12px;
+    background: linear-gradient(180deg, #3B82F6 0%, #8B5CF6 50%, #3B82F6 100%);
+    animation: dna-twist-left 2s ease-in-out infinite;
+}
+
+.dna-strand-right {
+    right: 12px;
+    background: linear-gradient(180deg, #06B6D4 0%, #10B981 50%, #06B6D4 100%);
+    animation: dna-twist-right 2s ease-in-out infinite;
+}
+
+.dna-rung {
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    height: 3px;
+    border-radius: 1.5px;
+    opacity: 0.6;
+}
+
+.dna-rung:nth-child(3) { top: 10%; background: #EF4444; animation: dna-rung-pulse 2s 0.0s infinite; }
+.dna-rung:nth-child(4) { top: 25%; background: #F59E0B; animation: dna-rung-pulse 2s 0.2s infinite; }
+.dna-rung:nth-child(5) { top: 40%; background: #10B981; animation: dna-rung-pulse 2s 0.4s infinite; }
+.dna-rung:nth-child(6) { top: 55%; background: #3B82F6; animation: dna-rung-pulse 2s 0.6s infinite; }
+.dna-rung:nth-child(7) { top: 70%; background: #8B5CF6; animation: dna-rung-pulse 2s 0.8s infinite; }
+.dna-rung:nth-child(8) { top: 85%; background: #EC4899; animation: dna-rung-pulse 2s 1.0s infinite; }
+
+@keyframes dna-twist-left {
+    0%, 100% { transform: scaleX(1) translateX(0); }
+    25%      { transform: scaleX(0.3) translateX(8px); }
+    50%      { transform: scaleX(1) translateX(0); }
+    75%      { transform: scaleX(0.3) translateX(-8px); }
+}
+
+@keyframes dna-twist-right {
+    0%, 100% { transform: scaleX(1) translateX(0); }
+    25%      { transform: scaleX(0.3) translateX(-8px); }
+    50%      { transform: scaleX(1) translateX(0); }
+    75%      { transform: scaleX(0.3) translateX(8px); }
+}
+
+@keyframes dna-rung-pulse {
+    0%, 100% { opacity: 0.4; transform: scaleX(1); }
+    50%      { opacity: 1; transform: scaleX(0.5); }
+}
+
+/* ── Protein Molecule ────────────────────────────────────── */
+.protein-molecule {
+    position: relative;
+    width: 60px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.protein-core {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #10B981, #059669);
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+    animation: protein-breathe 2s ease-in-out infinite;
+}
+
+.protein-orbit {
+    position: absolute;
+    border: 2px dashed rgba(16, 185, 129, 0.3);
+    border-radius: 50%;
+    animation: protein-spin 3s linear infinite;
+}
+
+.protein-orbit:nth-child(2) {
+    width: 44px; height: 44px;
+    animation-duration: 3s;
+}
+
+.protein-orbit:nth-child(3) {
+    width: 60px; height: 60px;
+    animation-duration: 5s;
+    animation-direction: reverse;
+    border-color: rgba(6, 182, 212, 0.25);
+}
+
+.protein-electron {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #06B6D4;
+    box-shadow: 0 0 8px rgba(6, 182, 212, 0.6);
+}
+
+.protein-electron:nth-child(4) { animation: orbit-1 3s linear infinite; }
+.protein-electron:nth-child(5) { animation: orbit-2 5s linear infinite; }
+.protein-electron:nth-child(6) { animation: orbit-1 4s linear infinite reverse; }
+
+@keyframes protein-breathe {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(16, 185, 129, 0.4); }
+    50%      { transform: scale(1.15); box-shadow: 0 0 30px rgba(16, 185, 129, 0.7); }
+}
+
+@keyframes protein-spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+@keyframes orbit-1 {
+    from { transform: rotate(0deg) translateX(22px) rotate(0deg); }
+    to   { transform: rotate(360deg) translateX(22px) rotate(-360deg); }
+}
+
+@keyframes orbit-2 {
+    from { transform: rotate(0deg) translateX(30px) rotate(0deg); }
+    to   { transform: rotate(360deg) translateX(30px) rotate(-360deg); }
+}
+
+/* ── Shield / Safety ─────────────────────────────────────── */
+.safety-shield {
+    width: 48px;
+    height: 56px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shield-shape {
+    width: 40px;
+    height: 48px;
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(239, 68, 68, 0.15));
+    border: 2px solid rgba(245, 158, 11, 0.5);
+    border-radius: 4px 4px 50% 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    animation: shield-pulse 1.5s ease-in-out infinite;
+}
+
+.shield-scan {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #F59E0B, transparent);
+    border-radius: 2px;
+    animation: shield-scan-move 1.5s ease-in-out infinite;
+}
+
+@keyframes shield-pulse {
+    0%, 100% { border-color: rgba(245, 158, 11, 0.5); }
+    50%      { border-color: rgba(16, 185, 129, 0.8); }
+}
+
+@keyframes shield-scan-move {
+    0%   { top: 0; opacity: 0; }
+    20%  { opacity: 1; }
+    80%  { opacity: 1; }
+    100% { top: 100%; opacity: 0; }
+}
+
+/* ── Feature Bars ────────────────────────────────────────── */
+.feature-bars-anim {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 50px;
+    height: 60px;
+    justify-content: center;
+}
+
+.feature-bar-anim {
+    height: 4px;
+    border-radius: 2px;
+    animation: bar-grow 2s ease-out infinite;
+}
+
+.feature-bar-anim:nth-child(1) { background: #3B82F6; animation-delay: 0.0s; }
+.feature-bar-anim:nth-child(2) { background: #10B981; animation-delay: 0.15s; }
+.feature-bar-anim:nth-child(3) { background: #F59E0B; animation-delay: 0.30s; }
+.feature-bar-anim:nth-child(4) { background: #8B5CF6; animation-delay: 0.45s; }
+.feature-bar-anim:nth-child(5) { background: #06B6D4; animation-delay: 0.60s; }
+.feature-bar-anim:nth-child(6) { background: #EC4899; animation-delay: 0.75s; }
+.feature-bar-anim:nth-child(7) { background: #EF4444; animation-delay: 0.90s; }
+.feature-bar-anim:nth-child(8) { background: #14B8A6; animation-delay: 1.05s; }
+
+@keyframes bar-grow {
+    0%   { width: 10%; opacity: 0.3; }
+    50%  { width: 100%; opacity: 1; }
+    100% { width: 10%; opacity: 0.3; }
+}
+
+/* ── Neural Network ──────────────────────────────────────── */
+.neural-net {
+    position: relative;
+    width: 60px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.neuron {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #8B5CF6;
+    box-shadow: 0 0 8px rgba(139, 92, 246, 0.5);
+}
+
+.neuron:nth-child(1) { left: 0;   top: 10px; animation: neuron-fire 1.5s 0.0s infinite; }
+.neuron:nth-child(2) { left: 0;   top: 35px; animation: neuron-fire 1.5s 0.2s infinite; }
+.neuron:nth-child(3) { left: 0;   top: 60px; animation: neuron-fire 1.5s 0.4s infinite; }
+.neuron:nth-child(4) { left: 25px; top: 22px; animation: neuron-fire 1.5s 0.5s infinite; background: #3B82F6; }
+.neuron:nth-child(5) { left: 25px; top: 48px; animation: neuron-fire 1.5s 0.7s infinite; background: #3B82F6; }
+.neuron:nth-child(6) { left: 50px; top: 35px; animation: neuron-fire 1.5s 0.9s infinite; background: #10B981; box-shadow: 0 0 12px rgba(16,185,129,0.6); }
+
+.neural-synapse {
+    position: absolute;
+    height: 1.5px;
+    background: linear-gradient(90deg, rgba(139,92,246,0.4), rgba(59,130,246,0.4));
+    transform-origin: left center;
+    animation: synapse-flash 1.5s ease-in-out infinite;
+}
+
+@keyframes neuron-fire {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50%      { transform: scale(1.4); opacity: 1; }
+}
+
+@keyframes synapse-flash {
+    0%, 100% { opacity: 0.2; }
+    50%      { opacity: 0.8; }
+}
+
+/* ── Score Reveal ────────────────────────────────────────── */
+.score-reveal {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.score-ring {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #10B981;
+    border-right-color: #06B6D4;
+    animation: score-spin 1s linear infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.score-ring-inner {
+    font-size: 16px;
+    font-weight: 800;
+    animation: score-counter 2s ease-out forwards;
+}
+
+@keyframes score-spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+@keyframes score-counter {
+    0%   { opacity: 0; transform: scale(0.5); }
+    60%  { opacity: 1; transform: scale(1.2); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* ── Pipeline Container ──────────────────────────────────── */
+.pipeline-container {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+.pipeline-header {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.pipeline-header h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    background: linear-gradient(90deg, #3B82F6, #8B5CF6, #06B6D4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.pipeline-header p {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.pipeline-stages {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+    position: relative;
+}
+
+.pipeline-connector {
+    position: absolute;
+    top: 40px;
+    left: 50px;
+    right: 50px;
+    height: 2px;
+    background: var(--border);
+    z-index: 0;
+}
+
+.pipeline-connector-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #3B82F6, #8B5CF6, #10B981);
+    border-radius: 1px;
+    transition: width 0.5s ease;
+}
+
+.pipeline-stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    z-index: 1;
+    min-width: 80px;
+}
+
+.pipeline-icon-box {
+    width: 80px;
+    height: 80px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-secondary);
+    border: 2px solid var(--border);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.pipeline-stage.active .pipeline-icon-box {
+    border-color: #3B82F6;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+}
+
+.pipeline-stage.complete .pipeline-icon-box {
+    border-color: #10B981;
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
+}
+
+.pipeline-stage.pending .pipeline-icon-box {
+    opacity: 0.35;
+}
+
+.pipeline-stage-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-align: center;
+    color: var(--text-muted);
+    transition: color 0.3s;
+    max-width: 90px;
+}
+
+.pipeline-stage.active .pipeline-stage-label {
+    color: #3B82F6;
+}
+
+.pipeline-stage.complete .pipeline-stage-label {
+    color: #10B981;
+}
+
+.pipeline-stage-time {
+    font-size: 10px;
+    color: var(--text-muted);
+    font-family: monospace;
+}
+
+.pipeline-stage.complete .pipeline-stage-time {
+    color: #10B981;
+}
+
+.pipeline-check {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #10B981;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    animation: check-pop 0.3s ease-out;
+}
+
+@keyframes check-pop {
+    from { transform: scale(0); }
+    to   { transform: scale(1); }
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 800px) {
+    .pipeline-stages {
+        flex-direction: column;
+        align-items: center;
+    }
+    .pipeline-connector { display: none; }
+    .pipeline-stage { flex-direction: row; gap: 16px; }
+    .pipeline-icon-box { width: 60px; height: 60px; min-width: 60px; }
+}

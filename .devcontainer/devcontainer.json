@@ -1,0 +1,48 @@
+{
+    "name": "CARVanta Dev Container",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "app",
+    "workspaceFolder": "/workspace",
+    "features": {
+        "ghcr.io/devcontainers/features/python:1": {
+            "version": "3.12"
+        },
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "22"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "python.defaultInterpreterPath": "/usr/local/bin/python",
+                "typescript.tsdk": "frontend-react/node_modules/typescript/lib",
+                "editor.formatOnSave": true,
+                "editor.defaultFormatter": "esbenp.prettier-vscode"
+            },
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "dbaeumer.vscode-eslint",
+                "esbenp.prettier-vscode",
+                "ms-azuretools.vscode-docker",
+                "bradlc.vscode-tailwindcss"
+            ]
+        }
+    },
+    "postCreateCommand": "pip install -r requirements.txt && cd frontend-react && npm install",
+    "postStartCommand": "echo '🚀 CARVanta is ready! Run: uvicorn api.main:app --port 8001 & cd frontend-react && npm run dev'",
+    "forwardPorts": [
+        8001,
+        5173
+    ],
+    "portsAttributes": {
+        "8001": {
+            "label": "CARVanta API",
+            "onAutoForward": "notify"
+        },
+        "5173": {
+            "label": "React Frontend",
+            "onAutoForward": "openBrowser"
+        }
+    }
+}

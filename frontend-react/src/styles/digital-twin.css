@@ -1,0 +1,1809 @@
+/* ═══════════════════════════════════════════════════════════════════════════════
+   CARVanta – Patient Digital Twin Styles v5
+   Complete styling for 7-tab Digital Twin UI
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+/* ─── Page Layout ─────────────────────────────────────────────────────────── */
+
+.twin-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    animation: twinFadeIn 0.3s ease-out;
+}
+
+@keyframes twinFadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.twin-header {
+    margin-bottom: 20px;
+}
+
+.twin-page h1 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #f1f5f9;
+    margin: 0 0 4px;
+}
+
+.twin-page .page-subtitle {
+    font-size: 13px;
+    color: #94a3b8;
+    margin: 0;
+}
+
+/* ─── Tabs ────────────────────────────────────────────────────────────────── */
+
+.twin-tabs {
+    display: flex;
+    gap: 4px;
+    overflow-x: auto;
+    margin-bottom: 20px;
+    background: rgba(30, 41, 59, 0.6);
+    border: 1px solid rgba(148, 163, 184, 0.12);
+    border-radius: 12px;
+    padding: 5px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.twin-tabs button {
+    flex: 0 0 auto;
+    padding: 8px 14px;
+    border: none;
+    background: transparent;
+    color: #94a3b8;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.twin-tabs button:hover:not(:disabled) {
+    background: rgba(148, 163, 184, 0.08);
+    color: #e2e8f0;
+}
+
+.twin-tabs button.active {
+    background: rgba(99, 102, 241, 0.2);
+    color: #a5b4fc;
+}
+
+.twin-tabs button:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+/* ─── Error ───────────────────────────────────────────────────────────────── */
+
+.twin-error {
+    background: rgba(239, 68, 68, 0.12);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #fca5a5;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+/* ─── Cards ───────────────────────────────────────────────────────────────── */
+
+.twin-page .card {
+    background: rgba(30, 41, 59, 0.6);
+    border: 1px solid rgba(148, 163, 184, 0.12);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 14px;
+    backdrop-filter: blur(12px);
+}
+
+.twin-page .card h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #f1f5f9;
+    margin: 0 0 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.card-desc {
+    font-size: 13px;
+    color: #94a3b8;
+    margin: -8px 0 16px;
+}
+
+/* ─── Presets ──────────────────────────────────────────────────────────────── */
+
+.twin-presets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.twin-preset-btn {
+    background: rgba(99, 102, 241, 0.08);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    color: #a5b4fc;
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.twin-preset-btn:hover {
+    background: rgba(99, 102, 241, 0.18);
+    border-color: rgba(99, 102, 241, 0.4);
+    transform: translateY(-1px);
+}
+
+/* ─── Form Grid ───────────────────────────────────────────────────────────── */
+
+.twin-form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 14px;
+    margin-bottom: 16px;
+}
+
+.twin-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.twin-fields label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.twin-fields input[type="number"],
+.twin-fields input[type="text"],
+.twin-fields select {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(148, 163, 184, 0.15);
+    color: #f1f5f9;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.2s;
+}
+
+.twin-fields input:focus,
+.twin-fields select:focus {
+    outline: none;
+    border-color: rgba(99, 102, 241, 0.5);
+}
+
+.twin-fields input[type="range"] {
+    accent-color: #6366f1;
+    height: 6px;
+}
+
+.range-val {
+    font-size: 16px;
+    font-weight: 800;
+    color: #a5b4fc;
+    text-align: right;
+}
+
+.twin-check {
+    flex-direction: row !important;
+    align-items: center;
+    gap: 10px !important;
+    cursor: pointer;
+}
+
+.twin-check input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #6366f1;
+}
+
+/* ─── Action Buttons ──────────────────────────────────────────────────────── */
+
+.twin-action-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.twin-run-btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.twin-run-btn.primary {
+    background: linear-gradient(135deg, #6366f1, #4f46e5);
+    color: white;
+    box-shadow: 0 4px 16px rgba(99, 102, 241, 0.25);
+}
+
+.twin-run-btn.primary:hover:not(:disabled) {
+    background: linear-gradient(135deg, #818cf8, #6366f1);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.35);
+}
+
+.twin-run-btn.secondary {
+    background: rgba(148, 163, 184, 0.1);
+    border: 1px solid rgba(148, 163, 184, 0.15);
+    color: #e2e8f0;
+}
+
+.twin-run-btn.secondary:hover:not(:disabled) {
+    background: rgba(148, 163, 184, 0.18);
+}
+
+.twin-run-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.twin-back-btn {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    font-size: 13px;
+    cursor: pointer;
+    padding: 8px 0;
+    margin-bottom: 12px;
+}
+
+.twin-back-btn:hover { color: #e2e8f0; }
+
+/* ─── Summary Cards ───────────────────────────────────────────────────────── */
+
+.twin-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.twin-summary-card {
+    background: rgba(30, 41, 59, 0.7);
+    border: 1px solid rgba(148, 163, 184, 0.1);
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.twin-summary-card:hover {
+    transform: translateY(-2px);
+}
+
+.twin-summary-value {
+    font-size: 28px;
+    font-weight: 800;
+    color: #f1f5f9;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+.twin-summary-label {
+    font-size: 11px;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    margin-top: 6px;
+}
+
+/* ─── Charts ──────────────────────────────────────────────────────────────── */
+
+.twin-chart {
+    margin-bottom: 16px;
+}
+
+.twin-chart-label {
+    font-size: 12px;
+    color: #94a3b8;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.twin-svg {
+    width: 100%;
+    height: auto;
+    max-height: 140px;
+    border-radius: 8px;
+    background: rgba(15, 23, 42, 0.3);
+    padding: 8px;
+}
+
+.twin-chart-range {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: #64748b;
+    margin-top: 4px;
+}
+
+.twin-chart-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(148, 163, 184, 0.08);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: #94a3b8;
+    text-transform: capitalize;
+}
+
+.legend-swatch {
+    width: 10px;
+    height: 3px;
+    border-radius: 2px;
+}
+
+/* ─── CRS Risk ────────────────────────────────────────────────────────────── */
+
+.crs-gauge {
+    height: 12px;
+    background: rgba(148, 163, 184, 0.12);
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 16px auto;
+    max-width: 500px;
+}
+
+.crs-gauge-fill {
+    height: 100%;
+    border-radius: 6px;
+    transition: width 0.6s ease;
+}
+
+.crs-score {
+    font-size: 36px;
+    font-weight: 800;
+    color: #f1f5f9;
+    margin: 8px 0;
+}
+
+.crs-severity {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.crs-management {
+    font-size: 13px;
+    color: #94a3b8;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+.crs-factors {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.crs-factor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+}
+
+.crs-factor.high { background: rgba(239, 68, 68, 0.08); }
+.crs-factor.moderate { background: rgba(245, 158, 11, 0.08); }
+.crs-factor.low { background: rgba(16, 185, 129, 0.08); }
+
+.crs-factor-name { color: #e2e8f0; }
+
+.crs-factor-pts {
+    font-weight: 700;
+    font-family: monospace;
+    color: #94a3b8;
+}
+
+.interventions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.intervention-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 14px;
+    background: rgba(99, 102, 241, 0.06);
+    border: 1px solid rgba(99, 102, 241, 0.12);
+    border-radius: 8px;
+    font-size: 13px;
+    color: #e2e8f0;
+}
+
+.intervention-timing {
+    font-size: 11px;
+    color: #94a3b8;
+}
+
+/* ─── Cancer Profiles ─────────────────────────────────────────────────────── */
+
+.cancer-profiles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 12px;
+}
+
+.cancer-profile-card {
+    background: rgba(15, 23, 42, 0.4);
+    border: 1px solid rgba(148, 163, 184, 0.1);
+    border-radius: 10px;
+    padding: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.cancer-profile-card:hover {
+    border-color: rgba(99, 102, 241, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.cancer-profile-card h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #f1f5f9;
+    margin: 0 0 10px;
+}
+
+.profile-stat {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #94a3b8;
+    padding: 4px 0;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.05);
+}
+
+.stat-val {
+    font-weight: 700;
+    color: #a5b4fc;
+}
+
+/* TME Grid */
+.tme-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 10px;
+}
+
+.tme-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 12px;
+    background: rgba(15, 23, 42, 0.3);
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+.tme-label { color: #94a3b8; text-transform: capitalize; }
+.tme-value { font-weight: 700; color: #f1f5f9; }
+
+/* ─── Products ────────────────────────────────────────────────────────────── */
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.product-card {
+    background: rgba(15, 23, 42, 0.4);
+    border: 1px solid rgba(148, 163, 184, 0.1);
+    border-radius: 10px;
+    padding: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+}
+
+.product-card:hover {
+    border-color: rgba(99, 102, 241, 0.3);
+    transform: translateY(-2px);
+}
+
+.product-card.selected {
+    border-color: rgba(99, 102, 241, 0.5);
+    background: rgba(99, 102, 241, 0.06);
+}
+
+.product-card h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #f1f5f9;
+    margin: 0 0 8px;
+}
+
+.product-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+.product-year {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 10px;
+    font-weight: 700;
+    color: #64748b;
+    background: rgba(148, 163, 184, 0.1);
+    padding: 2px 8px;
+    border-radius: 6px;
+}
+
+.clinical-context {
+    margin-top: 16px;
+    padding: 14px;
+    background: rgba(99, 102, 241, 0.06);
+    border: 1px solid rgba(99, 102, 241, 0.12);
+    border-radius: 8px;
+}
+
+.clinical-context h4 {
+    font-size: 13px;
+    color: #a5b4fc;
+    margin: 0 0 8px;
+}
+
+.clinical-context p {
+    font-size: 13px;
+    color: #94a3b8;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.product-risks {
+    margin-top: 14px;
+}
+
+.product-risks h4 {
+    font-size: 13px;
+    color: #fbbf24;
+    margin: 0 0 10px;
+}
+
+.risk-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 12px;
+    background: rgba(245, 158, 11, 0.06);
+    border-radius: 8px;
+    margin-bottom: 6px;
+    font-size: 13px;
+    color: #e2e8f0;
+}
+
+.risk-impact {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 6px;
+    text-transform: uppercase;
+}
+
+.risk-impact.high { background: rgba(239, 68, 68, 0.15); color: #fca5a5; }
+.risk-impact.moderate { background: rgba(245, 158, 11, 0.15); color: #fbbf24; }
+.risk-impact.low { background: rgba(16, 185, 129, 0.15); color: #6ee7b7; }
+
+/* ─── Biomarkers ──────────────────────────────────────────────────────────── */
+
+.biomarker-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 14px;
+}
+
+.biomarker-item {
+    background: rgba(15, 23, 42, 0.3);
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.biomarker-name {
+    font-size: 12px;
+    font-weight: 600;
+    color: #94a3b8;
+    text-transform: capitalize;
+    margin-bottom: 6px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   New Digital Twin Sub-Pages (dt- prefix)
+   Genomic Profiler, Adverse Events, Outcomes Tracker, Population Simulator
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+/* ─── Page & Header ──────────────────────────────────────────────────────── */
+
+.digital-twin-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    animation: dtFadeIn 0.35s ease-out;
+}
+
+@keyframes dtFadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.dt-header {
+    margin-bottom: 20px;
+}
+
+.dt-header h1 {
+    font-size: 26px;
+    font-weight: 800;
+    color: #f1f5f9;
+    margin: 0 0 6px;
+    letter-spacing: -0.01em;
+}
+
+.dt-header p {
+    font-size: 13px;
+    color: #94a3b8;
+    margin: 0;
+}
+
+/* ─── Tabs ────────────────────────────────────────────────────────────────── */
+
+.dt-tabs {
+    display: flex;
+    gap: 4px;
+    overflow-x: auto;
+    margin-bottom: 20px;
+    background: rgba(30, 41, 59, 0.6);
+    border: 1px solid rgba(148, 163, 184, 0.12);
+    border-radius: 12px;
+    padding: 5px;
+}
+
+.dt-tab {
+    flex: 0 0 auto;
+    padding: 10px 18px;
+    border: none;
+    background: transparent;
+    color: #94a3b8;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.dt-tab:hover { background: rgba(148, 163, 184, 0.08); color: #e2e8f0; }
+.dt-tab-active { background: rgba(99, 102, 241, 0.2) !important; color: #a5b4fc !important; }
+
+/* ─── Panels ──────────────────────────────────────────────────────────────── */
+
+.dt-panel {
+    background: rgba(30, 41, 59, 0.6);
+    border: 1px solid rgba(148, 163, 184, 0.12);
+    border-radius: 14px;
+    padding: 24px;
+    backdrop-filter: blur(12px);
+    margin-bottom: 16px;
+}
+
+.dt-results {
+    margin-top: 20px;
+    animation: dtFadeIn 0.3s ease-out;
+}
+
+.dt-section {
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(148, 163, 184, 0.08);
+}
+
+.dt-section h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #f1f5f9;
+    margin: 0 0 14px;
+}
+
+/* ─── Error ───────────────────────────────────────────────────────────────── */
+
+.dt-error {
+    background: rgba(239, 68, 68, 0.12);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #fca5a5;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-size: 13px;
+    margin-bottom: 16px;
+}
+
+/* ─── Forms ───────────────────────────────────────────────────────────────── */
+
+.dt-form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: flex-end;
+    margin-bottom: 16px;
+}
+
+.dt-form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 14px;
+    margin-bottom: 16px;
+}
+
+.dt-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.dt-field label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.dt-field input,
+.dt-field select {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(148, 163, 184, 0.15);
+    color: #f1f5f9;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.2s;
+    min-width: 120px;
+}
+
+.dt-field input:focus,
+.dt-field select:focus {
+    outline: none;
+    border-color: rgba(99, 102, 241, 0.5);
+}
+
+.dt-btn-primary {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    background: linear-gradient(135deg, #6366f1, #4f46e5);
+    color: white;
+    box-shadow: 0 4px 16px rgba(99, 102, 241, 0.25);
+    transition: all 0.2s;
+    white-space: nowrap;
+    align-self: flex-end;
+}
+
+.dt-btn-primary:hover:not(:disabled) {
+    background: linear-gradient(135deg, #818cf8, #6366f1);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.35);
+}
+
+.dt-btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* ─── Summary Cards ──────────────────────────────────────────────────────── */
+
+.dt-summary-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.dt-card-mini {
+    background: rgba(15, 23, 42, 0.4);
+    border: 1px solid rgba(148, 163, 184, 0.1);
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.dt-card-mini:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.dt-card-mini h4 {
+    font-size: 11px;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0 0 8px;
+    font-weight: 700;
+}
+
+.dt-big-num {
+    font-size: 28px;
+    font-weight: 800;
+    color: #f1f5f9;
+    display: block;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+.dt-card-mini p {
+    font-size: 12px;
+    color: #94a3b8;
+    margin: 4px 0 0;
+}
+
+.dt-label {
+    font-size: 12px;
+    color: #94a3b8;
+    margin: 4px 0 0;
+}
+
+.dt-small {
+    font-size: 11px;
+    color: #64748b;
+    margin: 4px 0 0;
+    line-height: 1.4;
+}
+
+/* ─── Tables ──────────────────────────────────────────────────────────────── */
+
+.dt-table-wrap {
+    overflow-x: auto;
+    border-radius: 10px;
+    border: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.dt-data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.dt-data-table thead {
+    background: rgba(30, 41, 59, 0.8);
+}
+
+.dt-data-table th {
+    padding: 10px 14px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 700;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.dt-data-table td {
+    padding: 10px 14px;
+    color: #e2e8f0;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.05);
+}
+
+.dt-data-table tbody tr:hover {
+    background: rgba(99, 102, 241, 0.04);
+}
+
+.dt-winner-row {
+    background: rgba(46, 213, 115, 0.06) !important;
+}
+
+/* ─── Tier Badges ─────────────────────────────────────────────────────────── */
+
+.dt-tier {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 6px;
+    text-transform: uppercase;
+}
+
+.dt-tier-1 { background: rgba(239, 68, 68, 0.15); color: #fca5a5; }
+.dt-tier-2 { background: rgba(245, 158, 11, 0.15); color: #fbbf24; }
+.dt-tier-3 { background: rgba(59, 130, 246, 0.15); color: #93c5fd; }
+.dt-tier-4 { background: rgba(148, 163, 184, 0.15); color: #94a3b8; }
+
+/* ─── Progress Bars ──────────────────────────────────────────────────────── */
+
+.dt-progress-bar {
+    height: 8px;
+    background: rgba(148, 163, 184, 0.12);
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 8px 0;
+}
+
+.dt-progress-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.6s ease;
+}
+
+/* ─── Risk Badges ─────────────────────────────────────────────────────────── */
+
+.dt-risk-badge {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 6px;
+}
+
+.dt-risk-high   { background: rgba(239, 68, 68, 0.15); color: #ff4757; }
+.dt-risk-moderate { background: rgba(245, 158, 11, 0.15); color: #ffa502; }
+.dt-risk-low    { background: rgba(46, 213, 115, 0.15); color: #2ed573; }
+
+/* ─── Status Badges ──────────────────────────────────────────────────────── */
+
+.dt-status-badge {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 6px;
+    text-transform: capitalize;
+}
+
+.dt-status-superior, .dt-status-better { background: rgba(46, 213, 115, 0.15); color: #2ed573; }
+.dt-status-comparable { background: rgba(59, 130, 246, 0.15); color: #93c5fd; }
+.dt-status-inferior, .dt-status-worse { background: rgba(239, 68, 68, 0.15); color: #ff4757; }
+
+/* ─── Resistance Pathways ─────────────────────────────────────────────────── */
+
+.dt-resistance-pathways {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.dt-pathway-card {
+    background: rgba(15, 23, 42, 0.3);
+    border: 1px solid rgba(148, 163, 184, 0.08);
+    border-radius: 10px;
+    padding: 16px;
+}
+
+.dt-pathway-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.dt-pathway-header h4 {
+    font-size: 14px;
+    color: #f1f5f9;
+    margin: 0;
+    font-weight: 700;
+}
+
+.dt-mechanism, .dt-monitoring {
+    font-size: 13px;
+    color: #94a3b8;
+    margin: 6px 0;
+    line-height: 1.5;
+}
+
+.dt-mitigation {
+    font-size: 13px;
+    color: #94a3b8;
+    margin-top: 8px;
+}
+
+.dt-mitigation ul {
+    margin: 4px 0 0 16px;
+    padding: 0;
+}
+
+.dt-mitigation li {
+    margin-bottom: 3px;
+    line-height: 1.4;
+}
+
+.dt-strategy {
+    font-size: 14px;
+    color: #a5b4fc;
+    font-weight: 600;
+    padding: 14px;
+    background: rgba(99, 102, 241, 0.06);
+    border: 1px solid rgba(99, 102, 241, 0.12);
+    border-radius: 8px;
+}
+
+/* ─── Actionable Findings ─────────────────────────────────────────────────── */
+
+.dt-actionable {
+    padding: 12px 16px;
+    background: rgba(250, 204, 21, 0.06);
+    border: 1px solid rgba(250, 204, 21, 0.15);
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.dt-actionable strong {
+    color: #fbbf24;
+    font-size: 14px;
+}
+
+.dt-actionable p {
+    font-size: 13px;
+    color: #94a3b8;
+    margin: 6px 0 0;
+    line-height: 1.5;
+}
+
+/* ─── Charts ──────────────────────────────────────────────────────────────── */
+
+.dt-chart-container {
+    margin-top: 16px;
+}
+
+.dt-svg-chart {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    background: rgba(15, 23, 42, 0.3);
+    padding: 8px;
+}
+
+.dt-chart-legend {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.dt-summary-grid, .dt-mrd-summary .dt-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.dt-stat {
+    text-align: center;
+    padding: 12px;
+    background: rgba(15, 23, 42, 0.3);
+    border-radius: 8px;
+}
+
+.dt-stat-value {
+    font-size: 18px;
+    font-weight: 800;
+    color: #f1f5f9;
+    display: block;
+}
+
+.dt-stat-label {
+    font-size: 10px;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-top: 4px;
+    display: block;
+}
+
+.dt-monitoring-recs {
+    margin-top: 16px;
+}
+
+.dt-monitoring-recs h4 {
+    font-size: 13px;
+    color: #a5b4fc;
+    margin: 0 0 8px;
+}
+
+.dt-monitoring-recs ul {
+    margin: 0;
+    padding: 0 0 0 18px;
+    font-size: 13px;
+    color: #94a3b8;
+    line-height: 1.6;
+}
+
+/* ─── KM Curves ──────────────────────────────────────────────────────────── */
+
+.dt-km-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.dt-km-chart {
+    background: rgba(15, 23, 42, 0.3);
+    border-radius: 10px;
+    padding: 16px;
+}
+
+.dt-km-chart h4 {
+    font-size: 13px;
+    color: #a5b4fc;
+    margin: 0 0 10px;
+    font-weight: 700;
+}
+
+.dt-km-stats {
+    display: flex;
+    gap: 16px;
+    margin-top: 8px;
+    font-size: 12px;
+    color: #94a3b8;
+    font-weight: 600;
+}
+
+/* ─── Waterfall ──────────────────────────────────────────────────────────── */
+
+.dt-waterfall {
+    margin-top: 20px;
+}
+
+.dt-waterfall h4 {
+    font-size: 13px;
+    color: #a5b4fc;
+    margin: 0 0 10px;
+    font-weight: 700;
+}
+
+/* ─── Timeline ───────────────────────────────────────────────────────────── */
+
+.dt-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.dt-timeline-item {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    background: rgba(15, 23, 42, 0.2);
+    border-left: 3px solid #64748b;
+}
+
+.dt-tl-milestone { border-left-color: #6366f1; }
+.dt-tl-procedure { border-left-color: #3b82f6; }
+.dt-tl-treatment { border-left-color: #2ed573; }
+.dt-tl-adverse_event { border-left-color: #ff4757; }
+.dt-tl-resolution { border-left-color: #ffa502; }
+.dt-tl-assessment { border-left-color: #00d2ff; }
+
+.dt-tl-day {
+    font-size: 11px;
+    font-weight: 700;
+    color: #94a3b8;
+    min-width: 60px;
+}
+
+.dt-tl-event {
+    color: #e2e8f0;
+}
+
+/* ─── Cost ────────────────────────────────────────────────────────────────── */
+
+.dt-cost-summary {
+    padding: 16px;
+    background: rgba(46, 213, 115, 0.06);
+    border: 1px solid rgba(46, 213, 115, 0.15);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.dt-cost-total {
+    font-size: 24px;
+    font-weight: 800;
+    color: #f1f5f9;
+    margin: 0 0 6px;
+}
+
+/* ─── AE Cards ───────────────────────────────────────────────────────────── */
+
+.dt-ae-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.dt-overall-risk {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    background: rgba(15, 23, 42, 0.3);
+    border-radius: 12px;
+}
+
+.dt-overall-risk h3 {
+    font-size: 14px;
+    color: #94a3b8;
+    margin: 0 0 8px;
+    text-transform: uppercase;
+}
+
+.dt-overall-risk p {
+    font-size: 13px;
+    color: #94a3b8;
+    margin: 8px 0 0;
+}
+
+/* ─── QoL ─────────────────────────────────────────────────────────────────── */
+
+.dt-qol-scores {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+}
+
+/* ─── Grids ───────────────────────────────────────────────────────────────── */
+
+.dt-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.dt-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+}
+
+.dt-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 10px;
+}
+
+/* ─── Histograms ──────────────────────────────────────────────────────────── */
+
+.dt-histogram {
+    background: rgba(15, 23, 42, 0.3);
+    border-radius: 10px;
+    padding: 14px;
+}
+
+.dt-histogram h4 {
+    font-size: 12px;
+    color: #a5b4fc;
+    margin: 0 0 8px;
+    font-weight: 700;
+}
+
+/* ─── Bar Charts ──────────────────────────────────────────────────────────── */
+
+.dt-bar-chart {
+    margin-bottom: 20px;
+}
+
+.dt-bar-chart h4 {
+    font-size: 13px;
+    color: #a5b4fc;
+    margin: 0 0 8px;
+    font-weight: 700;
+}
+
+/* ─── Subgroups ──────────────────────────────────────────────────────────── */
+
+.dt-subgroups {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.dt-subgroup-category h4 {
+    font-size: 12px;
+    color: #a5b4fc;
+    margin: 0 0 8px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+/* ─── Assessment & Interpretation ─────────────────────────────────────────── */
+
+.dt-assessment {
+    font-size: 14px;
+    color: #a5b4fc;
+    font-weight: 600;
+    margin-top: 14px;
+    padding: 14px;
+    background: rgba(99, 102, 241, 0.06);
+    border: 1px solid rgba(99, 102, 241, 0.12);
+    border-radius: 8px;
+}
+
+.dt-interpretation {
+    font-size: 14px;
+    color: #fbbf24;
+    font-weight: 600;
+    margin-bottom: 16px;
+    padding: 12px 16px;
+    background: rgba(251, 191, 36, 0.06);
+    border: 1px solid rgba(251, 191, 36, 0.15);
+    border-radius: 8px;
+}
+
+/* ─── Responsive ──────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+    .twin-form-grid { grid-template-columns: 1fr; }
+    .twin-summary-grid { grid-template-columns: repeat(2, 1fr); }
+    .twin-action-bar { flex-direction: column; }
+    .twin-run-btn { width: 100%; }
+    .products-grid, .cancer-profiles-grid { grid-template-columns: 1fr; }
+
+    .dt-form-row { flex-direction: column; }
+    .dt-form-grid { grid-template-columns: 1fr; }
+    .dt-summary-cards { grid-template-columns: repeat(2, 1fr); }
+    .dt-ae-cards { grid-template-columns: repeat(2, 1fr); }
+    .dt-km-section { grid-template-columns: 1fr; }
+    .dt-grid-2 { grid-template-columns: 1fr; }
+    .dt-grid-3 { grid-template-columns: 1fr; }
+    .dt-grid-4 { grid-template-columns: repeat(2, 1fr); }
+    .dt-qol-scores { grid-template-columns: repeat(3, 1fr); }
+    .dt-btn-primary { width: 100%; }
+}
+
+@media (max-width: 480px) {
+    .digital-twin-page { padding: 12px; }
+    .dt-panel { padding: 14px; }
+    .dt-summary-cards { grid-template-columns: 1fr; }
+    .dt-big-num { font-size: 22px; }
+    .dt-tabs { gap: 2px; padding: 3px; }
+    .dt-tab { padding: 8px 12px; font-size: 11px; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Patient Wizard  (.dt-wizard-*)
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.dt-wizard-progress {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    padding: 16px 20px;
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid rgba(148, 163, 184, 0.1);
+    border-radius: 14px;
+    overflow-x: auto;
+    gap: 4px;
+}
+
+.dt-wizard-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    min-width: 80px;
+    flex-shrink: 0;
+}
+
+.dt-wizard-step:hover { background: rgba(148, 163, 184, 0.06); }
+
+.dt-step-active {
+    background: rgba(99, 102, 241, 0.15) !important;
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.25);
+}
+
+.dt-step-done { opacity: 0.7; }
+
+.dt-step-icon {
+    font-size: 20px;
+    display: block;
+    line-height: 1;
+}
+
+.dt-step-done .dt-step-icon {
+    color: #2ed573;
+}
+
+.dt-step-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.dt-step-active .dt-step-label { color: #a5b4fc; }
+
+.dt-wizard-panel {
+    animation: dtFadeIn 0.3s ease-out;
+}
+
+.dt-wizard-title {
+    font-size: 20px;
+    font-weight: 800;
+    color: #f1f5f9;
+    margin: 0 0 20px;
+    letter-spacing: -0.01em;
+}
+
+.dt-wizard-nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(148, 163, 184, 0.08);
+}
+
+.dt-btn-secondary {
+    padding: 10px 24px;
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    background: transparent;
+    color: #94a3b8;
+    transition: all 0.2s;
+}
+
+.dt-btn-secondary:hover {
+    background: rgba(148, 163, 184, 0.08);
+    color: #e2e8f0;
+}
+
+.dt-btn-large {
+    padding: 14px 36px;
+    font-size: 16px;
+}
+
+.dt-range-val {
+    font-size: 13px;
+    font-weight: 700;
+    color: #a5b4fc;
+    margin-top: 4px;
+}
+
+.dt-checkbox label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #e2e8f0;
+    cursor: pointer;
+}
+
+.dt-checkbox input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #6366f1;
+}
+
+.dt-warning-box {
+    margin: 16px 0;
+    padding: 12px 18px;
+    background: rgba(239, 68, 68, 0.08);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    border-radius: 10px;
+    color: #fca5a5;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* ─── Review Grid ─────────────────────────────────────────────────────────── */
+
+.dt-review-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 14px;
+}
+
+.dt-review-section {
+    background: rgba(15, 23, 42, 0.3);
+    border: 1px solid rgba(148, 163, 184, 0.08);
+    border-radius: 10px;
+    padding: 16px;
+}
+
+.dt-review-section h4 {
+    font-size: 12px;
+    font-weight: 700;
+    color: #a5b4fc;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin: 0 0 8px;
+}
+
+.dt-review-section p {
+    font-size: 13px;
+    color: #e2e8f0;
+    margin: 4px 0;
+    line-height: 1.4;
+}
+
+/* ─── Tumor Animation ────────────────────────────────────────────────────── */
+
+.dt-tumor-animation {
+    margin-top: 16px;
+}
+
+.dt-tumor-viz-row {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 20px;
+    align-items: center;
+}
+
+.dt-tumor-circle-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.dt-tumor-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: tumorPulse 2s ease-in-out infinite;
+}
+
+@keyframes tumorPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+}
+
+.dt-tumor-size {
+    font-size: 14px;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.dt-tumor-chart {
+    min-width: 0;
+}
+
+/* ─── Risk Factor Row ────────────────────────────────────────────────────── */
+
+.dt-risk-factor-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 14px;
+    margin: 4px 0;
+    background: rgba(15, 23, 42, 0.2);
+    border-radius: 8px;
+    border-left: 3px solid rgba(148, 163, 184, 0.2);
+    font-size: 13px;
+    color: #e2e8f0;
+}
+
+/* ─── Recommendation List ────────────────────────────────────────────────── */
+
+.dt-rec-list {
+    padding-left: 18px;
+    margin: 0;
+}
+
+.dt-rec-list li {
+    font-size: 13px;
+    color: #e2e8f0;
+    line-height: 1.6;
+    margin-bottom: 6px;
+}
+
+/* ─── Wizard Responsive ──────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+    .dt-wizard-progress { flex-wrap: nowrap; padding: 10px; gap: 2px; }
+    .dt-wizard-step { min-width: 50px; padding: 6px 8px; }
+    .dt-step-label { font-size: 8px; }
+    .dt-review-grid { grid-template-columns: 1fr; }
+    .dt-tumor-viz-row { grid-template-columns: 1fr; }
+    .dt-wizard-nav { flex-direction: column; }
+    .dt-btn-secondary, .dt-btn-primary { width: 100%; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   LIGHT THEME OVERRIDES — Digital Twin
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+[data-theme="light"] .twin-page h1 { color: #0f172a; }
+[data-theme="light"] .twin-page .page-subtitle { color: #475569; }
+
+[data-theme="light"] .twin-tabs {
+    background: rgba(241, 245, 249, 0.9);
+    border-color: rgba(148, 163, 184, 0.25);
+}
+[data-theme="light"] .twin-tabs button { color: #475569; }
+[data-theme="light"] .twin-tabs button:hover:not(:disabled) { background: rgba(99,102,241,0.08); color: #1e293b; }
+[data-theme="light"] .twin-tabs button.active { background: rgba(99,102,241,0.15); color: #4338ca; }
+
+[data-theme="light"] .twin-page .card {
+    background: #ffffff;
+    border-color: rgba(148, 163, 184, 0.25);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+[data-theme="light"] .twin-page .card h3 { color: #0f172a; border-color: rgba(148,163,184,0.2); }
+[data-theme="light"] .card-desc { color: #475569; }
+
+[data-theme="light"] .twin-error { color: #dc2626; background: rgba(239,68,68,0.08); border-color: rgba(239,68,68,0.2); }
+
+[data-theme="light"] .twin-fields label { color: #334155; }
+[data-theme="light"] .twin-fields input[type="number"],
+[data-theme="light"] .twin-fields input[type="text"],
+[data-theme="light"] .twin-fields select {
+    background: #f8fafc;
+    border-color: rgba(148, 163, 184, 0.3);
+    color: #0f172a;
+}
+[data-theme="light"] .twin-fields input:focus,
+[data-theme="light"] .twin-fields select:focus { border-color: #6366f1; }
+
+[data-theme="light"] .twin-preset-btn { color: #4338ca; background: rgba(99,102,241,0.06); border-color: rgba(99,102,241,0.15); }
+[data-theme="light"] .twin-preset-btn:hover { background: rgba(99,102,241,0.12); }
+
+[data-theme="light"] .twin-summary-card { background: #f8fafc; border-color: rgba(148,163,184,0.2); }
+[data-theme="light"] .twin-summary-value { color: #0f172a; }
+[data-theme="light"] .twin-summary-label { color: #475569; }
+
+[data-theme="light"] .twin-run-btn.primary { color: #ffffff; }
+[data-theme="light"] .twin-run-btn.secondary { color: #334155; background: rgba(99,102,241,0.06); border-color: rgba(99,102,241,0.2); }
+[data-theme="light"] .twin-run-btn.secondary:hover { background: rgba(99,102,241,0.12); }
+
+[data-theme="light"] .twin-chart-label { color: #334155; }
+[data-theme="light"] .twin-chart-range span { color: #64748b; }
+[data-theme="light"] .legend-item { color: #334155; }
+
+[data-theme="light"] .crs-score { color: #0f172a; }
+[data-theme="light"] .crs-management { color: #334155; }
+[data-theme="light"] .crs-gauge { background: #e2e8f0; }
+[data-theme="light"] .crs-factor { border-color: rgba(148,163,184,0.2); }
+[data-theme="light"] .crs-factor-name { color: #1e293b; }
+
+[data-theme="light"] .cancer-profile-card { background: #f8fafc; border-color: rgba(148,163,184,0.2); }
+[data-theme="light"] .cancer-profile-card h4 { color: #0f172a; }
+[data-theme="light"] .cancer-profile-card:hover { background: rgba(99,102,241,0.06); border-color: #6366f1; }
+[data-theme="light"] .profile-stat span:first-child { color: #475569; }
+[data-theme="light"] .stat-val { color: #1e293b; }
+
+[data-theme="light"] .product-card { background: #f8fafc; border-color: rgba(148,163,184,0.2); }
+[data-theme="light"] .product-card h4 { color: #0f172a; }
+[data-theme="light"] .product-card:hover { border-color: #6366f1; }
+[data-theme="light"] .product-meta span { color: #475569; }
+
+[data-theme="light"] .tme-label { color: #334155; }
+[data-theme="light"] .tme-value { color: #0f172a; }
+
+[data-theme="light"] .intervention-name { color: #1e293b; }
+[data-theme="light"] .intervention-timing { color: #6366f1; }
+
+[data-theme="light"] .biomarker-name { color: #334155; }
+[data-theme="light"] .clinical-context p { color: #334155; }
+[data-theme="light"] .clinical-context h4 { color: #0f172a; }
+
+[data-theme="light"] .twin-back-btn { color: #4338ca; }
+
+[data-theme="light"] .range-val { color: #1e293b; }
+[data-theme="light"] .twin-check { color: #334155; }
+
+/* Wizard steps for light theme */
+[data-theme="light"] .dt-wizard-step { background: #f8fafc; border-color: rgba(148,163,184,0.2); }
+[data-theme="light"] .dt-wizard-step.active { background: rgba(99,102,241,0.08); border-color: #6366f1; }
+[data-theme="light"] .dt-step-label { color: #334155; }
+[data-theme="light"] .dt-review-item { color: #1e293b; }
+[data-theme="light"] .dt-review-label { color: #475569; }
+[data-theme="light"] .dt-review-value { color: #0f172a; }
+[data-theme="light"] .dt-insight { color: #334155; background: #f8fafc; }
+[data-theme="light"] .dt-insight strong { color: #0f172a; }
+
+/* ─── dt-* classes used by Adverse Events, Outcomes Tracker, etc. ────────── */
+
+[data-theme="light"] .digital-twin-page { color: #1e293b; }
+[data-theme="light"] .digital-twin-page h1,
+[data-theme="light"] .dt-header h1 { color: #0f172a; }
+[data-theme="light"] .dt-header p { color: #475569; }
+
+[data-theme="light"] .dt-tabs { background: #f8fafc; border-color: rgba(148,163,184,0.2); }
+[data-theme="light"] .dt-tab { color: #475569; }
+[data-theme="light"] .dt-tab:hover { background: rgba(99,102,241,0.06); color: #1e293b; }
+[data-theme="light"] .dt-tab-active { background: rgba(99,102,241,0.12); color: #4338ca; }
+
+[data-theme="light"] .dt-panel { color: #1e293b; }
+[data-theme="light"] .dt-section { border-color: rgba(148,163,184,0.15); }
+[data-theme="light"] .dt-section h3 { color: #0f172a; }
+[data-theme="light"] .dt-section p { color: #334155; }
+
+[data-theme="light"] .dt-error { color: #dc2626; background: rgba(239,68,68,0.06); border-color: rgba(239,68,68,0.15); }
+
+[data-theme="light"] .dt-field label { color: #334155; }
+[data-theme="light"] .dt-field input,
+[data-theme="light"] .dt-field select { background: #f8fafc; border-color: #e2e8f0; color: #0f172a; }
+[data-theme="light"] .dt-field input:focus,
+[data-theme="light"] .dt-field select:focus { border-color: #6366f1; }
+
+[data-theme="light"] .dt-card-mini { background: #ffffff; border-color: rgba(148,163,184,0.2); box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+[data-theme="light"] .dt-card-mini h4 { color: #475569; }
+[data-theme="light"] .dt-card-mini p { color: #475569; }
+[data-theme="light"] .dt-big-num { color: #0f172a; }
+[data-theme="light"] .dt-label { color: #475569; }
+[data-theme="light"] .dt-small { color: #64748b; }
+
+[data-theme="light"] .dt-data-table thead { background: #f1f5f9; }
+[data-theme="light"] .dt-data-table th { color: #475569; border-color: rgba(148,163,184,0.2); }
+[data-theme="light"] .dt-data-table td { color: #1e293b; border-color: rgba(148,163,184,0.1); }
+[data-theme="light"] .dt-data-table tr:hover td { background: rgba(99,102,241,0.04); }
+
+[data-theme="light"] .dt-progress-bar { background: #e2e8f0; }
+[data-theme="light"] .dt-chart-container { border-color: rgba(148,163,184,0.2); }
+[data-theme="light"] .dt-chart-legend span { color: #334155; }
+[data-theme="light"] .dt-summary-grid { border-color: rgba(148,163,184,0.1); }
+[data-theme="light"] .dt-stat { background: #f8fafc; border-color: rgba(148,163,184,0.15); }
+[data-theme="light"] .dt-stat-value { color: #0f172a; }
+[data-theme="light"] .dt-stat-label { color: #475569; }
+
+[data-theme="light"] .dt-overall-risk h3 { color: #0f172a; }
+[data-theme="light"] .dt-overall-risk p { color: #334155; }
+[data-theme="light"] .dt-ae-cards { color: #1e293b; }
+
+[data-theme="light"] .dt-pathway-card { background: #ffffff; border-color: rgba(148,163,184,0.2); }
+[data-theme="light"] .dt-pathway-card h4 { color: #0f172a; }
+[data-theme="light"] .dt-pathway-header { color: #1e293b; }
+[data-theme="light"] .dt-mechanism { color: #334155; }
+[data-theme="light"] .dt-monitoring { color: #334155; }
+[data-theme="light"] .dt-mitigation { color: #334155; }
+[data-theme="light"] .dt-mitigation li { color: #475569; }
+[data-theme="light"] .dt-strategy { color: #1e293b; }
+[data-theme="light"] .dt-mrd-summary { color: #1e293b; }
+[data-theme="light"] .dt-monitoring-recs h4 { color: #0f172a; }
+[data-theme="light"] .dt-monitoring-recs li { color: #334155; }
+[data-theme="light"] .dt-actionable { background: rgba(245,158,11,0.04); border-color: rgba(245,158,11,0.15); color: #1e293b; }
+[data-theme="light"] .dt-actionable strong { color: #0f172a; }
+
+[data-theme="light"] .dt-tier { border-color: rgba(148,163,184,0.2); }
+[data-theme="light"] .dt-risk-badge { font-weight: 700; }
+[data-theme="light"] .dt-grid-3 { color: #1e293b; }
+[data-theme="light"] .dt-grid-4 { color: #1e293b; }
+
+[data-theme="light"] .dt-svg-chart text { fill: #475569; }
+[data-theme="light"] .dt-svg-chart line { stroke: #cbd5e1; }

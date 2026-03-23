@@ -1,0 +1,68 @@
+# ═══════════════════════════════════════════════════════════════════════════════
+# CARVanta — Production Docker Compose
+# ═══════════════════════════════════════════════════════════════════════════════
+# 3-service stack: PostgreSQL + API + Frontend
+# Usage: docker-compose up --build
+# ═══════════════════════════════════════════════════════════════════════════════
+
+services:
+  # ── PostgreSQL Database ──────────────────────────────────────────────────
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: carvanta
+      POSTGRES_USER: ${POSTGRES_USER:-carvanta}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-carvanta_secure_pw}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U carvanta"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ── CARVanta API Server ──────────────────────────────────────────────────
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      ENVIRONMENT: production
+      DATABASE_URL: postgresql://${POSTGRES_USER:-carvanta}:${POSTGRES_PASSWORD:-carvanta_secure_pw}@db:5432/carvanta
+      API_HOST: 0.0.0.0
+      API_PORT: 8001
+      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:8501}
+      CARVANTA_API_KEY_DEV: ${CARVANTA_API_KEY_DEV:-}
+      CARVANTA_API_KEY_PRO: ${CARVANTA_API_KEY_PRO:-}
+      CARVANTA_API_KEY_ENTERPRISE: ${CARVANTA_API_KEY_ENTERPRISE:-}
+    ports:
+      - "8001:8001"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # ── CARVanta Streamlit Frontend ──────────────────────────────────────────
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    restart: unless-stopped
+    depends_on:
+      api:
+        condition: service_healthy
+    environment:
+      API_BASE_URL: http://api:8001
+    ports:
+      - "8501:8501"
+
+volumes:
+  postgres_data:

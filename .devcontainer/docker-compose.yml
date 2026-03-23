@@ -1,0 +1,12 @@
+services:
+  app:
+    image: mcr.microsoft.com/devcontainers/universal:2
+    volumes:
+      - ..:/workspace:cached
+    command: sleep infinity
+    environment:
+      - ENVIRONMENT=development
+      - PYTHONPATH=/workspace
+    ports:
+      - "8001:8001"
+      - "5173:5173"
