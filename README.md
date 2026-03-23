@@ -213,7 +213,3 @@ Weights adapt dynamically based on data confidence. Final CVS = 60% rule-based +
 | **Security** | CodeQL, gitleaks, pip-audit, Dependabot |
 
 ---
-
-## 📄 License
-
-Research and educational purposes. **© CARVanta** — AI-Powered CAR-T Target Discovery
