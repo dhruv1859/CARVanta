@@ -1,4 +1,26 @@
-# ─── Python ──────────────────────────────────────────────────────────────────────
+# ─── Environment & Secrets ─────────────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+
+# ─── Databases (contain user data, sessions, audit logs) ──────────────────────
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+
+# ─── Trained ML Models (proprietary / trade secrets) ──────────────────────────
+models/*.pkl
+models/*.joblib
+models/*.h5
+models/*.pt
+
+# ─── Research Data ─────────────────────────────────────────────────────────────
+data/biomarker_database.csv
+data/biomarker_database_synthetic_backup.csv
+data/cache/
+
+# ─── Python ────────────────────────────────────────────────────────────────────
 __pycache__/
 *.py[cod]
 *$py.class
@@ -7,35 +29,40 @@ __pycache__/
 dist/
 build/
 *.egg
-
-# ─── Environment ─────────────────────────────────────────────────────────────────
-.env
-.env.local
-.env.production
 .venv/
-env/
 venv/
+env/
 
-# ─── IDE ─────────────────────────────────────────────────────────────────────────
+# ─── Node / React ─────────────────────────────────────────────────────────────
+node_modules/
+frontend-react/dist/
+frontend-react/.vite/
+*.tsbuildinfo
+
+# ─── Certificates & Keys ──────────────────────────────────────────────────────
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+
+# ─── Reports & Temp ──────────────────────────────────────────────────────────
+*.pdf
+tmp_*
+*.log
+logs/
+
+# ─── OS ────────────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ─── IDE ───────────────────────────────────────────────────────────────────────
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
 
-# ─── Data (managed via database, not git) ────────────────────────────────────────
-data/cache/
-data/biomarker_database_synthetic_backup.csv
-
-# ─── Model Artifacts ─────────────────────────────────────────────────────────────
-models/*.pkl
-
-# ─── Reports & Temp ──────────────────────────────────────────────────────────────
-*.pdf
-tmp_*
-*.log
-
-# ─── OS ──────────────────────────────────────────────────────────────────────────
-.DS_Store
-Thumbs.db
-desktop.ini
+# ─── Docker ────────────────────────────────────────────────────────────────────
+docker-compose.override.yml
