@@ -102,7 +102,7 @@ def create_user(
         institution=institution,
         country=country,
         is_active=True,
-        is_verified=False,
+        is_verified=os.getenv("ENVIRONMENT", "development") == "development",  # Auto-verify in dev
     )
     db.add(user)
     db.commit()
