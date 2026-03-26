@@ -103,7 +103,16 @@ def register(req: RegisterRequest, db: Session = Depends(get_db)):
     if "error" in result:
         return result
 
-    # Send verification email after successful registration
+    # In development mode, accounts are auto-verified — skip email
+    import os
+    if os.getenv("ENVIRONMENT", "development") == "development":
+        return {
+            **result,
+            "verification": {"status": "auto_verified", "message": "Dev mode: account auto-verified"},
+            "message": "Account created and verified! You can log in now.",
+        }
+
+    # In production, send verification email
     email_result = send_verification_email(req.email, req.full_name)
 
     return {
