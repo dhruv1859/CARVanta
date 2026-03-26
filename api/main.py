@@ -37,6 +37,7 @@ from api.auth_router import router as auth_router
 from db.connection import init_db
 from digital_twin.twin_router import router as twin_router
 from api.enterprise_router import router as enterprise_router
+from api.omics_router import router as omics_router
 
 
 app = FastAPI(
@@ -56,6 +57,7 @@ def startup_event():
 app.include_router(auth_router)
 app.include_router(twin_router)
 app.include_router(enterprise_router)
+app.include_router(omics_router)
 
 # Middleware stack (order matters: first added = outermost)
 app.add_middleware(AuditLogMiddleware)  # Audit logging for regulatory compliance

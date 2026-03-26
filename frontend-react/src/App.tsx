@@ -28,6 +28,7 @@ import AdverseEvents from './pages/AdverseEvents';
 import OutcomesTracker from './pages/OutcomesTracker';
 import PopulationSimulator from './pages/PopulationSimulator';
 import PatientWizard from './pages/PatientWizard';
+import MultiOmics from './pages/MultiOmics';
 
 function ProtectedApp() {
   const { user, loading } = useAuth();
@@ -76,6 +77,7 @@ function ProtectedApp() {
         <Route path="/outcomes" element={<OutcomesTracker />} />
         <Route path="/population" element={<PopulationSimulator />} />
         <Route path="/wizard" element={<PatientWizard />} />
+        <Route path="/multi-omics" element={<MultiOmics />} />
       </Routes>
     </Layout>
   );

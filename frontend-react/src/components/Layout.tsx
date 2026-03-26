@@ -27,6 +27,7 @@ const NAV_ITEMS = [
     { path: '/outcomes', icon: '📊', label: 'Outcomes Tracker' },
     { path: '/population', icon: '🌍', label: 'Population Simulator' },
     { path: '/wizard', icon: '📝', label: 'Patient Wizard' },
+    { path: '/multi-omics', icon: '🧬', label: 'Multi-Omics Engine' },
     // Enterprise section
     { path: '/admin', icon: '🛡️', label: 'Admin Dashboard', section: 'Enterprise' },
     { path: '/mfa', icon: '🔐', label: 'MFA Security' },
