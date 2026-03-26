@@ -60,7 +60,22 @@ export default function LoginPage() {
                 regRole, regInstitution, regCountry
             );
 
-            // Show verification step
+            // Check if account was auto-verified (dev mode)
+            if (result?.verification?.status === 'auto_verified') {
+                setSuccess('Account created and verified! Logging you in...');
+                setTimeout(async () => {
+                    try {
+                        await login(regEmail, regPassword);
+                    } catch {
+                        setSuccess('Account created! You can now sign in.');
+                        setIsRegister(false);
+                        setLoginId(regEmail);
+                    }
+                }, 500);
+                return;
+            }
+
+            // Production: show verification step
             setVerificationEmail(regEmail);
             setVerificationPassword(regPassword);
             setShowVerification(true);
