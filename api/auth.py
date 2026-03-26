@@ -18,7 +18,11 @@ from db.models import User, UserSession
 
 # ─── Config ──────────────────────────────────────────────────────────────────────
 
-JWT_SECRET = os.getenv("JWT_SECRET", "carvanta-dev-secret-change-in-prod")
+JWT_SECRET = os.getenv("JWT_SECRET", "")
+if not JWT_SECRET:
+    import warnings
+    warnings.warn("JWT_SECRET not set — using insecure fallback. Set JWT_SECRET in .env!")
+    JWT_SECRET = "INSECURE-DEV-ONLY-" + hashlib.sha256(b"carvanta-dev").hexdigest()[:16]
 ACCESS_TOKEN_TTL_HOURS = int(os.getenv("ACCESS_TOKEN_TTL_HOURS", "24"))
 REFRESH_TOKEN_TTL_DAYS = int(os.getenv("REFRESH_TOKEN_TTL_DAYS", "30"))
 
@@ -27,7 +31,9 @@ REFRESH_TOKEN_TTL_DAYS = int(os.getenv("REFRESH_TOKEN_TTL_DAYS", "30"))
 
 def _hash_password(password: str) -> str:
     """SHA-256 password hash with salt."""
-    salt = os.getenv("PASSWORD_SALT", "carvanta-salt")
+    salt = os.getenv("PASSWORD_SALT", "")
+    if not salt:
+        salt = "INSECURE-DEV-SALT-" + hashlib.sha256(b"carvanta").hexdigest()[:12]
     return hashlib.sha256(f"{salt}:{password}".encode()).hexdigest()
 
 
