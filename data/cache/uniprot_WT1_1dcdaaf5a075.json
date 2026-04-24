@@ -1,0 +1,19 @@
+{
+  "gene": "WT1",
+  "uniprot_id": "P19544",
+  "protein_name": "Wilms tumor protein",
+  "subcellular_location": [
+    "Nucleus",
+    "Nucleus, nucleolus",
+    "Cytoplasm",
+    "Nucleus speckle",
+    "Nucleus, nucleoplasm"
+  ],
+  "is_membrane_protein": false,
+  "is_single_pass": false,
+  "topology": "",
+  "function_description": "Transcription factor that plays an important role in cellular development and cell survival (PubMed:7862533). Recognizes and binds to the DNA sequence 5'-GCG(T/G)GGGCG-3' (PubMed:17716689, PubMed:25258363, PubMed:7862533). Regulates the expression of numerous target genes, including EPO. Plays an essential role for development of the urogenital system. It has a tumor suppressor as well as an oncogenic role in tumor formation. Function may be isoform-specific: isoforms lacking the KTS motif may act as transcription factors (PubMed:15520190). Isoforms containing the KTS motif may bind mRNA and play a role in mRNA metabolism or splicing (PubMed:16934801). Isoform 1 has lower affinity for DNA, and can bind RNA (PubMed:19123921)",
+  "molecular_mass_kda": 49.2,
+  "source": "UniProt",
+  "status": "fetched"
+}

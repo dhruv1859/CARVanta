@@ -1,0 +1,16 @@
+{
+  "gene": "CD38",
+  "uniprot_id": "P28907",
+  "protein_name": "ADP-ribosyl cyclase/cyclic ADP-ribose hydrolase 1",
+  "subcellular_location": [
+    "Cell surface",
+    "Cell membrane"
+  ],
+  "is_membrane_protein": true,
+  "is_single_pass": true,
+  "topology": "Single-pass type I membrane protein",
+  "function_description": "Multifunctional transmembrane glycoprotein able to exert enzymatic activities and also to mobilize calcium, to transduce signals, to adhere to hyaluronan and to other ligands. Synthesizes cyclic ADP-ribose (cADPR), a second messenger for glucose-induced insulin secretion (PubMed:7961800, PubMed:8253715). Synthesizes the Ca(2+) mobilizer nicotinate-adenine dinucleotide phosphate, NAADP(+), from 2'-phospho-cADPR and nicotinic acid, as well as from NADP(+) and nicotinic acid. At both pH 5.0 and pH 7.4 preferentially transforms 2'-phospho-cADPR into NAADP(+), while preferentially cleaving NADP(+) to cADPR and ADPRP rather than into NADDP(+) (PubMed:16690024). Has cADPR hydrolase activity (PubMed:7961800, PubMed:8253715). Functions also as a receptor that binds the ligand CD31 on endothelial cells, promoting lymphocyte activation, proliferation, and migration across the endothelial barrier (PubMed:9551996). Involved in the regulation of crucial dendritic cell functions acquired at the mature stage, such as CCL21-driven migration, survival, and Th1-polarizing activity (PubMed:16293598). In lamina propria T lymphocytes, CD38/CD31 cognate interactions initiate a multistep signaling pathway resulting in activation of LCK anf LAT, followed by cytokine release (PubMed:11259373)",
+  "molecular_mass_kda": 34.3,
+  "source": "UniProt",
+  "status": "fetched"
+}

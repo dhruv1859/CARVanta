@@ -1,0 +1,9 @@
+{
+  "gene": "ABC14B",
+  "tissues": {},
+  "organ_summary": {},
+  "critical_organ_flags": [],
+  "overall_mean_normal": 0.0,
+  "source": "GTEx",
+  "status": "gene_not_found"
+}

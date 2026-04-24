@@ -1,0 +1,17 @@
+{
+  "gene": "CEACAM5",
+  "uniprot_id": "P06731",
+  "protein_name": "Cell adhesion molecule CEACAM5",
+  "subcellular_location": [
+    "Cell membrane",
+    "Apical cell membrane",
+    "Cell surface"
+  ],
+  "is_membrane_protein": true,
+  "is_single_pass": false,
+  "topology": "",
+  "function_description": "(Microbial infection) Receptor for E.coli Dr adhesins. Binding of E.coli Dr adhesins leads to dissociation of the homodimer",
+  "molecular_mass_kda": 76.8,
+  "source": "UniProt",
+  "status": "fetched"
+}

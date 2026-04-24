@@ -1,0 +1,15 @@
+{
+  "gene": "IL13RA2",
+  "uniprot_id": "Q14627",
+  "protein_name": "Interleukin-13 receptor subunit alpha-2",
+  "subcellular_location": [
+    "Cell membrane"
+  ],
+  "is_membrane_protein": true,
+  "is_single_pass": true,
+  "topology": "Single-pass type I membrane protein",
+  "function_description": "Cell surface receptor that plays a role in the regulation of IL-13-mediated responses (PubMed:11861389, PubMed:17030238). Functions as a decoy receptor that inhibits IL-13- and IL-4-mediated signal transduction via the JAK-STAT pathway and thereby modulates immune responses and inflammation (PubMed:11861389, PubMed:17030238). Serves as a functional signaling receptor for IL-13 in an alternative pathway involving AP-1 ultimately leading to the production of TGFB1 (PubMed:16327802)",
+  "molecular_mass_kda": 44.2,
+  "source": "UniProt",
+  "status": "fetched"
+}

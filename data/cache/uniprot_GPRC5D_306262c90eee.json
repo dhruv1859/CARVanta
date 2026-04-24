@@ -1,0 +1,15 @@
+{
+  "gene": "GPRC5D",
+  "uniprot_id": "Q9NZD1",
+  "protein_name": "G-protein coupled receptor family C group 5 member D",
+  "subcellular_location": [
+    "Cell membrane"
+  ],
+  "is_membrane_protein": true,
+  "is_single_pass": false,
+  "topology": "Multi-pass membrane protein (7 TM domains)",
+  "function_description": "G-protein coupled receptor involved in hard keratin expression and likely plays a role in the development of hair and nails",
+  "molecular_mass_kda": 38.8,
+  "source": "UniProt",
+  "status": "fetched"
+}

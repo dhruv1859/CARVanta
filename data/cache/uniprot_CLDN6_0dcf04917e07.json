@@ -1,0 +1,16 @@
+{
+  "gene": "CLDN6",
+  "uniprot_id": "P56747",
+  "protein_name": "Claudin-6",
+  "subcellular_location": [
+    "Cell junction, tight junction",
+    "Cell membrane"
+  ],
+  "is_membrane_protein": true,
+  "is_single_pass": false,
+  "topology": "Multi-pass membrane protein (4 TM domains)",
+  "function_description": "(Microbial infection) Acts as a receptor for hepatitis C virus (HCV) entry into hepatic cells",
+  "molecular_mass_kda": 23.3,
+  "source": "UniProt",
+  "status": "fetched"
+}

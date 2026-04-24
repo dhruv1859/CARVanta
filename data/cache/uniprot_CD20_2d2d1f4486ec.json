@@ -1,0 +1,16 @@
+{
+  "gene": "CD20",
+  "uniprot_id": "P11836",
+  "protein_name": "B-lymphocyte antigen CD20",
+  "subcellular_location": [
+    "Cell membrane",
+    "Cell membrane"
+  ],
+  "is_membrane_protein": true,
+  "is_single_pass": false,
+  "topology": "Multi-pass membrane protein (4 TM domains)",
+  "function_description": "B-lymphocyte-specific membrane protein that plays a role in the regulation of cellular calcium influx necessary for the development, differentiation, and activation of B-lymphocytes (PubMed:12920111, PubMed:3925015, PubMed:7684739). Functions as a store-operated calcium (SOC) channel component promoting calcium influx after activation by the B-cell receptor/BCR (PubMed:12920111, PubMed:18474602, PubMed:7684739)",
+  "molecular_mass_kda": 33.1,
+  "source": "UniProt",
+  "status": "fetched"
+}

@@ -1,0 +1,15 @@
+{
+  "gene": "LYPD3",
+  "uniprot_id": "O95274",
+  "protein_name": "Ly6/PLAUR domain-containing protein 3",
+  "subcellular_location": [
+    "Cell membrane"
+  ],
+  "is_membrane_protein": true,
+  "is_single_pass": false,
+  "topology": "",
+  "function_description": "Supports cell migration. May be involved in urothelial cell-matrix interactions. May be involved in tumor progression",
+  "molecular_mass_kda": 36.0,
+  "source": "UniProt",
+  "status": "fetched"
+}

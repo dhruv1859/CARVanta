@@ -1,0 +1,19 @@
+{
+  "gene": "PRAME",
+  "uniprot_id": "P78395",
+  "protein_name": "Melanoma antigen preferentially expressed in tumors",
+  "subcellular_location": [
+    "Nucleus",
+    "Chromosome",
+    "Cytoplasm",
+    "Golgi apparatus",
+    "Cell membrane"
+  ],
+  "is_membrane_protein": true,
+  "is_single_pass": false,
+  "topology": "",
+  "function_description": "Substrate-recognition component of a Cul2-RING (CRL2) E3 ubiquitin-protein ligase complex, which mediates ubiquitination of target proteins, leading to their degradation (PubMed:21822215, PubMed:26138980). The CRL2(PRAME) complex mediates ubiquitination and degradation of truncated MSRB1/SEPX1 selenoproteins produced by failed UGA/Sec decoding (PubMed:26138980). In the nucleus, the CRL2(PRAME) complex is recruited to epigenetically and transcriptionally active promoter regions bound by nuclear transcription factor Y (NFY) and probably plays a role in chromstin regulation (PubMed:21822215). Functions as a transcriptional repressor, inhibiting the signaling of retinoic acid through the retinoic acid receptors RARA, RARB and RARG: prevents retinoic acid-induced cell proliferation arrest, differentiation and apoptosis (PubMed:16179254)",
+  "molecular_mass_kda": 57.9,
+  "source": "UniProt",
+  "status": "fetched"
+}

@@ -1,0 +1,15 @@
+{
+  "gene": "ALPPL2",
+  "uniprot_id": "P10696",
+  "protein_name": "Alkaline phosphatase, germ cell type",
+  "subcellular_location": [
+    "Cell membrane"
+  ],
+  "is_membrane_protein": true,
+  "is_single_pass": false,
+  "topology": "",
+  "function_description": "Alkaline phosphatase that can hydrolyze various phosphate compounds",
+  "molecular_mass_kda": 57.4,
+  "source": "UniProt",
+  "status": "fetched"
+}

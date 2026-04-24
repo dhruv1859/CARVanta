@@ -1,0 +1,17 @@
+{
+  "gene": "FCRH5",
+  "subcellular_location": [],
+  "is_membrane": false,
+  "is_secreted": false,
+  "protein_class": [
+    "CD markers",
+    "Disease related genes",
+    "Predicted membrane proteins",
+    "Predicted secreted proteins"
+  ],
+  "tissue_expression": {},
+  "cancer_expression": {},
+  "antibody_validated": false,
+  "source": "HPA",
+  "status": "fetched"
+}

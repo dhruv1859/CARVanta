@@ -1,0 +1,22 @@
+{
+  "gene": "EGFR",
+  "uniprot_id": "P00533",
+  "protein_name": "Epidermal growth factor receptor",
+  "subcellular_location": [
+    "Cell membrane",
+    "Endoplasmic reticulum membrane",
+    "Golgi apparatus membrane",
+    "Nucleus membrane",
+    "Endosome",
+    "Endosome membrane",
+    "Nucleus",
+    "Secreted"
+  ],
+  "is_membrane_protein": true,
+  "is_single_pass": true,
+  "topology": "Single-pass type I membrane protein",
+  "function_description": "(Microbial infection) Acts as a receptor for hepatitis C virus (HCV) in hepatocytes and facilitates its cell entry. Mediates HCV entry by promoting the formation of the CD81-CLDN1 receptor complexes that are essential for HCV entry and by enhancing membrane fusion of cells expressing HCV envelope glycoproteins",
+  "molecular_mass_kda": 134.3,
+  "source": "UniProt",
+  "status": "fetched"
+}

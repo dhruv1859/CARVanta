@@ -1,0 +1,16 @@
+{
+  "gene": "BCMA",
+  "uniprot_id": "Q02223",
+  "protein_name": "Tumor necrosis factor receptor superfamily member 17",
+  "subcellular_location": [
+    "Cell membrane",
+    "Endomembrane system"
+  ],
+  "is_membrane_protein": true,
+  "is_single_pass": true,
+  "topology": "Single-pass type I membrane protein",
+  "function_description": "Receptor for TNFSF13B/BLyS/BAFF and TNFSF13/APRIL. Promotes B-cell survival and plays a role in the regulation of humoral immunity. Activates NF-kappa-B and JNK",
+  "molecular_mass_kda": 20.2,
+  "source": "UniProt",
+  "status": "fetched"
+}

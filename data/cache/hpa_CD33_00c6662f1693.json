@@ -1,0 +1,20 @@
+{
+  "gene": "CD33",
+  "subcellular_location": [
+    "Plasma membrane",
+    "Cytosol"
+  ],
+  "is_membrane": true,
+  "is_secreted": false,
+  "protein_class": [
+    "CD markers",
+    "FDA approved drug targets",
+    "Plasma proteins",
+    "Predicted membrane proteins"
+  ],
+  "tissue_expression": {},
+  "cancer_expression": {},
+  "antibody_validated": true,
+  "source": "HPA",
+  "status": "fetched"
+}

@@ -1,0 +1,21 @@
+{
+  "gene": "FOLR1",
+  "uniprot_id": "P15328",
+  "protein_name": "Folate receptor alpha",
+  "subcellular_location": [
+    "Cell membrane",
+    "Apical cell membrane",
+    "Basolateral cell membrane",
+    "Secreted",
+    "Cytoplasmic vesicle",
+    "Cytoplasmic vesicle, clathrin-coated vesicle",
+    "Endosome"
+  ],
+  "is_membrane_protein": true,
+  "is_single_pass": false,
+  "topology": "",
+  "function_description": "Binds to folate and reduced folic acid derivatives and mediates delivery of 5-methyltetrahydrofolate and folate analogs into the interior of cells (PubMed:19074442, PubMed:23851396, PubMed:23934049, PubMed:2527252, PubMed:8033114, PubMed:8567728). Has high affinity for folate and folic acid analogs at neutral pH (PubMed:23851396, PubMed:23934049, PubMed:2527252, PubMed:8033114, PubMed:8567728). Exposure to slightly acidic pH after receptor endocytosis triggers a conformation change that strongly reduces its affinity for folates and mediates their release (PubMed:8567728). Required for normal embryonic development and normal cell proliferation (By similarity)",
+  "molecular_mass_kda": 29.8,
+  "source": "UniProt",
+  "status": "fetched"
+}

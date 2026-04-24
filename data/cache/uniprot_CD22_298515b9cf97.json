@@ -1,0 +1,15 @@
+{
+  "gene": "CD22",
+  "uniprot_id": "P20273",
+  "protein_name": "B-cell receptor CD22",
+  "subcellular_location": [
+    "Cell membrane"
+  ],
+  "is_membrane_protein": true,
+  "is_single_pass": true,
+  "topology": "Single-pass type I membrane protein",
+  "function_description": "Most highly expressed siglec (sialic acid-binding immunoglobulin-like lectin) on B-cells that plays a role in various aspects of B-cell biology including differentiation, antigen presentation, and trafficking to bone marrow (PubMed:34330755, PubMed:8627166). Binds to alpha 2,6-linked sialic acid residues of surface molecules such as CD22 itself, CD45 and IgM in a cis configuration. Can also bind to ligands on other cells as an adhesion molecule in a trans configuration (PubMed:20172905). Acts as an inhibitory coreceptor on the surface of B-cells and inhibits B-cell receptor induced signaling, characterized by inhibition of the calcium mobilization and cellular activation. Mechanistically, the immunoreceptor tyrosine-based inhibitory motif domain is phosphorylated by the Src kinase LYN, which in turn leads to the recruitment of the protein tyrosine phosphatase 1/PTPN6, leading to the negative regulation of BCR signaling (PubMed:8627166). If this negative signaling from is of sufficient strength, apoptosis of the B-cell can be induced (PubMed:20516366)",
+  "molecular_mass_kda": 95.3,
+  "source": "UniProt",
+  "status": "fetched"
+}

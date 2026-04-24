@@ -1,0 +1,16 @@
+{
+  "gene": "MUC16",
+  "subcellular_location": [],
+  "is_membrane": false,
+  "is_secreted": false,
+  "protein_class": [
+    "Plasma proteins",
+    "Predicted membrane proteins",
+    "Predicted secreted proteins"
+  ],
+  "tissue_expression": {},
+  "cancer_expression": {},
+  "antibody_validated": true,
+  "source": "HPA",
+  "status": "fetched"
+}

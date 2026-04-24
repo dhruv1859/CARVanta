@@ -1,0 +1,13 @@
+{
+  "gene": "NYESO1",
+  "uniprot_id": "",
+  "protein_name": "",
+  "subcellular_location": [],
+  "is_membrane_protein": false,
+  "is_single_pass": false,
+  "topology": "",
+  "function_description": "",
+  "molecular_mass_kda": 0.0,
+  "source": "UniProt",
+  "status": "not_found"
+}

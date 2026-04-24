@@ -1,0 +1,16 @@
+{
+  "gene": "CD19",
+  "uniprot_id": "P15391",
+  "protein_name": "B-lymphocyte antigen CD19",
+  "subcellular_location": [
+    "Cell membrane",
+    "Membrane raft"
+  ],
+  "is_membrane_protein": true,
+  "is_single_pass": true,
+  "topology": "Single-pass type I membrane protein",
+  "function_description": "Functions as a coreceptor for the B-cell antigen receptor complex (BCR) on B-lymphocytes (PubMed:29523808). Decreases the threshold for activation of downstream signaling pathways and for triggering B-cell responses to antigens (PubMed:1373518, PubMed:16672701, PubMed:2463100). Activates signaling pathways that lead to the activation of phosphatidylinositol 3-kinase and the mobilization of intracellular Ca(2+) stores (PubMed:12387743, PubMed:16672701, PubMed:9317126, PubMed:9382888). Is not required for early steps during B cell differentiation in the blood marrow (PubMed:9317126). Required for normal differentiation of B-1 cells (By similarity). Required for normal B cell differentiation and proliferation in response to antigen challenges (PubMed:1373518, PubMed:2463100). Required for normal levels of serum immunoglobulins, and for production of high-affinity antibodies in response to antigen challenge (PubMed:12387743, PubMed:16672701, PubMed:9317126)",
+  "molecular_mass_kda": 61.1,
+  "source": "UniProt",
+  "status": "fetched"
+}

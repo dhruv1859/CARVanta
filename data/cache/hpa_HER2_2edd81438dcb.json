@@ -1,0 +1,27 @@
+{
+  "gene": "HER2",
+  "subcellular_location": [
+    "Nucleoplasm",
+    "Plasma membrane",
+    "Cytosol"
+  ],
+  "is_membrane": true,
+  "is_secreted": false,
+  "protein_class": [
+    "Cancer-related genes",
+    "CD markers",
+    "Disease related genes",
+    "Enzymes",
+    "FDA approved drug targets",
+    "Human disease related genes",
+    "Plasma proteins",
+    "Predicted intracellular proteins",
+    "Predicted membrane proteins",
+    "Transporters"
+  ],
+  "tissue_expression": {},
+  "cancer_expression": {},
+  "antibody_validated": true,
+  "source": "HPA",
+  "status": "fetched"
+}

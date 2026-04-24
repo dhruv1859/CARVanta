@@ -1,0 +1,16 @@
+{
+  "gene": "CLDN18",
+  "subcellular_location": [
+    "Cell Junctions"
+  ],
+  "is_membrane": false,
+  "is_secreted": false,
+  "protein_class": [
+    "Predicted membrane proteins"
+  ],
+  "tissue_expression": {},
+  "cancer_expression": {},
+  "antibody_validated": true,
+  "source": "HPA",
+  "status": "fetched"
+}

@@ -1,0 +1,16 @@
+{
+  "gene": "CD33",
+  "uniprot_id": "P20138",
+  "protein_name": "Myeloid cell surface antigen CD33",
+  "subcellular_location": [
+    "Cell membrane",
+    "Peroxisome"
+  ],
+  "is_membrane_protein": true,
+  "is_single_pass": true,
+  "topology": "Single-pass type I membrane protein",
+  "function_description": "Sialic-acid-binding immunoglobulin-like lectin (Siglec) that plays a role in mediating cell-cell interactions and in maintaining immune cells in a resting state (PubMed:10611343, PubMed:11320212, PubMed:15597323). Preferentially recognizes and binds alpha-2,3- and more avidly alpha-2,6-linked sialic acid-bearing glycans (PubMed:7718872). Upon engagement of ligands such as C1q or syalylated glycoproteins, two immunoreceptor tyrosine-based inhibitory motifs (ITIMs) located in CD33 cytoplasmic tail are phosphorylated by Src-like kinases such as LCK (PubMed:10887109, PubMed:28325905). These phosphorylations provide docking sites for the recruitment and activation of protein-tyrosine phosphatases PTPN6/SHP-1 and PTPN11/SHP-2 (PubMed:10206955, PubMed:10556798, PubMed:10887109). In turn, these phosphatases regulate downstream pathways through dephosphorylation of signaling molecules (PubMed:10206955, PubMed:10887109). One of the repressive effect of CD33 on monocyte activation requires phosphoinositide 3-kinase/PI3K (PubMed:15597323)",
+  "molecular_mass_kda": 39.8,
+  "source": "UniProt",
+  "status": "fetched"
+}

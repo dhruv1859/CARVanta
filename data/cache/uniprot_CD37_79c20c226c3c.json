@@ -1,0 +1,15 @@
+{
+  "gene": "CD37",
+  "uniprot_id": "P11049",
+  "protein_name": "Leukocyte antigen CD37",
+  "subcellular_location": [
+    "Cell membrane"
+  ],
+  "is_membrane_protein": true,
+  "is_single_pass": false,
+  "topology": "Multi-pass membrane protein (4 TM domains)",
+  "function_description": "Structural component of specialized membrane microdomains known as tetraspanin-enriched microdomains (TERMs), which act as platforms for receptor clustering and signaling. Participates thereby in diverse biological functions such as cell signal transduction, adhesion, migration and protein trafficking (PubMed:22624718). Upon ligand binding, two signaling pathways are activated, one acting through phosphorylation by LYN leading to cell death or a survival pathway with activation of GSK3B (PubMed:22624718). Plays an essential role essential for clustering of integrin ITGA4/ITGB1 and promotes its mobility in the plasma membrane of B-cells. In turn, participates in ITGA4/ITGB1 integrin-mediated antiapoptotic signaling through AKT (By similarity). Also plays a role in the migration of dendritic cells and neutrophils to draining lymph nodes, as well as in their integrin-mediated adhesion (By similarity). Negatively regulates IL-6 responses through direct interaction with SOCS3 thereby preventing constitutive IL-6 signaling (PubMed:26784544). Alternatively, inhibition of IL-6 signaling can also occur via interaction and stabilization of DECTIN1/CLEC7A at the cell membrane to inhibit its ability to promote the production of IL-6 (PubMed:17182550)",
+  "molecular_mass_kda": 31.7,
+  "source": "UniProt",
+  "status": "fetched"
+}

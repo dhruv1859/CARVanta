@@ -1,0 +1,15 @@
+{
+  "gene": "TROP2",
+  "uniprot_id": "P09758",
+  "protein_name": "Tumor-associated calcium signal transducer 2",
+  "subcellular_location": [
+    "Membrane"
+  ],
+  "is_membrane_protein": true,
+  "is_single_pass": true,
+  "topology": "Single-pass type I membrane protein",
+  "function_description": "May function as a growth factor receptor",
+  "molecular_mass_kda": 35.7,
+  "source": "UniProt",
+  "status": "fetched"
+}

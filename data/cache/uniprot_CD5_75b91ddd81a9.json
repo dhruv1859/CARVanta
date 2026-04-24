@@ -1,0 +1,15 @@
+{
+  "gene": "CD5",
+  "uniprot_id": "P06127",
+  "protein_name": "T-cell surface glycoprotein CD5",
+  "subcellular_location": [
+    "Cell membrane"
+  ],
+  "is_membrane_protein": true,
+  "is_single_pass": true,
+  "topology": "Single-pass type I membrane protein",
+  "function_description": "Lymphoid-specific receptor expressed by all T-cells and in a subset of B-cells known as B1a cells. Plays a role in the regulation of TCR and BCR signaling, thymocyte selection, T-cell effector differentiation and immune tolerance. Acts by interacting with several ligands expressed on B-cells such as CD5L or CD72 and thereby plays an important role in contact-mediated, T-dependent B-cell activation and in the maintenance of regulatory T and B-cell homeostasis. Functions as a negative regulator of TCR signaling during thymocyte development by associating with several signaling proteins including LCK, CD3Z chain, PI3K or CBL (PubMed:1384049, PubMed:1385158). Mechanistically, co-engagement of CD3 with CD5 enhances phosphorylated CBL recruitment leading to increased VAV1 phosphorylation and degradation (PubMed:23376399). Modulates B-cell biology through ERK1/2 activation in a Ca(2+)-dependent pathway via the non-selective Ca(2+) channel TRPC1, leading to IL-10 production (PubMed:27499044)",
+  "molecular_mass_kda": 54.6,
+  "source": "UniProt",
+  "status": "fetched"
+}

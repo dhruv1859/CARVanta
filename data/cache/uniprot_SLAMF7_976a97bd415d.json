@@ -1,0 +1,15 @@
+{
+  "gene": "SLAMF7",
+  "uniprot_id": "Q9NQ25",
+  "protein_name": "SLAM family member 7",
+  "subcellular_location": [
+    "Membrane"
+  ],
+  "is_membrane_protein": true,
+  "is_single_pass": true,
+  "topology": "Single-pass type I membrane protein",
+  "function_description": "Isoform 3 does not mediate any NK cell activation",
+  "molecular_mass_kda": 37.4,
+  "source": "UniProt",
+  "status": "fetched"
+}

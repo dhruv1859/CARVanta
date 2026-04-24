@@ -1,0 +1,15 @@
+{
+  "gene": "NKG2D",
+  "uniprot_id": "P26718",
+  "protein_name": "NKG2-D type II integral membrane protein",
+  "subcellular_location": [
+    "Cell membrane"
+  ],
+  "is_membrane_protein": true,
+  "is_single_pass": true,
+  "topology": "Single-pass type I membrane protein",
+  "function_description": "Functions as an activating and costimulatory receptor involved in immunosurveillance upon binding to various cellular stress-inducible ligands displayed at the surface of autologous tumor cells and virus-infected cells. Provides both stimulatory and costimulatory innate immune responses on activated killer (NK) cells, leading to cytotoxic activity. Acts as a costimulatory receptor for T-cell receptor (TCR) in CD8(+) T-cell-mediated adaptive immune responses by amplifying T-cell activation. Stimulates perforin-mediated elimination of ligand-expressing tumor cells. Signaling involves calcium influx, culminating in the expression of TNF. Participates in NK cell-mediated bone marrow graft rejection. May play a regulatory role in differentiation and survival of NK cells. Binds to ligands belonging to various subfamilies of MHC class I-related glycoproteins including MICA, MICB, RAET1E, RAET1G, RAET1L/ULBP6, ULBP1, ULBP2, ULBP3 (ULBP2>ULBP1>ULBP3) and ULBP4",
+  "molecular_mass_kda": 25.3,
+  "source": "UniProt",
+  "status": "fetched"
+}

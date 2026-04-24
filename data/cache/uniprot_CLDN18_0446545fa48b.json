@@ -1,0 +1,19 @@
+{
+  "gene": "CLDN18",
+  "uniprot_id": "P56856",
+  "protein_name": "Claudin-18",
+  "subcellular_location": [
+    "Cell junction, tight junction",
+    "Cell membrane",
+    "Cell junction, tight junction",
+    "Cell junction, tight junction",
+    "Lateral cell membrane"
+  ],
+  "is_membrane_protein": true,
+  "is_single_pass": false,
+  "topology": "Multi-pass membrane protein (4 TM domains)",
+  "function_description": "Required for the formation of the gastric paracellular barrier via its role in tight junction formation, thereby involved in the response to gastric acidification",
+  "molecular_mass_kda": 27.9,
+  "source": "UniProt",
+  "status": "fetched"
+}

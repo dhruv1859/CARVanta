@@ -1,0 +1,15 @@
+{
+  "gene": "B7H3",
+  "uniprot_id": "Q5ZPR3",
+  "protein_name": "CD276 antigen",
+  "subcellular_location": [
+    "Membrane"
+  ],
+  "is_membrane_protein": true,
+  "is_single_pass": true,
+  "topology": "Single-pass type I membrane protein",
+  "function_description": "May participate in the regulation of T-cell-mediated immune response. May play a protective role in tumor cells by inhibiting natural-killer mediated cell lysis as well as a role of marker for detection of neuroblastoma cells. May be involved in the development of acute and chronic transplant rejection and in the regulation of lymphocytic activity at mucosal surfaces. Could also play a key role in providing the placenta and fetus with a suitable immunological environment throughout pregnancy. Both isoform 1 and isoform 2 appear to be redundant in their ability to modulate CD4 T-cell responses. Isoform 2 is shown to enhance the induction of cytotoxic T-cells and selectively stimulates interferon gamma production in the presence of T-cell receptor signaling",
+  "molecular_mass_kda": 57.2,
+  "source": "UniProt",
+  "status": "fetched"
+}

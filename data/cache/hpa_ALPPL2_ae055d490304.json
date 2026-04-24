@@ -1,0 +1,20 @@
+{
+  "gene": "ALPPL2",
+  "subcellular_location": [
+    "Plasma membrane"
+  ],
+  "is_membrane": true,
+  "is_secreted": false,
+  "protein_class": [
+    "Enzymes",
+    "FDA approved drug targets",
+    "Metabolic proteins",
+    "Plasma proteins",
+    "Predicted intracellular proteins"
+  ],
+  "tissue_expression": {},
+  "cancer_expression": {},
+  "antibody_validated": true,
+  "source": "HPA",
+  "status": "fetched"
+}

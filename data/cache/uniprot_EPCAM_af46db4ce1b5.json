@@ -1,0 +1,16 @@
+{
+  "gene": "EPCAM",
+  "uniprot_id": "P16422",
+  "protein_name": "Epithelial cell adhesion molecule",
+  "subcellular_location": [
+    "Lateral cell membrane",
+    "Cell junction, tight junction"
+  ],
+  "is_membrane_protein": true,
+  "is_single_pass": true,
+  "topology": "Single-pass type I membrane protein",
+  "function_description": "May act as a physical homophilic interaction molecule between intestinal epithelial cells (IECs) and intraepithelial lymphocytes (IELs) at the mucosal epithelium for providing immunological barrier as a first line of defense against mucosal infection. Plays a role in embryonic stem cells proliferation and differentiation. Up-regulates the expression of FABP5, MYC and cyclins A and E",
+  "molecular_mass_kda": 34.9,
+  "source": "UniProt",
+  "status": "fetched"
+}

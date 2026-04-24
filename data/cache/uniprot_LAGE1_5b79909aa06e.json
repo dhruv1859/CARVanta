@@ -1,0 +1,13 @@
+{
+  "gene": "LAGE1",
+  "uniprot_id": "O75638",
+  "protein_name": "Cancer/testis antigen 2",
+  "subcellular_location": [],
+  "is_membrane_protein": false,
+  "is_single_pass": false,
+  "topology": "",
+  "function_description": "",
+  "molecular_mass_kda": 21.1,
+  "source": "UniProt",
+  "status": "fetched"
+}

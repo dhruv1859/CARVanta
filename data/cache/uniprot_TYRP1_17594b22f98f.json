@@ -1,0 +1,15 @@
+{
+  "gene": "TYRP1",
+  "uniprot_id": "P17643",
+  "protein_name": "5,6-dihydroxyindole-2-carboxylic acid oxidase",
+  "subcellular_location": [
+    "Melanosome membrane"
+  ],
+  "is_membrane_protein": true,
+  "is_single_pass": true,
+  "topology": "Single-pass type I membrane protein",
+  "function_description": "Plays a role in melanin biosynthesis (PubMed:16704458, PubMed:22556244, PubMed:23504663). Catalyzes the oxidation of 5,6-dihydroxyindole-2-carboxylic acid (DHICA) into indole-5,6-quinone-2-carboxylic acid in the presence of bound Cu(2+) ions, but not in the presence of Zn(2+) (PubMed:28661582). May regulate or influence the type of melanin synthesized (PubMed:16704458, PubMed:22556244). Also to a lower extent, capable of hydroxylating tyrosine and producing melanin (By similarity)",
+  "molecular_mass_kda": 60.7,
+  "source": "UniProt",
+  "status": "fetched"
+}

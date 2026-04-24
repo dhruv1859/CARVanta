@@ -1,0 +1,16 @@
+{
+  "gene": "CD30",
+  "uniprot_id": "P28908",
+  "protein_name": "Tumor necrosis factor receptor superfamily member 8",
+  "subcellular_location": [
+    "Cell membrane",
+    "Cytoplasm"
+  ],
+  "is_membrane_protein": true,
+  "is_single_pass": true,
+  "topology": "Single-pass type I membrane protein",
+  "function_description": "Receptor for TNFSF8/CD30L (PubMed:8391931). May play a role in the regulation of cellular growth and transformation of activated lymphoblasts. Regulates gene expression through activation of NF-kappa-B (PubMed:8999898)",
+  "molecular_mass_kda": 63.7,
+  "source": "UniProt",
+  "status": "fetched"
+}

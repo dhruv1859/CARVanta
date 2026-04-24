@@ -1,0 +1,15 @@
+{
+  "gene": "GPC3",
+  "uniprot_id": "P51654",
+  "protein_name": "Glypican-3",
+  "subcellular_location": [
+    "Cell membrane"
+  ],
+  "is_membrane_protein": true,
+  "is_single_pass": false,
+  "topology": "",
+  "function_description": "Cell surface proteoglycan (PubMed:14610063). Negatively regulates the hedgehog signaling pathway when attached via the GPI-anchor to the cell surface by competing with the hedgehog receptor PTC1 for binding to hedgehog proteins (By similarity). Binding to the hedgehog protein SHH triggers internalization of the complex by endocytosis and its subsequent lysosomal degradation (By similarity). Positively regulates the canonical Wnt signaling pathway by binding to the Wnt receptor Frizzled and stimulating the binding of the Frizzled receptor to Wnt ligands (PubMed:16227623, PubMed:24496449). Positively regulates the non-canonical Wnt signaling pathway (By similarity). Binds to CD81 which decreases the availability of free CD81 for binding to the transcriptional repressor HHEX, resulting in nuclear translocation of HHEX and transcriptional repression (By similarity). Inhibits the dipeptidyl peptidase activity of DPP4 (PubMed:17549790). Plays a role in limb patterning and skeletal development by controlling the cellular response to BMP4 (By similarity). Modulates the effects of growth factors BMP2, BMP7 and FGF7 on renal branching morphogenesis (By similarity). Required for coronary vascular development (By similarity). Plays a role in regulating cell movements during gastrulation (By similarity)",
+  "molecular_mass_kda": 65.6,
+  "source": "UniProt",
+  "status": "fetched"
+}

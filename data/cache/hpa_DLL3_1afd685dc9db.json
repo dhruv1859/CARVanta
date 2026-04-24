@@ -1,0 +1,22 @@
+{
+  "gene": "DLL3",
+  "subcellular_location": [
+    "Nucleoplasm",
+    "Golgi apparatus",
+    "Plasma membrane"
+  ],
+  "is_membrane": true,
+  "is_secreted": false,
+  "protein_class": [
+    "Disease related genes",
+    "Human disease related genes",
+    "Plasma proteins",
+    "Predicted intracellular proteins",
+    "Predicted membrane proteins"
+  ],
+  "tissue_expression": {},
+  "cancer_expression": {},
+  "antibody_validated": true,
+  "source": "HPA",
+  "status": "fetched"
+}

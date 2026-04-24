@@ -1,0 +1,19 @@
+{
+  "gene": "ROR1",
+  "subcellular_location": [],
+  "is_membrane": false,
+  "is_secreted": false,
+  "protein_class": [
+    "Disease related genes",
+    "Enzymes",
+    "Human disease related genes",
+    "Potential drug targets",
+    "Predicted intracellular proteins",
+    "Predicted membrane proteins"
+  ],
+  "tissue_expression": {},
+  "cancer_expression": {},
+  "antibody_validated": false,
+  "source": "HPA",
+  "status": "fetched"
+}

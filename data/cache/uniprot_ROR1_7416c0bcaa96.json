@@ -1,0 +1,16 @@
+{
+  "gene": "ROR1",
+  "uniprot_id": "Q01973",
+  "protein_name": "Inactive tyrosine-protein kinase transmembrane receptor ROR1",
+  "subcellular_location": [
+    "Membrane",
+    "Cell projection, axon"
+  ],
+  "is_membrane_protein": true,
+  "is_single_pass": true,
+  "topology": "Single-pass type I membrane protein",
+  "function_description": "Has very low kinase activity in vitro and is unlikely to function as a tyrosine kinase in vivo (PubMed:25029443). Receptor for ligand WNT5A which activate downstream NFkB signaling pathway and may result in the inhibition of WNT3A-mediated signaling (PubMed:25029443, PubMed:27162350). In inner ear, crucial for spiral ganglion neurons to innervate auditory hair cells (PubMed:27162350). Via IGFBP5 ligand, forms a complex with ERBB2 to enhance CREB oncogenic signaling (PubMed:36949068)",
+  "molecular_mass_kda": 104.3,
+  "source": "UniProt",
+  "status": "fetched"
+}

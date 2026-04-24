@@ -1,0 +1,15 @@
+{
+  "gene": "CLEC12A",
+  "uniprot_id": "Q5QGZ9",
+  "protein_name": "C-type lectin domain family 12 member A",
+  "subcellular_location": [
+    "Cell membrane"
+  ],
+  "is_membrane_protein": true,
+  "is_single_pass": true,
+  "topology": "Single-pass type I membrane protein",
+  "function_description": "Myeloid inhibitory C-type lectin receptor that acts as a negative regulator of myeloid cell activation (PubMed:14739280, PubMed:15238421, PubMed:16239426, PubMed:34234773, PubMed:38367667, PubMed:38386511, PubMed:39143217). Myeloid cell inhibition is required to limit proinflammatory pathways and protect against excessive inflammation (By similarity). Specifically recognizes and binds various structures, such as neutrophil extracellular traps (NETs) or monosodium urate crystals (PubMed:38367667, PubMed:38386511, PubMed:39143217). Also acts as a pattern-recognition receptor for pathogen-associated molecules, such as plasmodium hemozoin or mycobacterial micolic acid (PubMed:31269448, PubMed:36542980). Ligand-binding induces phosphorylation of its ITIM motif, followed by recruitment of tyrosine-protein phosphatases PTPN6 and PTPN11, which counteract tyrosine-protein kinase SYK, thereby preventing myeloid cell activation (PubMed:14739280, PubMed:16239426, PubMed:34234773). Acts as a pattern-recognition receptor for NETs in neutrophils: specifically recognizes DNA in NETs, leading to inhibit neutrophil activation and limit further NET formation (PubMed:39143217). This regulation is essential for controlling key neutrophil responses and limit NET-mediated inflammatory conditions (By similarity). Also recognizes dead cells by acting as a receptor for monosodium urate crystals, leading to down-regulate neutrophil activation (PubMed:38367667, PubMed:38386511). Binding to monosodium urate crystals also promotes the type I interferon response (By similarity). Acts as an inhibitor of natural killer (NK) cell cytotoxicity (PubMed:15238421). Also acts as an inhibitor of dendritic cell maturation in an IL10-dependent manner (PubMed:16239426)",
+  "molecular_mass_kda": 30.8,
+  "source": "UniProt",
+  "status": "fetched"
+}

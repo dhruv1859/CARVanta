@@ -1,0 +1,15 @@
+{
+  "gene": "CD70",
+  "uniprot_id": "P32970",
+  "protein_name": "CD70 antigen",
+  "subcellular_location": [
+    "Cell membrane"
+  ],
+  "is_membrane_protein": true,
+  "is_single_pass": true,
+  "topology": "Single-pass type I membrane protein",
+  "function_description": "Expressed at the plasma membrane of B cells, it is the ligand of the CD27 receptor which is specifically expressed at the surface of T cells (PubMed:28011863, PubMed:28011864, PubMed:8387892). The CD70-CD27 signaling pathway mediates antigen-specific T cell activation and expansion which in turn provides immune surveillance of B cells (PubMed:28011863, PubMed:28011864)",
+  "molecular_mass_kda": 21.1,
+  "source": "UniProt",
+  "status": "fetched"
+}

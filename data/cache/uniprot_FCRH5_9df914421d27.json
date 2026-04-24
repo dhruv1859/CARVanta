@@ -1,0 +1,15 @@
+{
+  "gene": "FCRH5",
+  "uniprot_id": "Q96RD9",
+  "protein_name": "Fc receptor-like protein 5",
+  "subcellular_location": [
+    "Cell membrane"
+  ],
+  "is_membrane_protein": true,
+  "is_single_pass": true,
+  "topology": "Single-pass type I membrane protein",
+  "function_description": "Plays an important role in B-cell response to antigen that acts both as a negative or positive coreceptor. Inhibits B-cell receptor (BCR) signaling in the absence of CR2 stimulation but engagement with CR2 and the BCR lead to a superior calcium response compared to CR2 and BCR costimulation (PubMed:30107486). May be involved in B-cell development and differentiation in peripheral lymphoid organs and may be useful markers of B-cell stages. May have an immunoregulatory role in marginal zone B-cells. May play a role in fertilization (By similarity)",
+  "molecular_mass_kda": 106.4,
+  "source": "UniProt",
+  "status": "fetched"
+}

@@ -1,0 +1,24 @@
+{
+  "gene": "HER2",
+  "uniprot_id": "P04626",
+  "protein_name": "Receptor tyrosine-protein kinase erbB-2",
+  "subcellular_location": [
+    "Cell membrane",
+    "Cell projection, ruffle membrane",
+    "Cell membrane",
+    "Early endosome",
+    "Cytoplasm, perinuclear region",
+    "Nucleus",
+    "Cytoplasm",
+    "Nucleus",
+    "Cytoplasm",
+    "Nucleus"
+  ],
+  "is_membrane_protein": true,
+  "is_single_pass": true,
+  "topology": "Single-pass type I membrane protein",
+  "function_description": "In the nucleus is involved in transcriptional regulation. Associates with the 5'-TCAAATTC-3' sequence in the PTGS2/COX-2 promoter and activates its transcription. Implicated in transcriptional activation of CDKN1A; the function involves STAT3 and SRC. Involved in the transcription of rRNA genes by RNA Pol I and enhances protein synthesis and cell growth",
+  "molecular_mass_kda": 137.9,
+  "source": "UniProt",
+  "status": "fetched"
+}

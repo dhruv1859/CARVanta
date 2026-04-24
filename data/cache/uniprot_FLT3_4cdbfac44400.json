@@ -1,0 +1,16 @@
+{
+  "gene": "FLT3",
+  "uniprot_id": "P36888",
+  "protein_name": "Receptor-type tyrosine-protein kinase FLT3",
+  "subcellular_location": [
+    "Membrane",
+    "Endoplasmic reticulum lumen"
+  ],
+  "is_membrane_protein": true,
+  "is_single_pass": true,
+  "topology": "Single-pass type I membrane protein",
+  "function_description": "Tyrosine-protein kinase that acts as a cell-surface receptor for the cytokine FLT3LG and regulates differentiation, proliferation and survival of hematopoietic progenitor cells and of dendritic cells. Promotes phosphorylation of SHC1 and AKT1, and activation of the downstream effector MTOR. Promotes activation of RAS signaling and phosphorylation of downstream kinases, including MAPK1/ERK2 and/or MAPK3/ERK1. Promotes phosphorylation of FES, FER, PTPN6/SHP, PTPN11/SHP-2, PLCG1, and STAT5A and/or STAT5B. Activation of wild-type FLT3 causes only marginal activation of STAT5A or STAT5B. Mutations that cause constitutive kinase activity promote cell proliferation and resistance to apoptosis via the activation of multiple signaling pathways",
+  "molecular_mass_kda": 112.9,
+  "source": "UniProt",
+  "status": "fetched"
+}

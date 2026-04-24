@@ -1,0 +1,23 @@
+{
+  "gene": "EPCAM",
+  "subcellular_location": [
+    "Plasma membrane"
+  ],
+  "is_membrane": true,
+  "is_secreted": false,
+  "protein_class": [
+    "Cancer-related genes",
+    "CD markers",
+    "Disease related genes",
+    "FDA approved drug targets",
+    "Human disease related genes",
+    "Plasma proteins",
+    "Predicted intracellular proteins",
+    "Predicted membrane proteins"
+  ],
+  "tissue_expression": {},
+  "cancer_expression": {},
+  "antibody_validated": true,
+  "source": "HPA",
+  "status": "fetched"
+}
