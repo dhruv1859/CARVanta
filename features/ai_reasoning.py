@@ -438,44 +438,165 @@ def generate_global_insight(best_antigen):
 def generate_synergy_insight(synergy_data):
     """
     CARVanta-Original: Generate multi-target synergy AI insight.
+    Produces rich, dynamic analysis based on the actual combination data.
     """
     antigens = synergy_data.get("antigens", [])
     synergy = synergy_data.get("synergy_score", 0)
     comp = synergy_data.get("complementarity", 0)
     escape = synergy_data.get("escape_risk_reduction", 0)
     coverage = synergy_data.get("combined_coverage", 0)
+    indiv = synergy_data.get("individual_scores", {})
+    safety = synergy_data.get("combined_safety", {})
 
     combo_name = " + ".join(antigens)
+    n = len(antigens)
     sections = []
 
-    if synergy >= 0.80:
+    # ── Overall synergy verdict ──────────────────────────────────────────────
+    if synergy >= 0.85:
         sections.append(
-            f"**Excellent synergy detected.** The {combo_name} combination "
-            f"scores {synergy:.3f}, indicating strong multi-target potential."
+            f"**Outstanding synergy ({synergy:.3f}).** The {combo_name} combination "
+            f"represents a top-tier multi-antigen strategy with exceptional "
+            f"therapeutic potential across all evaluation axes."
+        )
+    elif synergy >= 0.75:
+        sections.append(
+            f"**Strong synergy ({synergy:.3f}).** {combo_name} demonstrates "
+            f"robust combinatorial benefit — the whole is substantially greater "
+            f"than the sum of its parts."
         )
     elif synergy >= 0.65:
         sections.append(
-            f"**Good synergy.** The {combo_name} combination ({synergy:.3f}) "
-            f"shows complementary targeting that improves upon individual targets."
+            f"**Moderate synergy ({synergy:.3f}).** The {combo_name} combination "
+            f"provides meaningful advantage over monotherapy, though optimization "
+            f"opportunities remain."
+        )
+    elif synergy >= 0.50:
+        sections.append(
+            f"**Marginal synergy ({synergy:.3f}).** Combining {combo_name} offers "
+            f"limited incremental benefit. Consider alternative antigen pairings."
         )
     else:
         sections.append(
-            f"**Limited synergy.** The {combo_name} combination ({synergy:.3f}) "
-            f"does not show significant benefit over individual targeting."
+            f"**Weak synergy ({synergy:.3f}).** The {combo_name} combination does "
+            f"not demonstrate meaningful combinatorial advantage. These antigens may "
+            f"have overlapping expression profiles or conflicting safety constraints."
         )
 
-    if escape > 0.85:
+    # ── Individual antigen analysis ──────────────────────────────────────────
+    if indiv:
+        scores = [(name, s.get("CVS", 0), s.get("tier", "")) for name, s in indiv.items()]
+        scores.sort(key=lambda x: x[1], reverse=True)
+        best = scores[0]
+        weakest = scores[-1]
+
+        if best[1] - weakest[1] > 0.15:
+            sections.append(
+                f"**Score disparity noted:** {best[0]} (CVS {best[1]:.3f}, {best[2]}) "
+                f"significantly outperforms {weakest[0]} (CVS {weakest[1]:.3f}, "
+                f"{weakest[2]}). The weaker antigen may be the rate-limiting factor — "
+                f"consider whether its unique coverage justifies the overall profile dilution."
+            )
+        elif len(scores) >= 2 and all(s[1] >= 0.80 for s in scores):
+            sections.append(
+                f"**Uniformly strong components:** All targets score ≥0.80, "
+                f"creating a high-confidence combination without a weak link."
+            )
+
+        # Tier mix analysis
+        tiers = [s[2] for s in scores if s[2]]
+        tier1_count = sum(1 for t in tiers if "1" in t)
+        if tier1_count == n:
+            sections.append(
+                "All components are Tier 1 candidates, supporting fast-track "
+                "development with high regulatory confidence."
+            )
+        elif tier1_count == 0:
+            sections.append(
+                "No individual component reaches Tier 1 independently. The "
+                "combination approach is essential for therapeutic viability."
+            )
+
+    # ── Escape risk analysis ─────────────────────────────────────────────────
+    if escape > 0.90:
         sections.append(
-            f"Escape risk is dramatically reduced ({escape:.3f}) — tumor cells "
-            f"would need to downregulate {len(antigens)} antigens simultaneously "
-            f"to evade this therapy."
+            f"**Exceptional escape resistance ({escape:.3f}).** Tumor immune evasion "
+            f"would require simultaneous downregulation of {n} independent antigens — "
+            f"a biologically improbable event. This dramatically reduces relapse risk "
+            f"from antigen-loss variants."
+        )
+    elif escape > 0.80:
+        sections.append(
+            f"**Strong escape prevention ({escape:.3f}).** Multi-antigen targeting "
+            f"substantially mitigates the antigen-loss escape mechanism that limits "
+            f"single-target CAR-T efficacy."
+        )
+    elif escape > 0.60:
+        sections.append(
+            f"Escape risk reduction ({escape:.3f}) is moderate. While improved over "
+            f"monotherapy, some escape pathways may persist."
         )
 
-    if comp > 0.60:
+    # ── Complementarity analysis ─────────────────────────────────────────────
+    if comp > 0.75:
         sections.append(
-            f"Expression complementarity is strong ({comp:.3f}), meaning "
-            f"these antigens cover different patient subpopulations effectively."
+            f"**Excellent complementarity ({comp:.3f}).** These antigens are expressed "
+            f"in distinct tumor cell subpopulations, maximizing patient coverage and "
+            f"addressing intra-tumoral heterogeneity."
         )
+    elif comp > 0.55:
+        sections.append(
+            f"Expression complementarity ({comp:.3f}) indicates partial non-overlap, "
+            f"meaning the combination reaches more tumor cells than either alone."
+        )
+    elif comp < 0.35:
+        sections.append(
+            f"**Low complementarity ({comp:.3f}).** These antigens may be co-expressed "
+            f"on the same cells, limiting the combinatorial patient coverage advantage."
+        )
+
+    # ── Coverage analysis ────────────────────────────────────────────────────
+    if coverage > 0.95:
+        sections.append(
+            f"Projected tumor coverage ({coverage:.3f}) approaches complete population "
+            f"targeting — nearly all tumor cells express at least one target antigen."
+        )
+    elif coverage > 0.80:
+        sections.append(
+            f"Coverage of {coverage:.3f} indicates broad tumor targeting with "
+            f"minimal escape through antigen-negative subclones."
+        )
+
+    # ── Safety commentary ────────────────────────────────────────────────────
+    if safety:
+        max_ner = safety.get("max_normal_expression_risk", 0)
+        combined_risk = safety.get("combined_toxicity_risk", max_ner)
+        if combined_risk > 0.45:
+            sections.append(
+                f"⚠️ **Safety alert:** Combined normal tissue risk ({combined_risk:.3f}) "
+                f"is elevated. Multi-antigen CARs may amplify off-tumor toxicity. "
+                f"Consider tandem CAR architecture with tunable affinity or "
+                f"sequential dosing to manage CRS risk."
+            )
+        elif combined_risk < 0.20:
+            sections.append(
+                f"✅ Combined safety profile is favorable (risk: {combined_risk:.3f}). "
+                f"Low off-tumor toxicity is expected."
+            )
+
+    # ── Clinical strategy ────────────────────────────────────────────────────
+    if synergy >= 0.70 and escape > 0.80:
+        if n == 2:
+            sections.append(
+                f"**Suggested approach:** A bivalent tandem CAR or dual-CAR "
+                f"co-transduction strategy is recommended for the {combo_name} pair."
+            )
+        elif n >= 3:
+            sections.append(
+                f"**Suggested approach:** With {n} targets, consider a sequential "
+                f"multi-CAR infusion protocol or a trivalent CAR construct using "
+                f"modular adapter systems (e.g., SUPRA CAR, UniCAR)."
+            )
 
     return " ".join(sections)
 

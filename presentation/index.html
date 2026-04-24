@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARVanta — Presentation</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #fff;
+            color: #1a1a1a;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── slide system ────────────────────────────────────────────── */
+        .slide {
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 64px 10vw;
+            position: relative;
+        }
+
+        .slide-num {
+            position: absolute;
+            bottom: 28px;
+            right: 40px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #bbb;
+        }
+
+        /* ── typography ──────────────────────────────────────────────── */
+        .serif { font-family: 'DM Serif Display', serif; }
+
+        h1 { font-size: 64px; line-height: 1.08; letter-spacing: -1.5px; }
+        h2 { font-size: 40px; line-height: 1.15; letter-spacing: -0.8px; }
+        h3 { font-size: 22px; font-weight: 700; }
+
+        .muted { color: #777; }
+        .light { color: #999; }
+        .accent { color: #2563EB; }
+        .red { color: #dc2626; }
+        .green { color: #059669; }
+
+        .pill {
+            display: inline-block;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        .pill-blue { background: #EFF6FF; color: #2563EB; }
+        .pill-red { background: #FEF2F2; color: #dc2626; }
+        .pill-green { background: #ECFDF5; color: #059669; }
+
+        /* ──────────────────────────────────────────────────────────────
+           SLIDE 1 — TITLE
+           ────────────────────────────────────────────────────────────── */
+        #s1 {
+            background: #fafafa;
+        }
+
+        .s1-top {
+            margin-bottom: 48px;
+        }
+
+        .s1-top .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+
+        .s1-top .logo-mark {
+            width: 44px; height: 44px;
+            background: #2563EB;
+            border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            color: #fff; font-weight: 700; font-size: 22px;
+        }
+
+        .s1-top .logo-name {
+            font-size: 20px; font-weight: 700; color: #1a1a1a;
+        }
+
+        .s1-sub {
+            font-size: 20px;
+            color: #555;
+            max-width: 560px;
+            line-height: 1.55;
+            margin-top: 18px;
+        }
+
+        .s1-bottom {
+            display: flex;
+            gap: 48px;
+            margin-top: 56px;
+            padding-top: 32px;
+            border-top: 1px solid #e5e5e5;
+        }
+
+        .s1-meta {
+            font-size: 14px;
+        }
+        .s1-meta .label {
+            color: #999;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .s1-meta .value {
+            color: #1a1a1a;
+            font-weight: 500;
+        }
+
+        /* ──────────────────────────────────────────────────────────────
+           SLIDE 2 — PROBLEM
+           ────────────────────────────────────────────────────────────── */
+        #s2 { background: #fff; }
+
+        .s2-lead {
+            font-size: 18px;
+            color: #555;
+            max-width: 580px;
+            line-height: 1.6;
+            margin-top: 12px;
+            margin-bottom: 48px;
+        }
+
+        .problems {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            border: 1px solid #e5e5e5;
+            border-radius: 12px;
+            overflow: hidden;
+            max-width: 900px;
+        }
+
+        .prob {
+            padding: 32px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        .prob:nth-child(odd) { border-right: 1px solid #e5e5e5; }
+        .prob:nth-child(n+3) { border-bottom: none; }
+
+        .prob-num {
+            font-size: 13px;
+            font-weight: 700;
+            color: #dc2626;
+            margin-bottom: 10px;
+        }
+
+        .prob h4 {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .prob p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .prob .highlight {
+            margin-top: 12px;
+            font-size: 24px;
+            font-weight: 700;
+            color: #dc2626;
+            font-family: 'DM Serif Display', serif;
+        }
+
+        /* ──────────────────────────────────────────────────────────────
+           SLIDE 3 — SOLUTION
+           ────────────────────────────────────────────────────────────── */
+        #s3 { background: #fafafa; }
+
+        .s3-lead {
+            font-size: 18px;
+            color: #555;
+            max-width: 600px;
+            line-height: 1.6;
+            margin-top: 10px;
+            margin-bottom: 44px;
+        }
+
+        .solution-columns {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 56px;
+            max-width: 960px;
+        }
+
+        .features { }
+
+        .feat {
+            display: flex;
+            gap: 16px;
+            padding: 20px 0;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        .feat:last-child { border-bottom: none; }
+
+        .feat-marker {
+            width: 32px; height: 32px;
+            border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 15px;
+            font-weight: 700;
+            color: #2563EB;
+            background: #EFF6FF;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .feat h4 {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 3px;
+        }
+
+        .feat p {
+            font-size: 13px;
+            color: #777;
+            line-height: 1.55;
+        }
+
+        .who-uses {
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            border-radius: 12px;
+            overflow: hidden;
+            align-self: start;
+        }
+
+        .who-header {
+            padding: 16px 24px;
+            border-bottom: 1px solid #e5e5e5;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #999;
+        }
+
+        .who-item {
+            padding: 18px 24px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .who-item:last-child { border-bottom: none; }
+
+        .who-item h5 {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .who-item p {
+            font-size: 12px;
+            color: #888;
+            line-height: 1.5;
+        }
+
+        /* ──────────────────────────────────────────────────────────────
+           SLIDE 4 — TECH STACK
+           ────────────────────────────────────────────────────────────── */
+        #s4 { background: #fff; }
+
+        .s4-lead {
+            font-size: 18px;
+            color: #555;
+            margin-top: 10px;
+            margin-bottom: 40px;
+        }
+
+        .stack-table {
+            width: 100%;
+            max-width: 800px;
+            border-collapse: collapse;
+        }
+
+        .stack-table th {
+            text-align: left;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #999;
+            font-weight: 700;
+            padding: 10px 0;
+            border-bottom: 2px solid #e5e5e5;
+        }
+
+        .stack-table td {
+            padding: 16px 0;
+            border-bottom: 1px solid #f0f0f0;
+            vertical-align: top;
+        }
+
+        .stack-table .layer {
+            font-weight: 700;
+            font-size: 15px;
+            width: 140px;
+            color: #1a1a1a;
+        }
+
+        .stack-table .techs {
+            font-size: 14px;
+            color: #555;
+        }
+        .stack-table .techs strong {
+            color: #1a1a1a;
+        }
+
+        .stack-table .detail {
+            font-size: 13px;
+            color: #999;
+            text-align: right;
+        }
+
+        .stats-row {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+            padding-top: 28px;
+            border-top: 1px solid #e5e5e5;
+            max-width: 800px;
+        }
+
+        .stat-box .stat-val {
+            font-size: 36px;
+            font-weight: 700;
+            font-family: 'DM Serif Display', serif;
+            color: #2563EB;
+        }
+
+        .stat-box .stat-label {
+            font-size: 12px;
+            color: #999;
+            margin-top: 2px;
+        }
+
+        /* ──────────────────────────────────────────────────────────────
+           SLIDE 5 — SYSTEM DESIGN
+           ────────────────────────────────────────────────────────────── */
+        #s5 { background: #fafafa; }
+
+        .s5-lead {
+            font-size: 18px;
+            color: #555;
+            margin-top: 10px;
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+
+        .arch-diagram {
+            max-width: 860px;
+            width: 100%;
+        }
+
+        .arch-row {
+            display: flex;
+            align-items: stretch;
+            gap: 0;
+            margin-bottom: 6px;
+        }
+
+        .arch-label {
+            width: 120px;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            color: #999;
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .arch-boxes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            flex: 1;
+            padding: 12px 0;
+        }
+
+        .arch-box {
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .arch-box.b { background: #EFF6FF; color: #2563EB; }
+        .arch-box.g { background: #ECFDF5; color: #059669; }
+        .arch-box.p { background: #F5F3FF; color: #7C3AED; }
+        .arch-box.a { background: #FFFBEB; color: #B45309; }
+        .arch-box.r { background: #FEF2F2; color: #dc2626; }
+        .arch-box.gray { background: #f5f5f5; color: #555; }
+
+        .arch-sep {
+            height: 1px;
+            background: #e5e5e5;
+            margin: 4px 0 4px 120px;
+        }
+
+        .vision-box {
+            margin-top: 40px;
+            padding: 28px 32px;
+            border-left: 3px solid #2563EB;
+            background: #fff;
+            max-width: 700px;
+        }
+
+        .vision-box p {
+            font-size: 17px;
+            font-style: italic;
+            color: #444;
+            line-height: 1.55;
+            font-family: 'DM Serif Display', serif;
+        }
+
+        .vision-box .attr {
+            font-size: 13px;
+            color: #999;
+            margin-top: 8px;
+            font-style: normal;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        /* ── slide 6: scoring engine ─────────────────────────────────── */
+        #s6 { background: #fff; }
+        .cvs-formula {
+            background: #fafafa; border: 1px solid #e5e5e5; border-radius: 12px;
+            padding: 28px 32px; max-width: 820px; margin: 24px 0;
+            font-family: 'DM Serif Display', serif; font-size: 15px; color: #444; line-height: 2;
+        }
+        .cvs-formula .cf-title { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #999; margin-bottom: 12px; }
+        .cvs-row { display: flex; align-items: baseline; gap: 8px; }
+        .cvs-weight { color: #2563EB; font-weight: 700; min-width: 48px; }
+        .cvs-feat { color: #1a1a1a; }
+        .fda-table { width: 100%; max-width: 640px; border-collapse: collapse; margin-top: 24px; }
+        .fda-table th { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #999; font-weight: 700; padding: 8px 0; border-bottom: 2px solid #e5e5e5; text-align: left; }
+        .fda-table td { padding: 14px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; }
+        .fda-table .score { font-weight: 700; color: #059669; }
+        .fda-table .pass { color: #059669; font-weight: 700; }
+        .s6-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; max-width: 900px; }
+
+        /* ── slide 7: roadmap & biz model ───────────────────────────────── */
+        #s7 { background: #fafafa; }
+        .roadmap { display: flex; gap: 0; max-width: 880px; margin: 28px 0; }
+        .phase {
+            flex: 1; padding: 24px 20px; border-left: 3px solid #e5e5e5;
+            transition: border-color .2s;
+        }
+        .phase:first-child { border-left: 3px solid #2563EB; }
+        .phase-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #2563EB; margin-bottom: 6px; }
+        .phase h4 { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+        .phase p { font-size: 12px; color: #777; line-height: 1.5; }
+        .biz-table { width: 100%; max-width: 820px; border-collapse: collapse; margin-top: 36px; }
+        .biz-table th { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #999; font-weight: 700; padding: 8px 0; border-bottom: 2px solid #e5e5e5; text-align: left; }
+        .biz-table td { padding: 14px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; }
+        .biz-table .tier { font-weight: 700; }
+        .biz-table .price { color: #2563EB; font-weight: 700; }
+
+        /* ── slide 8: vision ────────────────────────────────────────────── */
+        #s8 { background: #1a1a2e; color: #fff; }
+        #s8 .muted { color: #aaa; }
+        #s8 h2 { color: #fff; }
+        .big-quote {
+            font-family: 'DM Serif Display', serif;
+            font-size: 36px; line-height: 1.25; color: #fff;
+            max-width: 760px; margin: 24px 0 40px;
+            letter-spacing: -0.5px;
+        }
+        .big-quote span { color: #60a5fa; }
+        .moat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 760px; margin-bottom: 40px; }
+        .moat-item { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 20px 24px; }
+        .moat-item h5 { font-size: 14px; font-weight: 700; margin-bottom: 4px; color: #e2e8f0; }
+        .moat-item p { font-size: 12px; color: #94a3b8; line-height: 1.5; }
+        .team-row { display: flex; gap: 32px; padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.1); }
+        .team-member .name { font-size: 15px; font-weight: 700; color: #e2e8f0; }
+        .team-member .role { font-size: 12px; color: #64748b; margin-top: 2px; }
+        #s8 .slide-num { color: #475569; }
+
+        /* ── responsive ──────────────────────────────────────────────── */
+        @media (max-width: 768px) {
+            .slide { padding: 40px 24px; }
+            h1 { font-size: 36px; }
+            h2 { font-size: 28px; }
+            .problems { grid-template-columns: 1fr; }
+            .prob:nth-child(odd) { border-right: none; }
+            .prob { border-bottom: 1px solid #e5e5e5 !important; }
+            .prob:last-child { border-bottom: none !important; }
+            .solution-columns { grid-template-columns: 1fr; }
+            .s1-bottom { flex-wrap: wrap; gap: 24px; }
+            .stats-row { flex-wrap: wrap; }
+            .arch-label { width: 80px; font-size: 10px; }
+            .s6-grid { grid-template-columns: 1fr; }
+            .roadmap { flex-direction: column; }
+            .moat-grid { grid-template-columns: 1fr; }
+            .big-quote { font-size: 24px; }
+            .team-row { flex-wrap: wrap; gap: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+
+<!-- ─── SLIDE 1: TITLE ──────────────────────────────────────────────── -->
+<section class="slide" id="s1">
+    <div class="s1-top">
+        <div class="logo">
+            <div class="logo-mark">C</div>
+            <div class="logo-name">CARVanta</div>
+        </div>
+
+        <h1 class="serif">AI-Powered Platform for<br>CAR-T Target Discovery</h1>
+
+        <p class="s1-sub">
+            We're building an open intelligence platform that helps researchers, oncologists, and pharma companies find the best targets for CAR-T cell cancer therapy — using real genomic data and machine learning.
+        </p>
+    </div>
+
+    <div class="s1-bottom">
+        <div class="s1-meta">
+            <div class="label">Built by</div>
+            <div class="value">Dhruv</div>
+        </div>
+        <div class="s1-meta">
+            <div class="label">Theme</div>
+            <div class="value">Healthcare + AI</div>
+        </div>
+        <div class="s1-meta">
+            <div class="label">Stack</div>
+            <div class="value">React · FastAPI · XGBoost</div>
+        </div>
+        <div class="s1-meta">
+            <div class="label">Codebase</div>
+            <div class="value">84,697 lines · 227 files</div>
+        </div>
+    </div>
+
+    <div class="slide-num">1 / 8</div>
+</section>
+
+
+<!-- ─── SLIDE 2: PROBLEM ────────────────────────────────────────────── -->
+<section class="slide" id="s2">
+    <span class="pill pill-red" style="margin-bottom:16px;">THE PROBLEM</span>
+    <h2 class="serif">Finding the right cancer target<br>shouldn't take years.</h2>
+    <p class="s2-lead">
+        CAR-T therapy rewires a patient's immune cells to kill cancer. It works — but picking the wrong target protein can be fatal. Today, that decision relies on fragmented data, scattered tools, and months of manual research.
+    </p>
+
+    <div class="problems">
+        <div class="prob">
+            <div class="prob-num">01</div>
+            <h4>Slow & Manual Discovery</h4>
+            <p>Researchers spend 2–4 years reviewing literature across 20+ disconnected databases to identify a single viable antigen target.</p>
+            <div class="highlight">2–4 years</div>
+        </div>
+        <div class="prob">
+            <div class="prob-num">02</div>
+            <h4>Prohibitive Cost</h4>
+            <p>A single CAR-T treatment costs $400K–$500K. Patients can't afford to guess wrong. There's no unified tool to predict which target works best.</p>
+            <div class="highlight">$473K avg.</div>
+        </div>
+        <div class="prob">
+            <div class="prob-num">03</div>
+            <h4>No Unified Platform</h4>
+            <p>TCGA for tumors, GTEx for safety, UniProt for proteins, ClinicalTrials.gov for trials — no tool connects all of them into a single scoring system.</p>
+            <div class="highlight">20+ tools</div>
+        </div>
+        <div class="prob">
+            <div class="prob-num">04</div>
+            <h4>Access Inequality</h4>
+            <p>Labs in developing countries have zero access to the proprietary tools that top institutions use. The best minds are locked out by paywalls.</p>
+            <div class="highlight">Open source</div>
+        </div>
+    </div>
+
+    <div class="slide-num">2 / 8</div>
+</section>
+
+
+<!-- ─── SLIDE 3: SOLUTION ───────────────────────────────────────────── -->
+<section class="slide" id="s3">
+    <span class="pill pill-blue" style="margin-bottom:16px;">THE SOLUTION</span>
+    <h2 class="serif">CARVanta: one platform,<br>every answer.</h2>
+    <p class="s3-lead">
+        CARVanta replaces the entire fragmented workflow with a single AI-powered platform. Score any antigen. Simulate any patient. Discover novel targets. Match to clinical trials.
+    </p>
+
+    <div class="solution-columns">
+        <div class="features">
+            <div class="feat">
+                <div class="feat-marker">1</div>
+                <div>
+                    <h4>AI Antigen Scoring</h4>
+                    <p>8-feature adaptive weighted scoring + Random Forest + XGBoost ensemble trained on 119,816 biomarkers from TCGA, GTEx, UniProt, and HPA. Scores 16,000+ targets across 18 cancers.</p>
+                </div>
+            </div>
+            <div class="feat">
+                <div class="feat-marker">2</div>
+                <div>
+                    <h4>Patient Digital Twin</h4>
+                    <p>Full patient simulator — models T-cell expansion, tumor regression, cytokine storm risk, and treatment outcomes over 12 months. 18 specialized engines including IPI/NCCN-IPI clinical scoring.</p>
+                </div>
+            </div>
+            <div class="feat">
+                <div class="feat-marker">3</div>
+                <div>
+                    <h4>Real-Time Genomic Analyzer</h4>
+                    <p>Upload VCF/FASTA/BAM files. 14 engines: variant calling, neoantigen prediction, HLA typing, TMB/MSI, fusion detection, clonal evolution, pharmacogenomics. Publication-ready figures.</p>
+                </div>
+            </div>
+            <div class="feat">
+                <div class="feat-marker">4</div>
+                <div>
+                    <h4>Drug Discovery Engine</h4>
+                    <p>Graph Neural Networks scan 20,000+ human proteins for novel targets. Includes scFv antibody designer, CAR construct architect, and off-target toxicity prediction.</p>
+                </div>
+            </div>
+            <div class="feat">
+                <div class="feat-marker">5</div>
+                <div>
+                    <h4>Clinical Trial Matcher</h4>
+                    <p>Syncs with ClinicalTrials.gov. AI-powered patient-trial matching, eligibility screening, geographic proximity, biomarker correlation, and outcome prediction.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="who-uses">
+            <div class="who-header">Who uses it</div>
+            <div class="who-item">
+                <h5>Researchers</h5>
+                <p>Upload data, get scored targets in minutes instead of months. NLP search: "find safe targets for leukemia"</p>
+            </div>
+            <div class="who-item">
+                <h5>Oncologists</h5>
+                <p>Build a digital twin. Simulate outcomes. Pick the best CAR-T construct for each patient.</p>
+            </div>
+            <div class="who-item">
+                <h5>Patients</h5>
+                <p>Find matching clinical trials. Understand your options without medical jargon.</p>
+            </div>
+            <div class="who-item">
+                <h5>Pharma & Biotech</h5>
+                <p>Discover novel targets before competitors. Proteome-wide scoring with safety analysis.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide-num">3 / 8</div>
+</section>
+
+
+<!-- ─── SLIDE 4: TECH STACK ─────────────────────────────────────────── -->
+<section class="slide" id="s4">
+    <span class="pill pill-green" style="margin-bottom:16px;">TECH STACK</span>
+    <h2 class="serif">Built for production,<br>not just demos.</h2>
+    <p class="s4-lead">Full-stack platform with enterprise-grade security, Docker deployment, and audit logging.</p>
+
+    <table class="stack-table">
+        <thead>
+            <tr>
+                <th>Layer</th>
+                <th>Technologies</th>
+                <th>Scale</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="layer">Frontend</td>
+                <td class="techs"><strong>React 19</strong> + TypeScript 5 + Vite 7 + React Compiler</td>
+                <td class="detail">39 pages, lazy-loaded</td>
+            </tr>
+            <tr>
+                <td class="layer">Backend</td>
+                <td class="techs"><strong>Python 3.12</strong> + FastAPI + Uvicorn + 15 API routers</td>
+                <td class="detail">70+ REST endpoints</td>
+            </tr>
+            <tr>
+                <td class="layer">ML / AI</td>
+                <td class="techs"><strong>scikit-learn</strong> (Random Forest) + <strong>XGBoost</strong> (Classifier + Ranker) + GNN</td>
+                <td class="detail">119K training instances</td>
+            </tr>
+            <tr>
+                <td class="layer">Data</td>
+                <td class="techs"><strong>TCGA</strong> (tumors) · <strong>GTEx</strong> (safety) · <strong>UniProt</strong> · <strong>HPA</strong> · <strong>ClinicalTrials.gov</strong></td>
+                <td class="detail">5 real-world APIs</td>
+            </tr>
+            <tr>
+                <td class="layer">Database</td>
+                <td class="techs"><strong>SQLAlchemy</strong> — SQLite (dev) → PostgreSQL 16 (prod)</td>
+                <td class="detail">14M CSV + SQL</td>
+            </tr>
+            <tr>
+                <td class="layer">Auth</td>
+                <td class="techs"><strong>JWT</strong> + PBKDF2 + <strong>TOTP MFA</strong> + OAuth2 SSO + RBAC</td>
+                <td class="detail">zero external deps</td>
+            </tr>
+            <tr>
+                <td class="layer">DevOps</td>
+                <td class="techs"><strong>Docker</strong> Compose (3 services) + GitHub Actions CI + CodeQL + Codespaces</td>
+                <td class="detail">1-click deploy</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="stats-row">
+        <div class="stat-box">
+            <div class="stat-val">84,697</div>
+            <div class="stat-label">Lines of code</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-val">227</div>
+            <div class="stat-label">Source files</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-val">119,816</div>
+            <div class="stat-label">Biomarker records</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-val">16,000+</div>
+            <div class="stat-label">Antigens scored</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-val">99.93%</div>
+            <div class="stat-label">ML accuracy (5-fold CV)</div>
+        </div>
+    </div>
+
+    <div class="slide-num">4 / 8</div>
+</section>
+
+
+<!-- ─── SLIDE 5: SYSTEM DESIGN ──────────────────────────────────────── -->
+<section class="slide" id="s5">
+    <span class="pill pill-blue" style="margin-bottom:16px;">SYSTEM DESIGN</span>
+    <h2 class="serif">Modular architecture.<br>10 independent engines.</h2>
+    <p class="s5-lead">
+        Each module is a self-contained package with its own router, business logic, and frontend pages.
+        The system scales horizontally — add a module without touching existing code.
+    </p>
+
+    <div class="arch-diagram">
+        <div class="arch-row">
+            <div class="arch-label">Client</div>
+            <div class="arch-boxes">
+                <div class="arch-box b">React 19 SPA</div>
+                <div class="arch-box b">39 Pages (code-split)</div>
+                <div class="arch-box b">Typed API Client</div>
+            </div>
+        </div>
+        <div class="arch-sep"></div>
+
+        <div class="arch-row">
+            <div class="arch-label">API Layer</div>
+            <div class="arch-boxes">
+                <div class="arch-box g">FastAPI Gateway</div>
+                <div class="arch-box g">15 Routers</div>
+                <div class="arch-box g">Rate Limiter</div>
+                <div class="arch-box g">Audit Logger</div>
+                <div class="arch-box g">JWT + MFA</div>
+            </div>
+        </div>
+        <div class="arch-sep"></div>
+
+        <div class="arch-row">
+            <div class="arch-label">AI / ML</div>
+            <div class="arch-boxes">
+                <div class="arch-box p">CVS Scoring (8 features)</div>
+                <div class="arch-box p">RF + XGBoost Ensemble</div>
+                <div class="arch-box p">NLP Query Parser</div>
+                <div class="arch-box p">AI Reasoning</div>
+                <div class="arch-box p">GNN</div>
+            </div>
+        </div>
+        <div class="arch-sep"></div>
+
+        <div class="arch-row">
+            <div class="arch-label">Modules</div>
+            <div class="arch-boxes">
+                <div class="arch-box a">Digital Twin (18 engines)</div>
+                <div class="arch-box a">Genomics (14 engines)</div>
+                <div class="arch-box a">Drug Discovery (6)</div>
+                <div class="arch-box a">Multi-Omics (7)</div>
+                <div class="arch-box a">Trials (15)</div>
+                <div class="arch-box a">Copilot</div>
+                <div class="arch-box a">Collab Hub</div>
+                <div class="arch-box a">Health Econ</div>
+            </div>
+        </div>
+        <div class="arch-sep"></div>
+
+        <div class="arch-row">
+            <div class="arch-label">Data</div>
+            <div class="arch-boxes">
+                <div class="arch-box gray">119K Biomarkers (CSV)</div>
+                <div class="arch-box gray">SQLite / PostgreSQL</div>
+                <div class="arch-box gray">TCGA · GTEx · UniProt APIs</div>
+                <div class="arch-box gray">ML Models (.pkl)</div>
+            </div>
+        </div>
+        <div class="arch-sep"></div>
+
+        <div class="arch-row">
+            <div class="arch-label">Infra</div>
+            <div class="arch-boxes">
+                <div class="arch-box r">Docker (3 services)</div>
+                <div class="arch-box r">GitHub Actions CI</div>
+                <div class="arch-box r">CodeQL Security</div>
+                <div class="arch-box r">Codespaces</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="vision-box">
+        <p>"A world where no cancer patient is left without options, no researcher is left without tools, and no target is left undiscovered."</p>
+        <div class="attr">— CARVanta Vision</div>
+    </div>
+
+    <div class="slide-num">5 / 8</div>
+</section>
+
+
+
+<!-- ─── SLIDE 6: SCORING ENGINE ───────────────────────────────────── -->
+<section class="slide" id="s6">
+    <span class="pill pill-blue" style="margin-bottom:16px;">THE SCIENCE</span>
+    <h2 class="serif">Proprietary CVS — built on<br>real biological evidence.</h2>
+
+    <div class="s6-grid">
+        <div>
+            <div class="cvs-formula">
+                <div class="cf-title">CAR Viability Score = 60% Rule-Based + 40% ML Ensemble</div>
+                <div class="cvs-row"><span class="cvs-weight">0.25 ×</span><span class="cvs-feat">tumor specificity</span></div>
+                <div class="cvs-row"><span class="cvs-weight">0.20 ×</span><span class="cvs-feat">safety component</span></div>
+                <div class="cvs-row"><span class="cvs-weight">0.12 ×</span><span class="cvs-feat">stability score</span></div>
+                <div class="cvs-row"><span class="cvs-weight">0.10 ×</span><span class="cvs-feat">literature evidence</span></div>
+                <div class="cvs-row"><span class="cvs-weight">0.10 ×</span><span class="cvs-feat">immunogenicity</span></div>
+                <div class="cvs-row"><span class="cvs-weight">0.08 ×</span><span class="cvs-feat">surface accessibility</span></div>
+                <div class="cvs-row"><span class="cvs-weight">0.08 ×</span><span class="cvs-feat">tissue risk</span></div>
+                <div class="cvs-row"><span class="cvs-weight">0.07 ×</span><span class="cvs-feat">protein validation</span></div>
+            </div>
+            <p style="font-size:13px;color:#777;max-width:380px;line-height:1.6;">Weights adapt dynamically based on data confidence. Final score blends rule-based biology with Random Forest + XGBoost ensemble trained on 119,816 biomarkers.</p>
+        </div>
+        <div>
+            <p style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#999;margin-bottom:8px;">FDA-Approved Target Validation</p>
+            <table class="fda-table">
+                <thead><tr><th>Target</th><th>CVS Score</th><th>Tier</th><th>Result</th></tr></thead>
+                <tbody>
+                    <tr><td>CD19</td><td class="score">0.945</td><td>Tier 1</td><td class="pass">✅ PASS</td></tr>
+                    <tr><td>BCMA</td><td class="score">0.943</td><td>Tier 1</td><td class="pass">✅ PASS</td></tr>
+                    <tr><td>CD22</td><td class="score">0.927</td><td>Tier 1</td><td class="pass">✅ PASS</td></tr>
+                    <tr><td>GPRC5D</td><td class="score">0.936</td><td>Tier 1</td><td class="pass">✅ PASS</td></tr>
+                </tbody>
+            </table>
+            <p style="margin-top:20px;font-size:13px;color:#777;">5-fold CV accuracy: <strong style="color:#1a1a1a;">99.93%</strong> · ROC-AUC: <strong style="color:#1a1a1a;">1.000</strong></p>
+            <div style="margin-top:20px;">
+                <p style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#999;margin-bottom:10px;">6 Novel Algorithms (CARVanta-Original)</p>
+                <div style="display:flex;flex-wrap:wrap;gap:8px;">
+                    <span class="pill pill-blue">CVS Adaptive Scoring</span>
+                    <span class="pill pill-blue">Antigen Synergy Matrix</span>
+                    <span class="pill pill-blue">Tissue Risk Heatmap</span>
+                    <span class="pill pill-blue">Biomarker Stratification</span>
+                    <span class="pill pill-blue">CARVanta Query Language</span>
+                    <span class="pill pill-blue">PPI Network Scorer</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slide-num">6 / 8</div>
+</section>
+
+
+<!-- ─── SLIDE 7: ROADMAP & BUSINESS MODEL ──────────────────────────── -->
+<section class="slide" id="s7">
+    <span class="pill pill-green" style="margin-bottom:16px;">ROADMAP & REVENUE</span>
+    <h2 class="serif">Validate → Productize → Scale.</h2>
+
+    <div class="roadmap">
+        <div class="phase">
+            <div class="phase-tag">Phase 1 · Months 1–3</div>
+            <h4>Foundation</h4>
+            <p>Validate CVS against FDA targets. Integrate real TCGA/GTEx data. Publish benchmark report.</p>
+        </div>
+        <div class="phase">
+            <div class="phase-tag">Phase 2 · Months 4–8</div>
+            <h4>Product</h4>
+            <p>SaaS deployment on AWS/GCP. Python + R SDKs. Multi-target combination scoring.</p>
+        </div>
+        <div class="phase">
+            <div class="phase-tag">Phase 3 · Months 6–12</div>
+            <h4>Credibility</h4>
+            <p>Peer-reviewed publication. Academic lab partnerships. Open-source scoring engine.</p>
+        </div>
+        <div class="phase">
+            <div class="phase-tag">Phase 4 · Months 9–18</div>
+            <h4>Revenue</h4>
+            <p>Enterprise contracts. API pay-per-query. Pharma R&D licensing deals.</p>
+        </div>
+        <div class="phase">
+            <div class="phase-tag">Phase 5 · Months 18–36</div>
+            <h4>Expand</h4>
+            <p>TCR therapies, bispecific antibodies, ADCs, neoantigen cancer vaccines.</p>
+        </div>
+    </div>
+
+    <table class="biz-table">
+        <thead><tr><th>Tier</th><th>Customer</th><th>Price</th><th>Funding Target</th></tr></thead>
+        <tbody>
+            <tr><td class="tier">Free / Academic</td><td>University researchers</td><td class="price">Free</td><td rowspan="4" style="vertical-align:middle;padding-left:24px;font-size:13px;color:#555;border-bottom:none;">Pre-seed $250K →<br>Seed $3M →<br>Series A $15M</td></tr>
+            <tr><td class="tier">Pro</td><td>Biotech startups</td><td class="price">$500–$2K/mo</td></tr>
+            <tr><td class="tier">Enterprise</td><td>Big Pharma R&D</td><td class="price">$10K–$50K/yr</td></tr>
+            <tr><td class="tier">API Access</td><td>Bioinformatics pipelines</td><td class="price">Pay-per-query</td></tr>
+        </tbody>
+    </table>
+    <div class="slide-num">7 / 8</div>
+</section>
+
+
+<!-- ─── SLIDE 8: VISION & CLOSING ──────────────────────────────────── -->
+<section class="slide" id="s8">
+    <span class="pill" style="background:rgba(255,255,255,0.1);color:#93c5fd;margin-bottom:16px;">VISION</span>
+    <div class="big-quote">
+        "No cancer patient left without options.<br>
+        No researcher left without tools.<br>
+        <span>No target left undiscovered.</span>"
+    </div>
+
+    <div class="moat-grid">
+        <div class="moat-item">
+            <h5>🔬 Built on Real Science</h5>
+            <p>119,816 biomarkers from TCGA + GTEx. All 4 FDA-approved CAR-T targets score Tier 1. Explainable AI — every score has a human-readable reason.</p>
+        </div>
+        <div class="moat-item">
+            <h5>⚡ One Platform, Not Twenty</h5>
+            <p>Scoring + simulation + discovery + trials + genomics + economics — all in one place. No platform combines AI antigen scoring with digital twin simulation.</p>
+        </div>
+        <div class="moat-item">
+            <h5>🛡️ Enterprise-Grade from Day One</h5>
+            <p>ISO 13485 aligned. HIPAA + GDPR compliant. FDA 510(k) pathway ready. Full audit logging. RBAC with 4 roles. Zero-external-dep auth.</p>
+        </div>
+        <div class="moat-item">
+            <h5>🌍 Designed for Everyone</h5>
+            <p>The researcher in a small lab in India. The oncologist with 30 minutes to decide. The family that can't afford a wrong choice. The pharma company looking for the next breakthrough.</p>
+        </div>
+    </div>
+
+    <div class="team-row">
+        <div class="team-member"><div class="name">Dhruv Agrawal</div><div class="role">Cell-Forge · AI & Backend</div></div>
+        <div class="team-member"><div class="name">Aviral Agrawal</div><div class="role">Cell-Forge · Bioinformatics</div></div>
+        <div class="team-member"><div class="name">Ishaan Sahi</div><div class="role">Cell-Forge · Frontend & Design</div></div>
+    </div>
+    <div class="slide-num">8 / 8</div>
+</section>
+
+
+</body>
+</html>

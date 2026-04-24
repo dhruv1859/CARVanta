@@ -279,31 +279,41 @@ export default function SingleAnalysis() {
                                 </div>
                             )}
                             <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-                                {shapData.top_drivers?.map((driver: any, i: number) => (
-                                    <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-                                        <span style={{ width: 20, textAlign: 'center', fontWeight: 800, color: i < 3 ? '#F59E0B' : 'var(--text-muted)', fontSize: 14 }}>
-                                            {i + 1}
-                                        </span>
-                                        <span style={{ width: 180, fontSize: 12, color: 'var(--text-secondary)' }}>
-                                            {driver.feature?.replace(/_/g, ' ')}
-                                        </span>
-                                        <div style={{ flex: 1, height: 8, background: 'var(--bg-secondary)', borderRadius: 4, overflow: 'hidden' }}>
-                                            <div style={{
-                                                height: '100%', borderRadius: 4,
-                                                width: `${Math.min(Math.abs(driver.contribution || 0) * 500, 100)}%`,
-                                                background: (driver.contribution || 0) > 0
-                                                    ? 'linear-gradient(90deg, #10B981, #06B6D4)'
-                                                    : 'linear-gradient(90deg, #EF4444, #F59E0B)',
-                                            }} />
+                                {(() => {
+                                    const drivers = shapData.top_drivers || [];
+                                    const maxAbs = Math.max(...drivers.map((d: any) => Math.abs(d.shap_value || 0)), 0.001);
+                                    return drivers.map((driver: any, i: number) => {
+                                        const sv = driver.shap_value || 0;
+                                        const barPct = Math.min((Math.abs(sv) / maxAbs) * 100, 100);
+                                        const isPositive = sv >= 0;
+                                        return (
+                                        <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                                            <span style={{ width: 20, textAlign: 'center', fontWeight: 800, color: i < 3 ? '#F59E0B' : 'var(--text-muted)', fontSize: 14 }}>
+                                                {i + 1}
+                                            </span>
+                                            <span style={{ width: 180, fontSize: 12, color: 'var(--text-secondary)' }}>
+                                                {driver.feature?.replace(/_/g, ' ')}
+                                            </span>
+                                            <div style={{ flex: 1, height: 8, background: 'var(--bg-secondary)', borderRadius: 4, overflow: 'hidden' }}>
+                                                <div style={{
+                                                    height: '100%', borderRadius: 4,
+                                                    width: `${barPct}%`,
+                                                    background: isPositive
+                                                        ? 'linear-gradient(90deg, #10B981, #06B6D4)'
+                                                        : 'linear-gradient(90deg, #EF4444, #F59E0B)',
+                                                    transition: 'width 0.4s ease',
+                                                }} />
+                                            </div>
+                                            <span style={{ width: 60, fontSize: 12, fontWeight: 600, textAlign: 'right', color: isPositive ? '#10B981' : '#EF4444' }}>
+                                                {isPositive ? '+' : ''}{sv.toFixed(3)}
+                                            </span>
+                                            <span style={{ width: 50, fontSize: 11, color: 'var(--text-muted)', textAlign: 'right' }}>
+                                                ({driver.feature_value?.toFixed(2)})
+                                            </span>
                                         </div>
-                                        <span style={{ width: 60, fontSize: 12, fontWeight: 600, textAlign: 'right', color: (driver.contribution || 0) > 0 ? '#10B981' : '#EF4444' }}>
-                                            {(driver.contribution || 0) > 0 ? '+' : ''}{driver.contribution?.toFixed(3)}
-                                        </span>
-                                        <span style={{ width: 50, fontSize: 11, color: 'var(--text-muted)', textAlign: 'right' }}>
-                                            ({driver.feature_value?.toFixed(2)})
-                                        </span>
-                                    </div>
-                                ))}
+                                        );
+                                    });
+                                })()}
                             </div>
                         </div>
                     )}

@@ -29,8 +29,13 @@ export default function TissueHeatmap() {
         } finally { setLoading(false); }
     };
 
-    const tissueMap = data?.tissue_risk_map || {};
-    const alerts = data?.critical_organ_alerts || [];
+    // The safety report nests toxicity under "tissue_risk_heatmap"
+    const heatmapData = data?.tissue_risk_heatmap || data || {};
+    const tissueMap = heatmapData?.tissue_risk_map || data?.tissue_risk_map || {};
+    const alerts = heatmapData?.critical_organ_alerts || data?.critical_organ_alerts || [];
+    const aggTox = heatmapData?.aggregate_toxicity_index ?? data?.aggregate_toxicity_index;
+    const organsCount = heatmapData?.organs_analyzed || data?.organs_analyzed || Object.keys(tissueMap).length;
+    const safetyRec = heatmapData?.safety_recommendation || data?.safety_recommendation;
 
     return (
         <>
@@ -61,8 +66,8 @@ export default function TissueHeatmap() {
                 <>
                     <div className="stats-grid">
                         <StatsCard value={data.antigen || selected} label="Antigen" />
-                        <StatsCard value={data.aggregate_toxicity_index?.toFixed(3) || 'N/A'} label="Aggregate Toxicity" />
-                        <StatsCard value={data.organs_analyzed || Object.keys(tissueMap).length} label="Organs Analyzed" />
+                        <StatsCard value={aggTox != null ? aggTox.toFixed(3) : 'N/A'} label="Aggregate Toxicity" />
+                        <StatsCard value={organsCount} label="Organs Analyzed" />
                         <StatsCard value={alerts.length} label="Critical Alerts" />
                     </div>
 
@@ -85,11 +90,11 @@ export default function TissueHeatmap() {
                         </div>
                         {alerts.length > 0 && (
                             <div className="error-msg" style={{ marginTop: 16 }}>
-                                ⚠️ Critical organ alerts: {alerts.join(', ')}
+                                ⚠️ Critical organ alerts: {alerts.map(a => typeof a === 'string' ? a : a.message || a.organ).join(', ')}
                             </div>
                         )}
-                        {data.safety_recommendation && (
-                            <div className="success-msg" style={{ marginTop: 12 }}>{data.safety_recommendation}</div>
+                        {safetyRec && (
+                            <div className="success-msg" style={{ marginTop: 12 }}>{safetyRec}</div>
                         )}
                     </div>
                 </>

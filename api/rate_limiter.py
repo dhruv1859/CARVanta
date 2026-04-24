@@ -58,13 +58,14 @@ ENDPOINT_RATE_RULES: Dict[str, int] = {
     "/api/v5/enterprise/billing/webhook": 200,    # Webhooks need higher limits
     "/api/v5/enterprise/analytics": 120,          # Analytics is expensive
     "/api/v5/enterprise/compliance/export": 10,   # Data export is very expensive
-    "/api/auth/login": 20,                        # Brute-force protection
-    "/api/auth/register": 10,                     # Prevent spam registration
-    "/api/auth/verify-email": 30,                 # Moderate limit
-    "/score": 100,                                # Scoring endpoint
-    "/batch_score": 30,                           # Batch scoring is heavy
-    "/api/multi-target": 30,                      # Combo analysis is heavy
-    "/api/query": 60,                             # NLP queries
+    "/api/v5/auth/login": 20,                        # Brute-force protection
+    "/api/v5/auth/register": 10,                     # Prevent spam registration
+    "/api/v5/auth/verify-email": 30,                 # Moderate limit
+    "/api/v5/score": 100,                                # Scoring endpoint
+    "/api/v5/batch_score": 30,                           # Batch scoring is heavy
+    "/api/v5/multi-target": 30,                      # Combo analysis is heavy
+    "/api/v5/query": 60,                             # NLP queries
+    "/api/v5/bridge/graph": 20,                      # Graph data payload is very heavy
 }
 
 # Paths exempt from rate limiting

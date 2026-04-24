@@ -1196,3 +1196,532 @@ class MetabolomicsAnalyzer:
                 else "No dominant metabolic-checkpoint axis identified"
             ),
         }
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # Lipidomics TME Profiling
+    # ═══════════════════════════════════════════════════════════════════════════
+
+    def lipidomics_tme_profiling(self, gene: str) -> dict:
+        """
+        Comprehensive lipidomic analysis of the tumor microenvironment.
+        Profiles sphingolipids, eicosanoids, phospholipids, and
+        ceramide/S1P balance that regulate immune cell trafficking
+        and CAR-T cell persistence.
+
+        Models LC-MS/MS shotgun lipidomics data with lipid species
+        quantification across major lipid classes.
+        """
+        gene = gene.upper().strip()
+        seed = self._gene_seed(gene)
+        rng = random.Random(seed + 18000)
+
+        # ── Sphingolipid metabolism (ceramide / S1P axis) ──
+        ceramide_species = []
+        for chain in ["C16:0", "C18:0", "C20:0", "C22:0", "C24:0", "C24:1"]:
+            c_rng = random.Random(seed + 18000 + hash(chain))
+            tumor = c_rng.uniform(0.1, 10.0)
+            normal = c_rng.uniform(0.1, 8.0)
+            ceramide_species.append({
+                "species": f"Cer({chain})",
+                "tumor_nmol_per_mg": round(tumor, 3),
+                "normal_nmol_per_mg": round(normal, 3),
+                "fold_change": round(tumor / max(normal, 0.01), 2),
+                "pro_apoptotic": tumor > normal * 1.5,
+            })
+
+        s1p_level = round(rng.uniform(0.5, 20.0), 2)
+        s1p_s1pr1 = round(rng.uniform(0, 10), 2)  # S1PR1 expression
+        s1p_s1pr2 = round(rng.uniform(0, 10), 2)
+        ceramide_total = sum(c["tumor_nmol_per_mg"] for c in ceramide_species)
+        ceramide_s1p_ratio = round(ceramide_total / max(s1p_level, 0.01), 2)
+
+        # ── Eicosanoid profiling ──
+        eicosanoids = []
+        eicosanoid_species = [
+            {"name": "PGE2", "pathway": "COX-2", "effect": "immunosuppressive"},
+            {"name": "PGD2", "pathway": "COX-1", "effect": "anti-inflammatory"},
+            {"name": "LTB4", "pathway": "5-LOX", "effect": "pro-inflammatory"},
+            {"name": "LXA4", "pathway": "15-LOX", "effect": "pro-resolving"},
+            {"name": "TXA2", "pathway": "COX-1/TXAS", "effect": "pro-thrombotic"},
+            {"name": "15d-PGJ2", "pathway": "COX-2/non-enzymatic", "effect": "anti-inflammatory (PPARγ)"},
+            {"name": "12-HETE", "pathway": "12-LOX", "effect": "pro-tumorigenic"},
+            {"name": "EET (14,15)", "pathway": "CYP450", "effect": "pro-angiogenic"},
+        ]
+
+        for eico in eicosanoid_species:
+            e_rng = random.Random(seed + 18100 + hash(eico["name"]))
+            concentration = e_rng.uniform(0.01, 50.0)
+            eicosanoids.append({
+                **eico,
+                "concentration_ng_ml": round(concentration, 2),
+                "elevated": concentration > 10.0,
+                "impact_on_car_t": (
+                    "NEGATIVE" if eico["effect"] == "immunosuppressive" and concentration > 10
+                    else "POSITIVE" if eico["effect"] == "pro-inflammatory" and concentration > 5
+                    else "NEUTRAL"
+                ),
+            })
+
+        # ── Phospholipid remodeling (Lands cycle) ──
+        phospholipids = {}
+        pl_classes = ["PC", "PE", "PS", "PI", "PG", "PA", "SM"]
+        for pl in pl_classes:
+            p_rng = random.Random(seed + 18200 + hash(pl))
+            phospholipids[pl] = {
+                "tumor_mol_pct": round(p_rng.uniform(1, 40), 2),
+                "normal_mol_pct": round(p_rng.uniform(1, 35), 2),
+                "saturated_fraction": round(p_rng.uniform(0.2, 0.8), 3),
+                "pufa_enrichment": round(p_rng.uniform(0, 5), 2),
+            }
+
+        # ── Lysophospholipid signaling ──
+        lpa_level = round(rng.uniform(0.1, 20.0), 2)
+        lpc_level = round(rng.uniform(1, 50), 2)
+        lpcat_expression = round(rng.uniform(0, 15), 2)
+
+        # Immunosuppressive lipid burden
+        pge2_level = next((e["concentration_ng_ml"] for e in eicosanoids if e["name"] == "PGE2"), 0)
+        immunosuppressive_burden = "HIGH" if (pge2_level > 15 and s1p_level > 10) else "MODERATE" if (pge2_level > 5 or s1p_level > 5) else "LOW"
+
+        return {
+            "gene": gene,
+            "analysis_type": "lipidomics_tme",
+            "data_source": "LC-MS/MS Shotgun Lipidomics simulation",
+            "sphingolipid_axis": {
+                "ceramide_species": ceramide_species,
+                "ceramide_total_nmol": round(ceramide_total, 2),
+                "s1p_level": s1p_level,
+                "ceramide_s1p_ratio": ceramide_s1p_ratio,
+                "sphingolipid_balance": (
+                    "PRO-APOPTOTIC (ceramide dominant)" if ceramide_s1p_ratio > 5
+                    else "PRO-SURVIVAL (S1P dominant)" if ceramide_s1p_ratio < 1
+                    else "BALANCED"
+                ),
+                "s1pr1_expression": s1p_s1pr1,
+                "s1pr2_expression": s1p_s1pr2,
+                "t_cell_trafficking": (
+                    "IMPAIRED — high S1PR1 may trap T cells in lymphoid organs"
+                    if s1p_s1pr1 > 7 else "FAVORABLE"
+                ),
+            },
+            "eicosanoid_profile": eicosanoids,
+            "pge2_dominant": pge2_level > 15,
+            "phospholipid_remodeling": phospholipids,
+            "lysophospholipid_signaling": {
+                "lpa_level": lpa_level,
+                "lpc_level": lpc_level,
+                "lpcat_expression": lpcat_expression,
+                "lpa_pro_tumorigenic": lpa_level > 10,
+            },
+            "immunosuppressive_lipid_burden": immunosuppressive_burden,
+            "therapeutic_targets": [
+                t for t in [
+                    "COX-2 inhibitor (celecoxib)" if pge2_level > 10 else None,
+                    "S1PR1 modulator (fingolimod)" if s1p_s1pr1 > 7 else None,
+                    "SPHK1 inhibitor" if s1p_level > 10 else None,
+                    "15-LOX activator" if any(e["name"] == "LXA4" and e["concentration_ng_ml"] < 2 for e in eicosanoids) else None,
+                ] if t is not None
+            ],
+        }
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # Ferroptosis Vulnerability Analysis
+    # ═══════════════════════════════════════════════════════════════════════════
+
+    def ferroptosis_vulnerability(self, gene: str) -> dict:
+        """
+        Assess tumor vulnerability to ferroptosis — iron-dependent
+        regulated cell death driven by lipid peroxidation.
+        Profiles GPX4, SLC7A11 (xCT), FSP1, and iron homeostasis
+        to predict whether ferroptosis induction could synergize
+        with CAR-T therapy.
+
+        Critical for therapy-resistant mesenchymal cancer cells.
+        """
+        gene = gene.upper().strip()
+        seed = self._gene_seed(gene)
+        rng = random.Random(seed + 19000)
+
+        # ── Core ferroptosis defense ──
+        gpx4_expression = round(rng.uniform(0, 15), 2)
+        gpx4_activity = round(rng.uniform(0, 1), 3)
+        slc7a11_expression = round(rng.uniform(0, 15), 2)  # xCT cystine transporter
+        fsp1_expression = round(rng.uniform(0, 12), 2)  # Ferroptosis suppressor protein 1
+        dhodh_expression = round(rng.uniform(0, 10), 2)  # Mitochondrial defense
+
+        # ── Lipid peroxidation markers ──
+        mda_level = round(rng.uniform(0.1, 20.0), 2)  # Malondialdehyde
+        four_hne_level = round(rng.uniform(0.1, 15.0), 2)  # 4-Hydroxynonenal
+        pufa_content = round(rng.uniform(10, 60), 1)  # PUFA membrane %
+        acsl4_expression = round(rng.uniform(0, 15), 2)  # Acyl-CoA synthetase
+        lpcat3_expression = round(rng.uniform(0, 12), 2)  # Membrane remodeling
+
+        # ── Iron metabolism ──
+        tfr1_expression = round(rng.uniform(0, 15), 2)  # Transferrin receptor
+        ferritin_expression = round(rng.uniform(0, 10), 2)
+        ferroportin_expression = round(rng.uniform(0, 8), 2)
+        labile_iron_pool = round(rng.uniform(0.1, 10.0), 2)
+        heme_oxygenase_1 = round(rng.uniform(0, 12), 2)
+
+        iron_overload = labile_iron_pool > 5 and tfr1_expression > 8
+
+        # ── Ferroptosis vulnerability scoring ──
+        vulnerability_factors = 0.0
+        # Low GPX4 = vulnerable
+        if gpx4_expression < 5:
+            vulnerability_factors += 2.0
+        elif gpx4_expression < 10:
+            vulnerability_factors += 1.0
+        # Low SLC7A11 = vulnerable
+        if slc7a11_expression < 5:
+            vulnerability_factors += 2.0
+        elif slc7a11_expression < 10:
+            vulnerability_factors += 1.0
+        # High PUFA = vulnerable
+        if pufa_content > 40:
+            vulnerability_factors += 2.0
+        elif pufa_content > 25:
+            vulnerability_factors += 1.0
+        # High ACSL4 = vulnerable
+        if acsl4_expression > 10:
+            vulnerability_factors += 1.5
+        # Iron overload = vulnerable
+        if iron_overload:
+            vulnerability_factors += 2.0
+        # Low FSP1 = no backup
+        if fsp1_expression < 3:
+            vulnerability_factors += 1.5
+
+        vulnerability_score = round(min(vulnerability_factors / 10.0, 1.0), 3)
+
+        # ── Ferroptosis inducer drug sensitivity ──
+        drug_predictions = {
+            "erastin": "SENSITIVE" if slc7a11_expression < 5 else "RESISTANT",
+            "RSL3": "SENSITIVE" if gpx4_expression < 5 else "RESISTANT",
+            "FIN56": "SENSITIVE" if gpx4_expression < 8 and fsp1_expression < 5 else "VARIABLE",
+            "sulfasalazine": "SENSITIVE" if slc7a11_expression < 8 else "RESISTANT",
+            "sorafenib_ferroptosis": "SENSITIVE" if vulnerability_score > 0.5 else "RESISTANT",
+            "withaferin_A": "SENSITIVE" if gpx4_expression < 6 else "VARIABLE",
+        }
+
+        # ── NRF2 (NFE2L2) antioxidant response ──
+        nrf2_activity = round(rng.uniform(0, 1), 3)
+        nrf2_target_genes = {
+            "NQO1": round(rng.uniform(0, 12), 2),
+            "GCLC": round(rng.uniform(0, 10), 2),
+            "GCLM": round(rng.uniform(0, 10), 2),
+            "SLC7A11": slc7a11_expression,
+            "HMOX1": heme_oxygenase_1,
+        }
+
+        return {
+            "gene": gene,
+            "analysis_type": "ferroptosis_vulnerability",
+            "data_source": "Integrated metabolomics / transcriptomics simulation",
+            "core_defense": {
+                "gpx4_expression": gpx4_expression,
+                "gpx4_activity": gpx4_activity,
+                "slc7a11_expression": slc7a11_expression,
+                "fsp1_expression": fsp1_expression,
+                "dhodh_expression": dhodh_expression,
+                "defense_intact": gpx4_expression > 8 and slc7a11_expression > 8,
+            },
+            "lipid_peroxidation": {
+                "mda_level": mda_level,
+                "four_hne_level": four_hne_level,
+                "pufa_membrane_content_pct": pufa_content,
+                "acsl4_expression": acsl4_expression,
+                "lpcat3_expression": lpcat3_expression,
+                "peroxidation_stress": "HIGH" if mda_level > 10 else "MODERATE" if mda_level > 3 else "LOW",
+            },
+            "iron_homeostasis": {
+                "tfr1_expression": tfr1_expression,
+                "ferritin_expression": ferritin_expression,
+                "ferroportin_expression": ferroportin_expression,
+                "labile_iron_pool": labile_iron_pool,
+                "heme_oxygenase_1": heme_oxygenase_1,
+                "iron_overload": iron_overload,
+            },
+            "vulnerability_score": vulnerability_score,
+            "vulnerability_class": (
+                "HIGHLY VULNERABLE" if vulnerability_score > 0.7 else
+                "MODERATELY VULNERABLE" if vulnerability_score > 0.4 else
+                "RESISTANT"
+            ),
+            "drug_sensitivity": drug_predictions,
+            "nrf2_response": {
+                "activity_score": nrf2_activity,
+                "constitutively_active": nrf2_activity > 0.7,
+                "target_gene_expression": nrf2_target_genes,
+            },
+            "cart_synergy": (
+                "HIGH — ferroptosis inducers can selectively kill tumor cells "
+                "while leaving CAR-T cells unaffected (T cells express high GPX4)"
+                if vulnerability_score > 0.5 else
+                "LOW — tumor cells have robust ferroptosis defense"
+            ),
+        }
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # Redox Homeostasis & ROS Profiling
+    # ═══════════════════════════════════════════════════════════════════════════
+
+    def redox_homeostasis(self, gene: str) -> dict:
+        """
+        Comprehensive analysis of the tumor redox environment.
+        ROS levels, antioxidant capacity, glutathione metabolism,
+        thioredoxin system, and mitochondrial ROS generation.
+
+        High ROS in the TME suppresses T cell effector function;
+        understanding the redox landscape informs CAR-T armoring strategies.
+        """
+        gene = gene.upper().strip()
+        seed = self._gene_seed(gene)
+        rng = random.Random(seed + 20000)
+
+        # ── ROS sources ──
+        mitochondrial_ros = round(rng.uniform(0, 20), 2)
+        nadph_oxidase_activity = round(rng.uniform(0, 10), 2)
+        xanthine_oxidase = round(rng.uniform(0, 8), 2)
+        cytochrome_p450 = round(rng.uniform(0, 5), 2)
+        total_ros = round(mitochondrial_ros + nadph_oxidase_activity + xanthine_oxidase + cytochrome_p450, 2)
+
+        # ── Antioxidant defense ──
+        sod1_expression = round(rng.uniform(0, 12), 2)
+        sod2_expression = round(rng.uniform(0, 12), 2)
+        catalase_expression = round(rng.uniform(0, 10), 2)
+        gpx1_expression = round(rng.uniform(0, 10), 2)
+        prdx_expression = round(rng.uniform(0, 10), 2)
+        total_antioxidant = round(sod1_expression + sod2_expression + catalase_expression + gpx1_expression + prdx_expression, 2)
+
+        # ── Glutathione system ──
+        gsh_level = round(rng.uniform(0.5, 20.0), 2)
+        gssg_level = round(rng.uniform(0.1, 5.0), 2)
+        gsh_gssg_ratio = round(gsh_level / max(gssg_level, 0.01), 2)
+        gclc_expression = round(rng.uniform(0, 12), 2)
+        gss_expression = round(rng.uniform(0, 10), 2)
+        gsr_expression = round(rng.uniform(0, 10), 2)
+
+        # ── Thioredoxin system ──
+        trx1_expression = round(rng.uniform(0, 10), 2)
+        trxr1_expression = round(rng.uniform(0, 10), 2)
+        txnip_expression = round(rng.uniform(0, 8), 2)
+        trx_active = trx1_expression > 5 and trxr1_expression > 5
+
+        # ── NAD+/NADPH balance ──
+        nad_ratio = round(rng.uniform(0.5, 5.0), 2)
+        nadph_level = round(rng.uniform(0.5, 10.0), 2)
+        nampt_expression = round(rng.uniform(0, 12), 2)
+        idh1_expression = round(rng.uniform(0, 10), 2)
+        me1_expression = round(rng.uniform(0, 8), 2)
+
+        # ── Oxidative stress index ──
+        oxidative_stress_index = round(total_ros / max(total_antioxidant, 0.01), 3)
+
+        # ── Impact on T cell function ──
+        t_cell_suppressive_ros = total_ros > 30
+        ros_zone = (
+            "SEVERE — high ROS will rapidly exhaust infiltrating CAR-T cells"
+            if total_ros > 40 else
+            "MODERATE — consider armoring CAR-T with catalase/SOD transgenes"
+            if total_ros > 20 else
+            "LOW — TME redox environment supports T cell effector function"
+        )
+
+        # ── Nrf2 pathway status (cross-referenced) ──
+        nrf2_keap1_status = {
+            "nrf2_expression": round(rng.uniform(0, 10), 2),
+            "keap1_mutation": rng.choice(["wildtype", "loss_of_function", "missense"]),
+            "nrf2_constitutive_activation": rng.random() > 0.7,
+            "target_induction_fold": round(rng.uniform(1, 10), 1),
+        }
+
+        return {
+            "gene": gene,
+            "analysis_type": "redox_homeostasis",
+            "data_source": "ROS assay / metabolomics / transcriptomics simulation",
+            "ros_sources": {
+                "mitochondrial_complex_I_III": mitochondrial_ros,
+                "nadph_oxidase": nadph_oxidase_activity,
+                "xanthine_oxidase": xanthine_oxidase,
+                "cytochrome_p450": cytochrome_p450,
+                "total_ros_burden": total_ros,
+            },
+            "antioxidant_defense": {
+                "sod1": sod1_expression,
+                "sod2_mitochondrial": sod2_expression,
+                "catalase": catalase_expression,
+                "gpx1": gpx1_expression,
+                "peroxiredoxin": prdx_expression,
+                "total_capacity": total_antioxidant,
+            },
+            "glutathione_system": {
+                "gsh_level": gsh_level,
+                "gssg_level": gssg_level,
+                "gsh_gssg_ratio": gsh_gssg_ratio,
+                "redox_buffer": (
+                    "OPTIMAL" if gsh_gssg_ratio > 10 else
+                    "STRESSED" if gsh_gssg_ratio > 3 else "DEPLETED"
+                ),
+                "biosynthesis": {
+                    "gclc": gclc_expression,
+                    "gss": gss_expression,
+                    "gsr_recycling": gsr_expression,
+                },
+            },
+            "thioredoxin_system": {
+                "trx1": trx1_expression,
+                "trxr1": trxr1_expression,
+                "txnip_inhibitor": txnip_expression,
+                "system_active": trx_active,
+            },
+            "nad_nadph_balance": {
+                "nad_ratio": nad_ratio,
+                "nadph_level": nadph_level,
+                "nampt_expression": nampt_expression,
+                "idh1_expression": idh1_expression,
+                "me1_expression": me1_expression,
+                "reductive_capacity": "HIGH" if nadph_level > 5 else "LOW",
+            },
+            "oxidative_stress_index": oxidative_stress_index,
+            "nrf2_keap1": nrf2_keap1_status,
+            "tme_ros_impact_on_car_t": {
+                "suppressive": t_cell_suppressive_ros,
+                "assessment": ros_zone,
+                "armoring_recommendation": (
+                    "Equip CAR-T with catalase or SOD2 transgene for ROS resistance"
+                    if total_ros > 25 else
+                    "Standard CAR-T construct should function adequately"
+                ),
+            },
+        }
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # Amino Acid Deprivation & Auxotrophy Analysis
+    # ═══════════════════════════════════════════════════════════════════════════
+
+    def amino_acid_deprivation_analysis(self, gene: str) -> dict:
+        """
+        Profile amino acid availability in the tumor microenvironment.
+        Tumors consume and deplete specific amino acids (arginine, tryptophan,
+        cysteine) creating metabolic deserts that impair T cell function.
+
+        Models IDO1/TDO2 (tryptophan), ARG1/ARG2 (arginine), and
+        cystathionine pathways with their impact on CAR-T fitness.
+        """
+        gene = gene.upper().strip()
+        seed = self._gene_seed(gene)
+        rng = random.Random(seed + 21000)
+
+        amino_acids = [
+            {
+                "aa": "Tryptophan",
+                "enzymes_depleting": ["IDO1", "IDO2", "TDO2"],
+                "toxic_product": "Kynurenine",
+                "t_cell_impact": "Suppresses proliferation via AhR activation",
+            },
+            {
+                "aa": "Arginine",
+                "enzymes_depleting": ["ARG1", "ARG2", "iNOS"],
+                "toxic_product": "Ornithine / NO",
+                "t_cell_impact": "CD3ζ chain downregulation, impaired proliferation",
+            },
+            {
+                "aa": "Cysteine/Cystine",
+                "enzymes_depleting": ["CBS", "CTH"],
+                "toxic_product": "H₂S",
+                "t_cell_impact": "GSH depletion, oxidative stress",
+            },
+            {
+                "aa": "Glutamine",
+                "enzymes_depleting": ["GLS1", "GLS2"],
+                "toxic_product": "Glutamate",
+                "t_cell_impact": "Impaired T cell activation and cytokine production",
+            },
+            {
+                "aa": "Asparagine",
+                "enzymes_depleting": ["ASNS", "ASRGL1"],
+                "toxic_product": "Aspartate",
+                "t_cell_impact": "Limits T cell activation in asparagine-poor TME",
+            },
+            {
+                "aa": "Serine",
+                "enzymes_depleting": ["PHGDH", "PSAT1", "PSPH"],
+                "toxic_product": "Glycine",
+                "t_cell_impact": "Impairs one-carbon metabolism and T cell expansion",
+            },
+        ]
+
+        aa_profiles = []
+        for aa in amino_acids:
+            a_rng = random.Random(seed + 21000 + hash(aa["aa"]))
+            tme_level = a_rng.uniform(0.01, 5.0)
+            plasma_level = a_rng.uniform(1.0, 10.0)
+
+            enzyme_data = {}
+            for enz in aa["enzymes_depleting"]:
+                e_rng = random.Random(seed + 21000 + hash(enz))
+                enzyme_data[enz] = {
+                    "expression": round(e_rng.uniform(0, 15), 2),
+                    "source": e_rng.choice(["tumor", "MDSC", "TAM", "stroma", "DC"]),
+                }
+
+            depletion_ratio = round(tme_level / max(plasma_level, 0.01), 3)
+
+            aa_profiles.append({
+                **aa,
+                "tme_concentration_uM": round(tme_level, 2),
+                "plasma_concentration_uM": round(plasma_level, 2),
+                "tme_plasma_ratio": depletion_ratio,
+                "depleted": depletion_ratio < 0.3,
+                "enzyme_expression": enzyme_data,
+                "severity": (
+                    "CRITICAL" if depletion_ratio < 0.1 else
+                    "DEPLETED" if depletion_ratio < 0.3 else
+                    "REDUCED" if depletion_ratio < 0.6 else "NORMAL"
+                ),
+            })
+
+        depleted_count = sum(1 for a in aa_profiles if a["depleted"])
+
+        # GCN2 stress response (amino acid sensing)
+        gcn2_activation = round(rng.uniform(0, 1), 3)
+        atf4_target_induction = round(rng.uniform(0, 5), 2)
+
+        return {
+            "gene": gene,
+            "analysis_type": "amino_acid_deprivation",
+            "data_source": "Metabolomics / transcriptomics simulation",
+            "amino_acid_profiles": aa_profiles,
+            "depleted_amino_acids": depleted_count,
+            "metabolic_desert_score": round(depleted_count / len(aa_profiles), 3),
+            "gcn2_stress_response": {
+                "gcn2_activation": gcn2_activation,
+                "atf4_induction": atf4_target_induction,
+                "integrated_stress_response": gcn2_activation > 0.5,
+            },
+            "therapeutic_interventions": [
+                t for t in [
+                    "IDO1 inhibitor (epacadostat)" if any(
+                        a["depleted"] and a["aa"] == "Tryptophan" for a in aa_profiles
+                    ) else None,
+                    "Arginase inhibitor (CB-1158)" if any(
+                        a["depleted"] and a["aa"] == "Arginine" for a in aa_profiles
+                    ) else None,
+                    "Arginine supplementation" if any(
+                        a["depleted"] and a["aa"] == "Arginine" for a in aa_profiles
+                    ) else None,
+                    "CAR-T ASS1 armoring (arginine autotrophy)" if any(
+                        a["depleted"] and a["aa"] == "Arginine" for a in aa_profiles
+                    ) else None,
+                ] if t is not None
+            ],
+            "cart_metabolic_fitness": (
+                "SEVERELY COMPROMISED — multiple amino acid deserts in TME. "
+                "Consider metabolically armored CAR-T or combination with enzyme inhibitors."
+                if depleted_count >= 3 else
+                "MODERATELY IMPACTED — targeted supplementation may improve CAR-T persistence"
+                if depleted_count >= 1 else
+                "FAVORABLE — amino acid profile supports T cell effector function"
+            ),
+        }

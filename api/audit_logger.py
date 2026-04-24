@@ -859,12 +859,12 @@ class AuditLogMiddleware(BaseHTTPMiddleware):
 
         start = time.perf_counter()
 
-        # Read body for hashing (never store raw — PHI compliance)
+        # NOTE: Do NOT read request.body() here — doing so inside
+        # BaseHTTPMiddleware causes a known Starlette deadlock where
+        # the server hangs and never responds to any request.
+        # We hash an empty placeholder; the critical audit fields
+        # (method, path, status_code, client_ip, latency) are still captured.
         body = b""
-        try:
-            body = await request.body()
-        except Exception:
-            pass
 
         # Extract user ID from JWT if present
         user_id = None

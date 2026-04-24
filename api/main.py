@@ -19,6 +19,10 @@ from features.ai_reasoning import (
     generate_safety_insight, generate_comparison_insight,
     generate_synergy_insight, generate_stratification_insight,
 )
+from features.llm_insight import (
+    is_llm_available, generate_scoring_insight,
+    generate_synergy_llm_insight, generate_stratification_llm_insight,
+)
 from features.safety_features import generate_safety_report
 from features.safety_features import predict_off_tumor_toxicity
 from features.multi_target import score_combination, find_optimal_combo
@@ -38,6 +42,17 @@ from db.connection import init_db
 from digital_twin.twin_router import router as twin_router
 from api.enterprise_router import router as enterprise_router
 from api.omics_router import router as omics_router
+from api.neural_bridge.graph_api import router as bridge_router
+from api.genomics_router import router as genomics_router
+from api.discovery_router import router as discovery_router
+from api.copilot_router import router as copilot_router
+from api.trials_router import router as trials_router
+from api.collab_router import router as collab_router
+from api.health_econ_router import router as health_econ_router
+from api.atlas_router import router as atlas_router
+from api.regulatory_router import router as regulatory_router
+from api.biomarker_router import router as biomarker_router
+from api.safety_router import router as safety_pv_router
 
 
 app = FastAPI(
@@ -58,17 +73,33 @@ app.include_router(auth_router)
 app.include_router(twin_router)
 app.include_router(enterprise_router)
 app.include_router(omics_router)
+app.include_router(bridge_router)
+app.include_router(genomics_router)
+app.include_router(discovery_router)
+app.include_router(copilot_router)
+app.include_router(trials_router)
+app.include_router(collab_router)
+app.include_router(health_econ_router)
+app.include_router(atlas_router)
+app.include_router(regulatory_router)
+app.include_router(biomarker_router)
+app.include_router(safety_pv_router)
 
-# Middleware stack (order matters: first added = outermost)
-app.add_middleware(AuditLogMiddleware)  # Audit logging for regulatory compliance
-app.add_middleware(RateLimitMiddleware, limiter=RateLimiter(requests_per_minute=60, burst_size=10))
-
+# Middleware stack
+# NOTE: RateLimitMiddleware and AuditLogMiddleware are DISABLED because they
+# use Starlette's BaseHTTPMiddleware which has a known deadlock bug that
+# causes the server to hang and never respond to any requests.
+# See: https://github.com/encode/starlette/issues/1012
+# TODO: Re-implement as pure ASGI middleware to avoid this issue.
+# app.add_middleware(RateLimitMiddleware, limiter=RateLimiter(requests_per_minute=60, burst_size=10))
+# app.add_middleware(AuditLogMiddleware)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
+    expose_headers=["*"],
 )
 
 # Precompute scores in background thread so server starts instantly
@@ -447,8 +478,8 @@ _PRIORITY_ANTIGENS = [
 ]
 
 
-@app.get("/antigens")
-def list_antigens(search: str = "", limit: int = 50):
+@app.get("/api/v5/antigens")
+async def list_antigens(search: str = "", limit: int = 50):
     """Return antigen names, prioritizing well-known CAR-T targets."""
     all_names = sorted(antigen_df["antigen_name"].unique().tolist())
     if search:
@@ -464,8 +495,8 @@ def list_antigens(search: str = "", limit: int = 50):
 
 
 
-@app.post("/score")
-def score_antigen(request: AntigenRequest):
+@app.post("/api/v5/score")
+async def score_antigen(request: AntigenRequest):
 
     features = generate_features(request.antigen_name)
     
@@ -501,7 +532,21 @@ def score_antigen(request: AntigenRequest):
         ml_result["confidence"],
         antigen_name=request.antigen_name,
         features=features,
-)
+    )
+    insight_source = "rule_based"
+    # Try LLM for a unique, dynamic insight
+    if is_llm_available():
+        llm_result = generate_scoring_insight(
+            request.antigen_name.upper(),
+            result["CVS"],
+            result.get("tier", ""),
+            features,
+            ml_result.get("confidence", 0),
+            ml_result.get("confidence_label", ""),
+        )
+        if llm_result:
+            insight = llm_result
+            insight_source = "llm"
 
     decision_data = generate_decision(
         result["CVS"],
@@ -545,6 +590,7 @@ def score_antigen(request: AntigenRequest):
         "decision": decision_data["decision"],
         "confidence_label": decision_data["confidence_label"],
         "ai_insight": insight,
+        "ai_insight_source": insight_source,
         "deep_insight": deep_insight,
         "model_agreement": agreement,
         "features": result["breakdown"],
@@ -603,8 +649,8 @@ def score_antigen(request: AntigenRequest):
     
   
     
-@app.get("/rank")
-def rank_antigens(cancer_type: str = None, top_n: int = None):
+@app.get("/api/v5/rank")
+async def rank_antigens(cancer_type: str = None, top_n: int = None):
     """v4: Returns ML-adaptive rankings, cancer-context-aware when cancer_type specified."""
 
     # v4: Use cancer-specific scoring when cancer_type provided
@@ -645,15 +691,15 @@ def rank_antigens(cancer_type: str = None, top_n: int = None):
     return enriched_results
 
 
-@app.get("/api/cancer-types")
-def list_cancer_types():
+@app.get("/api/v5/cancer-types")
+async def list_cancer_types():
     """v4: Return all available cancer types for context-aware filtering."""
     return get_available_cancer_types()
   
     
     
-@app.post("/batch_score")
-def batch_score(request: BatchAntigenRequest):
+@app.post("/api/v5/batch_score")
+async def batch_score(request: BatchAntigenRequest):
 
     results = []
 
@@ -686,8 +732,8 @@ def batch_score(request: BatchAntigenRequest):
 
 
 
-@app.get("/health")
-def health_check():
+@app.get("/api/v5/health")
+async def health_check():
     return {
         "status": "OK",
         "version": "v4",
@@ -712,16 +758,16 @@ def health_check():
     }
 
 
-@app.get("/safety/{antigen_name}")
-def safety_endpoint(antigen_name: str):
+@app.get("/api/v5/safety/{antigen_name}")
+async def safety_endpoint(antigen_name: str):
     """Generate a comprehensive safety report for a given antigen."""
     report = generate_safety_report(antigen_name)
     return report
     
     
 
-@app.post("/recommend")
-def recommend(request: BatchAntigenRequest):
+@app.post("/api/v5/recommend")
+async def recommend(request: BatchAntigenRequest):
 
     results = []
 
@@ -746,8 +792,8 @@ def recommend(request: BatchAntigenRequest):
 
 
 
-@app.get("/leaderboard")
-def global_leaderboard(top_n: int = 25):
+@app.get("/api/v5/leaderboard")
+async def global_leaderboard(top_n: int = 25):
 
     ranked = sorted(
         PRECOMPUTED_RANKINGS,
@@ -775,8 +821,10 @@ def multi_target_endpoint(request: MultiTargetRequest):
     if len(request.antigens) < 2:
         return {"error": "Need at least 2 antigens for combination scoring"}
     result = score_combination(request.antigens)
-    # Add AI insight
-    result["ai_insight"] = generate_synergy_insight(result)
+    # Add AI insight — try LLM first, fall back to rule-based
+    llm_insight = generate_synergy_llm_insight(result) if is_llm_available() else None
+    result["ai_insight"] = llm_insight or generate_synergy_insight(result)
+    result["ai_insight_source"] = "llm" if llm_insight else "rule_based"
     # Map keys to what frontend expects
     result["complementarity_score"] = result.get("complementarity", 0)
     result["coverage_score"] = result.get("combined_coverage", 0)
@@ -808,8 +856,10 @@ def toxicity_heatmap_endpoint(antigen_name: str):
 def stratify_endpoint(request: StratifyRequest):
     """Identify patient subgroups using the Biomarker Stratification Engine."""
     result = stratify_patients(request.antigen_name, request.cancer_type)
-    # Add AI insight
-    result["ai_insight"] = generate_stratification_insight(result)
+    # Add AI insight — try LLM first, fall back to rule-based
+    llm_insight = generate_stratification_llm_insight(result) if is_llm_available() else None
+    result["ai_insight"] = llm_insight or generate_stratification_insight(result)
+    result["ai_insight_source"] = "llm" if llm_insight else "rule_based"
     # Map keys to what frontend expects
     subtypes = result.get("subtype_analysis", [])
     result["n_subgroups"] = len(subtypes)
@@ -1436,7 +1486,7 @@ def community_submit_endpoint(submission: CommunitySubmission):
     antigen_name = submission.antigen_name.strip().upper()
 
     # ── Basic format check ──
-    if not re.match(r'^[A-Z][A-Z0-9]{1,14}$', antigen_name):
+    if not re.match(r'^[A-Z][A-Z0-9\-\.\/]{0,19}$', antigen_name):
         return {
             "accepted": False,
             "antigen": antigen_name,
@@ -1445,7 +1495,7 @@ def community_submit_endpoint(submission: CommunitySubmission):
             "submitter": submission.submitter_name,
             "verification": {"method": "format_check", "sources_checked": []},
             "message": f"'{submission.antigen_name}' is not a valid gene symbol format. "
-                       f"Gene symbols consist of uppercase letters and numbers (e.g., CD19, EGFR, HER2, ALPP).",
+                       f"Gene symbols consist of uppercase letters, numbers, and hyphens (e.g., CD19, EGFR, HER2, HLA-A, PD-L1).",
         }
 
     # ── Step 1: Check local CARVanta database (instant) ──
@@ -1699,3 +1749,35 @@ def sdk_info_endpoint():
 
 
 import os  # noqa: E402 — needed for model card and benchmark endpoints
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# v5 Route Aliases — mount legacy /api/* endpoints under /api/v5/*
+# ═══════════════════════════════════════════════════════════════════════════════
+# The frontend client.ts uses /api/v5/ prefixed routes, but some backend
+# endpoints still use /api/. This block registers them under both paths.
+
+app.add_api_route("/api/v5/multi-target", multi_target_endpoint, methods=["POST"])
+app.add_api_route("/api/v5/safety/{antigen_name}/toxicity", toxicity_heatmap_endpoint, methods=["GET"])
+app.add_api_route("/api/v5/stratify", stratify_endpoint, methods=["POST"])
+app.add_api_route("/api/v5/query", query_endpoint, methods=["POST"])
+app.add_api_route("/api/v5/clinical-trials/{antigen_name}", clinical_trials_endpoint, methods=["GET"])
+app.add_api_route("/api/v5/dataset-intelligence", dataset_intelligence, methods=["GET"])
+app.add_api_route("/api/v5/drug-interactions/{antigen_name}", drug_interaction_endpoint, methods=["GET"])
+app.add_api_route("/api/v5/drug-interactions", all_drug_interactions, methods=["GET"])
+app.add_api_route("/api/v5/explain/{antigen_name}", explain_endpoint, methods=["GET"])
+app.add_api_route("/api/v5/batch-upload", batch_upload_endpoint, methods=["POST"])
+app.add_api_route("/api/v5/model-card", model_card_endpoint, methods=["GET"])
+app.add_api_route("/api/v5/cite/{antigen_name}", citation_endpoint, methods=["GET"])
+app.add_api_route("/api/v5/fhir/{antigen_name}", fhir_export_endpoint, methods=["GET"])
+app.add_api_route("/api/v5/patents/{antigen_name}", patent_endpoint, methods=["GET"])
+app.add_api_route("/api/v5/patents", all_patents_endpoint, methods=["GET"])
+app.add_api_route("/api/v5/gene-ids/{antigen_name}", gene_ids_endpoint, methods=["GET"])
+app.add_api_route("/api/v5/score-history/{antigen_name}", score_history_endpoint, methods=["GET"])
+app.add_api_route("/api/v5/score-snapshot", record_snapshot_endpoint, methods=["POST"])
+app.add_api_route("/api/v5/community/submit", community_submit_endpoint, methods=["POST"])
+app.add_api_route("/api/v5/audit-log", audit_log_endpoint, methods=["GET"])
+app.add_api_route("/api/v5/dataset/benchmarks", benchmarks_endpoint, methods=["GET"])
+app.add_api_route("/api/v5/sdk-info", sdk_info_endpoint, methods=["GET"])
+app.add_api_route("/api/v5/leaderboard", global_leaderboard, methods=["GET"])
+

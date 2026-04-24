@@ -1522,3 +1522,392 @@ class SingleCellAnalyzer:
                 "Standard CAR-T approach viable"
             ),
         }
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # Multiome (Paired scRNA + scATAC) Integration
+    # ═══════════════════════════════════════════════════════════════════════════
+
+    def multiome_integration(self, gene: str) -> dict:
+        """
+        Integrate paired single-cell RNA and ATAC data (10x Multiome)
+        to link chromatin accessibility to gene expression at single-cell
+        resolution. Identifies regulatory elements controlling target
+        expression and predicts epigenetic vulnerabilities.
+        """
+        gene = gene.upper().strip()
+        seed = int(hashlib.md5(gene.encode()).hexdigest()[:8], 16)
+        rng = random.Random(seed + 24000)
+
+        n_cells = rng.randint(3000, 15000)
+        cell_types = [
+            "malignant_epithelial", "CD8_effector", "CD4_helper",
+            "Treg", "macrophage_M1", "macrophage_M2",
+            "fibroblast_CAF", "endothelial", "NK_cell",
+            "B_cell", "dendritic_cell", "mast_cell",
+        ]
+
+        multiome_profiles = []
+        for ct in cell_types:
+            ct_rng = random.Random(seed + 24000 + hash(ct))
+            n_cells_type = ct_rng.randint(50, n_cells // len(cell_types))
+
+            rna_expression = ct_rng.uniform(0, 12)
+            promoter_accessibility = ct_rng.uniform(0, 1)
+            enhancer_accessibility = ct_rng.uniform(0, 1)
+
+            # Gene activity score (weighted combination)
+            gene_activity = round(
+                promoter_accessibility * 0.6 + enhancer_accessibility * 0.4, 3
+            )
+
+            # Peak-to-gene linkage
+            n_linked_peaks = ct_rng.randint(1, 10)
+            linked_peaks = []
+            for p in range(n_linked_peaks):
+                p_rng = random.Random(seed + 24500 + hash(ct) + p * 31)
+                linked_peaks.append({
+                    "peak_id": f"peak_{gene}_{ct[:4]}_{p+1}",
+                    "distance_to_tss": p_rng.randint(-100000, 100000),
+                    "correlation_with_expression": round(p_rng.uniform(-0.3, 0.9), 3),
+                    "peak_type": p_rng.choice(["promoter", "enhancer", "silencer", "insulator"]),
+                    "tf_motif": p_rng.choice([
+                        "AP-1", "CTCF", "GATA", "ETS", "NF-kB",
+                        "POU", "STAT", "SOX", "RUNX", "IRF",
+                    ]),
+                })
+
+            multiome_profiles.append({
+                "cell_type": ct,
+                "n_cells": n_cells_type,
+                "rna_expression": round(rna_expression, 2),
+                "promoter_accessibility": round(promoter_accessibility, 3),
+                "enhancer_accessibility": round(enhancer_accessibility, 3),
+                "gene_activity_score": gene_activity,
+                "rna_atac_correlation": round(ct_rng.uniform(0.1, 0.9), 3),
+                "linked_peaks": linked_peaks[:5],
+                "chromatin_state": ct_rng.choice([
+                    "active_transcription", "poised", "repressed",
+                    "bivalent", "heterochromatin",
+                ]),
+            })
+
+        # Identify key regulatory elements
+        all_peaks = []
+        for profile in multiome_profiles:
+            all_peaks.extend(profile["linked_peaks"])
+
+        top_enhancers = sorted(
+            [p for p in all_peaks if p["peak_type"] == "enhancer"],
+            key=lambda p: p["correlation_with_expression"],
+            reverse=True,
+        )[:5]
+
+        # Epigenetic vulnerability assessment
+        tumor_profile = next(
+            (p for p in multiome_profiles if "malignant" in p["cell_type"]),
+            multiome_profiles[0]
+        )
+
+        return {
+            "gene": gene,
+            "analysis_type": "multiome_integration",
+            "data_source": "10x Multiome (scRNA + scATAC) simulation",
+            "total_cells": n_cells,
+            "cell_type_profiles": multiome_profiles,
+            "key_regulatory_elements": {
+                "top_enhancers": top_enhancers,
+                "n_linked_peaks_total": len(all_peaks),
+                "promoter_state_in_tumor": tumor_profile["chromatin_state"],
+            },
+            "epigenetic_vulnerability": {
+                "promoter_accessibility_tumor": tumor_profile["promoter_accessibility"],
+                "can_be_epigenetically_silenced": tumor_profile["promoter_accessibility"] < 0.3,
+                "hdac_inhibitor_potential": (
+                    "HIGH — closed chromatin may respond to HDAC inhibitor upregulation"
+                    if tumor_profile["promoter_accessibility"] < 0.3 else
+                    "LOW — promoter already accessible"
+                ),
+                "demethylation_potential": (
+                    "Consider azacitidine to upregulate target expression"
+                    if tumor_profile["chromatin_state"] == "repressed" else
+                    "Epigenetic upregulation unlikely needed"
+                ),
+            },
+            "expression_atac_concordance": round(
+                sum(p["rna_atac_correlation"] for p in multiome_profiles) /
+                max(len(multiome_profiles), 1), 3
+            ),
+        }
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # Perturb-seq CRISPR Screen Analysis
+    # ═══════════════════════════════════════════════════════════════════════════
+
+    def perturb_seq_analysis(self, gene: str) -> dict:
+        """
+        Analyze Perturb-seq (CRISPR screen + scRNA-seq) data to identify
+        genetic dependencies and transcriptional consequences of target
+        gene perturbation at single-cell resolution.
+
+        Maps gene regulatory networks disrupted by knockout and predicts
+        compensatory rescue pathways.
+        """
+        gene = gene.upper().strip()
+        seed = int(hashlib.md5(gene.encode()).hexdigest()[:8], 16)
+        rng = random.Random(seed + 25000)
+
+        # sgRNA library targeting the gene
+        n_guides = rng.randint(3, 8)
+        guides = []
+        for i in range(n_guides):
+            g_rng = random.Random(seed + 25000 + i * 47)
+            guides.append({
+                "guide_id": f"sg{gene}_{i+1}",
+                "target_exon": g_rng.randint(1, 10),
+                "cutting_efficiency": round(g_rng.uniform(0.3, 0.95), 3),
+                "knockdown_level": round(g_rng.uniform(0.1, 0.95), 3),
+                "off_target_score": round(g_rng.uniform(0, 0.1), 4),
+            })
+
+        # Differentially expressed genes upon KO
+        n_de_genes = rng.randint(50, 2000)
+        pathways_affected = []
+        pathway_pool = [
+            "PI3K-AKT signaling", "MAPK cascade", "Apoptosis",
+            "Cell cycle", "DNA damage response", "Wnt signaling",
+            "NF-kB pathway", "JAK-STAT signaling", "Notch pathway",
+            "Hippo signaling", "mTOR signaling", "TGF-beta signaling",
+            "Interferon response", "Unfolded protein response",
+            "Oxidative phosphorylation", "Glycolysis",
+        ]
+
+        for pathway in rng.sample(pathway_pool, k=rng.randint(3, 8)):
+            pw_rng = random.Random(seed + 25500 + hash(pathway))
+            pathways_affected.append({
+                "pathway": pathway,
+                "direction": pw_rng.choice(["upregulated", "downregulated"]),
+                "enrichment_score": round(pw_rng.uniform(1, 5), 2),
+                "fdr": round(pw_rng.uniform(0.0001, 0.05), 5),
+                "n_genes_in_pathway": pw_rng.randint(10, 200),
+                "therapeutic_relevance": pw_rng.choice([
+                    "druggable", "potential_biomarker", "resistance_mechanism",
+                    "vulnerability", "unknown",
+                ]),
+            })
+
+        # Cell fate upon KO
+        fate_outcomes = {
+            "apoptosis": round(rng.uniform(0, 0.5), 3),
+            "growth_arrest": round(rng.uniform(0, 0.4), 3),
+            "differentiation": round(rng.uniform(0, 0.3), 3),
+            "emt_transition": round(rng.uniform(0, 0.2), 3),
+            "senescence": round(rng.uniform(0, 0.2), 3),
+            "no_effect": round(rng.uniform(0, 0.3), 3),
+        }
+        total_fate = sum(fate_outcomes.values())
+        for k in fate_outcomes:
+            fate_outcomes[k] = round(fate_outcomes[k] / max(total_fate, 0.01), 3)
+
+        dominant_fate = max(fate_outcomes, key=lambda k: fate_outcomes[k])
+
+        # Compensatory genes identified
+        n_compensatory = rng.randint(0, 5)
+        compensatory_genes = []
+        comp_pool = [
+            "AKT1", "BCL2", "MCL1", "STAT3", "MYC", "KRAS",
+            "BRAF", "PIK3CA", "EGFR", "NOTCH1", "WNT3A",
+        ]
+        for comp_gene in rng.sample(comp_pool, k=min(n_compensatory, len(comp_pool))):
+            c_rng = random.Random(seed + 25800 + hash(comp_gene))
+            compensatory_genes.append({
+                "gene": comp_gene,
+                "upregulation_fold": round(c_rng.uniform(1.5, 10), 2),
+                "rescue_efficiency": round(c_rng.uniform(0.1, 0.8), 3),
+                "druggable": c_rng.random() > 0.3,
+                "inhibitor": c_rng.choice([
+                    "Ipatasertib", "Venetoclax", "S63845", "Ruxolitinib",
+                    "Trametinib", "Palbociclib", "Osimertinib", "None",
+                ]),
+            })
+
+        return {
+            "gene": gene,
+            "analysis_type": "perturb_seq_crispr_screen",
+            "data_source": "Perturb-seq / CROP-seq simulation",
+            "guide_library": guides,
+            "best_guide": max(guides, key=lambda g: g["cutting_efficiency"])["guide_id"],
+            "transcriptional_impact": {
+                "de_genes_count": n_de_genes,
+                "impact_magnitude": (
+                    "MASSIVE" if n_de_genes > 1000 else
+                    "LARGE" if n_de_genes > 500 else
+                    "MODERATE" if n_de_genes > 100 else "MINIMAL"
+                ),
+                "pathways_affected": pathways_affected,
+            },
+            "cell_fate_upon_ko": {
+                "fate_distribution": fate_outcomes,
+                "dominant_fate": dominant_fate,
+                "gene_essential": fate_outcomes.get("apoptosis", 0) > 0.3,
+            },
+            "compensatory_mechanisms": {
+                "n_compensatory_genes": len(compensatory_genes),
+                "compensatory_genes": compensatory_genes,
+                "resistance_risk": (
+                    "HIGH — multiple compensatory pathways identified"
+                    if len(compensatory_genes) > 2 else
+                    "MODERATE" if compensatory_genes else
+                    "LOW — no significant compensation detected"
+                ),
+                "combination_targets": [
+                    g["inhibitor"] for g in compensatory_genes
+                    if g["druggable"] and g["inhibitor"] != "None"
+                ],
+            },
+        }
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # T-cell Exhaustion Trajectory Scoring
+    # ═══════════════════════════════════════════════════════════════════════════
+
+    def t_cell_exhaustion_trajectory(self, gene: str) -> dict:
+        """
+        Score T-cell exhaustion trajectories in the TME at single-cell
+        resolution. Models the progression from effector to terminally
+        exhausted states and predicts CAR-T persistence potential.
+
+        Analyzes inhibitory receptor co-expression, transcription factor
+        dynamics, and metabolic fitness along the exhaustion continuum.
+        """
+        gene = gene.upper().strip()
+        seed = int(hashlib.md5(gene.encode()).hexdigest()[:8], 16)
+        rng = random.Random(seed + 26000)
+
+        # T-cell states along exhaustion trajectory
+        t_cell_states = [
+            "naive", "effector", "memory", "progenitor_exhausted",
+            "intermediate_exhausted", "terminally_exhausted",
+        ]
+
+        trajectory_data = []
+        for state in t_cell_states:
+            s_rng = random.Random(seed + 26000 + hash(state))
+            fraction = s_rng.uniform(0.02, 0.3)
+
+            # Inhibitory receptor expression
+            inhibitory_receptors = {
+                "PD-1": round(s_rng.uniform(0, 10), 2),
+                "TIM-3": round(s_rng.uniform(0, 8), 2),
+                "LAG-3": round(s_rng.uniform(0, 7), 2),
+                "TIGIT": round(s_rng.uniform(0, 6), 2),
+                "CTLA-4": round(s_rng.uniform(0, 5), 2),
+                "CD39": round(s_rng.uniform(0, 8), 2),
+                "TOX": round(s_rng.uniform(0, 10), 2),
+            }
+
+            # Key transcription factors
+            tf_expression = {
+                "TCF1": round(s_rng.uniform(0, 8), 2),
+                "TOX": round(s_rng.uniform(0, 10), 2),
+                "T-bet": round(s_rng.uniform(0, 8), 2),
+                "EOMES": round(s_rng.uniform(0, 7), 2),
+                "BATF": round(s_rng.uniform(0, 6), 2),
+                "IRF4": round(s_rng.uniform(0, 5), 2),
+            }
+
+            # Metabolic fitness
+            metabolic_features = {
+                "mitochondrial_fitness": round(s_rng.uniform(0, 1), 3),
+                "glycolytic_capacity": round(s_rng.uniform(0, 1), 3),
+                "oxidative_phosphorylation": round(s_rng.uniform(0, 1), 3),
+                "fatty_acid_oxidation": round(s_rng.uniform(0, 1), 3),
+            }
+
+            # Functional capacity
+            cytokine_production = {
+                "IFN_gamma": round(s_rng.uniform(0, 10), 2),
+                "TNF_alpha": round(s_rng.uniform(0, 8), 2),
+                "IL_2": round(s_rng.uniform(0, 5), 2),
+                "Granzyme_B": round(s_rng.uniform(0, 10), 2),
+                "Perforin": round(s_rng.uniform(0, 8), 2),
+            }
+
+            exhaustion_score = round(
+                sum(inhibitory_receptors.values()) /
+                max(sum(cytokine_production.values()), 0.01), 3
+            )
+
+            trajectory_data.append({
+                "state": state,
+                "fraction": round(fraction, 3),
+                "exhaustion_score": exhaustion_score,
+                "inhibitory_receptors": inhibitory_receptors,
+                "transcription_factors": tf_expression,
+                "metabolic_fitness": metabolic_features,
+                "cytokine_production": cytokine_production,
+                "proliferative_capacity": round(s_rng.uniform(0, 1), 3),
+                "reinvigoration_potential": round(
+                    s_rng.uniform(0.1, 0.9) if "terminally" not in state
+                    else s_rng.uniform(0, 0.2), 3
+                ),
+            })
+
+        # Normalize fractions
+        total_frac = sum(t["fraction"] for t in trajectory_data)
+        for t in trajectory_data:
+            t["fraction"] = round(t["fraction"] / total_frac, 3)
+
+        # Summary metrics
+        progenitor_exhausted = next(
+            (t for t in trajectory_data if t["state"] == "progenitor_exhausted"),
+            trajectory_data[0]
+        )
+        terminally_exhausted = next(
+            (t for t in trajectory_data if t["state"] == "terminally_exhausted"),
+            trajectory_data[-1]
+        )
+
+        checkpoint_burden = round(
+            sum(
+                sum(t["inhibitory_receptors"].values()) * t["fraction"]
+                for t in trajectory_data
+            ), 2
+        )
+
+        return {
+            "gene": gene,
+            "analysis_type": "t_cell_exhaustion_trajectory",
+            "data_source": "scRNA-seq T cell trajectory / Monocle3 simulation",
+            "trajectory_states": trajectory_data,
+            "summary_metrics": {
+                "progenitor_exhausted_fraction": progenitor_exhausted["fraction"],
+                "terminally_exhausted_fraction": terminally_exhausted["fraction"],
+                "overall_exhaustion_score": round(
+                    sum(t["exhaustion_score"] * t["fraction"] for t in trajectory_data), 3
+                ),
+                "checkpoint_burden": checkpoint_burden,
+                "reinvigoration_potential": round(
+                    sum(t["reinvigoration_potential"] * t["fraction"]
+                        for t in trajectory_data), 3
+                ),
+            },
+            "cart_persistence_prediction": {
+                "predicted_persistence": (
+                    "HIGH — favorable progenitor exhausted reservoir"
+                    if progenitor_exhausted["fraction"] > 0.15 else
+                    "MODERATE" if progenitor_exhausted["fraction"] > 0.05 else
+                    "LOW — predominantly terminally exhausted T cells"
+                ),
+                "checkpoint_combination_benefit": (
+                    "STRONG — anti-PD-1 may reinvigorate progenitor pool"
+                    if progenitor_exhausted["fraction"] > 0.1
+                    and checkpoint_burden > 10 else
+                    "MODERATE" if checkpoint_burden > 5 else
+                    "MINIMAL — low checkpoint burden"
+                ),
+                "metabolic_intervention": (
+                    "Consider metabolic reprogramming (e.g., acetate supplementation) "
+                    "to boost CAR-T mitochondrial fitness"
+                ),
+            },
+        }

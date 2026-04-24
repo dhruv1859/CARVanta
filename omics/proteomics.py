@@ -1275,3 +1275,470 @@ class ProteomicsAnalyzer:
                 "LOW: Epitope is freely accessible"
             ),
         }
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # Protein Conformational Dynamics (AlphaFold-based)
+    # ═══════════════════════════════════════════════════════════════════════════
+
+    def conformational_dynamics(self, gene: str) -> dict:
+        """
+        Model protein conformational dynamics using AlphaFold-predicted
+        structures. Analyzes flexible regions, domain movements, and
+        cryptic binding sites that affect antibody/scFv accessibility.
+
+        Simulates normal mode analysis (NMA) and molecular dynamics (MD)
+        to predict epitope exposure fluctuations.
+        """
+        gene = gene.upper().strip()
+        seed = self._gene_seed(gene)
+        rng = random.Random(seed + 15000)
+
+        protein_length = rng.randint(200, 1200)
+
+        # pLDDT confidence scores per domain
+        n_domains = rng.randint(2, 6)
+        domains = []
+        for i in range(n_domains):
+            d_rng = random.Random(seed + 15000 + i * 67)
+            start = int(protein_length * i / n_domains)
+            end = int(protein_length * (i + 1) / n_domains)
+            plddt = d_rng.uniform(40, 95)
+
+            domains.append({
+                "domain_id": f"D{i+1}",
+                "residue_range": f"{start+1}-{end}",
+                "length": end - start,
+                "mean_plddt": round(plddt, 1),
+                "confidence_class": (
+                    "very_high" if plddt > 90 else
+                    "confident" if plddt > 70 else
+                    "low" if plddt > 50 else "disordered"
+                ),
+                "b_factor_mean": round(d_rng.uniform(10, 80), 1),
+                "rmsd_fluctuation": round(d_rng.uniform(0.5, 5.0), 2),
+                "is_flexible": plddt < 70,
+                "secondary_structure": d_rng.choice([
+                    "alpha_helix_rich", "beta_sheet_rich", "mixed",
+                    "coil/loop", "intrinsically_disordered",
+                ]),
+            })
+
+        # Normal mode analysis
+        n_modes = rng.randint(3, 8)
+        normal_modes = []
+        for m in range(n_modes):
+            m_rng = random.Random(seed + 15500 + m * 31)
+            normal_modes.append({
+                "mode": m + 7,  # First 6 are rigid-body
+                "frequency_cm_inv": round(m_rng.uniform(5, 50), 2),
+                "collectivity": round(m_rng.uniform(0.1, 0.8), 3),
+                "domain_motion": m_rng.choice([
+                    "hinge_bending", "shear", "breathing",
+                    "twist", "clamshell", "domain_rotation",
+                ]),
+                "epitope_exposure_change": round(m_rng.uniform(-0.3, 0.5), 3),
+            })
+
+        # Cryptic binding site analysis
+        n_cryptic = rng.randint(0, 3)
+        cryptic_sites = []
+        for c in range(n_cryptic):
+            c_rng = random.Random(seed + 15800 + c * 43)
+            cryptic_sites.append({
+                "site_id": f"CRYPT_{gene}_{c+1}",
+                "residue_center": c_rng.randint(50, protein_length - 50),
+                "opening_frequency": round(c_rng.uniform(0.01, 0.3), 3),
+                "druggability": round(c_rng.uniform(0.2, 0.9), 3),
+                "exposure_condition": c_rng.choice([
+                    "thermal_fluctuation", "ligand_binding",
+                    "pH_change", "allosteric_trigger",
+                ]),
+            })
+
+        # Intrinsically disordered regions (IDR)
+        n_idrs = rng.randint(0, 4)
+        idrs = []
+        for d in range(n_idrs):
+            idr_rng = random.Random(seed + 15900 + d * 53)
+            idr_start = idr_rng.randint(1, protein_length - 50)
+            idr_len = idr_rng.randint(10, 100)
+            idrs.append({
+                "idr_id": f"IDR_{gene}_{d+1}",
+                "start": idr_start,
+                "end": min(idr_start + idr_len, protein_length),
+                "length": idr_len,
+                "charge_composition": round(idr_rng.uniform(-0.3, 0.3), 3),
+                "proline_content": round(idr_rng.uniform(0, 0.2), 3),
+                "propensity_for_binding": round(idr_rng.uniform(0, 1), 3),
+                "condensate_forming": idr_rng.random() > 0.7,
+            })
+
+        flexible_fraction = round(
+            sum(1 for d in domains if d["is_flexible"]) / max(len(domains), 1), 3
+        )
+
+        return {
+            "gene": gene,
+            "analysis_type": "conformational_dynamics",
+            "data_source": "AlphaFold2 / Normal Mode Analysis simulation",
+            "protein_length": protein_length,
+            "domains": domains,
+            "normal_modes": normal_modes,
+            "cryptic_binding_sites": cryptic_sites,
+            "intrinsically_disordered_regions": idrs,
+            "flexibility_summary": {
+                "flexible_domain_fraction": flexible_fraction,
+                "mean_plddt": round(
+                    sum(d["mean_plddt"] for d in domains) / max(len(domains), 1), 1
+                ),
+                "total_idr_residues": sum(r["length"] for r in idrs),
+                "conformational_heterogeneity": (
+                    "HIGH — significant structural flexibility"
+                    if flexible_fraction > 0.5 else
+                    "MODERATE" if flexible_fraction > 0.2 else
+                    "LOW — rigid, well-folded structure"
+                ),
+            },
+            "cart_design_implications": {
+                "epitope_stability": (
+                    "UNSTABLE — flexible target may present variable epitopes"
+                    if flexible_fraction > 0.4 else
+                    "STABLE — consistent epitope presentation expected"
+                ),
+                "scfv_binding_mode": (
+                    "Conformational epitope — consider multiple binder formats"
+                    if flexible_fraction > 0.3 else
+                    "Linear epitope feasible"
+                ),
+                "recommended_approach": (
+                    "Use nanobody/VHH for conformational tolerance"
+                    if flexible_fraction > 0.4 else
+                    "Standard scFv design appropriate"
+                ),
+            },
+        }
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # Extracellular Vesicle (EV) Cargo Profiling
+    # ═══════════════════════════════════════════════════════════════════════════
+
+    def ev_cargo_profiling(self, gene: str) -> dict:
+        """
+        Profile extracellular vesicle (exosome/microvesicle) cargo
+        containing the target protein. EV-associated antigens can act
+        as decoys for CAR-T cells, neutralizing therapeutic efficacy.
+
+        Models EV biogenesis, cargo loading, and serum biomarker
+        potential for non-invasive monitoring.
+        """
+        gene = gene.upper().strip()
+        seed = self._gene_seed(gene)
+        rng = random.Random(seed + 16000)
+
+        # EV characterization
+        ev_types = ["exosomes", "microvesicles", "apoptotic_bodies"]
+        ev_profiles = []
+        for ev_type in ev_types:
+            ev_rng = random.Random(seed + 16000 + hash(ev_type))
+            ev_profiles.append({
+                "ev_type": ev_type,
+                "size_nm": {
+                    "exosomes": (30, 150),
+                    "microvesicles": (100, 1000),
+                    "apoptotic_bodies": (500, 5000),
+                }[ev_type],
+                "target_enrichment": round(ev_rng.uniform(0.1, 10), 2),
+                "copies_per_vesicle": ev_rng.randint(0, 50),
+                "biogenesis_pathway": ev_rng.choice([
+                    "ESCRT-dependent", "ESCRT-independent",
+                    "ceramide-dependent", "ARF6-mediated",
+                ]),
+                "surface_displayed": ev_rng.random() > 0.4,
+                "luminal_cargo": ev_rng.random() > 0.5,
+            })
+
+        # Serum EV quantification
+        serum_ev_concentration = round(rng.uniform(1e8, 1e12), 0)
+        target_positive_evs = round(rng.uniform(0.01, 0.3), 3)
+        target_ev_concentration = round(serum_ev_concentration * target_positive_evs, 0)
+
+        # Decoy potential
+        surface_evs = [ev for ev in ev_profiles if ev["surface_displayed"]]
+        total_decoy_copies = sum(
+            ev["copies_per_vesicle"] for ev in surface_evs
+        ) * target_ev_concentration
+
+        decoy_score = round(min(1.0, total_decoy_copies / 1e12), 3)
+
+        # EV cargo co-passengers
+        co_cargo = []
+        cargo_proteins = [
+            "CD63", "CD81", "CD9", "TSG101", "ALIX", "Syntenin",
+            "PD-L1", "MHC-I", "MHC-II", "B7-H3", "EGFR",
+        ]
+        for prot in rng.sample(cargo_proteins, k=rng.randint(3, 8)):
+            c_rng = random.Random(seed + 16500 + hash(prot))
+            co_cargo.append({
+                "protein": prot,
+                "enrichment_fold": round(c_rng.uniform(0.5, 20), 2),
+                "functional_significance": c_rng.choice([
+                    "surface marker", "immunomodulatory",
+                    "structural", "signaling",
+                ]),
+            })
+
+        # Biomarker potential
+        roc_auc = round(rng.uniform(0.5, 0.95), 3)
+        sensitivity = round(rng.uniform(0.4, 0.95), 3)
+        specificity = round(rng.uniform(0.5, 0.95), 3)
+
+        return {
+            "gene": gene,
+            "analysis_type": "ev_cargo_profiling",
+            "data_source": "ExoCarta / Vesiclepedia / NanoSight simulation",
+            "ev_profiles": ev_profiles,
+            "serum_quantification": {
+                "total_ev_per_ml": serum_ev_concentration,
+                "target_positive_fraction": target_positive_evs,
+                "target_ev_per_ml": target_ev_concentration,
+            },
+            "decoy_analysis": {
+                "decoy_score": decoy_score,
+                "surface_displayed_ev_types": len(surface_evs),
+                "total_decoy_copies_estimated": total_decoy_copies,
+                "cart_neutralization_risk": (
+                    "HIGH — significant EV-mediated decoy effect"
+                    if decoy_score > 0.5 else
+                    "MODERATE — some EV decoy activity"
+                    if decoy_score > 0.1 else
+                    "LOW — minimal EV interference"
+                ),
+            },
+            "co_cargo_proteins": co_cargo,
+            "biomarker_potential": {
+                "roc_auc": roc_auc,
+                "sensitivity": sensitivity,
+                "specificity": specificity,
+                "clinical_utility": (
+                    "Excellent liquid biopsy marker"
+                    if roc_auc > 0.85 else
+                    "Moderate diagnostic value"
+                    if roc_auc > 0.7 else "Limited utility"
+                ),
+            },
+            "therapeutic_strategy": (
+                "Consider EV depletion (plasmapheresis) before CAR-T infusion"
+                if decoy_score > 0.5 else
+                "EV-mediated decoy effect is manageable"
+            ),
+        }
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # Native Mass Spectrometry Complex Analysis
+    # ═══════════════════════════════════════════════════════════════════════════
+
+    def native_ms_complex_analysis(self, gene: str) -> dict:
+        """
+        Analyze native protein complexes containing the target using
+        native mass spectrometry. Identifies stoichiometry, binding
+        partners, and complex stability relevant to CAR-T targeting.
+        """
+        gene = gene.upper().strip()
+        seed = self._gene_seed(gene)
+        rng = random.Random(seed + 17000)
+
+        monomer_mass_kda = rng.uniform(15, 150)
+
+        # Oligomeric state
+        oligomeric_states = ["monomer", "homodimer", "homotrimer",
+                              "homotetramer", "heterodimer", "heterotrimer"]
+        primary_state = rng.choice(oligomeric_states)
+
+        stoichiometry_map = {
+            "monomer": 1, "homodimer": 2, "homotrimer": 3,
+            "homotetramer": 4, "heterodimer": 2, "heterotrimer": 3,
+        }
+        n_subunits = stoichiometry_map.get(primary_state, 1)
+        complex_mass = monomer_mass_kda * n_subunits
+
+        # Binding partners
+        partner_pool = [
+            "BSA", "Transferrin", "IgG", "Albumin", "Complement C3",
+            "beta-2-microglobulin", "Calreticulin", "CD3",
+            "HLA-A", "HLA-B", "Integrin beta-1", "Calnexin",
+        ]
+        n_partners = rng.randint(0, 5)
+        binding_partners = []
+        for p in rng.sample(partner_pool, k=min(n_partners, len(partner_pool))):
+            p_rng = random.Random(seed + 17500 + hash(p))
+            binding_partners.append({
+                "partner": p,
+                "kd_nM": round(p_rng.uniform(0.1, 5000), 1),
+                "stoichiometry": p_rng.choice(["1:1", "1:2", "2:1", "2:2"]),
+                "interface_area_A2": round(p_rng.uniform(500, 3000), 0),
+                "salt_bridge_count": p_rng.randint(0, 15),
+                "hydrogen_bonds": p_rng.randint(5, 40),
+                "buries_epitope": p_rng.random() > 0.7,
+            })
+
+        epitope_burying = [bp for bp in binding_partners if bp["buries_epitope"]]
+
+        # Collision cross section (CCS)
+        ccs = round(rng.uniform(1500, 8000), 0)
+
+        # Charge state distribution
+        min_charge = max(5, int(complex_mass / 3))
+        max_charge = int(complex_mass / 1.5) + 1
+        dominant_charge = rng.randint(min_charge, max(min_charge + 1, max_charge))
+
+        return {
+            "gene": gene,
+            "analysis_type": "native_ms_complex",
+            "data_source": "Native MS / SEC-MALS simulation",
+            "monomer_mass_kda": round(monomer_mass_kda, 1),
+            "primary_oligomeric_state": primary_state,
+            "subunit_count": n_subunits,
+            "complex_mass_kda": round(complex_mass, 1),
+            "collision_cross_section_A2": ccs,
+            "dominant_charge_state": dominant_charge,
+            "binding_partners": binding_partners,
+            "epitope_occlusion": {
+                "partners_burying_epitope": len(epitope_burying),
+                "occlusion_risk": (
+                    "HIGH — binding partners mask target epitope in complex"
+                    if len(epitope_burying) > 1 else
+                    "MODERATE — some epitope masking possible"
+                    if epitope_burying else
+                    "LOW — epitope freely accessible in native complex"
+                ),
+            },
+            "therapeutic_considerations": {
+                "complex_stability": (
+                    "Highly stable complex — CAR-T must compete with partner binding"
+                    if any(bp["kd_nM"] < 10 for bp in binding_partners) else
+                    "Moderately stable — scFv can likely displace partners"
+                    if any(bp["kd_nM"] < 100 for bp in binding_partners) else
+                    "Weak complex — target is largely monomeric/accessible"
+                ),
+                "optimal_binding_format": (
+                    "Biparatopic CAR to access partially occluded epitope"
+                    if epitope_burying else
+                    "Standard scFv CAR design sufficient"
+                ),
+            },
+        }
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # Cross-linking Mass Spectrometry (XL-MS) Distance Mapping
+    # ═══════════════════════════════════════════════════════════════════════════
+
+    def xlms_distance_mapping(self, gene: str) -> dict:
+        """
+        Cross-linking mass spectrometry (XL-MS) analysis mapping
+        inter-residue distances and protein-protein interaction
+        interfaces. Provides structural constraints for epitope mapping
+        and CAR construct optimization.
+        """
+        gene = gene.upper().strip()
+        seed = self._gene_seed(gene)
+        rng = random.Random(seed + 18000)
+
+        protein_length = rng.randint(200, 1000)
+
+        # Cross-linker types
+        crosslinkers = [
+            {"name": "DSS", "spacer_arm_A": 11.4, "chemistry": "NHS-NHS"},
+            {"name": "BS3", "spacer_arm_A": 11.4, "chemistry": "NHS-NHS"},
+            {"name": "EDC", "spacer_arm_A": 0, "chemistry": "zero-length"},
+            {"name": "SDA", "spacer_arm_A": 3.9, "chemistry": "NHS-diazirine"},
+        ]
+
+        # Generate cross-links
+        n_crosslinks = rng.randint(20, 200)
+        crosslinks = []
+        for i in range(min(n_crosslinks, 50)):
+            xl_rng = random.Random(seed + 18000 + i * 61)
+            res1 = xl_rng.randint(1, protein_length)
+            res2 = xl_rng.randint(1, protein_length)
+            linker = xl_rng.choice(crosslinkers)
+            euclidean_dist = xl_rng.uniform(3, 35)
+            satisfied = euclidean_dist <= linker["spacer_arm_A"] + 5
+
+            crosslinks.append({
+                "xl_id": f"XL_{gene}_{i+1}",
+                "residue_1": res1,
+                "residue_2": res2,
+                "crosslinker": linker["name"],
+                "spacer_arm_A": linker["spacer_arm_A"],
+                "euclidean_distance_A": round(euclidean_dist, 1),
+                "distance_satisfied": satisfied,
+                "spectral_count": xl_rng.randint(1, 50),
+                "fdr": round(xl_rng.uniform(0.001, 0.05), 4),
+                "intra_or_inter": "intra" if xl_rng.random() > 0.3 else "inter",
+            })
+
+        # Satisfaction rate
+        satisfied = sum(1 for xl in crosslinks if xl["distance_satisfied"])
+        satisfaction_rate = round(satisfied / max(len(crosslinks), 1), 3)
+
+        # Epitope mapping by cross-link density
+        epitope_regions = []
+        for region_start in range(0, protein_length, 50):
+            region_end = min(region_start + 50, protein_length)
+            region_xls = sum(
+                1 for xl in crosslinks
+                if region_start <= xl["residue_1"] <= region_end
+                or region_start <= xl["residue_2"] <= region_end
+            )
+            if region_xls > 2:
+                e_rng = random.Random(seed + 18500 + region_start)
+                epitope_regions.append({
+                    "region": f"{region_start+1}-{region_end}",
+                    "crosslink_density": region_xls,
+                    "surface_exposed": e_rng.random() > 0.3,
+                    "antibody_accessible": e_rng.random() > 0.4,
+                    "epitope_quality": round(e_rng.uniform(0, 1), 3),
+                })
+
+        epitope_regions.sort(key=lambda r: r["epitope_quality"], reverse=True)
+
+        # Inter-protein cross-links (interaction interfaces)
+        inter_xls = [xl for xl in crosslinks if xl["intra_or_inter"] == "inter"]
+
+        return {
+            "gene": gene,
+            "analysis_type": "xlms_distance_mapping",
+            "data_source": "XL-MS / pLink2 / xiSearch simulation",
+            "protein_length": protein_length,
+            "total_crosslinks": len(crosslinks),
+            "crosslinks": crosslinks[:20],
+            "distance_satisfaction_rate": satisfaction_rate,
+            "structure_quality": (
+                "EXCELLENT — high satisfaction supports accurate model"
+                if satisfaction_rate > 0.8 else
+                "GOOD — minor discrepancies"
+                if satisfaction_rate > 0.6 else
+                "POOR — significant structural uncertainty"
+            ),
+            "epitope_mapping": {
+                "candidate_regions": epitope_regions[:5],
+                "best_epitope_region": (
+                    epitope_regions[0]["region"] if epitope_regions else "N/A"
+                ),
+                "surface_exposed_regions": sum(
+                    1 for r in epitope_regions if r["surface_exposed"]
+                ),
+            },
+            "interaction_interfaces": {
+                "inter_protein_crosslinks": len(inter_xls),
+                "interface_residues": list(set(
+                    xl["residue_1"] for xl in inter_xls
+                ))[:20],
+            },
+            "cart_design_guidance": (
+                "XL-MS-validated epitope regions identified — use for "
+                "rational scFv/VHH epitope selection"
+                if epitope_regions else
+                "Insufficient cross-link data for epitope guidance"
+            ),
+        }

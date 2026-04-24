@@ -18,6 +18,16 @@ updates:
       - "dependencies"
       - "security"
 
+  # Frontend npm dependencies
+  - package-ecosystem: "npm"
+    directory: "/frontend-react"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+    labels:
+      - "dependencies"
+      - "security"
+
   # GitHub Actions
   - package-ecosystem: "github-actions"
     directory: "/"

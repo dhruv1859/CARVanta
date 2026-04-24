@@ -4,8 +4,9 @@ CARVanta – Multi-Omics API Router
 FastAPI router exposing the Multi-Omics Intelligence Engine endpoints.
 """
 
-from fastapi import APIRouter, Query
+from fastapi import APIRouter, Query, UploadFile, File, HTTPException
 from typing import Optional, List
+import os
 
 from omics.integrator import MultiOmicsIntegrator
 

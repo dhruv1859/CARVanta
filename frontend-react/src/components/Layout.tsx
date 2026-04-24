@@ -1,48 +1,98 @@
 import { NavLink } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useAuth } from '../context/AuthContext';
 import SnapshotButton from './SnapshotButton';
 import '../styles/auth.css';
 
-const NAV_ITEMS = [
-    { path: '/', icon: '🔬', label: 'Single Antigen Analysis' },
-    { path: '/compare', icon: '⚖️', label: 'Antigen Comparison' },
-    { path: '/heatmap', icon: '🧫', label: 'Tissue Risk Heatmap' },
-    { path: '/synergy', icon: '🎯', label: 'Multi-Target Synergy' },
-    { path: '/stratify', icon: '👥', label: 'Patient Stratification' },
-    { path: '/search', icon: '🔍', label: 'NLP Query Search' },
-    { path: '/trials', icon: '🧪', label: 'Clinical Trials' },
-    { path: '/leaderboard', icon: '🏆', label: 'Global Leaderboard' },
-    { path: '/dataset', icon: '📊', label: 'Dataset Intelligence' },
-    { path: '/drugs', icon: '💊', label: 'Drug Interactions' },
-    { path: '/patents', icon: '⚖️', label: 'Patent Explorer' },
-    { path: '/community', icon: '🌐', label: 'Community Submit' },
-    { path: '/batch', icon: '📋', label: 'Batch Upload' },
-    { path: '/audit', icon: '📜', label: 'Audit Log' },
-    { path: '/status', icon: '⚙️', label: 'System Status' },
-    { path: '/profile', icon: '👤', label: 'My Profile' },
-    { path: '/twin', icon: '🧑‍⚕️', label: 'Patient Digital Twin' },
-    { path: '/genomics', icon: '🧬', label: 'Genomic Profiler' },
-    { path: '/adverse-events', icon: '⚠️', label: 'Adverse Events' },
-    { path: '/outcomes', icon: '📊', label: 'Outcomes Tracker' },
-    { path: '/population', icon: '🌍', label: 'Population Simulator' },
-    { path: '/wizard', icon: '📝', label: 'Patient Wizard' },
-    { path: '/multi-omics', icon: '🧬', label: 'Multi-Omics Engine' },
-    // Enterprise section
-    { path: '/admin', icon: '🛡️', label: 'Admin Dashboard', section: 'Enterprise' },
-    { path: '/mfa', icon: '🔐', label: 'MFA Security' },
-    { path: '/billing', icon: '💳', label: 'Billing & Plans' },
-    { path: '/organizations', icon: '🏢', label: 'Organizations' },
+interface NavItem {
+    path: string;
+    icon: string;
+    label: string;
+}
+
+interface NavSection {
+    title: string;
+    items: NavItem[];
+}
+
+const NAV_SECTIONS: NavSection[] = [
+    {
+        title: 'Discovery',
+        items: [
+            { path: '/', icon: '🔬', label: 'Single Antigen' },
+            { path: '/compare', icon: '⚖️', label: 'Comparison' },
+            { path: '/heatmap', icon: '🧫', label: 'Tissue Heatmap' },
+            { path: '/synergy', icon: '🎯', label: 'Multi-Target' },
+            { path: '/drug-discovery', icon: '💊', label: 'Drug Discovery' },
+            { path: '/drugs', icon: '💊', label: 'Interactions' },
+        ],
+    },
+    {
+        title: 'Intelligence',
+        items: [
+            { path: '/neural-bridge', icon: '🧠', label: 'Neural Bridge' },
+            { path: '/research-copilot', icon: '🤖', label: 'Research Copilot' },
+            { path: '/search', icon: '🔍', label: 'NLP Search' },
+            { path: '/genomic-analyzer', icon: '🧬', label: 'Genomic Analyzer' },
+            { path: '/multi-omics', icon: '🧬', label: 'Multi-Omics' },
+            { path: '/disease-atlas', icon: '🌍', label: 'Disease Atlas' },
+        ],
+    },
+    {
+        title: 'Clinical',
+        items: [
+            { path: '/twin', icon: '🧑‍⚕️', label: 'Digital Twin' },
+            { path: '/genomics', icon: '🧬', label: 'Genomic Profiler' },
+            { path: '/stratify', icon: '👥', label: 'Stratification' },
+            { path: '/wizard', icon: '📝', label: 'Patient Wizard' },
+            { path: '/trial-matcher', icon: '🏥', label: 'Trial Matcher' },
+            { path: '/trials', icon: '🧪', label: 'Clinical Trials' },
+            { path: '/adverse-events', icon: '⚠️', label: 'Adverse Events' },
+            { path: '/outcomes', icon: '📊', label: 'Outcomes' },
+        ],
+    },
+    {
+        title: 'Analytics',
+        items: [
+            { path: '/population', icon: '🌍', label: 'Population Sim' },
+            { path: '/health-economics', icon: '💰', label: 'Economics' },
+            { path: '/leaderboard', icon: '🏆', label: 'Leaderboard' },
+            { path: '/dataset', icon: '📊', label: 'Dataset Intel' },
+            { path: '/patents', icon: '⚖️', label: 'Patents' },
+        ],
+    },
+    {
+        title: 'Platform',
+        items: [
+            { path: '/collaboration', icon: '👥', label: 'Collaboration' },
+            { path: '/community', icon: '🌐', label: 'Community' },
+            { path: '/batch', icon: '📋', label: 'Batch Upload' },
+            { path: '/regulatory', icon: '🛡️', label: 'Regulatory' },
+        ],
+    },
+    {
+        title: 'Enterprise',
+        items: [
+            { path: '/admin', icon: '🛡️', label: 'Admin' },
+            { path: '/mfa', icon: '🔐', label: 'MFA Security' },
+            { path: '/billing', icon: '💳', label: 'Billing' },
+            { path: '/organizations', icon: '🏢', label: 'Organizations' },
+            { path: '/audit', icon: '📜', label: 'Audit Log' },
+            { path: '/status', icon: '⚙️', label: 'System Status' },
+            { path: '/profile', icon: '👤', label: 'Profile' },
+        ],
+    },
 ];
 
 function getInitialTheme(): 'dark' | 'light' {
     const stored = localStorage.getItem('carvanta-theme');
     if (stored === 'light' || stored === 'dark') return stored;
-    return 'dark'; // Default
+    return 'light'; // Default
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {
     const [theme, setTheme] = useState<'dark' | 'light'>(getInitialTheme);
+    const [sidebarOpen, setSidebarOpen] = useState(false);
     const { user, logout } = useAuth();
 
     useEffect(() => {
@@ -50,30 +100,68 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         localStorage.setItem('carvanta-theme', theme);
     }, [theme]);
 
+    // Lock body scroll when mobile sidebar is open
+    useEffect(() => {
+        if (sidebarOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+        return () => { document.body.style.overflow = ''; };
+    }, [sidebarOpen]);
+
     const toggleTheme = () => {
         setTheme(prev => prev === 'dark' ? 'light' : 'dark');
     };
 
+    const closeSidebar = useCallback(() => setSidebarOpen(false), []);
+
     const initials = user?.full_name?.split(' ').map((w: string) => w[0]).join('').slice(0, 2).toUpperCase() || '??';
 
     return (
-        <div className="app-layout">
+        <div className={`app-layout ${sidebarOpen ? 'sidebar-open' : ''}`}>
+            {/* ── Mobile Top Bar ─────────────────────────────────── */}
+            <header className="mobile-topbar">
+                <button
+                    className="hamburger-btn"
+                    onClick={() => setSidebarOpen(prev => !prev)}
+                    aria-label="Toggle navigation"
+                >
+                    <span className={`hamburger-icon ${sidebarOpen ? 'open' : ''}`}>
+                        <span /><span /><span />
+                    </span>
+                </button>
+                <span className="mobile-brand">◆ CARVanta</span>
+            </header>
+
+            {/* ── Overlay (mobile only) ─────────────────────────── */}
+            {sidebarOpen && (
+                <div className="sidebar-overlay" onClick={closeSidebar} />
+            )}
+
+            {/* ── Sidebar ───────────────────────────────────────── */}
             <aside className="sidebar">
                 <div className="sidebar-brand">
                     <h1>◆ CARVanta</h1>
-                    <p>AI-Augmented Biomarker Intelligence Platform · v5 Adaptive Scoring</p>
+                    <p>AI-Augmented Biomarker Intelligence</p>
                 </div>
                 <nav className="sidebar-nav">
-                    {NAV_ITEMS.map(item => (
-                        <NavLink
-                            key={item.path}
-                            to={item.path}
-                            end={item.path === '/'}
-                            className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
-                        >
-                            <span className="nav-icon">{item.icon}</span>
-                            {item.label}
-                        </NavLink>
+                    {NAV_SECTIONS.map(section => (
+                        <div key={section.title} className="nav-section">
+                            <div className="nav-section-title">{section.title}</div>
+                            {section.items.map(item => (
+                                <NavLink
+                                    key={item.path}
+                                    to={item.path}
+                                    end={item.path === '/'}
+                                    className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+                                    onClick={closeSidebar}
+                                >
+                                    <span className="nav-icon">{item.icon}</span>
+                                    {item.label}
+                                </NavLink>
+                            ))}
+                        </div>
                     ))}
                 </nav>
                 <button className="theme-toggle" onClick={toggleTheme} title="Toggle theme">
@@ -91,7 +179,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                     </div>
                 )}
                 <div className="sidebar-footer">
-                    <div>CARVanta v5 · Enterprise Edition</div>
+                    <div>CARVanta v5 · Enterprise</div>
                     <div>© CARVanta — carvanta.ai</div>
                 </div>
             </aside>

@@ -172,51 +172,133 @@ export default function DigitalTwin() {
     const renderChart = (data: number[], color: string, label: string, maxVal?: number) => {
         if (!data || data.length === 0) return null;
         const max = maxVal || Math.max(...data, 1);
-        const w = 600, h = 130;
-        const points = data.map((v: number, i: number) =>
-            `${(i / (data.length - 1)) * w},${h - (v / max) * h}`
-        ).join(' ');
+        const min = Math.min(...data);
+        const w = 640, h = 180;
+        const padL = 55, padR = 15, padT = 10, padB = 28;
+        const chartW = w - padL - padR;
+        const chartH = h - padT - padB;
+
+        const toX = (i: number) => padL + (i / (data.length - 1)) * chartW;
+        const toY = (v: number) => padT + chartH - (v / max) * chartH;
+
+        const points = data.map((v, i) => `${toX(i)},${toY(v)}`).join(' ');
+        const areaPoints = `${padL},${padT + chartH} ${points} ${padL + chartW},${padT + chartH}`;
+
+        // Grid: 4 horizontal lines
+        const gridLines = [0, 0.25, 0.5, 0.75, 1].map(frac => {
+            const yPos = padT + chartH - frac * chartH;
+            const val = (frac * max);
+            return { y: yPos, label: val >= 1000 ? `${(val / 1000).toFixed(0)}k` : val >= 1 ? val.toFixed(0) : val.toFixed(2) };
+        });
+
+        // X-axis: 5 evenly spaced day labels
+        const totalDays = data.length * Math.floor(params.days / data.length);
+        const xTicks = [0, 0.25, 0.5, 0.75, 1].map(frac => ({
+            x: padL + frac * chartW,
+            label: `D${Math.round(frac * totalDays)}`,
+        }));
+
+        // Key data points: peak, minimum, last
+        const peakIdx = data.indexOf(Math.max(...data));
+        const minIdx = data.indexOf(Math.min(...data));
+        const lastIdx = data.length - 1;
+        const keyPoints = [
+            { idx: peakIdx, val: data[peakIdx], type: 'peak' },
+            { idx: minIdx, val: data[minIdx], type: 'min' },
+            { idx: lastIdx, val: data[lastIdx], type: 'last' },
+        ].filter((p, i, arr) => arr.findIndex(a => a.idx === p.idx) === i); // deduplicate
+
         return (
             <div className="twin-chart">
                 <div className="twin-chart-label">{label}</div>
                 <svg viewBox={`0 0 ${w} ${h}`} className="twin-svg">
                     <defs>
-                        <linearGradient id={`grad-${color.replace('#','')}`} x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="0%" stopColor={color} stopOpacity="0.35"/>
-                            <stop offset="100%" stopColor={color} stopOpacity="0"/>
+                        <linearGradient id={`grad-${color.replace('#', '')}`} x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stopColor={color} stopOpacity="0.25" />
+                            <stop offset="100%" stopColor={color} stopOpacity="0.02" />
                         </linearGradient>
                     </defs>
-                    <polygon
-                        points={`0,${h} ${points} ${w},${h}`}
-                        fill={`url(#grad-${color.replace('#','')})`}
-                    />
-                    <polyline points={points} fill="none" stroke={color} strokeWidth="2.5"/>
+
+                    {/* Grid lines */}
+                    {gridLines.map((g, i) => (
+                        <g key={i}>
+                            <line x1={padL} y1={g.y} x2={padL + chartW} y2={g.y}
+                                stroke="rgba(148,163,184,0.12)" strokeWidth="0.5" />
+                            <text x={padL - 8} y={g.y + 3} textAnchor="end"
+                                fill="#64748b" fontSize="9" fontFamily="monospace">{g.label}</text>
+                        </g>
+                    ))}
+
+                    {/* X-axis ticks */}
+                    {xTicks.map((xt, i) => (
+                        <text key={i} x={xt.x} y={h - 5} textAnchor="middle"
+                            fill="#64748b" fontSize="9" fontFamily="monospace">{xt.label}</text>
+                    ))}
+
+                    {/* Area fill */}
+                    <polygon points={areaPoints} fill={`url(#grad-${color.replace('#', '')})`} />
+
+                    {/* Main line */}
+                    <polyline points={points} fill="none" stroke={color} strokeWidth="2.5"
+                        strokeLinecap="round" strokeLinejoin="round" />
+
+                    {/* Key data points */}
+                    {keyPoints.map((p, i) => (
+                        <g key={i}>
+                            <circle cx={toX(p.idx)} cy={toY(p.val)} r="4"
+                                fill={color} stroke="#0f172a" strokeWidth="1.5" />
+                            <text x={toX(p.idx)} y={toY(p.val) - 8} textAnchor="middle"
+                                fill={color} fontSize="9" fontWeight="700">
+                                {p.val >= 1e9 ? `${(p.val / 1e9).toFixed(1)}B` :
+                                    p.val >= 1e6 ? `${(p.val / 1e6).toFixed(1)}M` :
+                                        p.val >= 1000 ? `${(p.val / 1000).toFixed(0)}k` :
+                                            p.val >= 1 ? p.val.toFixed(0) : p.val.toFixed(2)}
+                            </text>
+                        </g>
+                    ))}
                 </svg>
-                <div className="twin-chart-range">
-                    <span>Day 0</span>
-                    <span>Day {data.length * Math.floor(params.days / data.length)}</span>
-                </div>
             </div>
         );
     };
 
     // ─── Multi-line Chart ─────────────────────────────────────────────────
     const renderMultiChart = (datasets: { data: number[], color: string, label: string }[], title: string) => {
-        const w = 600, h = 140;
+        const w = 640, h = 180;
+        const padL = 55, padR = 15, padT = 10, padB = 28;
+        const chartW = w - padL - padR;
+        const chartH = h - padT - padB;
         const allVals = datasets.flatMap(d => d.data);
         const max = Math.max(...allVals, 1);
+
+        const toX = (i: number, len: number) => padL + (i / (len - 1)) * chartW;
+        const toY = (v: number) => padT + chartH - (v / max) * chartH;
+
+        const gridLines = [0, 0.25, 0.5, 0.75, 1].map(frac => ({
+            y: padT + chartH - frac * chartH,
+            label: (frac * max) >= 1000 ? `${((frac * max) / 1000).toFixed(0)}k` : (frac * max).toFixed(0),
+        }));
 
         return (
             <div className="twin-chart">
                 <div className="twin-chart-label">{title}</div>
                 <svg viewBox={`0 0 ${w} ${h}`} className="twin-svg">
+                    {gridLines.map((g, i) => (
+                        <g key={i}>
+                            <line x1={padL} y1={g.y} x2={padL + chartW} y2={g.y}
+                                stroke="rgba(148,163,184,0.12)" strokeWidth="0.5" />
+                            <text x={padL - 8} y={g.y + 3} textAnchor="end"
+                                fill="#64748b" fontSize="9" fontFamily="monospace">{g.label}</text>
+                        </g>
+                    ))}
                     {datasets.map((ds, idx) => {
                         if (!ds.data || ds.data.length === 0) return null;
                         const pts = ds.data.map((v, i) =>
-                            `${(i / (ds.data.length - 1)) * w},${h - (v / max) * h}`
+                            `${toX(i, ds.data.length)},${toY(v)}`
                         ).join(' ');
                         return (
-                            <polyline key={idx} points={pts} fill="none" stroke={ds.color} strokeWidth="2" strokeDasharray={idx > 0 ? "4 2" : "none"}/>
+                            <polyline key={idx} points={pts} fill="none" stroke={ds.color} strokeWidth="2"
+                                strokeLinecap="round" strokeLinejoin="round"
+                                strokeDasharray={idx > 0 ? "6 3" : "none"} />
                         );
                     })}
                 </svg>
@@ -391,20 +473,20 @@ export default function DigitalTwin() {
 
                     <div className="card">
                         <h3>📈 Tumor Regression Timeline</h3>
-                        {renderChart(t.tumor_mm, '#ef4444', `Tumor Size (mm) — Nadir: ${s.nadir_tumor_mm}mm on Day ${s.nadir_tumor_day}`)}
+                        {renderChart(t.tumor_mm, '#ff6b6b', `Tumor Size (mm) — Nadir: ${s.nadir_tumor_mm}mm on Day ${s.nadir_tumor_day}`)}
                     </div>
                     <div className="card">
                         <h3>🧬 CAR-T Cell Expansion</h3>
-                        {renderChart(t.t_cells, '#6366f1', `T-Cell Count — Peak: ${(s.peak_t_cells / 1e9).toFixed(1)}B on Day ${s.peak_t_cell_day}`)}
+                        {renderChart(t.t_cells, '#818cf8', `T-Cell Count — Peak: ${(s.peak_t_cells / 1e9).toFixed(1)}B on Day ${s.peak_t_cell_day}`)}
                     </div>
                     <div className="card">
                         <h3>🧪 IL-6 Cytokine Levels</h3>
-                        {renderChart(t.il6, '#f59e0b', 'IL-6 (pg/mL) — CRS Biomarker')}
+                        {renderChart(t.il6, '#fbbf24', 'IL-6 (pg/mL) — CRS Biomarker')}
                     </div>
                     {t.crs_grade && (
                         <div className="card">
                             <h3>⚠️ CRS Grade Over Time</h3>
-                            {renderChart(t.crs_grade, '#f97316', 'CRS Grade (0-4)', 4)}
+                            {renderChart(t.crs_grade, '#fb923c', 'CRS Grade (0-4)', 4)}
                         </div>
                     )}
                 </div>

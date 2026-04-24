@@ -1227,3 +1227,665 @@ class EpigenomicsAnalyzer:
                 "Epigenetically youthful tumor — potentially more aggressive"
             ),
         }
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # CTCF / Cohesin 3D Chromatin Topology Analysis
+    # ═══════════════════════════════════════════════════════════════════════════
+
+    def ctcf_cohesin_topology(self, gene: str) -> dict:
+        """
+        Analyze the 3D chromatin architecture around the target gene locus.
+        Models CTCF binding sites, cohesin-mediated loop extrusion, and
+        topologically associating domain (TAD) boundaries to predict
+        whether structural reorganization could affect target expression.
+
+        Uses principles from Hi-C, Micro-C, and ChIA-PET data analysis.
+        """
+        gene = gene.upper().strip()
+        seed = int(hashlib.md5(gene.encode()).hexdigest()[:8], 16)
+        rng = random.Random(seed + 11000)
+
+        # Model CTCF binding sites flanking the target locus
+        n_ctcf_sites = rng.randint(4, 12)
+        ctcf_sites = []
+        for i in range(n_ctcf_sites):
+            c_rng = random.Random(seed + 11000 + i * 127)
+            position_kb = c_rng.randint(-500, 500)
+            ctcf_sites.append({
+                "site_id": f"CTCF_{gene}_{i+1}",
+                "position_relative_kb": position_kb,
+                "orientation": c_rng.choice(["forward", "reverse"]),
+                "binding_strength": round(c_rng.uniform(0, 1), 3),
+                "motif_quality": round(c_rng.uniform(0.5, 1.0), 3),
+                "methylation_at_site": round(c_rng.uniform(0, 1), 3),
+                "occupied_in_tumor": c_rng.random() > 0.3,
+                "occupied_in_normal": c_rng.random() > 0.2,
+                "conserved_across_species": c_rng.random() > 0.5,
+            })
+
+        # Model cohesin loop anchors
+        convergent_pairs = []
+        for i in range(len(ctcf_sites)):
+            for j in range(i + 1, len(ctcf_sites)):
+                if (ctcf_sites[i]["orientation"] == "forward" and
+                    ctcf_sites[j]["orientation"] == "reverse" and
+                    ctcf_sites[i]["occupied_in_tumor"] and
+                    ctcf_sites[j]["occupied_in_tumor"]):
+                    pair_rng = random.Random(seed + 11000 + i * 31 + j * 37)
+                    convergent_pairs.append({
+                        "anchor_1": ctcf_sites[i]["site_id"],
+                        "anchor_2": ctcf_sites[j]["site_id"],
+                        "loop_size_kb": abs(ctcf_sites[j]["position_relative_kb"] -
+                                           ctcf_sites[i]["position_relative_kb"]),
+                        "interaction_frequency": round(pair_rng.uniform(0, 1), 3),
+                        "cohesin_enrichment": round(pair_rng.uniform(0, 5), 2),
+                        "rad21_chip_signal": round(pair_rng.uniform(0, 10), 2),
+                        "smc3_chip_signal": round(pair_rng.uniform(0, 10), 2),
+                        "loop_type": pair_rng.choice([
+                            "enhancer-promoter", "insulator", "structural",
+                            "super-enhancer-promoter", "poised"
+                        ]),
+                        "disrupted_in_cancer": pair_rng.random() > 0.6,
+                    })
+
+        # TAD boundary analysis
+        tad_boundary_left = {
+            "position_relative_kb": rng.randint(-800, -200),
+            "insulation_score": round(rng.uniform(0, 1), 3),
+            "boundary_strength": round(rng.uniform(0, 1), 3),
+            "intact_in_tumor": rng.random() > 0.3,
+            "ctcf_density": rng.randint(2, 8),
+        }
+        tad_boundary_right = {
+            "position_relative_kb": rng.randint(200, 800),
+            "insulation_score": round(rng.uniform(0, 1), 3),
+            "boundary_strength": round(rng.uniform(0, 1), 3),
+            "intact_in_tumor": rng.random() > 0.3,
+            "ctcf_density": rng.randint(2, 8),
+        }
+
+        tad_size_kb = abs(tad_boundary_right["position_relative_kb"] -
+                         tad_boundary_left["position_relative_kb"])
+
+        # Compartment analysis (A/B compartment)
+        compartment_tumor = rng.choice(["A (active)", "B (repressive)", "A/B boundary"])
+        compartment_normal = rng.choice(["A (active)", "B (repressive)", "A/B boundary"])
+        compartment_switch = compartment_tumor != compartment_normal
+
+        # Insulation disruption can lead to enhancer adoption
+        enhancer_adoption_risk = "HIGH" if (
+            not tad_boundary_left["intact_in_tumor"] or
+            not tad_boundary_right["intact_in_tumor"]
+        ) else "MODERATE" if any(
+            p["disrupted_in_cancer"] for p in convergent_pairs
+        ) else "LOW"
+
+        disrupted_loops = sum(1 for p in convergent_pairs if p["disrupted_in_cancer"])
+        ep_loops = [p for p in convergent_pairs if p["loop_type"] == "enhancer-promoter"]
+
+        return {
+            "gene": gene,
+            "analysis_type": "ctcf_cohesin_topology",
+            "data_source": "Hi-C / Micro-C / ChIA-PET simulation",
+            "ctcf_binding_sites": ctcf_sites,
+            "n_ctcf_sites": len(ctcf_sites),
+            "occupied_in_tumor": sum(1 for s in ctcf_sites if s["occupied_in_tumor"]),
+            "tumor_specific_loss": sum(
+                1 for s in ctcf_sites
+                if s["occupied_in_normal"] and not s["occupied_in_tumor"]
+            ),
+            "cohesin_loops": convergent_pairs,
+            "n_loops": len(convergent_pairs),
+            "enhancer_promoter_loops": len(ep_loops),
+            "disrupted_loops": disrupted_loops,
+            "tad_boundaries": {
+                "left": tad_boundary_left,
+                "right": tad_boundary_right,
+                "tad_size_kb": tad_size_kb,
+            },
+            "compartment": {
+                "tumor": compartment_tumor,
+                "normal": compartment_normal,
+                "switch_detected": compartment_switch,
+            },
+            "enhancer_adoption_risk": enhancer_adoption_risk,
+            "clinical_insight": (
+                "TAD boundary disruption detected — risk of ectopic enhancer activation "
+                "driving aberrant target expression. Consider this in target stability."
+                if enhancer_adoption_risk == "HIGH" else
+                "Chromatin topology largely intact around target locus"
+                if enhancer_adoption_risk == "LOW" else
+                "Moderate loop disruption — monitor for expression instability"
+            ),
+        }
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # Super-Enhancer Addiction Profiling
+    # ═══════════════════════════════════════════════════════════════════════════
+
+    def super_enhancer_addiction(self, gene: str) -> dict:
+        """
+        Profile super-enhancer addiction at the target gene locus.
+        Super-enhancers are clusters of enhancers that drive high expression
+        of identity genes. Tumor-specific super-enhancers create
+        transcriptional addiction that can be therapeutically exploited.
+
+        Models H3K27ac signal, MED1/BRD4 occupancy, and phase separation
+        condensate formation at the target locus.
+        """
+        gene = gene.upper().strip()
+        seed = int(hashlib.md5(gene.encode()).hexdigest()[:8], 16)
+        rng = random.Random(seed + 12000)
+
+        # Identify constituent enhancers in the super-enhancer
+        n_enhancers = rng.randint(3, 15)
+        constituent_enhancers = []
+        total_h3k27ac = 0.0
+
+        for i in range(n_enhancers):
+            e_rng = random.Random(seed + 12000 + i * 89)
+            h3k27ac = e_rng.uniform(5, 100)
+            total_h3k27ac += h3k27ac
+            constituent_enhancers.append({
+                "enhancer_id": f"SE_{gene}_E{i+1}",
+                "position_relative_kb": e_rng.randint(-200, 200),
+                "h3k27ac_signal": round(h3k27ac, 2),
+                "h3k4me1_signal": round(e_rng.uniform(2, 50), 2),
+                "med1_occupancy": round(e_rng.uniform(0, 1), 3),
+                "brd4_occupancy": round(e_rng.uniform(0, 1), 3),
+                "p300_chip_signal": round(e_rng.uniform(0, 30), 2),
+                "eRNA_expression": round(e_rng.uniform(0, 10), 2),
+                "tumor_specific": e_rng.random() > 0.4,
+                "essential_by_crispr": e_rng.random() > 0.6,
+            })
+
+        # Rank in super-enhancer hierarchy (hockey stick analysis)
+        se_rank_percentile = rng.uniform(80, 99.9) if total_h3k27ac > 200 else rng.uniform(40, 80)
+
+        # Phase separation / condensate properties
+        condensate_score = round(rng.uniform(0, 1), 3)
+        phase_separation_drivers = []
+        if condensate_score > 0.5:
+            phase_separation_drivers = rng.sample([
+                "MED1 IDR", "BRD4 IDR", "YAP/TAZ", "OCT4",
+                "MYC", "RNA Pol II CTD", "coactivator complex"
+            ], k=rng.randint(1, 4))
+
+        # BET inhibitor sensitivity (BRD4 dependence)
+        avg_brd4 = sum(e["brd4_occupancy"] for e in constituent_enhancers) / max(len(constituent_enhancers), 1)
+        bet_sensitivity = "HIGH" if avg_brd4 > 0.6 else "MODERATE" if avg_brd4 > 0.3 else "LOW"
+
+        # CDK7/CDK9 inhibitor sensitivity (transcription elongation)
+        cdk7_sensitivity = round(rng.uniform(0, 1), 3)
+        cdk9_sensitivity = round(rng.uniform(0, 1), 3)
+
+        # SE hotspot mutations (non-coding mutations in SE region)
+        n_hotspot_mutations = rng.randint(0, 5)
+        se_mutations = []
+        for i in range(n_hotspot_mutations):
+            m_rng = random.Random(seed + 12500 + i * 61)
+            se_mutations.append({
+                "mutation_id": f"SE_MUT_{gene}_{i+1}",
+                "position_relative_kb": m_rng.randint(-200, 200),
+                "type": m_rng.choice(["SNV", "insertion", "deletion", "structural"]),
+                "effect_on_activity": m_rng.choice(["gain", "loss", "neutral"]),
+                "tf_binding_affected": m_rng.choice([
+                    "GATA3", "RUNX1", "PAX5", "ETS1", "NFKB1", "STAT3"
+                ]),
+                "allele_frequency": round(m_rng.uniform(0.01, 0.5), 3),
+            })
+
+        tumor_specific_count = sum(1 for e in constituent_enhancers if e["tumor_specific"])
+        essential_count = sum(1 for e in constituent_enhancers if e["essential_by_crispr"])
+
+        return {
+            "gene": gene,
+            "analysis_type": "super_enhancer_addiction",
+            "data_source": "H3K27ac ChIP-seq / CRISPR screen simulation",
+            "constituent_enhancers": constituent_enhancers,
+            "n_enhancers": len(constituent_enhancers),
+            "total_h3k27ac_signal": round(total_h3k27ac, 2),
+            "se_rank_percentile": round(se_rank_percentile, 2),
+            "is_super_enhancer": total_h3k27ac > 200,
+            "tumor_specific_enhancers": tumor_specific_count,
+            "essential_enhancers": essential_count,
+            "condensate": {
+                "condensate_score": condensate_score,
+                "phase_separation_likely": condensate_score > 0.5,
+                "drivers": phase_separation_drivers,
+            },
+            "therapeutic_vulnerabilities": {
+                "bet_inhibitor_sensitivity": bet_sensitivity,
+                "avg_brd4_occupancy": round(avg_brd4, 3),
+                "cdk7_sensitivity": cdk7_sensitivity,
+                "cdk9_sensitivity": cdk9_sensitivity,
+            },
+            "se_mutations": se_mutations,
+            "n_hotspot_mutations": len(se_mutations),
+            "gain_of_function_mutations": sum(
+                1 for m in se_mutations if m["effect_on_activity"] == "gain"
+            ),
+            "clinical_insight": (
+                "SUPER-ENHANCER ADDICTION: Target driven by tumor-specific SE — "
+                "highly favorable for CAR-T (stable, high expression). "
+                f"Consider BET inhibitor combo (sensitivity: {bet_sensitivity})."
+                if total_h3k27ac > 200 and tumor_specific_count > 2 else
+                "Target expression not driven by super-enhancer — "
+                "monitor for expression variability across subclones"
+            ),
+        }
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # CpG Island Shore & Shelf Drift Analysis
+    # ═══════════════════════════════════════════════════════════════════════════
+
+    def cpg_shore_shelf_drift(self, gene: str) -> dict:
+        """
+        Analyze methylation dynamics at CpG island shores (0-2kb from island)
+        and shelves (2-4kb from island). Shore methylation changes are more
+        strongly correlated with gene expression than island methylation itself.
+
+        Models tissue-specific differentially methylated regions (tDMRs),
+        cancer-specific DMRs (cDMRs), and epigenetic drift patterns.
+        """
+        gene = gene.upper().strip()
+        seed = int(hashlib.md5(gene.encode()).hexdigest()[:8], 16)
+        rng = random.Random(seed + 13000)
+
+        # CpG island properties
+        island_length_bp = rng.randint(200, 3000)
+        island_cpg_density = round(rng.uniform(0.5, 0.9), 3)
+        island_obs_exp = round(rng.uniform(0.6, 1.0), 3)
+
+        # Generate CpG probes across regions
+        regions = ["N_Shelf", "N_Shore", "Island", "S_Shore", "S_Shelf"]
+        probe_data = {}
+        for region in regions:
+            r_rng = random.Random(seed + 13000 + hash(region))
+            n_probes = r_rng.randint(3, 12)
+            probes = []
+            for i in range(n_probes):
+                p_rng = random.Random(seed + 13000 + hash(region) + i * 41)
+                tumor_beta = p_rng.uniform(0, 1)
+                normal_beta = p_rng.uniform(0, 1)
+                probes.append({
+                    "probe_id": f"cg{p_rng.randint(10000000, 99999999)}",
+                    "tumor_beta": round(tumor_beta, 4),
+                    "normal_beta": round(normal_beta, 4),
+                    "delta_beta": round(tumor_beta - normal_beta, 4),
+                    "p_value": round(p_rng.uniform(0.0001, 0.5), 4),
+                    "significant": abs(tumor_beta - normal_beta) > 0.2,
+                })
+            probe_data[region] = probes
+
+        # Calculate region-level summaries
+        region_summaries = {}
+        for region, probes in probe_data.items():
+            tumor_mean = sum(p["tumor_beta"] for p in probes) / max(len(probes), 1)
+            normal_mean = sum(p["normal_beta"] for p in probes) / max(len(probes), 1)
+            sig_count = sum(1 for p in probes if p["significant"])
+            region_summaries[region] = {
+                "n_probes": len(probes),
+                "tumor_mean_beta": round(tumor_mean, 4),
+                "normal_mean_beta": round(normal_mean, 4),
+                "mean_delta_beta": round(tumor_mean - normal_mean, 4),
+                "significant_probes": sig_count,
+                "hypermethylated": tumor_mean > normal_mean + 0.15,
+                "hypomethylated": tumor_mean < normal_mean - 0.15,
+            }
+
+        # Epigenetic drift score
+        shore_drift = abs(
+            region_summaries["N_Shore"]["mean_delta_beta"] +
+            region_summaries["S_Shore"]["mean_delta_beta"]
+        ) / 2
+        shelf_drift = abs(
+            region_summaries["N_Shelf"]["mean_delta_beta"] +
+            region_summaries["S_Shelf"]["mean_delta_beta"]
+        ) / 2
+        island_drift = abs(region_summaries["Island"]["mean_delta_beta"])
+
+        total_drift = round(shore_drift + shelf_drift + island_drift, 4)
+
+        # tDMR (tissue-specific DMR) analysis
+        n_tdmrs = rng.randint(0, 5)
+        tdmrs = []
+        for i in range(n_tdmrs):
+            t_rng = random.Random(seed + 13500 + i * 53)
+            tdmrs.append({
+                "dmr_id": f"tDMR_{gene}_{i+1}",
+                "region": t_rng.choice(regions),
+                "tissue_specificity": t_rng.choice([
+                    "blood-specific", "brain-specific", "liver-specific",
+                    "epithelial-specific", "immune-specific", "ubiquitous"
+                ]),
+                "delta_beta": round(t_rng.uniform(-0.5, 0.5), 4),
+                "functional_impact": t_rng.choice([
+                    "enhancer_silencing", "promoter_activation",
+                    "insulator_disruption", "none"
+                ]),
+            })
+
+        # cDMR (cancer-specific DMR) analysis
+        n_cdmrs = rng.randint(0, 6)
+        cdmrs = []
+        for i in range(n_cdmrs):
+            c_rng = random.Random(seed + 13800 + i * 67)
+            cdmrs.append({
+                "dmr_id": f"cDMR_{gene}_{i+1}",
+                "region": c_rng.choice(regions),
+                "cancer_types": c_rng.sample([
+                    "BRCA", "LUAD", "COAD", "PRAD", "BLCA",
+                    "HNSC", "LIHC", "KIRC", "AML", "DLBCL"
+                ], k=c_rng.randint(1, 4)),
+                "direction": c_rng.choice(["hyper", "hypo"]),
+                "delta_beta": round(c_rng.uniform(-0.5, 0.5), 4),
+                "driver_event": c_rng.random() > 0.7,
+            })
+
+        # Age-associated drift (Epigenetic Drift Theory)
+        age_correlated_drift = round(rng.uniform(-0.1, 0.3), 4)
+
+        return {
+            "gene": gene,
+            "analysis_type": "cpg_shore_shelf_drift",
+            "data_source": "450K/850K Methylation Array / WGBS simulation",
+            "cpg_island": {
+                "length_bp": island_length_bp,
+                "cpg_density": island_cpg_density,
+                "obs_exp_ratio": island_obs_exp,
+                "classification": (
+                    "high_density" if island_cpg_density > 0.7 else
+                    "intermediate_density" if island_cpg_density > 0.5 else
+                    "low_density"
+                ),
+            },
+            "region_summaries": region_summaries,
+            "probes": probe_data,
+            "drift_scores": {
+                "shore_drift": round(shore_drift, 4),
+                "shelf_drift": round(shelf_drift, 4),
+                "island_drift": round(island_drift, 4),
+                "total_drift": total_drift,
+            },
+            "tissue_specific_dmrs": tdmrs,
+            "cancer_specific_dmrs": cdmrs,
+            "n_tdmrs": len(tdmrs),
+            "n_cdmrs": len(cdmrs),
+            "driver_cdmrs": sum(1 for c in cdmrs if c["driver_event"]),
+            "age_correlated_drift": age_correlated_drift,
+            "epigenetic_instability": total_drift > 0.3,
+            "clinical_insight": (
+                "Significant CpG shore drift detected — epigenetic instability at target locus. "
+                "Expression may vary across tumor evolution. Multi-target CAR-T recommended."
+                if total_drift > 0.3 else
+                "Stable epigenetic landscape at target locus shores — "
+                "consistent target expression expected"
+                if total_drift < 0.1 else
+                "Moderate shore/shelf methylation changes — monitor longitudinally"
+            ),
+        }
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # Histone Variant Incorporation Analysis
+    # ═══════════════════════════════════════════════════════════════════════════
+
+    def histone_variant_analysis(self, gene: str) -> dict:
+        """
+        Analyze non-canonical histone variant incorporation at target locus.
+        Histone variants like H2A.Z, H3.3, macroH2A, and CENP-A alter
+        nucleosome stability and gene regulation in cancer.
+
+        Models variant-specific ChIP-seq profiles and their functional
+        impact on target gene transcription.
+        """
+        gene = gene.upper().strip()
+        seed = int(hashlib.md5(gene.encode()).hexdigest()[:8], 16)
+        rng = random.Random(seed + 14000)
+
+        histone_variants = [
+            {
+                "variant": "H2A.Z",
+                "canonical": "H2A",
+                "function": "Transcription regulation, DNA repair",
+                "localization": "Promoters, enhancers",
+            },
+            {
+                "variant": "H3.3",
+                "canonical": "H3",
+                "function": "Active transcription, heterochromatin",
+                "localization": "Gene bodies, telomeres, pericentric regions",
+            },
+            {
+                "variant": "macroH2A",
+                "canonical": "H2A",
+                "function": "Gene silencing, X inactivation",
+                "localization": "Silenced genes, Xi chromosome",
+            },
+            {
+                "variant": "H2A.X (γH2AX)",
+                "canonical": "H2A",
+                "function": "DNA damage response marker",
+                "localization": "DNA double-strand breaks",
+            },
+            {
+                "variant": "CENP-A",
+                "canonical": "H3",
+                "function": "Centromere identity, chromosome segregation",
+                "localization": "Centromeric regions",
+            },
+            {
+                "variant": "H2A.Bbd",
+                "canonical": "H2A",
+                "function": "Active transcription, spermatogenesis",
+                "localization": "Active gene bodies",
+            },
+        ]
+
+        variant_profiles = []
+        for hv in histone_variants:
+            v_rng = random.Random(seed + 14000 + hash(hv["variant"]))
+            enrichment_tumor = v_rng.uniform(0, 10)
+            enrichment_normal = v_rng.uniform(0, 8)
+
+            chaperone_map = {
+                "H2A.Z": ["ANP32E", "SRCAP", "p400/TIP60"],
+                "H3.3": ["DAXX", "ATRX", "HIRA"],
+                "macroH2A": ["FACT", "ANP32E"],
+                "H2A.X (γH2AX)": ["FACT", "TIP60"],
+                "CENP-A": ["HJURP", "MIS18"],
+                "H2A.Bbd": ["NAP1L1"],
+            }
+
+            chaperones = chaperone_map.get(hv["variant"], ["unknown"])
+            chaperone_status = {}
+            for chap in chaperones:
+                ch_rng = random.Random(seed + 14000 + hash(chap))
+                chaperone_status[chap] = {
+                    "expression": round(ch_rng.uniform(0, 10), 2),
+                    "mutation": ch_rng.choice(["wildtype", "missense", "loss"]),
+                }
+
+            variant_profiles.append({
+                **hv,
+                "enrichment_tumor": round(enrichment_tumor, 2),
+                "enrichment_normal": round(enrichment_normal, 2),
+                "fold_change": round(enrichment_tumor / max(enrichment_normal, 0.01), 2),
+                "at_target_promoter": v_rng.random() > 0.4,
+                "at_target_enhancer": v_rng.random() > 0.5,
+                "chaperone_status": chaperone_status,
+                "functional_consequence": v_rng.choice([
+                    "nucleosome_destabilization", "transcription_activation",
+                    "silencing_reinforcement", "damage_response_activation",
+                    "neutral",
+                ]),
+            })
+
+        # H2A.Z / H3.3 double-variant nucleosomes (highly unstable)
+        h2az_data = next((v for v in variant_profiles if v["variant"] == "H2A.Z"), None)
+        h33_data = next((v for v in variant_profiles if v["variant"] == "H3.3"), None)
+        double_variant_present = False
+        if h2az_data and h33_data:
+            double_variant_present = (
+                h2az_data["at_target_promoter"] and h33_data["at_target_promoter"]
+            )
+
+        # ATRX/DAXX loss analysis (common in pediatric gliomas)
+        atrx_status = "intact"
+        if h33_data:
+            daxx_status = h33_data["chaperone_status"].get("DAXX", {})
+            atrx_s = h33_data["chaperone_status"].get("ATRX", {})
+            if daxx_status.get("mutation") != "wildtype" or atrx_s.get("mutation") != "wildtype":
+                atrx_status = "disrupted — ALT-telomere phenotype possible"
+
+        return {
+            "gene": gene,
+            "analysis_type": "histone_variant_analysis",
+            "data_source": "Variant-specific ChIP-seq / proteomics simulation",
+            "variant_profiles": variant_profiles,
+            "n_variants_enriched_at_target": sum(
+                1 for v in variant_profiles
+                if v["at_target_promoter"] and v["fold_change"] > 1.5
+            ),
+            "double_variant_nucleosomes": double_variant_present,
+            "nucleosome_instability": (
+                "HIGH — H2A.Z/H3.3 double-variant nucleosomes at promoter"
+                if double_variant_present else
+                "MODERATE" if any(
+                    v["at_target_promoter"] and v["functional_consequence"] == "nucleosome_destabilization"
+                    for v in variant_profiles
+                ) else "LOW — stable canonical nucleosomes"
+            ),
+            "atrx_daxx_status": atrx_status,
+            "clinical_insight": (
+                "Histone variant composition supports active, accessible target locus — "
+                "favorable for stable CAR-T target expression"
+                if double_variant_present or any(
+                    v["fold_change"] > 2 and v["at_target_promoter"]
+                    for v in variant_profiles if v["variant"] in ["H2A.Z", "H3.3"]
+                ) else
+                "Standard histone composition — no variant-driven expression advantage"
+            ),
+        }
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # DNA Damage & Repair Epigenetics
+    # ═══════════════════════════════════════════════════════════════════════════
+
+    def dna_damage_repair_epigenetics(self, gene: str) -> dict:
+        """
+        Profile the epigenetic marks associated with DNA damage response
+        and repair pathway activity at and around the target gene locus.
+        γH2AX spreading, 53BP1 domains, and BRCA1/RAD51 foci.
+
+        Models how DNA damage accumulation affects target accessibility
+        and expression stability during anti-cancer treatment.
+        """
+        gene = gene.upper().strip()
+        seed = int(hashlib.md5(gene.encode()).hexdigest()[:8], 16)
+        rng = random.Random(seed + 15000)
+
+        # γH2AX (DNA damage marker) profile
+        gamma_h2ax_signal = round(rng.uniform(0, 20), 2)
+        gamma_h2ax_spread_kb = rng.randint(10, 500) if gamma_h2ax_signal > 5 else 0
+        foci_count = rng.randint(0, 50)
+
+        # DNA repair pathway status (epigenetic silencing)
+        repair_pathways = [
+            {"pathway": "HR (homologous recombination)", "key_genes": ["BRCA1", "BRCA2", "RAD51"]},
+            {"pathway": "NHEJ (non-homologous end joining)", "key_genes": ["XRCC4", "LIG4", "KU70"]},
+            {"pathway": "MMR (mismatch repair)", "key_genes": ["MLH1", "MSH2", "MSH6"]},
+            {"pathway": "NER (nucleotide excision repair)", "key_genes": ["ERCC1", "XPC", "XPA"]},
+            {"pathway": "BER (base excision repair)", "key_genes": ["OGG1", "MUTYH", "APEX1"]},
+        ]
+
+        repair_status = []
+        for pathway in repair_pathways:
+            p_rng = random.Random(seed + 15000 + hash(pathway["pathway"]))
+            gene_statuses = {}
+            for g in pathway["key_genes"]:
+                g_rng = random.Random(seed + 15000 + hash(g))
+                promoter_methylation = g_rng.uniform(0, 1)
+                gene_statuses[g] = {
+                    "promoter_methylation": round(promoter_methylation, 3),
+                    "epigenetically_silenced": promoter_methylation > 0.6,
+                    "h3k9me3_enrichment": round(g_rng.uniform(0, 5), 2),
+                    "expression_level": round(g_rng.uniform(0, 15), 2),
+                }
+
+            silenced = sum(1 for s in gene_statuses.values() if s["epigenetically_silenced"])
+            repair_status.append({
+                "pathway": pathway["pathway"],
+                "gene_status": gene_statuses,
+                "silenced_genes": silenced,
+                "pathway_functional": silenced == 0,
+                "synthetic_lethality_target": silenced > 0,
+            })
+
+        # 53BP1 and BRCA1 domain analysis
+        domain_53bp1 = round(rng.uniform(0, 10), 2)
+        domain_brca1 = round(rng.uniform(0, 10), 2)
+        repair_choice = "HR-dominant" if domain_brca1 > domain_53bp1 else "NHEJ-dominant"
+
+        # Treatment-induced damage prediction
+        chemo_damage_risk = round(rng.uniform(0, 1), 3)
+        radiation_damage_risk = round(rng.uniform(0, 1), 3)
+
+        # Chromothripsis evidence (massive rearrangement)
+        chromothripsis_score = round(rng.uniform(0, 1), 3)
+
+        hr_deficient = any(
+            not r["pathway_functional"]
+            for r in repair_status if "HR" in r["pathway"]
+        )
+        mmr_deficient = any(
+            not r["pathway_functional"]
+            for r in repair_status if "MMR" in r["pathway"]
+        )
+
+        return {
+            "gene": gene,
+            "analysis_type": "dna_damage_repair_epigenetics",
+            "data_source": "γH2AX ChIP-seq / DDR pathway simulation",
+            "damage_markers": {
+                "gamma_h2ax_signal": gamma_h2ax_signal,
+                "gamma_h2ax_spread_kb": gamma_h2ax_spread_kb,
+                "dna_damage_foci": foci_count,
+                "damage_severity": (
+                    "SEVERE" if gamma_h2ax_signal > 15 else
+                    "MODERATE" if gamma_h2ax_signal > 5 else "LOW"
+                ),
+            },
+            "repair_pathway_epigenetics": repair_status,
+            "hr_deficient": hr_deficient,
+            "mmr_deficient": mmr_deficient,
+            "repair_domains": {
+                "53bp1_signal": domain_53bp1,
+                "brca1_signal": domain_brca1,
+                "repair_choice": repair_choice,
+            },
+            "treatment_sensitivity": {
+                "parp_inhibitor": "SENSITIVE" if hr_deficient else "RESISTANT",
+                "platinum_chemotherapy": "SENSITIVE" if hr_deficient else "VARIABLE",
+                "checkpoint_immunotherapy": "FAVORABLE" if mmr_deficient else "VARIABLE",
+                "chemo_damage_risk_to_locus": chemo_damage_risk,
+                "radiation_damage_risk_to_locus": radiation_damage_risk,
+            },
+            "chromothripsis_evidence": {
+                "score": chromothripsis_score,
+                "detected": chromothripsis_score > 0.7,
+            },
+            "target_locus_integrity": (
+                "COMPROMISED — high DNA damage at/near target locus may affect expression"
+                if gamma_h2ax_signal > 10 else
+                "INTACT — target locus shows minimal DNA damage marks"
+            ),
+            "clinical_insight": (
+                "BRCAness detected (HR-deficient) — PARP inhibitor + CAR-T combination "
+                "may synergize through increased neoantigen presentation"
+                if hr_deficient else
+                "MMR-deficient — high neoantigen load favors immunotherapy combination"
+                if mmr_deficient else
+                "DNA repair pathways intact — standard CAR-T approach suitable"
+            ),
+        }

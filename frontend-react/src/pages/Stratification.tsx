@@ -161,8 +161,18 @@ export default function Stratification() {
                     )}
                     {data.ai_insight && (
                         <div className="card">
-                            <div className="card-header">AI Insight</div>
-                            <p style={{ fontSize: 13, color: '#94A3B8', lineHeight: 1.7 }}>{data.ai_insight}</p>
+                            <div className="card-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                <span>AI Insight</span>
+                                <span className="badge" style={{
+                                    background: data.ai_insight_source === 'llm' ? 'rgba(16,185,129,0.12)' : 'rgba(139,92,246,0.12)',
+                                    color: data.ai_insight_source === 'llm' ? '#10B981' : '#8B5CF6',
+                                    fontSize: 10,
+                                }}>
+                                    {data.ai_insight_source === 'llm' ? '🤖 LLM Generated' : '📐 Rule-Based'}
+                                </span>
+                            </div>
+                            <p style={{ fontSize: 13, color: '#94A3B8', lineHeight: 1.7 }}
+                               dangerouslySetInnerHTML={{ __html: data.ai_insight.replace(/\*\*(.*?)\*\*/g, '<strong style="color:#F1F5F9">$1</strong>') }} />
                         </div>
                     )}
                 </>

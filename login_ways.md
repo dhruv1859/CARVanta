@@ -4,29 +4,59 @@ This document explains how to access and authenticate with the CARVanta platform
 
 ---
 
-## 1. React Frontend (No Login Required — Open Access)
+## 1. Quick Start (Recommended)
 
-The React dashboard at `http://localhost:5173` is currently **open access** — no login wall.
-
-**How to access:**
 ```bash
-# Terminal 1: Start the API backend
+# Double-click start.bat or run:
 cd CARVanta
-py -m uvicorn api.main:app --port 8001
-
-# Terminal 2: Start the React frontend
-cd CARVanta/frontend-react
-npm run dev
+start.bat
 ```
-Then open **http://localhost:5173** in your browser.
 
-> All 10 modules (Single Analysis, Comparison, Heatmap, Synergy, Stratification, NLP Search, Clinical Trials, Leaderboard, Dataset Intelligence, System Status) are immediately accessible from the sidebar.
+This launches both servers:
+- **Backend API:** http://localhost:8001
+- **Frontend Dashboard:** http://localhost:5173
+
+> Wait ~15 seconds for the backend to finish loading, then open the frontend URL in your browser.
 
 ---
 
-## 2. API Access (API Key Authentication)
+## 2. React Frontend (JWT Authentication)
 
-The FastAPI backend at `http://localhost:8001` uses **API key authentication** via the `X-CARVanta-API-Key` header.
+The React dashboard at `http://localhost:5173` includes a full **login/registration system**.
+
+### First Time — Create an Account
+
+1. Open http://localhost:5173
+2. Click **"Create Account"** tab
+3. Fill in: Full Name, Username, Email, Password (min 8 chars), Role, Country
+4. Click **"Create Account"**
+5. In development mode, the account is **auto-verified** — you'll be logged in immediately
+6. In production, a **6-digit email verification code** is sent to your email
+
+### Returning User — Sign In
+
+1. Open http://localhost:5173
+2. Enter your **email or username** + password
+3. Click **"Sign In"**
+
+### Auth Bypass (Current Dev State)
+
+> The login wall is currently **bypassed** for convenience during development. All modules are accessible without logging in. The auth system is fully functional and can be re-enabled by uncommenting the auth gate in `App.tsx`.
+
+### Available Roles
+
+| Role | Description | Access Level |
+|------|-------------|-------------|
+| 🔬 Researcher | Academic / lab researcher | Full analysis access |
+| 🧑‍⚕️ Clinician | Medical professional | Full analysis + patient tools |
+| 🩺 Patient | Patient self-service | Limited access |
+| 🔑 Admin | Platform administrator | Full access + admin panel |
+
+---
+
+## 3. API Access (API Key Authentication)
+
+The FastAPI backend at `http://localhost:8001` supports **API key authentication** via the `X-CARVanta-API-Key` header.
 
 ### Available API Key Tiers
 
@@ -40,7 +70,7 @@ The FastAPI backend at `http://localhost:8001` uses **API key authentication** v
 
 ```bash
 # Using curl
-curl -X POST http://localhost:8001/score \
+curl -X POST http://localhost:8001/api/v5/score \
   -H "Content-Type: application/json" \
   -H "X-CARVanta-API-Key: carvanta-dev-key-001" \
   -d '{"antigen_name": "CD19"}'
@@ -48,7 +78,7 @@ curl -X POST http://localhost:8001/score \
 # Using Python requests
 import requests
 r = requests.post(
-    "http://localhost:8001/score",
+    "http://localhost:8001/api/v5/score",
     json={"antigen_name": "CD19"},
     headers={"X-CARVanta-API-Key": "carvanta-dev-key-001"}
 )
@@ -68,7 +98,29 @@ print(r.json())
 
 ---
 
-## 3. Docker Deployment Access
+## 4. JWT Token Authentication (Programmatic)
+
+For programmatic access with user-level auth:
+
+```bash
+# Register a new user
+curl -X POST http://localhost:8001/api/v5/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{"email": "user@example.com", "username": "user1", "password": "securepass123", "full_name": "Test User", "role": "researcher"}'
+
+# Login and get JWT token
+curl -X POST http://localhost:8001/api/v5/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{"email_or_username": "user@example.com", "password": "securepass123"}'
+
+# Use the JWT token for authenticated requests
+curl http://localhost:8001/api/v5/auth/me \
+  -H "Authorization: Bearer YOUR_JWT_TOKEN"
+```
+
+---
+
+## 5. Docker Deployment Access
 
 When running via Docker Compose, the services are exposed on the same ports:
 
@@ -82,30 +134,38 @@ docker-compose -f docker-compose.dev.yml up --build
 
 | Service | URL | Auth |
 |---------|-----|------|
-| Frontend | http://localhost:8501 (Streamlit) or http://localhost:5173 (React) | None |
-| API | http://localhost:8001 | API Key header |
+| Frontend | http://localhost:5173 (React) | JWT Login |
+| API | http://localhost:8001 | API Key / JWT |
+| API Docs | http://localhost:8001/docs | None |
 | Database | localhost:5432 | PostgreSQL user/pass from `.env` |
 
-### PostgreSQL credentials (production Docker)
+---
 
-Set in `.env` or `docker-compose.yml`:
-```
-POSTGRES_USER=carvanta
-POSTGRES_PASSWORD=carvanta_secure_pw
+## 6. Manual Start (Without start.bat)
+
+```bash
+# Terminal 1: Start the API backend
+cd CARVanta
+C:\Users\dhruv\carvanta_env\Scripts\python.exe -m uvicorn api.main:app --host 0.0.0.0 --port 8001
+
+# Terminal 2: Start the React frontend
+cd CARVanta/frontend-react
+npm run dev
 ```
 
 ---
 
-## 4. Future: Enterprise SSO / OAuth Integration
+## 7. Enterprise Features (Built, Not Yet Deployed)
 
-For hospital-grade deployment, the platform is architected to support:
+The platform includes enterprise auth infrastructure:
 
-- **OAuth 2.0 / OIDC** via FastAPI middleware (Auth0, Okta, Azure AD)
-- **SAML 2.0** for enterprise healthcare SSO
-- **Role-Based Access Control (RBAC)** — Admin, Researcher, Clinician, Viewer
-- **Session management** with JWT tokens stored in httpOnly cookies
-
-> This is not yet implemented but the architecture supports it via the existing `RateLimitMiddleware` and `APIKey` database model.
+- **OAuth 2.0 / SSO** — Google, GitHub, Azure AD integration (`api/oauth2_sso.py`)
+- **Multi-Factor Authentication** — TOTP-based MFA (`api/mfa_totp.py`)
+- **Role-Based Access Control** — Admin, Researcher, Clinician, Patient roles (`api/auth.py`)
+- **Email Verification** — 6-digit code via SMTP (`api/email_verification.py`)
+- **Rate Limiting** — Per-user, per-endpoint, plan-aware (`api/rate_limiter.py`)
+- **Audit Trail** — Tamper-proof, blockchain-style chained logging (`api/audit_logger.py`)
+- **Billing** — Stripe-style subscription management (`api/billing.py`)
 
 ---
 
@@ -113,8 +173,10 @@ For hospital-grade deployment, the platform is architected to support:
 
 | What you want | How to do it |
 |---------------|-------------|
+| Launch everything | Run `start.bat` |
 | View the dashboard | Open http://localhost:5173 |
 | Call the API | Add `X-CARVanta-API-Key: carvanta-dev-key-001` header |
+| Interactive API docs | Open http://localhost:8001/docs |
 | Change API keys | Edit `.env` → restart server |
 | Docker production | `docker-compose up --build` |
-| Check system health | Visit http://localhost:8001/health |
+| Check system health | Visit http://localhost:8001/api/v5/health |

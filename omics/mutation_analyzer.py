@@ -1275,3 +1275,409 @@ class MutationAnalyzer:
                 if len(subclonal) > 0 else "LOW: Only truncal mutations"
             ),
         }
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # Structural Variant Analysis
+    # ═══════════════════════════════════════════════════════════════════════════
+
+    def structural_variant_analysis(self, gene: str) -> dict:
+        """
+        Comprehensive structural variant analysis at and surrounding the
+        target gene locus. Identifies translocations, inversions, duplications,
+        deletions, and complex rearrangements (chromoplexy, chromothripsis)
+        that may disrupt or amplify target expression.
+
+        Models WGS-based SV calling with breakpoint resolution, partner
+        fusion gene identification, and clinical impact prediction.
+        """
+        gene = gene.upper().strip()
+        seed = self._gene_seed(gene)
+        rng = random.Random(seed + 15000)
+
+        # Survey structural variants in the region
+        sv_types = ["translocation", "inversion", "tandem_duplication",
+                     "deletion", "insertion", "complex_rearrangement"]
+
+        n_svs = rng.randint(0, 12)
+        structural_variants = []
+
+        fusion_partners = [
+            "BCR", "ABL1", "ALK", "ROS1", "RET", "NTRK1", "FGFR1",
+            "ETV6", "EWSR1", "MLL", "NUP98", "IGH", "MYC", "RUNX1",
+            "PML", "RARA", "FLI1", "ERG", "TMPRSS2", "SYT",
+        ]
+
+        for i in range(n_svs):
+            sv_rng = random.Random(seed + 15000 + i * 97)
+            sv_type = sv_rng.choice(sv_types)
+            chr_a = f"chr{sv_rng.randint(1, 22)}"
+            chr_b = f"chr{sv_rng.randint(1, 22)}"
+            pos_a = sv_rng.randint(1000000, 200000000)
+            pos_b = sv_rng.randint(1000000, 200000000)
+            size_bp = abs(pos_b - pos_a) if chr_a == chr_b else 0
+
+            is_fusion = sv_type == "translocation" and sv_rng.random() > 0.5
+            partner = sv_rng.choice(fusion_partners) if is_fusion else None
+
+            structural_variants.append({
+                "sv_id": f"SV_{gene}_{i+1}",
+                "type": sv_type,
+                "chromosome_a": chr_a,
+                "position_a": pos_a,
+                "chromosome_b": chr_b if sv_type == "translocation" else chr_a,
+                "position_b": pos_b,
+                "size_bp": size_bp if sv_type != "translocation" else None,
+                "orientation": sv_rng.choice([
+                    "+/+", "+/-", "-/+", "-/-"
+                ]),
+                "supporting_reads": sv_rng.randint(3, 200),
+                "vaf": round(sv_rng.uniform(0.05, 0.5), 3),
+                "clonal": sv_rng.random() > 0.4,
+                "breakpoint_homology": sv_rng.randint(0, 20),
+                "inserted_sequence_bp": sv_rng.randint(0, 50) if sv_rng.random() > 0.7 else 0,
+                "mechanism": sv_rng.choice([
+                    "NHEJ", "MMEJ (microhomology)", "fork_stalling",
+                    "replication_stress", "chromothripsis", "unknown"
+                ]),
+                "creates_fusion": is_fusion,
+                "fusion_partner": partner,
+                "in_frame_fusion": sv_rng.random() > 0.4 if is_fusion else False,
+                "affects_target_expression": sv_rng.random() > 0.5,
+                "recurrent_in_cancer": sv_rng.random() > 0.7,
+            })
+
+        # Classify SV burden
+        sv_burden = len(structural_variants)
+        fusions = [sv for sv in structural_variants if sv["creates_fusion"]]
+        expression_affecting = [sv for sv in structural_variants if sv["affects_target_expression"]]
+
+        # Complex SV detection (chromoplexy: chains of balanced SVs)
+        chromoplexy_score = round(rng.uniform(0, 1), 3)
+        complex_sv_chains = rng.randint(0, 3) if chromoplexy_score > 0.5 else 0
+
+        # Breakpoint clustering analysis
+        clustered_breakpoints = rng.randint(0, 8)
+
+        # Genome doubling (whole-genome duplication)
+        wgd_detected = rng.random() > 0.7
+        ploidy = round(rng.uniform(1.8, 4.5), 1)
+
+        # SV index relative to cancer type
+        sv_index = round(sv_burden / 10.0, 3)
+
+        return {
+            "gene": gene,
+            "analysis_type": "structural_variant_analysis",
+            "data_source": "WGS / linked-read simulation (Manta/DELLY/SVABA)",
+            "structural_variants": structural_variants,
+            "sv_burden": sv_burden,
+            "sv_by_type": {
+                svtype: sum(1 for sv in structural_variants if sv["type"] == svtype)
+                for svtype in sv_types
+            },
+            "fusions": {
+                "count": len(fusions),
+                "in_frame": sum(1 for f in fusions if f["in_frame_fusion"]),
+                "partners": [f["fusion_partner"] for f in fusions if f["fusion_partner"]],
+                "oncogenic_fusions": [
+                    f for f in fusions
+                    if f["fusion_partner"] in ["BCR", "ALK", "ROS1", "RET", "NTRK1"]
+                    and f["in_frame_fusion"]
+                ],
+            },
+            "expression_affecting_svs": len(expression_affecting),
+            "complex_rearrangements": {
+                "chromoplexy_score": chromoplexy_score,
+                "chromoplexy_chains": complex_sv_chains,
+                "clustered_breakpoints": clustered_breakpoints,
+            },
+            "genome_integrity": {
+                "wgd_detected": wgd_detected,
+                "ploidy": ploidy,
+                "sv_index": sv_index,
+                "genome_instability": (
+                    "HIGH — significant structural instability"
+                    if sv_index > 0.5 else
+                    "MODERATE" if sv_index > 0.2 else "LOW — stable genome"
+                ),
+            },
+            "clinical_insight": (
+                f"Gene fusion detected ({fusions[0]['fusion_partner']}) — "
+                "may create novel epitope or alter expression. "
+                "Consider fusion-targeting CAR-T strategy."
+                if fusions and fusions[0].get("in_frame_fusion") else
+                "SV-mediated expression changes detected — monitor for heterogeneity"
+                if expression_affecting else
+                "No significant structural variants affecting target locus"
+            ),
+        }
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # Kataegis Hypermutation Detection
+    # ═══════════════════════════════════════════════════════════════════════════
+
+    def kataegis_detection(self, gene: str) -> dict:
+        """
+        Detect kataegis events (focal hypermutation clusters) at and near
+        the target gene locus. Kataegis is driven by APOBEC enzymes and
+        creates localized C>T and C>G mutation showers that can disrupt
+        target epitopes or regulatory elements.
+
+        Models inter-mutation distance analysis and rainfall plots.
+        """
+        gene = gene.upper().strip()
+        seed = self._gene_seed(gene)
+        rng = random.Random(seed + 16000)
+
+        # Generate mutation positions across the target region
+        region_size_kb = rng.randint(100, 2000)
+        n_total_mutations = rng.randint(20, 300)
+
+        mutations = []
+        for i in range(n_total_mutations):
+            m_rng = random.Random(seed + 16000 + i * 73)
+            # Some mutations cluster (kataegis), others are scattered
+            is_clustered = m_rng.random() > 0.7
+            if is_clustered:
+                cluster_center = m_rng.randint(0, region_size_kb)
+                position = cluster_center + m_rng.randint(-2, 2)
+            else:
+                position = m_rng.randint(0, region_size_kb)
+
+            mutations.append({
+                "position_kb": max(0, min(position, region_size_kb)),
+                "base_change": m_rng.choice([
+                    "C>T", "C>G", "C>A", "T>C", "T>A", "T>G"
+                ]),
+                "trinucleotide_context": m_rng.choice([
+                    "TCA>TTA", "TCT>TTT", "TCA>TGA", "TCG>TTG",
+                    "ACA>ATA", "ACC>ATC", "GCA>GTA", "CCG>CTG",
+                ]),
+                "is_apobec_motif": m_rng.random() > 0.5,
+                "vaf": round(m_rng.uniform(0.05, 0.5), 3),
+            })
+
+        mutations.sort(key=lambda m: m["position_kb"])
+
+        # Calculate inter-mutation distances
+        inter_mutation_distances = []
+        for i in range(1, len(mutations)):
+            dist = abs(mutations[i]["position_kb"] - mutations[i-1]["position_kb"])
+            inter_mutation_distances.append({
+                "distance_kb": round(dist, 2),
+                "log10_distance": round(math.log10(max(dist, 0.001)), 3),
+                "is_kataegis": dist < 1.0,  # < 1kb = kataegis
+            })
+
+        # Identify kataegis events (clusters of 6+ mutations within 1kb)
+        kataegis_events = []
+        current_cluster = []
+        for i, imd in enumerate(inter_mutation_distances):
+            if imd["is_kataegis"]:
+                current_cluster.append(i)
+            else:
+                if len(current_cluster) >= 5:
+                    start_pos = mutations[current_cluster[0]]["position_kb"]
+                    end_pos = mutations[current_cluster[-1] + 1]["position_kb"]
+                    k_rng = random.Random(seed + 16500 + len(kataegis_events))
+                    kataegis_events.append({
+                        "event_id": f"KAT_{gene}_{len(kataegis_events) + 1}",
+                        "start_kb": round(start_pos, 2),
+                        "end_kb": round(end_pos, 2),
+                        "span_kb": round(end_pos - start_pos, 2),
+                        "n_mutations": len(current_cluster) + 1,
+                        "predominant_change": max(
+                            ["C>T", "C>G", "C>A"],
+                            key=lambda bc: sum(
+                                1 for j in current_cluster
+                                if mutations[j]["base_change"] == bc
+                            )
+                        ),
+                        "apobec_fraction": round(
+                            sum(1 for j in current_cluster if mutations[j]["is_apobec_motif"]) /
+                            max(len(current_cluster), 1), 3
+                        ),
+                        "near_target_cds": k_rng.random() > 0.6,
+                        "in_regulatory_region": k_rng.random() > 0.5,
+                        "strand_bias": round(k_rng.uniform(0, 1), 3),
+                    })
+                current_cluster = []
+
+        # Handle last cluster
+        if len(current_cluster) >= 5:
+            start_pos = mutations[current_cluster[0]]["position_kb"]
+            end_pos = mutations[min(current_cluster[-1] + 1, len(mutations) - 1)]["position_kb"]
+            k_rng = random.Random(seed + 16500 + len(kataegis_events))
+            kataegis_events.append({
+                "event_id": f"KAT_{gene}_{len(kataegis_events) + 1}",
+                "start_kb": round(start_pos, 2),
+                "end_kb": round(end_pos, 2),
+                "span_kb": round(end_pos - start_pos, 2),
+                "n_mutations": len(current_cluster) + 1,
+                "predominant_change": "C>T",
+                "apobec_fraction": 0.7,
+                "near_target_cds": k_rng.random() > 0.6,
+                "in_regulatory_region": k_rng.random() > 0.5,
+                "strand_bias": round(k_rng.uniform(0, 1), 3),
+            })
+
+        # Rainfall plot statistics
+        median_imd = round(
+            sorted([d["distance_kb"] for d in inter_mutation_distances])[
+                len(inter_mutation_distances) // 2
+            ] if inter_mutation_distances else 0, 2
+        )
+
+        apobec_mutations = sum(1 for m in mutations if m["is_apobec_motif"])
+
+        return {
+            "gene": gene,
+            "analysis_type": "kataegis_detection",
+            "data_source": "WGS / rainfall plot simulation",
+            "region_size_kb": region_size_kb,
+            "total_mutations": len(mutations),
+            "mutations_per_kb": round(len(mutations) / max(region_size_kb, 1), 3),
+            "kataegis_events": kataegis_events,
+            "n_kataegis_events": len(kataegis_events),
+            "total_kataegis_mutations": sum(e["n_mutations"] for e in kataegis_events),
+            "rainfall_statistics": {
+                "median_inter_mutation_distance_kb": median_imd,
+                "clustered_fraction": round(
+                    sum(1 for d in inter_mutation_distances if d["is_kataegis"]) /
+                    max(len(inter_mutation_distances), 1), 3
+                ),
+            },
+            "apobec_enrichment": {
+                "apobec_mutations": apobec_mutations,
+                "apobec_fraction": round(apobec_mutations / max(len(mutations), 1), 3),
+                "apobec_driven": apobec_mutations / max(len(mutations), 1) > 0.3,
+            },
+            "target_impact": {
+                "events_near_cds": sum(1 for e in kataegis_events if e["near_target_cds"]),
+                "events_in_regulatory": sum(1 for e in kataegis_events if e["in_regulatory_region"]),
+                "epitope_disruption_risk": (
+                    "HIGH — kataegis events overlap target coding sequence"
+                    if any(e["near_target_cds"] for e in kataegis_events) else
+                    "MODERATE — kataegis near regulatory regions may alter expression"
+                    if any(e["in_regulatory_region"] for e in kataegis_events) else
+                    "LOW — kataegis events distant from target"
+                    if kataegis_events else "NONE — no kataegis detected"
+                ),
+            },
+            "clinical_insight": (
+                "Active kataegis at target locus — high risk of epitope diversification. "
+                "Consider multi-epitope or bispecific CAR-T design."
+                if any(e["near_target_cds"] for e in kataegis_events) else
+                "Kataegis detected but not targeting the antigen coding region"
+                if kataegis_events else
+                "No kataegis — mutation landscape is relatively stable"
+            ),
+        }
+
+    # ═══════════════════════════════════════════════════════════════════════════
+    # Neoantigen Landscape Prediction
+    # ═══════════════════════════════════════════════════════════════════════════
+
+    def neoantigen_landscape(self, gene: str) -> dict:
+        """
+        Predict the neoantigen landscape generated by tumor mutations.
+        Identifies high-quality neoantigens that can be co-targeted
+        alongside CAR-T therapy for combinatorial immunotherapy.
+
+        Models MHC binding prediction, expression validation, and
+        clonality assessment for neoantigen prioritization.
+        """
+        gene = gene.upper().strip()
+        seed = self._gene_seed(gene)
+        rng = random.Random(seed + 17000)
+
+        n_neoantigens = rng.randint(5, 50)
+        neoantigens = []
+
+        hla_types = [
+            "HLA-A*02:01", "HLA-A*01:01", "HLA-A*03:01",
+            "HLA-B*07:02", "HLA-B*44:02", "HLA-C*07:02",
+        ]
+
+        for i in range(n_neoantigens):
+            n_rng = random.Random(seed + 17000 + i * 59)
+            binding_affinity = n_rng.uniform(1, 5000)
+            expression = n_rng.uniform(0, 20)
+            vaf = n_rng.uniform(0.05, 0.5)
+            is_clonal = vaf > 0.25
+
+            # Neoantigen quality score
+            quality = 0.0
+            if binding_affinity < 50:
+                quality += 3.0
+            elif binding_affinity < 150:
+                quality += 2.0
+            elif binding_affinity < 500:
+                quality += 1.0
+            if expression > 5:
+                quality += 2.0
+            elif expression > 1:
+                quality += 1.0
+            if is_clonal:
+                quality += 2.0
+            quality = round(min(quality / 7.0, 1.0), 3)
+
+            neoantigens.append({
+                "neoantigen_id": f"NEO_{gene}_{i+1}",
+                "mutation_type": n_rng.choice(["missense", "frameshift", "fusion"]),
+                "hla_allele": n_rng.choice(hla_types),
+                "binding_affinity_nM": round(binding_affinity, 1),
+                "binding_rank_pct": round(n_rng.uniform(0.01, 10), 2),
+                "strong_binder": binding_affinity < 50,
+                "weak_binder": 50 <= binding_affinity < 500,
+                "peptide_length": n_rng.choice([8, 9, 10, 11]),
+                "expression_tpm": round(expression, 2),
+                "vaf": round(vaf, 3),
+                "clonal": is_clonal,
+                "quality_score": quality,
+                "t_cell_reactivity_predicted": n_rng.random() > 0.5 if quality > 0.5 else n_rng.random() > 0.8,
+                "homology_to_self": round(n_rng.uniform(0, 1), 3),
+                "dissimilarity_to_self": round(1 - n_rng.uniform(0, 0.5), 3),
+            })
+
+        neoantigens.sort(key=lambda n: n["quality_score"], reverse=True)
+        high_quality = [n for n in neoantigens if n["quality_score"] > 0.6]
+        clonal_neoantigens = [n for n in neoantigens if n["clonal"]]
+
+        # Neoantigen burden categories
+        burden = len(neoantigens)
+        burden_category = (
+            "HIGH" if burden > 30 else
+            "MODERATE" if burden > 10 else "LOW"
+        )
+
+        return {
+            "gene": gene,
+            "analysis_type": "neoantigen_landscape",
+            "data_source": "NetMHCpan / MHCflurry / pVACseq simulation",
+            "total_neoantigens": len(neoantigens),
+            "neoantigen_burden_category": burden_category,
+            "high_quality_neoantigens": len(high_quality),
+            "clonal_neoantigens": len(clonal_neoantigens),
+            "top_neoantigens": neoantigens[:10],
+            "hla_coverage": {
+                hla: sum(1 for n in neoantigens if n["hla_allele"] == hla)
+                for hla in hla_types
+            },
+            "strong_binders": sum(1 for n in neoantigens if n["strong_binder"]),
+            "predicted_immunogenic": sum(1 for n in neoantigens if n["t_cell_reactivity_predicted"]),
+            "combination_therapy": {
+                "neoantigen_vaccine_candidates": [
+                    n["neoantigen_id"] for n in high_quality[:5]
+                ],
+                "checkpoint_eligible": burden > 20,
+                "cart_combination_strategy": (
+                    "HIGH neoantigen burden — combine CAR-T with checkpoint inhibitor "
+                    "or neoantigen vaccine for synergistic anti-tumor immunity"
+                    if burden > 20 else
+                    "MODERATE burden — CAR-T monotherapy with checkpoint backup"
+                    if burden > 10 else
+                    "LOW burden — CAR-T monotherapy recommended"
+                ),
+            },
+        }
