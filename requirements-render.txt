@@ -1,7 +1,7 @@
 # ─── CARVanta API — Render Deployment ───────────────────────────────────────
 # Lighter requirements for free-tier cloud hosting
 # Core API
-fastapi>=0.104.0
+fastapi>=0.136.1
 uvicorn[standard]>=0.24.0
 pydantic>=2.5.0
 
