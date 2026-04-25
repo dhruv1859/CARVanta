@@ -134,10 +134,34 @@ async def match_patient(request: MatchRequest) -> Dict[str, Any]:
         organ_function=request.patient.organ_function,
         prior_car_t=request.patient.prior_car_t,
     )
-    return await match_patient_to_trials(
+    result = await match_patient_to_trials(
         patient, max_results=request.max_results,
         min_score=request.min_score, include_ineligible=request.include_ineligible,
     )
+    # ── LLM Insight ──
+    try:
+        from features.llm_insight import generate_trial_insight, is_llm_available
+        if is_llm_available() and result.get("matches"):
+            top_match = result["matches"][0] if isinstance(result.get("matches"), list) else {}
+            trial_data = {
+                "title": top_match.get("title", "N/A"),
+                "phase": top_match.get("phase", "N/A"),
+                "sponsor": top_match.get("sponsor", "N/A"),
+                "target_antigen": top_match.get("target", "N/A"),
+                "cancer_type": request.patient.cancer_type,
+                "match_score": top_match.get("match_score", 0) * 100,
+                "location": top_match.get("location", "N/A"),
+                "status": top_match.get("status", "N/A"),
+                "criteria_met": top_match.get("criteria_met", "N/A"),
+                "criteria_total": top_match.get("criteria_total", "N/A"),
+            }
+            insight = generate_trial_insight(trial_data)
+            if insight:
+                result["ai_insight"] = insight
+                result["ai_insight_source"] = "llm"
+    except Exception as e:
+        print(f"[CARVanta] Trial LLM insight error: {e}")
+    return result
 
 
 # ──────────────────────────────────────────────────────────────────────

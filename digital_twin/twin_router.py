@@ -332,7 +332,26 @@ def run_simulation(req: SimulationRequest):
     step = max(1, total_days // 120)
     sampled = {k: [v[i] for i in range(0, total_days, step)] for k, v in timeline.items()}
 
-    return {"timeline": sampled, "summary": result["summary"], "parameters": result["parameters"]}
+    response = {"timeline": sampled, "summary": result["summary"], "parameters": result["parameters"]}
+
+    # ── LLM Insight ──
+    try:
+        from features.llm_insight import generate_digital_twin_insight, is_llm_available
+        if is_llm_available():
+            patient_data = {
+                "age": req.patient_age, "weight": req.patient_weight,
+                "cancer_type": req.cancer_type, "ecog": "N/A",
+                "prior_lines": "N/A", "target_antigen": "N/A",
+            }
+            sim_data = result.get("summary", {})
+            insight = generate_digital_twin_insight(patient_data, sim_data)
+            if insight:
+                response["ai_insight"] = insight
+                response["ai_insight_source"] = "llm"
+    except Exception as e:
+        print(f"[CARVanta] Twin LLM insight error: {e}")
+
+    return response
 
 
 @router.post("/compare")
@@ -485,11 +504,21 @@ def compare_treatments_endpoint(req: TreatmentCompareRequest):
 @router.post("/genomic-profile")
 def generate_genomic_profile_endpoint(req: GenomicProfileRequest):
     """Generate a comprehensive genomic profile for treatment planning."""
-    return generate_genomic_profile(
+    result = generate_genomic_profile(
         cancer_type=req.cancer_type,
         patient_age=req.patient_age,
         seed=req.seed,
     )
+    try:
+        from features.llm_insight import generate_genomic_insight, is_llm_available
+        if is_llm_available():
+            insight = generate_genomic_insight(result)
+            if insight:
+                result["ai_insight"] = insight
+                result["ai_insight_source"] = "llm"
+    except Exception as e:
+        print(f"[CARVanta] Genomic LLM insight error: {e}")
+    return result
 
 
 @router.post("/resistance-analysis")
@@ -520,7 +549,7 @@ def predict_mrd_endpoint(req: MRDRequest):
 @router.post("/predict-adverse-events")
 def predict_ae_endpoint(req: AdverseEventRequest):
     """Predict comprehensive adverse event profile for a CAR-T treatment."""
-    return predict_adverse_events(
+    result = predict_adverse_events(
         patient_age=req.patient_age, cancer_type=req.cancer_type,
         tumor_burden_mm=req.tumor_burden_mm, car_t_product=req.car_t_product,
         dose_cells=req.dose_cells, prior_car_t=req.prior_car_t,
@@ -528,6 +557,20 @@ def predict_ae_endpoint(req: AdverseEventRequest):
         il6=req.il6, alc=req.alc, platelets=req.platelets,
         comorbidities=req.comorbidities,
     )
+    try:
+        from features.llm_insight import generate_adverse_event_insight, is_llm_available
+        if is_llm_available():
+            ae_data = {"product": req.car_t_product, "target": "N/A",
+                       "total_patients": "simulated", "events": result.get("events", []),
+                       "crs_severe_rate": result.get("crs_severe_pct", 0),
+                       "icans_severe_rate": result.get("icans_severe_pct", 0)}
+            insight = generate_adverse_event_insight(ae_data)
+            if insight:
+                result["ai_insight"] = insight
+                result["ai_insight_source"] = "llm"
+    except Exception as e:
+        print(f"[CARVanta] AE LLM insight error: {e}")
+    return result
 
 
 @router.post("/crs-kinetics")

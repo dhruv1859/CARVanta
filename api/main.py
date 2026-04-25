@@ -805,10 +805,23 @@ async def global_leaderboard(top_n: int = 25):
 
     best = top[0] if top else None
 
-    return {
+    response = {
         "top_antigens": top,
         "best_candidate": best
     }
+
+    # ── LLM Insight ──
+    try:
+        from features.llm_insight import generate_ranking_insight, is_llm_available
+        if is_llm_available():
+            insight = generate_ranking_insight(top)
+            if insight:
+                response["ai_insight"] = insight
+                response["ai_insight_source"] = "llm"
+    except Exception:
+        pass
+
+    return response
 
 
 # ═══════════════════════════════════════════════════════════════════════════════

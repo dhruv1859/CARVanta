@@ -203,50 +203,70 @@ async def handle_message(
     response_text = ""
     sources: List[Dict[str, Any]] = []
     confidence = 0.0
+    ai_source = "rule_based"
 
     if intent == UserIntent.GREETING:
         response_text = _GREETING_RESPONSES[0]
         confidence = 1.0
 
-    elif intent in (UserIntent.LITERATURE_SEARCH, UserIntent.TARGET_QUESTION,
-                    UserIntent.SAFETY_QUESTION, UserIntent.CLINICAL_DATA,
-                    UserIntent.MECHANISM, UserIntent.MANUFACTURING,
-                    UserIntent.GENERAL):
-        # Route to RAG engine
-        from copilot.rag_engine import generate_rag_answer
-        rag_result = await generate_rag_answer(user_message, top_k=5)
-        response_text = rag_result.answer
-        sources = rag_result.sources
-        confidence = rag_result.confidence
-
-    elif intent == UserIntent.REVIEW_REQUEST:
-        # Route to literature reviewer
-        from copilot.lit_reviewer import generate_mini_review
-        target = session.context_targets[-1] if session.context_targets else ""
-        review = await generate_mini_review(target or user_message)
-        response_text = review.get("review_text", "I'll generate a review on that topic.")
-        sources = review.get("sources", [])
-        confidence = review.get("confidence", 0.7)
-
-    elif intent == UserIntent.PROTOCOL_REQUEST:
-        # Route to experiment designer
-        from copilot.experiment_designer import suggest_protocol
-        target = session.context_targets[-1] if session.context_targets else "CD19"
-        protocol = await suggest_protocol(target, user_message)
-        response_text = protocol.get("protocol_text", "Here's a suggested protocol.")
-        confidence = protocol.get("confidence", 0.8)
-
-    elif intent == UserIntent.COMPARISON:
-        # Comparison-specific RAG
-        from copilot.rag_engine import generate_rag_answer
-        rag_result = await generate_rag_answer(f"compare {user_message}", top_k=8)
-        response_text = rag_result.answer
-        sources = rag_result.sources
-        confidence = rag_result.confidence
-
     elif intent == UserIntent.CLARIFICATION:
         response_text = _CLARIFICATION_PROMPTS[0]
         confidence = 1.0
+
+    else:
+        # ── Try LLM first for ALL non-trivial intents ──
+        from features.llm_insight import generate_copilot_response, is_llm_available
+
+        if is_llm_available():
+            # Build context from session history
+            history_context = ""
+            if session.context_targets:
+                history_context += f"Targets discussed: {', '.join(session.context_targets)}\n"
+            recent = session.messages[-6:]  # Last 3 exchanges
+            if recent:
+                history_context += "Recent conversation:\n"
+                for m in recent:
+                    history_context += f"  {m.role}: {m.content[:200]}\n"
+
+            llm_response = generate_copilot_response(user_message, context=history_context)
+            if llm_response:
+                response_text = llm_response
+                confidence = 0.9
+                ai_source = "llm"
+
+        # ── Fallback to built-in handlers if LLM failed ──
+        if not response_text:
+            if intent in (UserIntent.LITERATURE_SEARCH, UserIntent.TARGET_QUESTION,
+                          UserIntent.SAFETY_QUESTION, UserIntent.CLINICAL_DATA,
+                          UserIntent.MECHANISM, UserIntent.MANUFACTURING,
+                          UserIntent.GENERAL):
+                from copilot.rag_engine import generate_rag_answer
+                rag_result = await generate_rag_answer(user_message, top_k=5)
+                response_text = rag_result.answer
+                sources = rag_result.sources
+                confidence = rag_result.confidence
+
+            elif intent == UserIntent.REVIEW_REQUEST:
+                from copilot.lit_reviewer import generate_mini_review
+                target = session.context_targets[-1] if session.context_targets else ""
+                review = await generate_mini_review(target or user_message)
+                response_text = review.get("review_text", "I'll generate a review on that topic.")
+                sources = review.get("sources", [])
+                confidence = review.get("confidence", 0.7)
+
+            elif intent == UserIntent.PROTOCOL_REQUEST:
+                from copilot.experiment_designer import suggest_protocol
+                target = session.context_targets[-1] if session.context_targets else "CD19"
+                protocol = await suggest_protocol(target, user_message)
+                response_text = protocol.get("protocol_text", "Here's a suggested protocol.")
+                confidence = protocol.get("confidence", 0.8)
+
+            elif intent == UserIntent.COMPARISON:
+                from copilot.rag_engine import generate_rag_answer
+                rag_result = await generate_rag_answer(f"compare {user_message}", top_k=8)
+                response_text = rag_result.answer
+                sources = rag_result.sources
+                confidence = rag_result.confidence
 
     # Add assistant response to history
     assistant_msg = ChatMessage(
@@ -266,6 +286,7 @@ async def handle_message(
         "response": response_text,
         "intent": intent.value,
         "confidence": round(confidence, 3),
+        "ai_source": ai_source,
         "sources": sources,
         "context_targets": session.context_targets,
         "total_messages": len(session.messages),
