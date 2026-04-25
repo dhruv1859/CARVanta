@@ -54,6 +54,7 @@ from api.regulatory_router import router as regulatory_router
 from api.biomarker_router import router as biomarker_router
 from api.safety_router import router as safety_pv_router
 from api.deep_learning_router import router as deep_learning_router
+from api.validation_router import router as validation_router
 
 
 app = FastAPI(
@@ -86,6 +87,7 @@ app.include_router(regulatory_router)
 app.include_router(biomarker_router)
 app.include_router(safety_pv_router)
 app.include_router(deep_learning_router)
+app.include_router(validation_router)
 
 # Middleware stack
 # NOTE: RateLimitMiddleware and AuditLogMiddleware are DISABLED because they

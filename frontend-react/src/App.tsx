@@ -44,6 +44,7 @@ const HealthEconomics = lazy(() => import('./pages/HealthEconomics'));
 const DiseaseAtlas = lazy(() => import('./pages/DiseaseAtlas'));
 const RegulatoryCompliance = lazy(() => import('./pages/RegulatoryCompliance'));
 const DeepLearning = lazy(() => import('./pages/DeepLearning'));
+const ModelValidation = lazy(() => import('./pages/ModelValidation'));
 
 /* ─── Loading Spinner ─── */
 function PageLoader() {
@@ -110,6 +111,7 @@ function ProtectedApp() {
           <Route path="/disease-atlas" element={<DiseaseAtlas />} />
           <Route path="/regulatory" element={<RegulatoryCompliance />} />
           <Route path="/deep-learning" element={<DeepLearning />} />
+          <Route path="/validation" element={<ModelValidation />} />
         </Routes>
       </Suspense>
     </Layout>
