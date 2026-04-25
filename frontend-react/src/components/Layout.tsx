@@ -35,6 +35,7 @@ const NAV_SECTIONS: NavSection[] = [
             { path: '/search', icon: '🔍', label: 'NLP Search' },
             { path: '/genomic-analyzer', icon: '🧬', label: 'Genomic Analyzer' },
             { path: '/multi-omics', icon: '🧬', label: 'Multi-Omics' },
+            { path: '/deep-learning', icon: '🧪', label: 'Deep Learning' },
             { path: '/disease-atlas', icon: '🌍', label: 'Disease Atlas' },
         ],
     },

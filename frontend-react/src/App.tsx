@@ -43,6 +43,7 @@ const CollaborationHub = lazy(() => import('./pages/CollaborationHub'));
 const HealthEconomics = lazy(() => import('./pages/HealthEconomics'));
 const DiseaseAtlas = lazy(() => import('./pages/DiseaseAtlas'));
 const RegulatoryCompliance = lazy(() => import('./pages/RegulatoryCompliance'));
+const DeepLearning = lazy(() => import('./pages/DeepLearning'));
 
 /* ─── Loading Spinner ─── */
 function PageLoader() {
@@ -108,6 +109,7 @@ function ProtectedApp() {
           <Route path="/health-economics" element={<HealthEconomics />} />
           <Route path="/disease-atlas" element={<DiseaseAtlas />} />
           <Route path="/regulatory" element={<RegulatoryCompliance />} />
+          <Route path="/deep-learning" element={<DeepLearning />} />
         </Routes>
       </Suspense>
     </Layout>
