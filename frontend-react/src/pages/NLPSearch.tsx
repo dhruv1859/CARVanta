@@ -151,6 +151,27 @@ export default function NLPSearch() {
                 </div>
             )}
 
+            {/* AI Insight */}
+            {data?.ai_insight && (
+                <div className="card" style={{
+                    borderLeft: `4px solid ${data.ai_insight_source === 'llm' ? '#10B981' : '#8B5CF6'}`,
+                }}>
+                    <div className="card-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <span>🤖 AI Analysis</span>
+                        <span style={{
+                            fontSize: 10, padding: '3px 10px', borderRadius: 12, fontWeight: 600,
+                            background: data.ai_insight_source === 'llm' ? 'rgba(16,185,129,0.15)' : 'rgba(139,92,246,0.15)',
+                            color: data.ai_insight_source === 'llm' ? '#10B981' : '#8B5CF6',
+                        }}>
+                            {data.ai_insight_source === 'llm' ? '🤖 LLM Generated' : '📐 Rule-Based'}
+                        </span>
+                    </div>
+                    <div style={{ fontSize: 13, lineHeight: 1.7, color: '#94A3B8' }}
+                        dangerouslySetInnerHTML={{ __html: data.ai_insight.replace(/\*\*(.*?)\*\*/g, '<strong style="color:#F1F5F9">$1</strong>').replace(/\n/g, '<br/>') }}
+                    />
+                </div>
+            )}
+
             {data?.results && data.results.length > 0 && (
                 <div className="card">
                     <div className="card-header">Results ({data.results.length})</div>

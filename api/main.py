@@ -721,12 +721,30 @@ async def batch_score(request: BatchAntigenRequest):
         else:
             tier = "Tier 4 - High Risk"
 
-        results.append({
+        entry = {
             "antigen": antigen.upper(),
             "CVS": cvs_value,
             "confidence_score": confidence_value,
             "tier": tier
-        })
+        }
+
+        # Add LLM insight
+        insight = generate_ai_insight(
+            cvs_value, 1 if cvs_value >= 0.7 else 0,
+            confidence_value, antigen_name=antigen, features=features,
+        )
+        insight_source = "rule_based"
+        if is_llm_available():
+            llm_result = generate_scoring_insight(
+                antigen.upper(), cvs_value, tier, features, confidence_value, "",
+            )
+            if llm_result:
+                insight = llm_result
+                insight_source = "llm"
+        entry["ai_insight"] = insight
+        entry["ai_insight_source"] = insight_source
+
+        results.append(entry)
 
     results = sorted(results, key=lambda x: x["CVS"], reverse=True)
 

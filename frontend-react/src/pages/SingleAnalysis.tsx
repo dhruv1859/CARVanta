@@ -222,6 +222,51 @@ export default function SingleAnalysis() {
                         </div>
                     </div>
 
+                    {/* ── AI Insight (LLM-Generated) ─────────────────────── */}
+                    {result.ai_insight && (
+                        <div className="card" style={{
+                            borderLeft: `4px solid ${result.ai_insight_source === 'llm' ? '#10B981' : '#8B5CF6'}`,
+                        }}>
+                            <div className="card-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                <span>🤖 AI Clinical Insight</span>
+                                <span className="badge" style={{
+                                    background: result.ai_insight_source === 'llm' ? 'rgba(16,185,129,0.15)' : 'rgba(139,92,246,0.15)',
+                                    color: result.ai_insight_source === 'llm' ? '#10B981' : '#8B5CF6',
+                                    fontSize: 10,
+                                }}>
+                                    {result.ai_insight_source === 'llm' ? '🤖 LLM Generated' : '📐 Rule-Based'}
+                                </span>
+                            </div>
+                            <div style={{
+                                fontSize: 13, lineHeight: 1.7, color: 'var(--text-secondary)',
+                                padding: '12px 16px', borderRadius: 8,
+                                background: result.ai_insight_source === 'llm' ? 'rgba(16,185,129,0.04)' : 'rgba(139,92,246,0.04)',
+                            }}
+                                dangerouslySetInnerHTML={{ __html: result.ai_insight.replace(/\*\*(.*?)\*\*/g, '<strong style="color:var(--text-primary)">$1</strong>').replace(/\n/g, '<br/>') }}
+                            />
+                        </div>
+                    )}
+
+                    {/* ── Deep Insight ──────────────────────────────────── */}
+                    {result.deep_insight && (
+                        <div className="card">
+                            <div className="card-header">🧬 Deep Analysis</div>
+                            <div style={{ fontSize: 13, lineHeight: 1.6, color: 'var(--text-secondary)', padding: '4px 0' }}
+                                dangerouslySetInnerHTML={{ __html: result.deep_insight.replace(/\*\*(.*?)\*\*/g, '<strong style="color:var(--text-primary)">$1</strong>').replace(/\n/g, '<br/>') }}
+                            />
+                        </div>
+                    )}
+
+                    {/* ── Safety Insight ────────────────────────────────── */}
+                    {result.safety_insight && (
+                        <div className="card" style={{ borderLeft: '4px solid #F59E0B' }}>
+                            <div className="card-header">⚠️ Safety Analysis</div>
+                            <div style={{ fontSize: 13, lineHeight: 1.6, color: 'var(--text-secondary)', padding: '4px 0' }}
+                                dangerouslySetInnerHTML={{ __html: result.safety_insight.replace(/\*\*(.*?)\*\*/g, '<strong style="color:var(--text-primary)">$1</strong>').replace(/\n/g, '<br/>') }}
+                            />
+                        </div>
+                    )}
+
                     {/* ── Drug Interaction Warning ─────────────────────── */}
                     {drugData?.has_interactions && (
                         <div className="card" style={{

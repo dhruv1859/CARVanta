@@ -111,6 +111,33 @@ export default function Comparison() {
                             </tbody>
                         </table>
                     </div>
+
+                    {/* ── AI Insights ──────────────────────────────────── */}
+                    {(a.ai_insight || b.ai_insight) && (
+                        <div className="card" style={{ borderLeft: '4px solid #10B981' }}>
+                            <div className="card-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                <span>🤖 AI Comparison Insight</span>
+                                <span className="badge" style={{
+                                    background: (a.ai_insight_source === 'llm' || b.ai_insight_source === 'llm') ? 'rgba(16,185,129,0.15)' : 'rgba(139,92,246,0.15)',
+                                    color: (a.ai_insight_source === 'llm' || b.ai_insight_source === 'llm') ? '#10B981' : '#8B5CF6', fontSize: 10,
+                                }}>
+                                    {(a.ai_insight_source === 'llm' || b.ai_insight_source === 'llm') ? '🤖 LLM Generated' : '📐 Rule-Based'}
+                                </span>
+                            </div>
+                            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+                                {[a, b].map(r => r.ai_insight && (
+                                    <div key={r.antigen} style={{
+                                        padding: '12px 16px', borderRadius: 8,
+                                        background: r.ai_insight_source === 'llm' ? 'rgba(16,185,129,0.04)' : 'rgba(139,92,246,0.04)',
+                                        fontSize: 12, lineHeight: 1.6, color: 'var(--text-secondary)',
+                                    }}>
+                                        <div style={{ fontWeight: 700, marginBottom: 6 }}>{r.antigen}</div>
+                                        <div dangerouslySetInnerHTML={{ __html: r.ai_insight.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br/>') }} />
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    )}
                 </>
             )}
         </>

@@ -82,7 +82,7 @@ export default function ResearchCopilot() {
       setSessionId(d.session_id);
       setMessages(prev => [...prev, {
         role: 'assistant', content: d.response, confidence: d.confidence,
-        sources: d.sources, intent: d.intent,
+        sources: d.sources, intent: d.intent, ai_source: d.ai_source,
       }]);
     }
   };
@@ -127,6 +127,7 @@ export default function ResearchCopilot() {
                   <div style={{ fontSize: 13, color: 'var(--text-primary, #e2e8f0)', lineHeight: 1.7, whiteSpace: 'pre-wrap' }}>{m.content}</div>
                   {m.role === 'assistant' && (
                     <div style={{ display: 'flex', gap: 8, marginTop: 8, flexWrap: 'wrap' }}>
+                      {m.ai_source && <span style={S.badge(m.ai_source === 'llm' ? '#10b981' : '#8b5cf6')}>{m.ai_source === 'llm' ? '🤖 LLM' : '📐 Rule-Based'}</span>}
                       {m.confidence && <span style={S.badge('#06b6d4')}>Confidence: {(m.confidence * 100).toFixed(0)}%</span>}
                       {m.intent && <span style={S.badge('#8b5cf6')}>{m.intent.replace(/_/g, ' ')}</span>}
                       {m.sources?.length > 0 && <span style={S.badge('#22c55e')}>{m.sources.length} sources</span>}

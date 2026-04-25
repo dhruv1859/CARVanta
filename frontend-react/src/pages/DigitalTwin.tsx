@@ -489,6 +489,29 @@ export default function DigitalTwin() {
                             {renderChart(t.crs_grade, '#fb923c', 'CRS Grade (0-4)', 4)}
                         </div>
                     )}
+
+                    {/* AI Clinical Insight */}
+                    {result.ai_insight && (
+                        <div className="card" style={{ borderLeft: `4px solid ${result.ai_insight_source === 'llm' ? '#10b981' : '#8b5cf6'}` }}>
+                            <h3 style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                <span>🤖 AI Clinical Interpretation</span>
+                                <span style={{
+                                    fontSize: 10, padding: '3px 10px', borderRadius: 20, fontWeight: 700,
+                                    background: result.ai_insight_source === 'llm' ? 'rgba(16,185,129,0.15)' : 'rgba(139,92,246,0.15)',
+                                    color: result.ai_insight_source === 'llm' ? '#10b981' : '#8b5cf6',
+                                }}>
+                                    {result.ai_insight_source === 'llm' ? '🤖 LLM Generated' : '📐 Rule-Based'}
+                                </span>
+                            </h3>
+                            <div style={{
+                                fontSize: 13, lineHeight: 1.7, color: '#cbd5e1',
+                                padding: '12px 16px', borderRadius: 8,
+                                background: result.ai_insight_source === 'llm' ? 'rgba(16,185,129,0.04)' : 'rgba(139,92,246,0.04)',
+                            }}
+                                dangerouslySetInnerHTML={{ __html: result.ai_insight.replace(/\*\*(.*?)\*\*/g, '<strong style="color:#f1f5f9">$1</strong>').replace(/\n/g, '<br/>') }}
+                            />
+                        </div>
+                    )}
                 </div>
             )}
 
