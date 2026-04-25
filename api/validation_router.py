@@ -2,12 +2,20 @@
 CARVanta – Model Validation API Router
 ========================================
 REST endpoints for model validation, benchmarking & certification.
+Uses run_in_executor for CPU-bound ML validation to avoid blocking the event loop.
 """
 
+import asyncio
+from functools import partial
 from fastapi import APIRouter
 from datetime import datetime, timezone
 
 router = APIRouter(prefix="/api/v5/validation", tags=["Model Validation"])
+
+
+def _run_sync(func, *args, **kwargs):
+    """Helper to run sync functions — called inside run_in_executor."""
+    return func(*args, **kwargs)
 
 
 @router.get("/run")
@@ -16,7 +24,10 @@ async def run_validation(k_folds: int = 5):
     from validation.model_validator import run_full_validation
     from features.llm_insight import is_llm_available, call_llm
 
-    results = run_full_validation(k_folds=k_folds, save_report=True)
+    loop = asyncio.get_event_loop()
+    results = await loop.run_in_executor(
+        None, partial(run_full_validation, k_folds=k_folds, save_report=True)
+    )
 
     # Add LLM interpretation
     if is_llm_available():
@@ -39,7 +50,7 @@ async def run_validation(k_folds: int = 5):
             f"3) Any concerns or risks, 4) Whether this model is ready for clinical decision support. "
             f"Be specific with numbers. Keep response under 200 words."
         )
-        llm_interpretation = call_llm(prompt)
+        llm_interpretation = await loop.run_in_executor(None, call_llm, prompt)
         if llm_interpretation:
             results["ai_insight"] = llm_interpretation
             results["ai_insight_source"] = "llm"
@@ -51,42 +62,50 @@ async def run_validation(k_folds: int = 5):
 async def validate_classifier_only(k_folds: int = 5):
     """Run classifier cross-validation only."""
     from validation.model_validator import validate_classifier
-    return validate_classifier(k_folds)
+    loop = asyncio.get_event_loop()
+    return await loop.run_in_executor(None, partial(validate_classifier, k_folds))
 
 
 @router.get("/ranker")
 async def validate_ranker_only(k_folds: int = 5):
     """Run ranker regression validation only."""
     from validation.model_validator import validate_ranker
-    return validate_ranker(k_folds)
+    loop = asyncio.get_event_loop()
+    return await loop.run_in_executor(None, partial(validate_ranker, k_folds))
 
 
 @router.get("/fda-targets")
 async def validate_fda_only():
     """Validate against FDA-approved ground-truth targets."""
     from validation.model_validator import validate_fda_targets
-    return validate_fda_targets()
+    loop = asyncio.get_event_loop()
+    return await loop.run_in_executor(None, validate_fda_targets)
 
 
 @router.get("/robustness")
 async def validate_robustness_only():
     """Test model robustness via feature perturbation."""
     from validation.model_validator import validate_robustness
-    return validate_robustness()
+    loop = asyncio.get_event_loop()
+    return await loop.run_in_executor(None, validate_robustness)
 
 
 @router.get("/statistical-significance")
 async def validate_stats_only():
     """Run statistical significance tests vs baselines."""
     from validation.model_validator import validate_statistical_significance
-    return validate_statistical_significance()
+    loop = asyncio.get_event_loop()
+    return await loop.run_in_executor(None, validate_statistical_significance)
 
 
 @router.get("/certification")
 async def get_certification():
     """Generate the full certification report."""
-    from validation.model_validator import run_full_validation, generate_certification_report
-    results = run_full_validation(k_folds=5, save_report=True)
+    from validation.model_validator import run_full_validation
+    loop = asyncio.get_event_loop()
+    results = await loop.run_in_executor(
+        None, partial(run_full_validation, k_folds=5, save_report=True)
+    )
     return results.get("certification", {})
 
 
@@ -94,8 +113,9 @@ async def get_certification():
 async def quick_validation():
     """Quick validation — classifier CV + FDA targets only (faster)."""
     from validation.model_validator import validate_classifier, validate_fda_targets
-    clf = validate_classifier(k_folds=5)
-    fda = validate_fda_targets()
+    loop = asyncio.get_event_loop()
+    clf = await loop.run_in_executor(None, partial(validate_classifier, k_folds=5))
+    fda = await loop.run_in_executor(None, validate_fda_targets)
     return {
         "classifier": {
             "accuracy": clf["aggregate"]["accuracy"],
