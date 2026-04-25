@@ -1,8 +1,11 @@
 [phases.setup]
-nixPkgs = ["python312", "python312Packages.pip"]
+nixPkgs = ["python312"]
 
 [phases.install]
-cmds = ["python3 -m pip install -r requirements-render.txt"]
+cmds = [
+    "python3 -m venv --copies /opt/venv",
+    "/opt/venv/bin/pip install -r requirements-render.txt"
+]
 
 [start]
-cmd = "python3 -m uvicorn api.main:app --host 0.0.0.0 --port ${PORT:-8001} --workers 1"
+cmd = "/opt/venv/bin/uvicorn api.main:app --host 0.0.0.0 --port ${PORT:-8001} --workers 1"
