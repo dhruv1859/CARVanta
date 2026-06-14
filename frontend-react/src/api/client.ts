@@ -1,7 +1,9 @@
 import axios from 'axios';
 
+const PROD_API = 'https://carvanta.onrender.com';
+
 const api = axios.create({
-    baseURL: '',
+    baseURL: import.meta.env.PROD ? PROD_API : '',
     timeout: 30000,
     headers: { 'Content-Type': 'application/json' },
 });
