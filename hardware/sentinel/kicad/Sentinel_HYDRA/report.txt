@@ -1,0 +1,32 @@
+Info: X scale constrained.
+Info: Y scale constrained.
+Plotted to 'C:\Users\dhruv\CARVanta\hardware\sentinel\kicad\Sentinel_HYDRA\Sentinel_HYDRA-Digital_Signals.gbr'.
+Plotted to 'C:\Users\dhruv\CARVanta\hardware\sentinel\kicad\Sentinel_HYDRA\Sentinel_HYDRA-GND_Plane.gbr'.
+Plotted to 'C:\Users\dhruv\CARVanta\hardware\sentinel\kicad\Sentinel_HYDRA\Sentinel_HYDRA-Analog_Signals.gbr'.
+Plotted to 'C:\Users\dhruv\CARVanta\hardware\sentinel\kicad\Sentinel_HYDRA\Sentinel_HYDRA-Power_Planes.gbr'.
+Plotted to 'C:\Users\dhruv\CARVanta\hardware\sentinel\kicad\Sentinel_HYDRA\Sentinel_HYDRA-HighSpeed.gbr'.
+Plotted to 'C:\Users\dhruv\CARVanta\hardware\sentinel\kicad\Sentinel_HYDRA\Sentinel_HYDRA-Bottom_GND.gbr'.
+Plotted to 'C:\Users\dhruv\CARVanta\hardware\sentinel\kicad\Sentinel_HYDRA\Sentinel_HYDRA-F_Paste.gbr'.
+Plotted to 'C:\Users\dhruv\CARVanta\hardware\sentinel\kicad\Sentinel_HYDRA\Sentinel_HYDRA-B_Paste.gbr'.
+Plotted to 'C:\Users\dhruv\CARVanta\hardware\sentinel\kicad\Sentinel_HYDRA\Sentinel_HYDRA-F_Silkscreen.gbr'.
+Plotted to 'C:\Users\dhruv\CARVanta\hardware\sentinel\kicad\Sentinel_HYDRA\Sentinel_HYDRA-B_Silkscreen.gbr'.
+Plotted to 'C:\Users\dhruv\CARVanta\hardware\sentinel\kicad\Sentinel_HYDRA\Sentinel_HYDRA-F_Mask.gbr'.
+Plotted to 'C:\Users\dhruv\CARVanta\hardware\sentinel\kicad\Sentinel_HYDRA\Sentinel_HYDRA-B_Mask.gbr'.
+Plotted to 'C:\Users\dhruv\CARVanta\hardware\sentinel\kicad\Sentinel_HYDRA\Sentinel_HYDRA-Edge_Cuts.gbr'.
+Created Gerber job file 'C:\Users\dhruv\CARVanta\hardware\sentinel\kicad\Sentinel_HYDRA\Sentinel_HYDRA-job.gbrjob'.
+Plotted to 'C:\Users\dhruv\CARVanta\hardware\sentinel\kicad\Sentinel_HYDRA\Sentinel_HYDRA-Digital_Signals.gbr'.
+Plotted to 'C:\Users\dhruv\CARVanta\hardware\sentinel\kicad\Sentinel_HYDRA\Sentinel_HYDRA-GND_Plane.gbr'.
+Plotted to 'C:\Users\dhruv\CARVanta\hardware\sentinel\kicad\Sentinel_HYDRA\Sentinel_HYDRA-Analog_Signals.gbr'.
+Plotted to 'C:\Users\dhruv\CARVanta\hardware\sentinel\kicad\Sentinel_HYDRA\Sentinel_HYDRA-Power_Planes.gbr'.
+Plotted to 'C:\Users\dhruv\CARVanta\hardware\sentinel\kicad\Sentinel_HYDRA\Sentinel_HYDRA-HighSpeed.gbr'.
+Plotted to 'C:\Users\dhruv\CARVanta\hardware\sentinel\kicad\Sentinel_HYDRA\Sentinel_HYDRA-Bottom_GND.gbr'.
+Plotted to 'C:\Users\dhruv\CARVanta\hardware\sentinel\kicad\Sentinel_HYDRA\Sentinel_HYDRA-F_Paste.gbr'.
+Plotted to 'C:\Users\dhruv\CARVanta\hardware\sentinel\kicad\Sentinel_HYDRA\Sentinel_HYDRA-B_Paste.gbr'.
+Plotted to 'C:\Users\dhruv\CARVanta\hardware\sentinel\kicad\Sentinel_HYDRA\Sentinel_HYDRA-F_Silkscreen.gbr'.
+Plotted to 'C:\Users\dhruv\CARVanta\hardware\sentinel\kicad\Sentinel_HYDRA\Sentinel_HYDRA-B_Silkscreen.gbr'.
+Plotted to 'C:\Users\dhruv\CARVanta\hardware\sentinel\kicad\Sentinel_HYDRA\Sentinel_HYDRA-F_Mask.gbr'.
+Plotted to 'C:\Users\dhruv\CARVanta\hardware\sentinel\kicad\Sentinel_HYDRA\Sentinel_HYDRA-B_Mask.gbr'.
+Plotted to 'C:\Users\dhruv\CARVanta\hardware\sentinel\kicad\Sentinel_HYDRA\Sentinel_HYDRA-Edge_Cuts.gbr'.
+Created Gerber job file 'C:\Users\dhruv\CARVanta\hardware\sentinel\kicad\Sentinel_HYDRA\Sentinel_HYDRA-job.gbrjob'.
+Info: Done.
+Info: Done.

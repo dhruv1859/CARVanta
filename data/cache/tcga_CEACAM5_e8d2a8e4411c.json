@@ -1,7 +1,85 @@
 {
   "gene": "CEACAM5",
-  "cancer_types": {},
-  "overall_mean_tumor": 0.0,
-  "source": "TCGA-GDC",
-  "status": "partial"
+  "cancer_types": {
+    "Breast Cancer": {
+      "median_expression": 112.8,
+      "mean_expression": 1407.3,
+      "sample_count": 1082
+    },
+    "Lymphoma": {
+      "median_expression": 0.2,
+      "mean_expression": 1.6,
+      "sample_count": 48
+    },
+    "Glioblastoma": {
+      "median_expression": 0.0,
+      "mean_expression": 0.5,
+      "sample_count": 160
+    },
+    "Lung Adenocarcinoma": {
+      "median_expression": 5104.9,
+      "mean_expression": 21387.7,
+      "sample_count": 510
+    },
+    "Melanoma": {
+      "median_expression": 0.4,
+      "mean_expression": 23.6,
+      "sample_count": 443
+    },
+    "Prostate Cancer": {
+      "median_expression": 19.6,
+      "mean_expression": 122.2,
+      "sample_count": 493
+    },
+    "Ovarian Cancer": {
+      "median_expression": 3.5,
+      "mean_expression": 23.0,
+      "sample_count": 300
+    },
+    "Liver Cancer": {
+      "median_expression": 0.0,
+      "mean_expression": 71.1,
+      "sample_count": 366
+    },
+    "Renal Cancer": {
+      "median_expression": 0.0,
+      "mean_expression": 2.4,
+      "sample_count": 510
+    },
+    "Gastric Cancer": {
+      "median_expression": 9087.3,
+      "mean_expression": 23087.6,
+      "sample_count": 374
+    },
+    "Pancreatic Cancer": {
+      "median_expression": 10049.7,
+      "mean_expression": 23357.7,
+      "sample_count": 177
+    },
+    "Bladder Cancer": {
+      "median_expression": 108.3,
+      "mean_expression": 2956.1,
+      "sample_count": 407
+    },
+    "Head & Neck Cancer": {
+      "median_expression": 747.4,
+      "mean_expression": 2823.2,
+      "sample_count": 515
+    },
+    "Endometrial Cancer": {
+      "median_expression": 98.5,
+      "mean_expression": 1950.8,
+      "sample_count": 527
+    },
+    "Thyroid Cancer": {
+      "median_expression": 0.4,
+      "mean_expression": 6.4,
+      "sample_count": 498
+    }
+  },
+  "overall_mean_tumor": 1688.9,
+  "max_expression_cancer": "Pancreatic Cancer",
+  "max_expression_value": 10049.7,
+  "source": "TCGA-cBioPortal",
+  "status": "fetched"
 }

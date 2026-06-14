@@ -5,5 +5,5 @@
   "critical_organ_flags": [],
   "overall_mean_normal": 0.0,
   "source": "GTEx",
-  "status": "fetched"
+  "status": "no_expression_data"
 }

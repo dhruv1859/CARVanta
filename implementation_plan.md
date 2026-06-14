@@ -359,50 +359,50 @@ graph TD
 
 ---
 
-## Quick Audit — Actual Line Count vs Targets
+## Quick Audit — Actual Line Count vs Targets (Updated May 24, 2026)
 
 | Module | Target | Actual | Status |
 |--------|--------|--------|--------|
-| **Core v5** | 14K | **15,048** | ✅ Exceeded |
-| **Multi-Omics** | 12K | **10,761** | ✅ Close |
-| **Digital Twin** | 15K | **11,305** | ✅ Close |
-| **Drug Discovery** | 10K | **8,531** | ✅ 85% |
-| **Trial Matcher** | 8K | **6,801** | ✅ 85% TARGET HIT |
-| **Genomics** | 12K | **10,206** | ✅ 85% TARGET HIT |
-| **Collaboration** | 10K | **8,500+** | ✅ 85% TARGET HIT |
-| **Health Economics** | 8K | **71** | ❌ Router only |
-| **Disease Atlas** | 10K | **250** | ❌ Stub |
-| **Copilot** | 10K | **2,149** | ⚠️ 21% |
-| **Enterprise/Auth** | 8K | **2,677** | ⚠️ 33% |
-| **Neural Bridge** | 10K | **161** | ❌ Stub |
-| | **127K** | **~78K** | **61%** |
+| **Core v5** | 14K | **15,536** | ✅ Exceeded (111%) |
+| **Multi-Omics** | 12K | **11,043** | ✅ 92% |
+| **Digital Twin** | 15K | **13,687** | ✅ 91% |
+| **Drug Discovery** | 10K | **7,876** | ⚠️ 79% |
+| **Trial Matcher** | 8K | **6,315** | ⚠️ 79% |
+| **Genomics** | 12K | **10,062** | ✅ 84% |
+| **Collaboration** | 10K | **7,806** | ⚠️ 78% |
+| **Health Economics** | 8K | **1,899** | ❌ 24% |
+| **Disease Atlas** | 10K | **1,546** | ❌ 15% |
+| **Copilot** | 10K | **2,468** | ❌ 25% |
+| **Enterprise/Auth** | 8K | **2,423** | ❌ 30% |
+| **Neural Bridge** | 10K | **7,926** | ⚠️ 79% |
+| **Infrastructure** | — | **18,871** | ✅ Routers + biomarker + safety + regulatory + DB |
+| | **127K** | **100,272** | **79%** |
 
 ---
 
 ## Line Count Summary — Detailed Breakdown
 
-| Module | Target Backend | **Actual Backend** | Target Frontend | **Actual Frontend** | Status |
+| Module | Target Backend | **Actual Backend** | Target Frontend | **Actual Frontend** | **Total** |
 |--------|:-:|:-:|:-:|:-:|:-:|
-| Core v5 (features/scoring/models) | ~5K | **5,826** ✅ | ~9K | **9,222** ✅ | ✅ |
-| Multi-Omics Engine | 7K | **10,761** ✅ | 5K | *(shared pages)* | ✅ |
-| Patient Digital Twin | 9K | **11,305** ✅ | 6K | **715** ⚠️ | ✅ Backend |
-| AI Drug Discovery | 7K | **3,945** ⚠️ | 3K | **469** ⚠️ | ⚠️ Partial |
-| Clinical Trial Matcher | 5K | **2,186** ⚠️ | 3K | **267** ⚠️ | ⚠️ Partial |
-| Genomic Analyzer | 8K | **5,128** ⚠️ | 4K | **1,033** ⚠️ | ⚠️ Partial |
-| Collaboration Hub | 6K | **1,812** ⚠️ | 4K | **214** ⚠️ | ⚠️ Partial |
-| Health Economics | 5K | **71** (router only) ❌ | 3K | **161** ⚠️ | ❌ Needs work |
-| Global Disease Atlas | 6K | **250** ❌ | 4K | **125** ⚠️ | ❌ Needs work |
-| AI Research Copilot | 7K | **2,149** ⚠️ | 3K | **300** ⚠️ | ⚠️ Partial |
-| Enterprise & Auth | 5K | **2,677** ⚠️ | 3K | **~1,500** ⚠️ | ⚠️ Partial |
-| Neural Network Bridge | 5K | **161** (API only) ❌ | 5K | **179** ❌ | ❌ Needs work |
-| Biomarker Analytics | — | **267** | — | — | ✅ New |
-| Pharmacovigilance | — | **310** | — | — | ✅ New |
-| API Routers + main.py | — | **4,011** | — | — | ✅ Infra |
-| **TOTALS** | **75K** | **53,592** | **52K** | **15,351** | |
-| | | | | **Grand: 68,943** | |
+| Core v5 (features/scoring/models) | ~5K | **6,314** ✅ | ~9K | **9,222** ✅ | **15,536** |
+| Multi-Omics Engine | 7K | **10,761** ✅ | 5K | **282** ⚠️ | **11,043** |
+| Patient Digital Twin | 9K | **11,346** ✅ | 6K | **2,341** ⚠️ | **13,687** |
+| AI Drug Discovery | 7K | **7,193** ✅ | 3K | **683** ⚠️ | **7,876** |
+| Clinical Trial Matcher | 5K | **5,567** ✅ | 3K | **748** ⚠️ | **6,315** |
+| Genomic Analyzer | 8K | **7,899** ✅ | 4K | **2,163** ⚠️ | **10,062** |
+| Collaboration Hub | 6K | **6,722** ✅ | 4K | **1,084** ⚠️ | **7,806** |
+| Health Economics | 5K | **1,502** ❌ | 3K | **397** ⚠️ | **1,899** |
+| Global Disease Atlas | 6K | **1,000** ❌ | 4K | **546** ⚠️ | **1,546** |
+| AI Research Copilot | 7K | **2,167** ❌ | 3K | **301** ⚠️ | **2,468** |
+| Enterprise & Auth | 5K | **2,564** ⚠️ | 3K | **1,741** ⚠️ | **4,305** |
+| Neural Network Bridge | 5K | **5,946** ✅ | 5K | **1,980** ⚠️ | **7,926** |
+| Infrastructure (API, DB, safety, etc.) | — | **18,871** | — | **950** | **19,821** |
+| **TOTALS** | **75K** | **85,020** | **52K** | **15,252** | |
+| | | | | **Grand: 100,272** | |
 
-> [!WARNING]
-> **Honest assessment:** We're at **~69K / 127K target (54%)**. Modules 1, 2, and Core v5 exceeded targets. Modules 7 (Health Economics), 8 (Disease Atlas), and 11 (Neural Bridge) need significant backend expansion. Most frontend pages are functional but lean (100-400 lines each vs 3-5K targets).
+> [!IMPORTANT]
+> **Updated assessment:** We're at **~100K / 127K target (79%)**. Backend has exceeded its 75K target at 85K. Frontend is the gap — 15K vs 52K target. Four modules (Health Economics, Disease Atlas, Copilot, Enterprise) need significant expansion to reach target.
+
 
 ---
 

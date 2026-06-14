@@ -2,6 +2,8 @@
   "gene": "HER2",
   "cancer_types": {},
   "overall_mean_tumor": 0.0,
-  "source": "TCGA-GDC",
-  "status": "partial"
+  "max_expression_cancer": "",
+  "max_expression_value": 0.0,
+  "source": "TCGA-cBioPortal",
+  "status": "gene_not_found"
 }

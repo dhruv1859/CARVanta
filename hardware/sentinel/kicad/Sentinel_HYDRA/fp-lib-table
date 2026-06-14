@@ -1,0 +1,8 @@
+(fp_lib_table
+	(version 7)
+	(lib (name "AD5941BCPZ-RL7") (type "KiCad") (uri "C:/Users/dhruv/NEW MODELS FOR KICAD/AD5941BCPZ-RL7") (options "") (descr ""))
+	(lib (name "LSM6DSOX") (type "KiCad") (uri "C:/Users/dhruv/NEW MODELS FOR KICAD/LSM6DSOX") (options "") (descr ""))
+	(lib (name "MAX17048G_") (type "KiCad") (uri "C:/Users/dhruv/NEW MODELS FOR KICAD/MAX17048G_") (options "") (descr ""))
+	(lib (name "MLX90614ESF-AAA-000-TU") (type "KiCad") (uri "C:/Users/dhruv/NEW MODELS FOR KICAD/MLX90614ESF-AAA-000-TU") (options "") (descr ""))
+	(lib (name "TPS63020DSJR") (type "KiCad") (uri "C:/Users/dhruv/NEW MODELS FOR KICAD/TPS63020DSJR") (options "") (descr ""))
+)

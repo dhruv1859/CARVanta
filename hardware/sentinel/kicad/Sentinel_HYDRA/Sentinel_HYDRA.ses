@@ -1,0 +1,6869 @@
+(session "Sentinel_HYDRA.ses"
+  (base_design "Sentinel_HYDRA.dsn")
+  (placement
+    (resolution um 10)
+    (component "Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical"
+      (place J12 50000 -560000 front 0)
+    )
+    (component "Capacitor_SMD:C_0402_1005Metric"
+      (place C24 360000 -140000 front 0)
+      (place C16 280000 -530000 front 0)
+      (place C5 150000 -340000 front 0)
+      (place C15 90000 -600000 front 0)
+      (place C32 730000 -160000 front 0)
+      (place C11 120000 -480000 front 0)
+      (place C22 140000 -140000 front 0)
+      (place C33 730000 -240000 front 0)
+      (place C38 290000 -710000 front 0)
+      (place C23 140000 -160000 front 0)
+      (place C13 90000 -540000 front 0)
+      (place C39 410000 -590000 front 0)
+      (place C56 720000 -330000 front 0)
+      (place C58 720000 -500000 front 0)
+      (place C51 540000 -690000 front 0)
+      (place C55 580000 -330000 front 0)
+      (place C30 710000 -140000 front 0)
+      (place C29 590000 -260000 front 0)
+      (place C28 590000 -140000 front 0)
+      (place C26 360000 -170000 front 0)
+      (place C48 540000 -610000 front 0)
+      (place C60 530000 -90000 front 0)
+      (place C17 320000 -530000 front 0)
+      (place C36 820000 -180000 front 0)
+      (place C41 290000 -610000 front 0)
+      (place C46 540000 -710000 front 0)
+      (place C31 710000 -260000 front 0)
+      (place C49 660000 -710000 front 0)
+      (place C59 870000 -760000 front 0)
+      (place C7 340000 -400000 front 0)
+      (place C53 910000 -480000 front 0)
+      (place C43 290000 -690000 front 0)
+      (place C47 660000 -590000 front 0)
+      (place C44 410000 -690000 front 0)
+      (place C35 550000 -190000 front 0)
+      (place C34 550000 -150000 front 0)
+      (place C9 260000 -380000 front 0)
+      (place C52 660000 -690000 front 0)
+      (place C50 660000 -610000 front 0)
+      (place C62 670000 -90000 front 0)
+      (place C63 740000 -90000 front 0)
+      (place C57 580000 -500000 front 0)
+      (place C37 290000 -590000 front 0)
+      (place C54 480000 -430000 front 0)
+      (place C42 410000 -610000 front 0)
+      (place C40 410000 -710000 front 0)
+      (place C25 140000 -180000 front 0)
+      (place C18 320000 -480000 front 0)
+      (place C45 540000 -590000 front 0)
+      (place C4 230000 -380000 front 0)
+      (place C61 600000 -90000 front 0)
+      (place C2 120000 -440000 front 0)
+    )
+    (component "Resistor_SMD:R_0402_1005Metric"
+      (place R21 780000 -760000 front 0)
+      (place R10 820000 -200000 front 0)
+      (place R18 840000 -440000 front 0)
+      (place R1 120000 -420000 front 0)
+      (place R6 150000 -580000 front 0)
+      (place R8 40000 -220000 front 0)
+      (place R4 360000 -450000 front 0)
+      (place R24 820000 -160000 front 0)
+      (place R12 730000 -200000 front 0)
+      (place R5 130000 -360000 front 0)
+      (place R13 350000 -730000 front 0)
+      (place R20 920000 -440000 front 0)
+      (place R14 600000 -730000 front 0)
+      (place R3 340000 -450000 front 0)
+      (place R7 40000 -160000 front 0)
+      (place R9 590000 -260000 front 0)
+      (place R16 880000 -340000 front 0)
+      (place R2 120000 -460000 front 0)
+      (place R11 820000 -220000 front 0)
+      (place R22 820000 -760000 front 0)
+      (place R19 880000 -440000 front 0)
+      (place R17 920000 -340000 front 0)
+      (place R15 840000 -340000 front 0)
+    )
+    (component "Capacitor_SMD:C_0805_2012Metric"
+      (place C12 240000 -500000 front 0)
+      (place C10 120000 -500000 front 0)
+      (place C6 340000 -380000 front 0)
+      (place C8 340000 -430000 front 0)
+      (place C27 360000 -210000 front 0)
+      (place C21 120000 -400000 front 0)
+      (place C19 280000 -480000 front 0)
+      (place C20 240000 -530000 front 0)
+      (place C3 260000 -430000 front 0)
+      (place C14 90000 -580000 front 0)
+      (place C1 130000 -380000 front 0)
+    )
+    (component "MAX17048G_:SON50P200X200X80-9N"
+      (place U17 120000 -560000 front 0)
+    )
+    (component "Package_DFN_QFN:Texas_RTW_WQFN-24-1EP_4x4mm_P0.5mm_EP2.7x2.7mm_ThermalVias"
+      (place U13 180000 -400000 front 0)
+    )
+    (component "Inductor_SMD:L_Taiyo-Yuden_NR-40xx"
+      (place L4 260000 -340000 front 0)
+      (place L3 180000 -340000 front 0)
+    )
+    (component "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm"
+      (place D2 600000 -40000 front 0)
+      (place D1 530000 -40000 front 0)
+      (place D4 740000 -40000 front 0)
+      (place D3 670000 -40000 front 0)
+    )
+    (component "Connector_Molex:Molex_PicoBlade_53047-0310_1x03_P1.25mm_Vertical"
+      (place J7 600000 -950000 front 0)
+      (place J6 520000 -950000 front 0)
+      (place J4 320000 -950000 front 0)
+      (place J3 240000 -950000 front 0)
+      (place J5 400000 -950000 front 0)
+      (place J2 160000 -950000 front 0)
+      (place J8 680000 -950000 front 0)
+      (place J9 760000 -950000 front 0)
+    )
+    (component "Package_LGA:AMS_OLGA-8_2x3.1mm_P0.8mm"
+      (place U6 880000 -480000 front 0)
+    )
+    (component "RF_Module:ESP32-S3-WROOM-1"
+      (place U1 250000 -180000 front 0)
+    )
+    (component "Package_TO_SOT_SMD:SOT-23"
+      (place Q2 800000 -780000 front 0)
+      (place Q4 880000 -360000 front 0)
+      (place Q3 840000 -360000 front 0)
+      (place Q1 870000 -160000 front 0)
+      (place Q5 920000 -360000 front 0)
+    )
+    (component "Package_DFN_QFN:QFN-56-1EP_7x7mm_P0.4mm_EP3.2x3.2mm"
+      (place U2 650000 -200000 front 0)
+    )
+    (component "Connector:Tag-Connect_TC2050-IDC-FP_2x05_P1.27mm_Vertical"
+      (place J13 740000 -120000 front 0)
+    )
+    (component "AD5941BCPZ-RL7:QFN50P700X700X80-49N"
+      (place U4 350000 -650000 front 0)
+      (place U5 600000 -650000 front 0)
+    )
+    (component "LED_SMD:LED_0805_2012Metric"
+      (place LED2 880000 -420000 front 0)
+      (place LED3 920000 -420000 front 0)
+      (place LED1 840000 -420000 front 0)
+    )
+    (component "Connector_Card:microSD_HC_Molex_104031-0811"
+      (place J11 920000 -580000 front 0)
+    )
+    (component "Button_Switch_SMD:SW_SPST_TL3342"
+      (place SW1 60000 -180000 front 0)
+      (place SW2 60000 -240000 front 0)
+    )
+    (component "Inductor_SMD:L_0402_1005Metric"
+      (place FB1 260000 -500000 front 0)
+    )
+    (component "Package_DFN_QFN:Texas_RGE0024C_VQFN-24-1EP_4x4mm_P0.5mm_EP2.1x2.1mm"
+      (place U7 500000 -450000 front 0)
+    )
+    (component "Package_TO_SOT_SMD:SOT-23-5"
+      (place U15 300000 -500000 front 0)
+    )
+    (component "Connector_FFC-FPC:Hirose_FH12-14S-0.5SH_1x14-1MP_P0.50mm_Horizontal"
+      (place J10 950000 -220000 front 0)
+    )
+    (component "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+      (place U3 780000 -200000 front 0)
+    )
+    (component "Buzzer_Beeper:Buzzer_12x9.5RM7.6"
+      (place BZ1 870000 -70000 front 0)
+    )
+    (component "LSM6DSOX:PQFN50P250X300X86-14N"
+      (place U11 740000 -480000 front 0)
+    )
+    (component "Package_SO:SOIC-16W_7.5x10.3mm_P1.27mm"
+      (place U10 600000 -480000 front 0)
+    )
+    (component "MLX90614ESF-AAA-000-TU:TO254P912H435-4"
+      (place U9 740000 -350000 front 0)
+    )
+    (component "TPS63020DSJR:IC_TPS63020DSJR"
+      (place U14 300000 -400000 front 0)
+    )
+    (component "Package_TO_SOT_SMD:SOT-223-3_TabPin2"
+      (place U16 180000 -500000 front 0)
+    )
+    (component "OptoDevice:Maxim_OLGA-14_3.3x5.6mm_P0.8mm"
+      (place U8 600000 -350000 front 0)
+    )
+    (component "Crystal:Crystal_SMD_3215-2Pin_3.2x1.5mm"
+      (place Y1 570000 -170000 front 0)
+    )
+    (component "Package_SON:WSON-6-1EP_2x2mm_P0.65mm_EP1x1.6mm"
+      (place U12 850000 -780000 front 0)
+    )
+    (component "Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-12"
+      (place J1 15000 -440000 front 0)
+    )
+  )
+  (was_is
+  )
+  (routes 
+    (resolution um 10)
+    (parser
+      (host_cad "KiCad's Pcbnew")
+      (host_version "10.0.3")
+    )
+    (library_out 
+      (padstack "Via[0-5]_300:300_um"
+        (shape
+          (circle "Digital_Signals" 3000 0 0)
+        )
+        (shape
+          (circle "GND_Plane" 3000 0 0)
+        )
+        (shape
+          (circle "Analog_Signals" 3000 0 0)
+        )
+        (shape
+          (circle "Power_Planes" 3000 0 0)
+        )
+        (shape
+          (circle HighSpeed 3000 0 0)
+        )
+        (shape
+          (circle "Bottom_GND" 3000 0 0)
+        )
+        (attach off)
+      )
+      (padstack "Via[0-5]_600:400_um"
+        (shape
+          (circle "Digital_Signals" 6000 0 0)
+        )
+        (shape
+          (circle "GND_Plane" 6000 0 0)
+        )
+        (shape
+          (circle "Analog_Signals" 6000 0 0)
+        )
+        (shape
+          (circle "Power_Planes" 6000 0 0)
+        )
+        (shape
+          (circle HighSpeed 6000 0 0)
+        )
+        (shape
+          (circle "Bottom_GND" 6000 0 0)
+        )
+        (attach off)
+      )
+      (padstack "Via[0-5]_500:300_um"
+        (shape
+          (circle "Digital_Signals" 5000 0 0)
+        )
+        (shape
+          (circle "GND_Plane" 5000 0 0)
+        )
+        (shape
+          (circle "Analog_Signals" 5000 0 0)
+        )
+        (shape
+          (circle "Power_Planes" 5000 0 0)
+        )
+        (shape
+          (circle HighSpeed 5000 0 0)
+        )
+        (shape
+          (circle "Bottom_GND" 5000 0 0)
+        )
+        (attach off)
+      )
+      (padstack "Via[0-5]_300:300_um"
+        (shape
+          (circle "Digital_Signals" 3000 0 0)
+        )
+        (shape
+          (circle "GND_Plane" 3000 0 0)
+        )
+        (shape
+          (circle "Analog_Signals" 3000 0 0)
+        )
+        (shape
+          (circle "Power_Planes" 3000 0 0)
+        )
+        (shape
+          (circle HighSpeed 3000 0 0)
+        )
+        (shape
+          (circle "Bottom_GND" 3000 0 0)
+        )
+        (attach off)
+      )
+      (padstack "Via[0-5]_300:300_um"
+        (shape
+          (circle "Digital_Signals" 3000 0 0)
+        )
+        (shape
+          (circle "GND_Plane" 3000 0 0)
+        )
+        (shape
+          (circle "Analog_Signals" 3000 0 0)
+        )
+        (shape
+          (circle "Power_Planes" 3000 0 0)
+        )
+        (shape
+          (circle HighSpeed 3000 0 0)
+        )
+        (shape
+          (circle "Bottom_GND" 3000 0 0)
+        )
+        (attach off)
+      )
+      (padstack "Via[0-5]_600:400_um"
+        (shape
+          (circle "Digital_Signals" 6000 0 0)
+        )
+        (shape
+          (circle "GND_Plane" 6000 0 0)
+        )
+        (shape
+          (circle "Analog_Signals" 6000 0 0)
+        )
+        (shape
+          (circle "Power_Planes" 6000 0 0)
+        )
+        (shape
+          (circle HighSpeed 6000 0 0)
+        )
+        (shape
+          (circle "Bottom_GND" 6000 0 0)
+        )
+        (attach off)
+      )
+      (padstack "Via[0-5]_500:300_um"
+        (shape
+          (circle "Digital_Signals" 5000 0 0)
+        )
+        (shape
+          (circle "GND_Plane" 5000 0 0)
+        )
+        (shape
+          (circle "Analog_Signals" 5000 0 0)
+        )
+        (shape
+          (circle "Power_Planes" 5000 0 0)
+        )
+        (shape
+          (circle HighSpeed 5000 0 0)
+        )
+        (shape
+          (circle "Bottom_GND" 5000 0 0)
+        )
+        (attach off)
+      )
+    )
+    (network_out 
+      (net VBAT
+        (wire
+          (path "Digital_Signals" 5000
+            199625 -412500
+            218608 -431483
+            218608 -435690
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            218608 -435690
+            224517 -441599
+            257901 -441599
+            269500 -430000
+          )
+        )
+        (via "Via[0-5]_600:400_um" 218608 -435690
+        )
+        (wire
+          (path "GND_Plane" 5000
+            50000 -560000
+            169315 -440685
+            213613 -440685
+            218608 -435690
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            110500 -400000
+            85959 -424541
+            85959 -524041
+            50000 -560000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2502
+            199625 -407771
+            199625 -407500
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            199625 -412500
+            199625 -407771
+          )
+        )
+      )
+      (net +3V3
+        (wire
+          (path "Digital_Signals" 2000
+            495777 -430625
+            495777 -420320
+            498298 -417799
+            511573 -417799
+            521606 -427832
+            521606 -435269
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            736474 -133518
+            735690 -133518
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            740000 -126350
+            740000 -133518
+            736474 -133518
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            736474 -133518
+            736474 -158326
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            764500 -56500
+            764441 -56500
+            740791 -80150
+          )
+        )
+        (wire
+          (path HighSpeed 2000
+            735690 -133518
+            734090 -131918
+            734090 -86851
+            740791 -80150
+          )
+        )
+        (via "Via[0-5]_300:300_um" 740791 -80150
+        )
+        (via "Via[0-5]_300:300_um" 735690 -133518
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            664800 -710000
+            664800 -715619
+            665421 -716240
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            805068 -762500
+            758808 -716240
+            665421 -716240
+          )
+        )
+        (via "Via[0-5]_300:300_um" 665421 -716240
+        )
+        (via "Via[0-5]_300:300_um" 805068 -762500
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            809375 -780000
+            805068 -775693
+            805068 -762500
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            790625 -789500
+            799875 -789500
+            809375 -780000
+          )
+        )
+        (wire
+          (path "Power_Planes" 2000
+            832979 -176955
+            861905 -176955
+          )
+        )
+        (wire
+          (path "Power_Planes" 2000
+            743567 -165419
+            755103 -176955
+            832979 -176955
+          )
+        )
+        (wire
+          (path "Power_Planes" 2000
+            832979 -178803
+            832979 -176955
+          )
+        )
+        (via "Via[0-5]_300:300_um" 832979 -178803
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            824800 -180000
+            831782 -180000
+            832979 -178803
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            736474 -158326
+            734800 -160000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            736474 -158326
+            743567 -165419
+          )
+        )
+        (via "Via[0-5]_300:300_um" 743567 -165419
+        )
+        (wire
+          (path "Analog_Signals" 2000
+            622907 -340046
+            622907 -281583
+            633501 -270989
+            633501 -204914
+            630980 -202393
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            858875 -786500
+            866695 -786500
+            874800 -778395
+            874800 -760000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            915586 -497379
+            915586 -480786
+            914800 -480000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            915586 -512847
+            915586 -497379
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            879012 -484000
+            879012 -493655
+            882736 -497379
+            915586 -497379
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            631483 -200000
+            631483 -201890
+            630980 -202393
+          )
+        )
+        (wire
+          (path "Analog_Signals" 2000
+            630980 -202393
+            630980 -200503
+            594800 -164323
+            594800 -146448
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            858875 -786500
+            858875 -788072
+            855926 -791021
+            838567 -791021
+            836729 -789183
+            836729 -783761
+            840490 -780000
+            841125 -780000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            275200 -530000
+            269014 -530000
+          )
+        )
+        (wire
+          (path HighSpeed 2000
+            298117 -619877
+            269014 -590774
+            269014 -530000
+          )
+        )
+        (via "Via[0-5]_300:300_um" 269014 -530000
+        )
+        (wire
+          (path "Analog_Signals" 2000
+            414800 -617815
+            398958 -633657
+            398958 -697887
+            399704 -698633
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            298117 -619877
+            298117 -613317
+            294800 -610000
+          )
+        )
+        (via "Via[0-5]_300:300_um" 298117 -619877
+        )
+        (wire
+          (path "GND_Plane" 2000
+            414800 -617815
+            405390 -627225
+            305465 -627225
+            298117 -619877
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            742650 -482799
+            742650 -483533
+          )
+        )
+        (wire
+          (path "Analog_Signals" 2000
+            740000 -324600
+            748915 -333515
+            748915 -476534
+            742650 -482799
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            742650 -483533
+            740000 -483533
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            745000 -483533
+            742650 -483533
+          )
+        )
+        (via "Via[0-5]_300:300_um" 742650 -482799
+        )
+        (wire
+          (path "Analog_Signals" 2000
+            150785 -180796
+            151916 -179665
+            151916 -127250
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            144800 -140000
+            143776 -141024
+            143776 -158976
+            144800 -160000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            414800 -617815
+            414800 -610000
+          )
+        )
+        (via "Via[0-5]_300:300_um" 414800 -617815
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            544800 -710000
+            529878 -695078
+            529878 -686406
+            532521 -683763
+            538563 -683763
+            544800 -690000
+          )
+        )
+        (wire
+          (path "Analog_Signals" 2000
+            103054 -264076
+            58200 -308930
+            58200 -408700
+          )
+        )
+        (wire
+          (path "Analog_Signals" 2000
+            150785 -180796
+            129883 -201698
+            103150 -201698
+          )
+        )
+        (wire
+          (path "Analog_Signals" 2000
+            103054 -264076
+            103055 -264076
+            103055 -201793
+            103150 -201698
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            91500 -199000
+            102517 -199000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            103150 -201698
+            102517 -201065
+            102517 -199000
+          )
+        )
+        (via "Via[0-5]_300:300_um" 103150 -201698
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            526762 -476533
+            526762 -440425
+            521606 -435269
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            553500 -486350
+            536579 -486350
+            526762 -476533
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            497500 -469375
+            497500 -474267
+            499766 -476533
+            526762 -476533
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            519375 -437500
+            521606 -435269
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            148500 -523000
+            130760 -523000
+            103517 -550243
+            103517 -559981
+            106036 -562500
+            110150 -562500
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            103054 -264076
+            102517 -263539
+            102517 -259000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            91500 -259000
+            102517 -259000
+          )
+        )
+        (via "Via[0-5]_300:300_um" 103054 -264076
+        )
+        (wire
+          (path "GND_Plane" 2000
+            576472 -147580
+            569721 -140829
+            371490 -140829
+            371138 -141181
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            144900 -580000
+            118707 -580000
+            116769 -578062
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            116769 -578062
+            116769 -574119
+            110150 -567500
+          )
+        )
+        (via "Via[0-5]_300:300_um" 116769 -578062
+        )
+        (wire
+          (path "GND_Plane" 2000
+            70000 -560000
+            98707 -560000
+            116769 -578062
+          )
+        )
+        (wire
+          (path "Power_Planes" 2000
+            91476 -444187
+            217913 -444187
+            226859 -435241
+            226859 -435044
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            250462 -429962
+            250500 -430000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            250462 -385622
+            250462 -429962
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            250462 -429962
+            231941 -429962
+            226859 -435044
+          )
+        )
+        (via "Via[0-5]_300:300_um" 226859 -435044
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            85200 -600000
+            70000 -584800
+            70000 -560000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            371138 -141181
+            365981 -141181
+            364800 -140000
+          )
+        )
+        (wire
+          (path HighSpeed 2000
+            358883 -216493
+            371138 -204238
+            371138 -141181
+          )
+        )
+        (via "Via[0-5]_300:300_um" 371138 -141181
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            399706 -698635
+            399706 -713627
+            402132 -716053
+            408747 -716053
+            414800 -710000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            399704 -698633
+            399706 -698635
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            414800 -690000
+            406165 -698635
+            399706 -698635
+          )
+        )
+        (via "Via[0-5]_300:300_um" 399704 -698633
+        )
+        (wire
+          (path "Power_Planes" 2000
+            373388 -695655
+            396726 -695655
+            399704 -698633
+          )
+        )
+        (via "Via[0-5]_300:300_um" 373388 -695655
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            372500 -684450
+            372500 -694767
+            373388 -695655
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            544800 -690000
+            566950 -690000
+            572500 -684450
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            601311 -651311
+            572500 -680122
+            572500 -684450
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            601311 -651311
+            615261 -665261
+            622500 -665261
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            600000 -650000
+            601311 -651311
+          )
+        )
+        (wire
+          (path "Power_Planes" 2000
+            740000 -324600
+            859404 -324600
+            910625 -375821
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            367438 -207938
+            364800 -205300
+            364800 -170000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            369500 -210000
+            367438 -207938
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            367438 -207938
+            358883 -216493
+          )
+        )
+        (wire
+          (path "Power_Planes" 2000
+            358883 -216493
+            253893 -216493
+            249000 -211600
+          )
+        )
+        (via "Via[0-5]_300:300_um" 358883 -216493
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            584800 -500000
+            645550 -500000
+            646500 -499050
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            554800 -147580
+            554800 -110000
+            534800 -90000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            554800 -150000
+            554800 -147580
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            554800 -147580
+            576472 -147580
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            576472 -147580
+            593668 -147580
+            594800 -146448
+          )
+        )
+        (via "Via[0-5]_300:300_um" 576472 -147580
+        )
+        (wire
+          (path "Analog_Signals" 2000
+            919797 -211239
+            921590 -213032
+            921590 -364856
+            910625 -375821
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            294800 -590000
+            294800 -610000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            664800 -690000
+            664800 -610000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            914800 -480000
+            914800 -473800
+          )
+        )
+        (wire
+          (path HighSpeed 2000
+            910625 -375821
+            914800 -379996
+            914800 -473800
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            910625 -375821
+            910625 -369500
+          )
+        )
+        (via "Via[0-5]_300:300_um" 910625 -375821
+        )
+        (via "Via[0-5]_300:300_um" 914800 -473800
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            294800 -690000
+            294800 -710000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            554800 -150000
+            549931 -154869
+            549931 -185131
+            554800 -190000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            602500 -615550
+            602500 -611126
+            581374 -590000
+            544800 -590000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            664800 -690000
+            664800 -710000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            674800 -90000
+            668556 -96244
+            662147 -96244
+            624500 -58597
+            624500 -56500
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            414800 -610000
+            414800 -590000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            144800 -180000
+            144800 -160000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            315200 -480000
+            299125 -480000
+            288625 -490500
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            324800 -480000
+            315200 -480000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            604800 -90000
+            604800 -130000
+            594800 -140000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            115200 -440000
+            95663 -440000
+            91476 -444187
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            91476 -444187
+            87272 -439983
+            58200 -439983
+          )
+        )
+        (via "Via[0-5]_300:300_um" 91476 -444187
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            125100 -420000
+            115200 -429900
+            115200 -440000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            349950 -454850
+            350822 -455722
+            359378 -455722
+            365100 -450000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            345100 -450000
+            349950 -454850
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            349950 -454850
+            324800 -480000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            129500 -400000
+            125100 -404400
+            125100 -420000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            335200 -400000
+            334341 -400859
+            334341 -416831
+            340107 -422597
+            340107 -445007
+            345100 -450000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            624500 -56500
+            604800 -76200
+            604800 -90000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            554500 -56500
+            534800 -76200
+            534800 -90000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            694500 -56500
+            674800 -76200
+            674800 -90000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            873620 -484000
+            879012 -484000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            162500 -127400
+            152483 -127400
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            152483 -127400
+            152333 -127250
+            151916 -127250
+          )
+        )
+        (via "Via[0-5]_300:300_um" 151916 -127250
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            594800 -146448
+            594800 -140000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            337500 -127400
+            347517 -127400
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            347517 -127400
+            348553 -126364
+            356353 -126364
+            364800 -134811
+            364800 -140000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            150785 -180796
+            145596 -180796
+            144800 -180000
+          )
+        )
+        (via "Via[0-5]_300:300_um" 150785 -180796
+        )
+        (wire
+          (path "GND_Plane" 2000
+            228000 -190600
+            160589 -190600
+            150785 -180796
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            235000 -204600
+            242000 -204600
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            228000 -204600
+            235000 -204600
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            235000 -211600
+            235000 -204600
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            235000 -197600
+            221000 -197600
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            228000 -211600
+            221000 -211600
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            235000 -211600
+            228000 -211600
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            228000 -218600
+            228000 -211600
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            235000 -190600
+            228000 -190600
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            242000 -190600
+            235000 -190600
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            235000 -197600
+            235000 -190600
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            235000 -204600
+            235000 -197600
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            242000 -197600
+            235000 -197600
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            249000 -197600
+            242000 -197600
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            242000 -204600
+            242000 -197600
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            242000 -211600
+            235000 -211600
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            249000 -211600
+            242000 -211600
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            242000 -218600
+            242000 -211600
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            870625 -364875
+            870625 -369500
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            910625 -369500
+            910625 -366902
+            897920 -354197
+            881303 -354197
+            870625 -364875
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            830625 -369500
+            830625 -365540
+            841820 -354345
+            860095 -354345
+            870625 -364875
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            612000 -342000
+            620953 -342000
+            622907 -340046
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            740000 -324600
+            724554 -340046
+            622907 -340046
+          )
+        )
+        (via "Via[0-5]_300:300_um" 594800 -146448
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            322500 -684450
+            316950 -690000
+            294800 -690000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            350950 -650950
+            322500 -679400
+            322500 -684450
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            350950 -650950
+            365261 -665261
+            372500 -665261
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            350000 -650000
+            350950 -650950
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            372500 -677500
+            372500 -684450
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            372500 -665261
+            372500 -677500
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            384450 -677500
+            372500 -677500
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            384450 -657500
+            380261 -657500
+            372500 -665261
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            350000 -650000
+            350000 -621983
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            350000 -621983
+            352500 -619483
+            352500 -615550
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            622500 -677500
+            622500 -684450
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            622500 -665261
+            622500 -677500
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            634450 -677500
+            622500 -677500
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            634450 -657500
+            630261 -657500
+            622500 -665261
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            600000 -650000
+            600000 -621983
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            600000 -621983
+            602500 -619483
+            602500 -615550
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            915586 -512847
+            910950 -517483
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            943950 -517483
+            939314 -512847
+            915586 -512847
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            910950 -525500
+            910950 -517483
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            943950 -525500
+            943950 -517483
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            288625 -509500
+            275200 -522925
+            275200 -530000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            288625 -485687
+            288625 -480875
+            289500 -480000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            288625 -490500
+            288625 -485687
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            270500 -485687
+            270500 -480000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            264850 -500000
+            270500 -494350
+            270500 -485687
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            288625 -485687
+            270500 -485687
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            919797 -211239
+            896189 -211239
+            861905 -176955
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            544800 -590000
+            544800 -610000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            255200 -380000
+            250462 -384738
+            250462 -385622
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            250462 -385622
+            230822 -385622
+            225200 -380000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            125100 -460000
+            125100 -449900
+            115200 -440000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            110150 -567500
+            110150 -562500
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            650000 -200000
+            631483 -200000
+          )
+        )
+        (via "Via[0-5]_300:300_um" 630980 -202393
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            85200 -540000
+            78517 -546683
+            78517 -560000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            80483 -199000
+            39517 -199000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            28500 -199000
+            39517 -199000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            28500 -259000
+            80483 -259000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            91500 -199000
+            80483 -199000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            91500 -259000
+            80483 -259000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            495777 -430625
+            497500 -430625
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            492500 -430625
+            495777 -430625
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            288625 -500000
+            288625 -490500
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            288625 -509500
+            288625 -500000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            861905 -176955
+            860625 -175675
+            860625 -169500
+          )
+        )
+        (via "Via[0-5]_300:300_um" 861905 -176955
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            734800 -240000
+            714800 -260000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            724800 -330000
+            724800 -270000
+            714800 -260000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            664800 -542749
+            664799 -542749
+            646500 -524450
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            724800 -500000
+            682051 -542749
+            664800 -542749
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            664800 -542749
+            664800 -590000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            553500 -524450
+            544800 -533150
+            544800 -590000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            664800 -590000
+            664800 -610000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            314000 -390000
+            310562 -390000
+            309500 -388938
+            309500 -388476
+            306621 -385597
+            293091 -385597
+            288688 -390000
+            286000 -390000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            125100 -460000
+            125100 -470100
+            115200 -480000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            825100 -776361
+            813014 -776361
+            809375 -780000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            841125 -780000
+            828739 -780000
+            825100 -776361
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            825100 -776361
+            825100 -760000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            70000 -560000
+            78517 -560000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            917500 -201500
+            917500 -210517
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            962500 -192483
+            962500 -190136
+            961801 -189437
+          )
+        )
+        (wire
+          (path "Power_Planes" 2000
+            919797 -211239
+            941599 -189437
+            961801 -189437
+          )
+        )
+        (via "Via[0-5]_300:300_um" 961801 -189437
+        )
+        (via "Via[0-5]_300:300_um" 919797 -211239
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            917500 -210517
+            919075 -210517
+            919797 -211239
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            962500 -192483
+            957500 -192483
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            957500 -201500
+            957500 -192483
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            962500 -201500
+            962500 -192483
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            967500 -192483
+            962500 -192483
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            967500 -201500
+            967500 -192483
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            972500 -192483
+            967500 -192483
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            972500 -201500
+            972500 -192483
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            977500 -192483
+            972500 -192483
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            977500 -201500
+            977500 -192483
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            982500 -201500
+            982500 -192483
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            982500 -192483
+            977500 -192483
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            755250 -219050
+            734800 -239500
+            734800 -240000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            745000 -489100
+            745000 -494667
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            745000 -494667
+            730133 -494667
+            724800 -500000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            745000 -488248
+            745000 -489100
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            745000 -488248
+            745000 -483533
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            740000 -489100
+            740000 -483533
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            553500 -494287
+            553500 -486350
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            553500 -499050
+            553500 -494287
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            553500 -494287
+            579087 -494287
+            584800 -500000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            553500 -511750
+            553500 -499050
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            553500 -524450
+            553500 -511750
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            646500 -511750
+            646500 -524450
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            646500 -499050
+            646500 -511750
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            646500 -486350
+            646500 -499050
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            646500 -473650
+            646500 -486350
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            740000 -324600
+            734600 -330000
+            724800 -330000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            281600 -390000
+            280483 -388883
+            280483 -386466
+            267912 -373895
+            261305 -373895
+            255200 -380000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            281600 -390000
+            280483 -390000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            286000 -390000
+            281600 -390000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            286000 -400000
+            280483 -400000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            280483 -400000
+            280483 -390000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            314000 -390000
+            325200 -390000
+            335200 -400000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            148500 -477000
+            131500 -460000
+            125100 -460000
+          )
+        )
+        (via "Via[0-5]_300:300_um" 622907 -340046
+        )
+        (wire
+          (path "Analog_Signals" 2000
+            58200 -450500
+            58200 -461017
+          )
+        )
+        (wire
+          (path "Analog_Signals" 2000
+            58200 -461017
+            70000 -472817
+            70000 -560000
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            58200 -450500
+            58200 -439983
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            -28200 -450500
+            -28200 -439983
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            -28200 -439983
+            58200 -439983
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            -28200 -408700
+            -28200 -395683
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            -28200 -395683
+            -21367 -395683
+            -17500 -399550
+          )
+        )
+        (wire
+          (path "Analog_Signals" 2000
+            -28200 -450500
+            -28200 -408700
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            58200 -408700
+            58200 -395683
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            58200 -395683
+            51367 -395683
+            47500 -399550
+          )
+        )
+        (wire
+          (path "Analog_Signals" 2000
+            58200 -450500
+            58200 -408700
+          )
+        )
+        (via "Via[0-5]_300:300_um" 980000 -985000
+          (type protect)
+        )
+        (via "Via[0-5]_300:300_um" 985000 -985000
+          (type protect)
+        )
+        (wire
+          (path "Digital_Signals" 10000
+            980000 -985000
+            985000 -985000
+          )
+          (type protect)
+        )
+        (wire
+          (path "Digital_Signals" 10000
+            790625 -789500
+            790625 -834375
+            790000 -835000
+            985000 -835000
+            985000 -850000
+            795000 -850000
+            795000 -865000
+            985000 -865000
+            985000 -880000
+            795000 -880000
+            795000 -895000
+            985000 -895000
+            985000 -910000
+            795000 -910000
+            795000 -925000
+            985000 -925000
+            985000 -940000
+            795000 -940000
+            795500 -940500
+            795500 -955000
+            985000 -955000
+            985000 -970000
+            795000 -970000
+            795000 -985000
+            980000 -985000
+          )
+          (type protect)
+        )
+        (wire
+          (path "Digital_Signals" 10000
+            790625 -789500
+            790625 -834375
+            790000 -835000
+            985000 -835000
+            985000 -850000
+            795000 -850000
+          )
+          (type protect)
+        )
+        (wire
+          (path "Digital_Signals" 10000
+            985000 -835000
+            790000 -835000
+            790625 -834375
+            790625 -789500
+          )
+          (type protect)
+        )
+        (wire
+          (path "Digital_Signals" 10000
+            790625 -834375
+            790625 -789500
+          )
+          (type protect)
+        )
+        (wire
+          (path "Digital_Signals" 10000
+            985000 -850000
+            985000 -835000
+            790000 -835000
+            790625 -834375
+            790625 -789500
+          )
+          (type protect)
+        )
+        (wire
+          (path "Digital_Signals" 10000
+            790000 -835000
+            790625 -834375
+            790625 -789500
+          )
+          (type protect)
+        )
+        (wire
+          (path "Digital_Signals" 10000
+            795000 -865000
+            985000 -865000
+            985000 -880000
+            795000 -880000
+            795000 -895000
+            985000 -895000
+            985000 -910000
+            795000 -910000
+            795000 -925000
+            985000 -925000
+            985000 -940000
+            795000 -940000
+            795500 -940500
+            795500 -955000
+            985000 -955000
+            985000 -970000
+            795000 -970000
+            795000 -985000
+            980000 -985000
+          )
+          (type protect)
+        )
+        (wire
+          (path "Digital_Signals" 10000
+            980000 -985000
+            795000 -985000
+            795000 -970000
+            985000 -970000
+            985000 -955000
+            795500 -955000
+            795500 -940500
+            795000 -940000
+            985000 -940000
+            985000 -925000
+            795000 -925000
+            795000 -910000
+            985000 -910000
+            985000 -895000
+            795000 -895000
+            795000 -880000
+            985000 -880000
+            985000 -865000
+          )
+          (type protect)
+        )
+        (wire
+          (path "Digital_Signals" 10000
+            980000 -985000
+            795000 -985000
+            795000 -970000
+            985000 -970000
+            985000 -955000
+            795500 -955000
+            795500 -940500
+            795000 -940000
+            985000 -940000
+            985000 -925000
+            795000 -925000
+            795000 -910000
+            985000 -910000
+            985000 -895000
+            795000 -895000
+            795000 -880000
+            985000 -880000
+          )
+          (type protect)
+        )
+        (wire
+          (path "Digital_Signals" 10000
+            980000 -985000
+            795000 -985000
+            795000 -970000
+            985000 -970000
+            985000 -955000
+            795500 -955000
+            795500 -940500
+            795000 -940000
+            985000 -940000
+            985000 -925000
+            795000 -925000
+            795000 -910000
+            985000 -910000
+            985000 -895000
+            795000 -895000
+            795000 -880000
+          )
+          (type protect)
+        )
+        (wire
+          (path "Digital_Signals" 10000
+            980000 -985000
+            795000 -985000
+            795000 -970000
+            985000 -970000
+            985000 -955000
+            795500 -955000
+            795500 -940500
+            795000 -940000
+            985000 -940000
+            985000 -925000
+            795000 -925000
+            795000 -910000
+            985000 -910000
+            985000 -895000
+            795000 -895000
+          )
+          (type protect)
+        )
+        (wire
+          (path "Digital_Signals" 10000
+            980000 -985000
+            795000 -985000
+            795000 -970000
+            985000 -970000
+            985000 -955000
+            795500 -955000
+            795500 -940500
+            795000 -940000
+            985000 -940000
+            985000 -925000
+            795000 -925000
+            795000 -910000
+            985000 -910000
+            985000 -895000
+          )
+          (type protect)
+        )
+        (wire
+          (path "Digital_Signals" 10000
+            980000 -985000
+            795000 -985000
+            795000 -970000
+            985000 -970000
+            985000 -955000
+            795500 -955000
+            795500 -940500
+            795000 -940000
+            985000 -940000
+            985000 -925000
+            795000 -925000
+            795000 -910000
+            985000 -910000
+          )
+          (type protect)
+        )
+        (wire
+          (path "Digital_Signals" 10000
+            795000 -910000
+            795000 -925000
+          )
+          (type protect)
+        )
+        (wire
+          (path "Digital_Signals" 10000
+            795000 -925000
+            985000 -925000
+          )
+          (type protect)
+        )
+        (wire
+          (path "Digital_Signals" 10000
+            985000 -925000
+            985000 -940000
+          )
+          (type protect)
+        )
+        (wire
+          (path "Digital_Signals" 10000
+            985000 -940000
+            795000 -940000
+          )
+          (type protect)
+        )
+        (wire
+          (path "Digital_Signals" 10000
+            795000 -940000
+            795500 -940500
+          )
+          (type protect)
+        )
+        (wire
+          (path "Digital_Signals" 10000
+            795500 -940500
+            795500 -955000
+          )
+          (type protect)
+        )
+        (wire
+          (path "Digital_Signals" 10000
+            795500 -955000
+            985000 -955000
+          )
+          (type protect)
+        )
+        (wire
+          (path "Digital_Signals" 10000
+            985000 -955000
+            985000 -970000
+          )
+          (type protect)
+        )
+        (wire
+          (path "Digital_Signals" 10000
+            985000 -970000
+            795000 -970000
+          )
+          (type protect)
+        )
+        (wire
+          (path "Digital_Signals" 10000
+            795000 -970000
+            795000 -985000
+          )
+          (type protect)
+        )
+        (wire
+          (path "Digital_Signals" 10000
+            795000 -985000
+            980000 -985000
+          )
+          (type protect)
+        )
+      )
+      (net "3V3_D"
+        (wire
+          (path "Digital_Signals" 5000
+            397948 -609692
+            397948 -617571
+            421608 -641231
+            421622 -641231
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            405200 -590000
+            397948 -597252
+            397948 -609692
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            397948 -609692
+            395536 -609692
+          )
+        )
+        (wire
+          (path "Power_Planes" 5000
+            306071 -652437
+            369722 -652437
+            397730 -624429
+            397730 -611886
+            395536 -609692
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            475200 -430000
+            475200 -428084
+            483815 -419469
+            483815 -417016
+            488333 -412498
+            513658 -412498
+            536138 -434978
+            536138 -436873
+            547515 -448250
+            553500 -448250
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            484974 -641231
+            484974 -670459
+            551743 -737228
+            627972 -737228
+            655200 -710000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            535200 -590000
+            484974 -640226
+            484974 -641231
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            484974 -641231
+            421622 -641231
+          )
+        )
+        (wire
+          (path HighSpeed 5000
+            730363 -143605
+            734933 -139035
+            737976 -139035
+            741207 -135804
+            741207 -131232
+            740191 -130216
+            740191 -126836
+            741458 -125569
+            741458 -121413
+            740191 -120146
+            740191 -97122
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            612000 -350000
+            609304 -350000
+            600270 -340966
+            600270 -327556
+            592370 -319656
+            585200 -319656
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            612000 -350000
+            621442 -350000
+            656748 -314694
+            656748 -244187
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2002
+            656748 -244187
+            652000 -239439
+            652000 -234375
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2002
+            660957 -244187
+            656748 -244187
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            612000 -350000
+            612000 -358000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            692769 -210000
+            714900 -210000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            692754 -210000
+            692769 -210000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            660957 -244187
+            669968 -253198
+            675588 -253198
+            692769 -236017
+            692769 -210000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            855253 -455667
+            849586 -455667
+            834900 -440981
+            834900 -440000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            874900 -440000
+            859233 -455667
+            855253 -455667
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            855253 -455667
+            855253 -496110
+            880683 -521540
+            880683 -533207
+            882739 -535263
+          )
+        )
+        (wire
+          (path "GND_Plane" 5000
+            344522 -154931
+            347754 -151699
+            352325 -151699
+            379792 -179166
+            598317 -179166
+            616969 -160514
+            677176 -160514
+            679002 -162340
+            711628 -162340
+            730363 -143605
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            585200 -319656
+            582699 -319656
+            575200 -327155
+            575200 -330000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            585200 -319656
+            585200 -260000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            249500 -530000
+            259507 -530000
+          )
+        )
+        (wire
+          (path "Analog_Signals" 5000
+            306071 -652437
+            306071 -576564
+            259507 -530000
+          )
+        )
+        (via "Via[0-5]_600:400_um" 259507 -530000
+        )
+        (wire
+          (path "GND_Plane" 5000
+            344522 -154931
+            344522 -182009
+            354817 -192304
+          )
+        )
+        (wire
+          (path "GND_Plane" 5000
+            176860 -146687
+            336278 -146687
+            344522 -154931
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            355200 -170000
+            355556 -169644
+            355556 -140356
+            355200 -140000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            307347 -647500
+            306071 -648776
+            306071 -652437
+          )
+        )
+        (via "Via[0-5]_600:400_um" 395536 -609692
+        )
+        (via "Via[0-5]_600:400_um" 306071 -652437
+        )
+        (wire
+          (path "Digital_Signals" 2600
+            307347 -647500
+            315550 -647500
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            603470 -437205
+            603470 -369503
+            604728 -368245
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            553500 -448250
+            592425 -448250
+            603470 -437205
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            646500 -460950
+            627215 -460950
+            603470 -437205
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            131595 -180000
+            127799 -176204
+            127799 -151981
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            45100 -220000
+            55989 -209111
+            103540 -209111
+            131595 -181056
+            131595 -180000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            131595 -180000
+            135200 -180000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            870000 -70000
+            870000 -83917
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            804750 -180950
+            804750 -149167
+            870000 -83917
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2002
+            654996 -157509
+            654996 -164621
+            656000 -165625
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            676000 -165625
+            676000 -162854
+            670078 -156932
+            655573 -156932
+            654996 -157509
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            725200 -160000
+            724900 -160300
+            724900 -200000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            721823 -203077
+            692491 -173745
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2002
+            692491 -173745
+            684630 -173745
+            684375 -174000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            721823 -203077
+            724900 -200000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            714900 -210000
+            721823 -203077
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            405200 -710000
+            405200 -707821
+            413021 -700000
+            416228 -700000
+            421622 -694606
+            421622 -641231
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            725200 -143605
+            725200 -160000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            714600 -126350
+            714600 -128414
+            725200 -139014
+            725200 -143605
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            730363 -143605
+            725200 -143605
+          )
+        )
+        (via "Via[0-5]_600:400_um" 730363 -143605
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            525200 -43200
+            525200 -90000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            505500 -23500
+            525200 -43200
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            525200 -43200
+            555800 -43200
+            575500 -23500
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            702622 -487421
+            676150 -460950
+            646500 -460950
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            715200 -500000
+            702622 -487421
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            834900 -440000
+            750043 -440000
+            702622 -487421
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            645500 -23500
+            625800 -43200
+            595200 -43200
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            645500 -23500
+            665200 -43200
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            595200 -43200
+            595200 -90000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            575500 -23500
+            595200 -43200
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            350500 -210000
+            354817 -205683
+            354817 -192304
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            354817 -192304
+            355200 -191921
+            355200 -170000
+          )
+        )
+        (via "Via[0-5]_600:400_um" 354817 -192304
+        )
+        (via "Via[0-5]_600:400_um" 176860 -146687
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            162500 -140100
+            170273 -140100
+            176860 -146687
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            595200 -90000
+            585200 -100000
+            585200 -140000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            921950 -534917
+            921604 -535263
+            882739 -535263
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            882739 -535263
+            882739 -678622
+            865200 -696161
+            865200 -760000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            714900 -210000
+            714900 -229700
+            725200 -240000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            914900 -440000
+            907611 -447289
+            880803 -447289
+            874900 -441386
+            874900 -440000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            162500 -140100
+            156860 -140100
+            149386 -132626
+            131428 -132626
+            127799 -136255
+            127799 -151981
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            45100 -160000
+            53119 -151981
+            127799 -151981
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            714821 -38497
+            710118 -43200
+            665200 -43200
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            715500 -23500
+            715500 -37818
+            714821 -38497
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            735200 -90000
+            735200 -58876
+            714821 -38497
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            665200 -43200
+            665200 -90000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            611872 -171316
+            610789 -171316
+            585200 -145727
+            585200 -140000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2002
+            611872 -171316
+            614556 -174000
+            615625 -174000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2002
+            692754 -210000
+            684375 -210000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2002
+            681691 -171316
+            684375 -174000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            676000 -165625
+            681691 -171316
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2002
+            672000 -165625
+            676000 -165625
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2002
+            656000 -165625
+            652000 -165625
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            921950 -525500
+            921950 -534917
+          )
+        )
+        (wire
+          (path "Digital_Signals" 3504
+            604728 -368245
+            609755 -368245
+            612000 -366000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            585200 -260000
+            584900 -260000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            735200 -90000
+            735200 -92131
+            740191 -97122
+          )
+        )
+        (wire
+          (path "GND_Plane" 5000
+            870000 -70000
+            759436 -70000
+            740191 -89245
+            740191 -97122
+          )
+        )
+        (via "Via[0-5]_600:400_um" 740191 -97122
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            911998 -190998
+            866704 -190998
+            848581 -172875
+            820570 -172875
+            815200 -178245
+            815200 -180000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2998
+            911998 -190998
+            920951 -190998
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            922500 -192547
+            920951 -190998
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2998
+            922500 -192547
+            922500 -201500
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            804750 -180950
+            805700 -180000
+            815200 -180000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            612000 -358000
+            612000 -366000
+          )
+        )
+      )
+      (net "Net-(C5-Pad1)"
+        (wire
+          (path "Digital_Signals" 2000
+            194000 -340000
+            194000 -361017
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            194000 -361017
+            192500 -362517
+            192500 -380375
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            194000 -340000
+            194000 -318983
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            145200 -340000
+            145200 -332212
+            158429 -318983
+            194000 -318983
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            187500 -380375
+            192500 -380375
+          )
+        )
+      )
+      (net "Net-(U13-BTST)"
+        (wire
+          (path "Digital_Signals" 2000
+            182500 -380375
+            182500 -376628
+            170053 -364181
+            162121 -364181
+            154800 -356860
+            154800 -340000
+          )
+        )
+      )
+      (net "Net-(C14-Pad1)"
+        (wire
+          (path "Digital_Signals" 2000
+            80500 -580000
+            94800 -594300
+            94800 -600000
+          )
+        )
+      )
+      (net "Net-(C10-Pad1)"
+        (wire
+          (path "Digital_Signals" 2000
+            110500 -500000
+            124800 -485700
+            124800 -480000
+          )
+        )
+      )
+      (net "HEATER_PWM"
+        (wire
+          (path "Digital_Signals" 2000
+            628000 -234375
+            628000 -239549
+            628895 -240444
+            628895 -258214
+            623254 -263855
+          )
+        )
+        (wire
+          (path "Analog_Signals" 2000
+            775154 -753737
+            775154 -734256
+            614917 -574019
+            614917 -275393
+            623254 -267056
+            623254 -263855
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            774900 -760000
+            774900 -753991
+            775154 -753737
+          )
+        )
+        (via "Via[0-5]_300:300_um" 775154 -753737
+        )
+        (via "Via[0-5]_300:300_um" 623254 -263855
+        )
+      )
+      (net "Net-(Q2-G)"
+        (wire
+          (path "Digital_Signals" 2000
+            814900 -760000
+            813383 -758483
+            802642 -758483
+            790625 -770500
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            790625 -770500
+            785100 -764975
+            785100 -760000
+          )
+        )
+      )
+      (net "Net-(U1-EN)"
+        (wire
+          (path "GND_Plane" 2000
+            147793 -148615
+            137297 -148615
+            135200 -146518
+          )
+        )
+        (via "Via[0-5]_300:300_um" 147793 -148615
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            162500 -152800
+            151978 -152800
+            147793 -148615
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            91500 -161000
+            102517 -161000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            102517 -161000
+            102517 -162185
+            103020 -162688
+          )
+        )
+        (wire
+          (path "Analog_Signals" 2000
+            135200 -146518
+            119030 -162688
+            103020 -162688
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            135200 -146518
+            135200 -140000
+          )
+        )
+        (via "Via[0-5]_300:300_um" 135200 -146518
+        )
+        (via "Via[0-5]_300:300_um" 103020 -162688
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            91500 -161000
+            80483 -161000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            34900 -160000
+            41037 -166137
+            75346 -166137
+            80483 -161000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            28500 -161000
+            33900 -161000
+            34900 -160000
+          )
+        )
+      )
+      (net "Net-(C12-Pad1)"
+        (wire
+          (path "Digital_Signals" 2000
+            103468 -533437
+            101363 -533437
+            94800 -540000
+          )
+        )
+        (via "Via[0-5]_300:300_um" 103468 -533437
+        )
+        (wire
+          (path "GND_Plane" 2000
+            225328 -516541
+            120364 -516541
+            103468 -533437
+          )
+        )
+        (via "Via[0-5]_300:300_um" 225328 -516541
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            230500 -500000
+            225328 -505172
+            225328 -516541
+          )
+        )
+      )
+      (net "Net-(U14-EN)"
+        (wire
+          (path "Digital_Signals" 2000
+            126530 -352147
+            124900 -353777
+            124900 -360000
+          )
+        )
+        (via "Via[0-5]_300:300_um" 126530 -352147
+        )
+        (wire
+          (path "Power_Planes" 2000
+            179059 -354386
+            128769 -354386
+            126530 -352147
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            129500 -510310
+            129500 -519287
+            99500 -549287
+            99500 -580000
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            239371 -503687
+            167344 -503687
+            164289 -506742
+          )
+        )
+        (via "Via[0-5]_300:300_um" 239371 -503687
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            249500 -500000
+            243058 -500000
+            239371 -503687
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            129500 -510310
+            129500 -500000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            129500 -510310
+            160721 -510310
+            164289 -506742
+          )
+        )
+        (wire
+          (path HighSpeed 2000
+            208614 -400376
+            208614 -462417
+            164289 -506742
+          )
+        )
+        (via "Via[0-5]_300:300_um" 164289 -506742
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            179059 -354386
+            166000 -341327
+            166000 -340000
+          )
+        )
+        (wire
+          (path "Analog_Signals" 2000
+            208614 -400376
+            208614 -383941
+            179059 -354386
+          )
+        )
+        (via "Via[0-5]_300:300_um" 179059 -354386
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            201749 -400376
+            199625 -402500
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            208614 -400376
+            201749 -400376
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            201749 -400376
+            201749 -399624
+            199625 -397500
+          )
+        )
+        (via "Via[0-5]_300:300_um" 208614 -400376
+        )
+        (wire
+          (path "GND_Plane" 2000
+            286000 -380588
+            228402 -380588
+            208614 -400376
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            286000 -385000
+            286000 -380588
+          )
+        )
+        (wire
+          (path "Analog_Signals" 2000
+            320429 -400373
+            320429 -399014
+            302003 -380588
+            286000 -380588
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            320429 -400373
+            319890 -400373
+            319517 -400000
+          )
+        )
+        (via "Via[0-5]_300:300_um" 320429 -400373
+        )
+        (via "Via[0-5]_300:300_um" 286000 -380588
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            316759 -395000
+            319517 -397758
+            319517 -400000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            314000 -395000
+            316759 -395000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            314000 -405000
+            319517 -405000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            319517 -400000
+            319517 -405000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            314000 -400000
+            319517 -400000
+          )
+        )
+      )
+      (net "BATT_ALT"
+        (wire
+          (path HighSpeed 2000
+            129850 -571981
+            129851 -571981
+            129851 -354507
+            151982 -332376
+            151982 -229147
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            152483 -229000
+            152129 -229000
+            151982 -229147
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            162500 -229000
+            152483 -229000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            129850 -571981
+            129850 -567500
+          )
+        )
+        (via "Via[0-5]_300:300_um" 129850 -571981
+        )
+        (via "Via[0-5]_300:300_um" 151982 -229147
+        )
+      )
+      (net "Net-(U17-QSTRT)"
+        (wire
+          (path "Digital_Signals" 2000
+            129850 -562500
+            137600 -562500
+            155100 -580000
+          )
+        )
+      )
+      (net "I2C_SCL"
+        (wire
+          (path "Digital_Signals" 2000
+            512500 -430625
+            515488 -430625
+            517052 -429061
+          )
+        )
+        (wire
+          (path "Power_Planes" 2000
+            152742 -402154
+            177244 -426656
+            514647 -426656
+            517052 -429061
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            136689 -554916
+            134105 -557500
+            129850 -557500
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            160375 -407500
+            156283 -407500
+            152742 -403959
+            152742 -402154
+          )
+        )
+        (wire
+          (path "Analog_Signals" 2000
+            151738 -198802
+            157717 -204781
+            157717 -397179
+            152742 -402154
+          )
+        )
+        (wire
+          (path HighSpeed 2000
+            152742 -402154
+            152742 -538863
+            136689 -554916
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            152483 -190900
+            152483 -198057
+            151738 -198802
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            162500 -190900
+            152483 -190900
+          )
+        )
+        (via "Via[0-5]_300:300_um" 151738 -198802
+        )
+        (via "Via[0-5]_300:300_um" 136689 -554916
+        )
+        (via "Via[0-5]_300:300_um" 152742 -402154
+        )
+        (via "Via[0-5]_300:300_um" 517052 -429061
+        )
+      )
+      (net "I2C_SDA"
+        (wire
+          (path "Digital_Signals" 2000
+            507500 -430625
+            507500 -426802
+            502530 -421832
+            500104 -421832
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            160095 -417808
+            165761 -423474
+            498462 -423474
+            500104 -421832
+          )
+        )
+        (wire
+          (path "Analog_Signals" 2000
+            160095 -417808
+            160095 -522255
+            134260 -548090
+          )
+        )
+        (wire
+          (path "Analog_Signals" 2000
+            173129 -178200
+            161234 -190095
+            161234 -416669
+            160095 -417808
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            160375 -412500
+            160375 -417528
+            160095 -417808
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            162500 -178200
+            173129 -178200
+          )
+        )
+        (via "Via[0-5]_300:300_um" 173129 -178200
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            129850 -552500
+            134260 -548090
+          )
+        )
+        (via "Via[0-5]_300:300_um" 134260 -548090
+        )
+        (via "Via[0-5]_300:300_um" 160095 -417808
+        )
+        (via "Via[0-5]_300:300_um" 500104 -421832
+        )
+      )
+      (net VBUS
+        (wire
+          (path "Digital_Signals" 2000
+            139500 -380000
+            147000 -387500
+            160375 -387500
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            -9500 -399550
+            -9500 -404468
+            -1325 -412643
+            31830 -412643
+            39500 -404973
+            39500 -399550
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            120500 -380000
+            139500 -380000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            39500 -399550
+            39500 -394430
+            53930 -380000
+            120500 -380000
+          )
+        )
+      )
+      (net "CHG_INT"
+        (wire
+          (path "Digital_Signals" 2000
+            167500 -419625
+            167500 -424565
+            164508 -427557
+          )
+        )
+        (wire
+          (path "Analog_Signals" 2000
+            173291 -217485
+            172795 -217981
+            172795 -268482
+            174500 -270187
+            174500 -417565
+            164508 -427557
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            172517 -216300
+            172517 -216711
+            173291 -217485
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            162500 -216300
+            172517 -216300
+          )
+        )
+        (via "Via[0-5]_300:300_um" 164508 -427557
+        )
+        (via "Via[0-5]_300:300_um" 173291 -217485
+        )
+      )
+      (net "Net-(U13-OTG)"
+        (wire
+          (path "Power_Planes" 2000
+            355031 -442027
+            343177 -430173
+            176028 -430173
+            173181 -433020
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            172500 -419625
+            172500 -432339
+            173181 -433020
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            355031 -442027
+            354900 -442158
+            354900 -450000
+          )
+        )
+        (via "Via[0-5]_300:300_um" 355031 -442027
+        )
+        (via "Via[0-5]_300:300_um" 173181 -433020
+        )
+      )
+      (net "Net-(U13-~{QON})"
+        (wire
+          (path "Digital_Signals" 2000
+            192500 -419625
+            196708 -419625
+            197033 -419300
+          )
+        )
+        (wire
+          (path "Power_Planes" 2000
+            134969 -367972
+            134969 -373360
+            167109 -405500
+            171109 -405500
+            174500 -408891
+            174500 -413335
+            180465 -419300
+            197033 -419300
+          )
+        )
+        (via "Via[0-5]_300:300_um" 197033 -419300
+        )
+        (via "Via[0-5]_300:300_um" 134969 -367972
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            135100 -360000
+            135100 -367841
+            134969 -367972
+          )
+        )
+      )
+      (net "Net-(U13-REGN)"
+        (wire
+          (path "Digital_Signals" 2000
+            177500 -380375
+            177500 -376601
+            169644 -368745
+            168186 -368745
+          )
+        )
+        (wire
+          (path "Power_Planes" 2000
+            235793 -369635
+            234903 -368745
+            168186 -368745
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            235793 -369635
+            234800 -370628
+            234800 -380000
+          )
+        )
+        (via "Via[0-5]_300:300_um" 235793 -369635
+        )
+        (via "Via[0-5]_300:300_um" 168186 -368745
+        )
+      )
+      (net "Net-(U13-PMID)"
+        (wire
+          (path "Digital_Signals" 2000
+            172500 -380375
+            172500 -376688
+            168575 -372763
+            158349 -372763
+            153158 -377954
+          )
+        )
+        (wire
+          (path "Analog_Signals" 2000
+            124800 -433780
+            124800 -406312
+            153158 -377954
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            124800 -433780
+            124800 -440000
+          )
+        )
+        (via "Via[0-5]_300:300_um" 124800 -433780
+        )
+        (via "Via[0-5]_300:300_um" 153158 -377954
+        )
+      )
+      (net "Net-(U14-L1_8)"
+        (wire
+          (path "Digital_Signals" 2000
+            319517 -415000
+            319517 -416572
+            316796 -419293
+          )
+        )
+        (wire
+          (path "Analog_Signals" 2000
+            273472 -361712
+            273472 -394951
+            297814 -419293
+            316796 -419293
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            314000 -415000
+            319517 -415000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            273472 -361712
+            274000 -361184
+            274000 -340000
+          )
+        )
+        (via "Via[0-5]_300:300_um" 273472 -361712
+        )
+        (via "Via[0-5]_300:300_um" 316796 -419293
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            314000 -415000
+            319517 -415000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            314000 -410000
+            319517 -410000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            319517 -410000
+            319517 -415000
+          )
+        )
+      )
+      (net "3V3_A"
+        (wire
+          (path "Digital_Signals" 5000
+            873620 -461643
+            868670 -461643
+            862133 -468180
+            862133 -492977
+            878073 -508917
+          )
+        )
+        (wire
+          (path "GND_Plane" 5000
+            656924 -576104
+            810886 -576104
+            878073 -508917
+          )
+        )
+        (wire
+          (path "Analog_Signals" 5000
+            878073 -508917
+            878073 -767167
+            865734 -779506
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            655200 -590000
+            624421 -590000
+            607500 -606921
+            607500 -607330
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            535200 -710000
+            524546 -699346
+            524546 -676119
+            533353 -667312
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            865734 -779506
+            862726 -779506
+          )
+        )
+        (wire
+          (path "Digital_Signals" 3756
+            862726 -779506
+            859369 -779506
+            858875 -780000
+          )
+        )
+        (via "Via[0-5]_600:400_um" 865734 -779506
+        )
+        (wire
+          (path "GND_Plane" 5000
+            585213 -606964
+            585213 -615452
+            533353 -667312
+          )
+        )
+        (wire
+          (path "GND_Plane" 5000
+            656924 -576104
+            616073 -576104
+            585213 -606964
+          )
+        )
+        (wire
+          (path "GND_Plane" 5000
+            585213 -606964
+            571186 -592937
+            359040 -592937
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            357803 -594174
+            359040 -592937
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            357803 -607330
+            357803 -594174
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            357803 -594174
+            344647 -594174
+            315200 -564727
+          )
+        )
+        (via "Via[0-5]_600:400_um" 359040 -592937
+        )
+        (via "Via[0-5]_600:400_um" 533353 -667312
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            285200 -590000
+            277948 -597252
+            277948 -702748
+            285200 -710000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            655200 -590000
+            655200 -577828
+            656924 -576104
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            905200 -480000
+            905200 -472879
+            889088 -456767
+            878496 -456767
+            873620 -461643
+          )
+        )
+        (via "Via[0-5]_600:400_um" 656924 -576104
+        )
+        (via "Via[0-5]_600:400_um" 878073 -508917
+        )
+        (wire
+          (path "Digital_Signals" 2600
+            607500 -607330
+            607500 -615550
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            315200 -564727
+            315200 -530000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            285200 -590000
+            285200 -588454
+            308927 -564727
+            315200 -564727
+          )
+        )
+        (wire
+          (path "Digital_Signals" 5000
+            873620 -468000
+            873620 -461643
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2600
+            357803 -607330
+            357803 -615247
+            357500 -615550
+          )
+        )
+      )
+      (net "Net-(D2-DOUT)"
+        (wire
+          (path "GND_Plane" 2000
+            693460 -31564
+            691723 -29827
+            590722 -29827
+            577987 -42562
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            694500 -23500
+            694500 -30524
+            693460 -31564
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            577987 -42562
+            575500 -45049
+            575500 -56500
+          )
+        )
+        (via "Via[0-5]_300:300_um" 577987 -42562
+        )
+        (via "Via[0-5]_300:300_um" 693460 -31564
+        )
+      )
+      (net "Net-(D1-DOUT)"
+        (wire
+          (path "Digital_Signals" 2000
+            622621 -33844
+            624500 -31965
+            624500 -23500
+          )
+        )
+        (via "Via[0-5]_300:300_um" 622621 -33844
+        )
+        (wire
+          (path "GND_Plane" 2000
+            517908 -55886
+            600579 -55886
+            622621 -33844
+          )
+        )
+        (via "Via[0-5]_300:300_um" 517908 -55886
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            505500 -56500
+            517294 -56500
+            517908 -55886
+          )
+        )
+      )
+      (net "Net-(U1-IO0)"
+        (wire
+          (path "Digital_Signals" 2000
+            327483 -292500
+            327483 -308776
+            327442 -308817
+          )
+        )
+        (wire
+          (path "Power_Planes" 2000
+            116769 -250812
+            141886 -250812
+            199891 -308817
+            327442 -308817
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            135200 -166220
+            135200 -160000
+          )
+        )
+        (wire
+          (path HighSpeed 2000
+            116769 -250812
+            135200 -232381
+            135200 -166220
+          )
+        )
+        (via "Via[0-5]_300:300_um" 135200 -166220
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            91500 -221000
+            80483 -221000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            80483 -221000
+            75696 -225787
+            40687 -225787
+            34900 -220000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            102517 -221000
+            116769 -235252
+            116769 -250812
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            337500 -292500
+            327483 -292500
+          )
+        )
+        (via "Via[0-5]_300:300_um" 327442 -308817
+        )
+        (via "Via[0-5]_300:300_um" 116769 -250812
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            28500 -221000
+            33900 -221000
+            34900 -220000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            91500 -221000
+            102517 -221000
+          )
+        )
+      )
+      (net "Net-(U2-QSPI_SD2)"
+        (wire
+          (path "GND_Plane" 2000
+            730803 -192784
+            686765 -192784
+            660757 -166776
+            618637 -166776
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            632000 -165625
+            632000 -160898
+            629287 -158185
+            622315 -158185
+            618637 -161863
+            618637 -166776
+          )
+        )
+        (via "Via[0-5]_300:300_um" 618637 -166776
+        )
+        (via "Via[0-5]_300:300_um" 730803 -192784
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            735100 -200000
+            735100 -197081
+            730803 -192784
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            755250 -206350
+            774122 -206350
+            780187 -212415
+            814540 -212415
+            825100 -201855
+            825100 -200000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            755250 -206350
+            741450 -206350
+            735100 -200000
+          )
+        )
+      )
+      (net "Net-(J7-Pin_1)"
+        (wire
+          (path "Digital_Signals" 2000
+            622500 -615550
+            622500 -611678
+            625346 -608832
+            630466 -608832
+          )
+        )
+        (wire
+          (path HighSpeed 2000
+            600000 -950000
+            630466 -919534
+            630466 -608832
+          )
+        )
+        (via "Via[0-5]_300:300_um" 630466 -608832
+        )
+      )
+      (net "RE_BUS"
+        (wire
+          (path "Analog_Signals" 2000
+            332500 -950000
+            332500 -940983
+          )
+        )
+        (wire
+          (path "Analog_Signals" 2000
+            325050 -605851
+            325050 -688996
+            330358 -694304
+            330358 -938841
+            332500 -940983
+          )
+        )
+        (wire
+          (path "Power_Planes" 2000
+            572080 -605862
+            567863 -601645
+            328561 -601645
+            325051 -605155
+            325051 -605851
+            325050 -605851
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            322500 -615550
+            322500 -608401
+            325050 -605851
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            612954 -949546
+            612500 -950000
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            692500 -940861
+            621639 -940861
+            612954 -949546
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            532500 -940990
+            532515 -940975
+            604382 -940975
+            612954 -949546
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            532500 -940990
+            532500 -940983
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            532500 -941862
+            532500 -940990
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            532500 -950000
+            532500 -941862
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            412500 -940990
+            412515 -940975
+            532492 -940975
+            532500 -940983
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            412500 -940990
+            412500 -940983
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            412500 -941862
+            412500 -940990
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            412500 -950000
+            412500 -941862
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            332954 -949546
+            332500 -950000
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            412500 -940983
+            412492 -940975
+            341525 -940975
+            332954 -949546
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            252500 -940990
+            252515 -940975
+            324382 -940975
+            332954 -949546
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            252500 -940990
+            252500 -940983
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            252500 -941862
+            252500 -940990
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            252500 -950000
+            252500 -941862
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            172500 -950000
+            181525 -940975
+            252492 -940975
+            252500 -940983
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            772500 -940983
+            772378 -940861
+            692500 -940861
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            692500 -940861
+            692500 -950000
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            772500 -950000
+            772500 -940983
+          )
+        )
+        (via "Via[0-5]_300:300_um" 325050 -605851
+        )
+        (via "Via[0-5]_300:300_um" 572080 -605862
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            572500 -615550
+            572080 -615130
+            572080 -605862
+          )
+        )
+      )
+      (net "CE_BUS"
+        (wire
+          (path "GND_Plane" 2000
+            329990 -605896
+            331863 -604023
+            564265 -604023
+            570347 -610105
+            575355 -610105
+            577269 -608191
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            577500 -615550
+            577500 -608422
+            577269 -608191
+          )
+        )
+        (wire
+          (path "Analog_Signals" 2000
+            551517 -950000
+            577269 -924248
+            577269 -608191
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            329990 -605896
+            329990 -608485
+            327500 -610975
+            327500 -615550
+          )
+        )
+        (via "Via[0-5]_300:300_um" 329990 -605896
+        )
+        (wire
+          (path "GND_Plane" 2000
+            551517 -950000
+            560642 -959125
+            622392 -959125
+            631517 -950000
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            545000 -950000
+            551517 -950000
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            705000 -950000
+            695700 -959300
+            640817 -959300
+            631517 -950000
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            431517 -950000
+            441081 -959564
+            535436 -959564
+            545000 -950000
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            425000 -950000
+            431517 -950000
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            425000 -950000
+            415975 -959025
+            360542 -959025
+            351517 -950000
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            271517 -950000
+            280617 -959100
+            342417 -959100
+            351517 -950000
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            265000 -950000
+            271517 -950000
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            191517 -950000
+            201029 -959512
+            255488 -959512
+            265000 -950000
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            345000 -950000
+            351517 -950000
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            185000 -950000
+            191517 -950000
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            625000 -950000
+            631517 -950000
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            705000 -950000
+            711517 -950000
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            785000 -950000
+            775700 -959300
+            720817 -959300
+            711517 -950000
+          )
+        )
+        (wire
+          (path "Analog_Signals" 2000
+            545000 -950000
+            551517 -950000
+          )
+        )
+        (via "Via[0-5]_300:300_um" 577269 -608191
+        )
+      )
+      (net "I2C1_SCL"
+        (wire
+          (path "Digital_Signals" 2000
+            624000 -234375
+            624000 -241853
+          )
+        )
+        (wire
+          (path "Analog_Signals" 2000
+            626571 -433261
+            618434 -425124
+            618434 -281083
+            627801 -271716
+            627801 -245654
+            624000 -241853
+          )
+        )
+        (wire
+          (path "Power_Planes" 2000
+            626571 -433261
+            825489 -433261
+            867670 -475442
+          )
+        )
+        (via "Via[0-5]_300:300_um" 626571 -433261
+        )
+        (via "Via[0-5]_300:300_um" 624000 -241853
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            868228 -476000
+            867670 -475442
+          )
+        )
+        (wire
+          (path "Analog_Signals" 2000
+            841125 -768247
+            867670 -741702
+            867670 -475442
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            841125 -773500
+            841125 -768247
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            873620 -476000
+            868228 -476000
+          )
+        )
+        (via "Via[0-5]_300:300_um" 867670 -475442
+        )
+        (via "Via[0-5]_300:300_um" 841125 -768247
+        )
+      )
+      (net "SPEC_INT"
+        (wire
+          (path "Digital_Signals" 2000
+            676000 -234375
+            678059 -236434
+            680173 -236434
+          )
+        )
+        (wire
+          (path "Analog_Signals" 2000
+            892289 -475907
+            892289 -448550
+            680173 -236434
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            892289 -475907
+            891865 -475907
+            891772 -476000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            886380 -476000
+            891772 -476000
+          )
+        )
+        (via "Via[0-5]_300:300_um" 892289 -475907
+        )
+        (via "Via[0-5]_300:300_um" 680173 -236434
+        )
+      )
+      (net "I2C1_SDA"
+        (wire
+          (path "Digital_Signals" 2000
+            615625 -226000
+            615625 -269004
+            615556 -269073
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            845401 -271402
+            617885 -271402
+            615556 -269073
+          )
+        )
+        (wire
+          (path HighSpeed 2000
+            886633 -462384
+            845402 -421153
+            845402 -271402
+            845401 -271402
+          )
+        )
+        (via "Via[0-5]_300:300_um" 845401 -271402
+        )
+        (via "Via[0-5]_300:300_um" 615556 -269073
+        )
+        (wire
+          (path HighSpeed 2000
+            858238 -768385
+            858238 -490779
+            886633 -462384
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            858875 -773500
+            858875 -769022
+            858238 -768385
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            886633 -462384
+            886380 -462637
+            886380 -468000
+          )
+        )
+        (via "Via[0-5]_300:300_um" 886633 -462384
+        )
+        (via "Via[0-5]_300:300_um" 858238 -768385
+        )
+      )
+      (net BUZZER
+        (wire
+          (path "Power_Planes" 2000
+            814713 -169039
+            806981 -161307
+            785207 -161307
+            785192 -161292
+            745837 -161292
+            745835 -161290
+            742923 -161290
+            742906 -161307
+            194305 -161307
+            179175 -176437
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            162500 -165500
+            172517 -165500
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            814713 -169039
+            814900 -168852
+            814900 -160000
+          )
+        )
+        (via "Via[0-5]_300:300_um" 814713 -169039
+        )
+        (via "Via[0-5]_300:300_um" 179175 -176437
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            172517 -165500
+            172517 -169779
+            179175 -176437
+          )
+        )
+      )
+      (net "TFT_DC"
+        (wire
+          (path "Power_Planes" 2000
+            935059 -187679
+            908041 -214697
+            675987 -214697
+            675516 -214226
+            613009 -214226
+            587804 -189021
+            587804 -183020
+            585451 -180667
+            582124 -180667
+            577934 -184857
+            577934 -184858
+            198189 -184858
+            176860 -206187
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            172517 -203600
+            175104 -206187
+            176860 -206187
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            162500 -203600
+            172517 -203600
+          )
+        )
+        (via "Via[0-5]_300:300_um" 176860 -206187
+        )
+        (via "Via[0-5]_300:300_um" 935059 -187679
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            932500 -201500
+            932500 -190238
+            935059 -187679
+          )
+        )
+      )
+      (net "PG_3V3"
+        (wire
+          (path "GND_Plane" 2000
+            176860 -242079
+            176860 -255773
+            232851 -311764
+            281885 -311764
+            310183 -340062
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            172517 -241700
+            172896 -242079
+            176860 -242079
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            162500 -241700
+            172517 -241700
+          )
+        )
+        (via "Via[0-5]_300:300_um" 176860 -242079
+        )
+        (via "Via[0-5]_300:300_um" 310183 -340062
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            314000 -385000
+            314000 -343879
+            310183 -340062
+          )
+        )
+      )
+      (net "TFT_CS"
+        (wire
+          (path "Power_Planes" 2000
+            917040 -224476
+            680793 -224476
+            674060 -217743
+            596018 -217743
+            589629 -224132
+            218415 -224132
+            176860 -265687
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            162500 -267100
+            172517 -267100
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            176860 -265687
+            173930 -265687
+            172517 -267100
+          )
+        )
+        (via "Via[0-5]_300:300_um" 176860 -265687
+        )
+        (via "Via[0-5]_300:300_um" 917040 -224476
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            927500 -201500
+            927500 -214016
+            917040 -224476
+          )
+        )
+      )
+      (net "USB_DM"
+        (wire
+          (path "Digital_Signals" 1800
+            12623 -389834
+            9950 -389834
+            7500 -392284
+            7500 -399550
+          )
+        )
+        (wire
+          (path "Digital_Signals" 1800
+            17500 -399550
+            17500 -392481
+            14853 -389834
+            12623 -389834
+          )
+        )
+        (wire
+          (path "Digital_Signals" 1800
+            12623 -389834
+            12623 -340062
+          )
+        )
+        (wire
+          (path "Digital_Signals" 1800
+            162500 -279800
+            152583 -279800
+          )
+        )
+        (wire
+          (path "Digital_Signals" 1800
+            146525 -280562
+            151821 -280562
+            152583 -279800
+          )
+        )
+        (via "Via[0-5]_300:300_um" 146525 -280562
+        )
+        (wire
+          (path "Power_Planes" 1800
+            12623 -340062
+            87025 -340062
+            146525 -280562
+          )
+        )
+        (via "Via[0-5]_300:300_um" 12623 -340062
+        )
+      )
+      (net "USB_DP"
+        (wire
+          (path "Digital_Signals" 1800
+            22500 -399550
+            22500 -392484
+            122484 -292500
+            162500 -292500
+          )
+        )
+        (wire
+          (path "Digital_Signals" 1800
+            22500 -399550
+            22499 -399550
+            22499 -406283
+            19562 -409220
+            15438 -409220
+            12501 -406283
+            12501 -399550
+            12500 -399550
+          )
+        )
+      )
+      (net "LED_DATA"
+        (wire
+          (path "Digital_Signals" 2000
+            548623 -31172
+            554500 -25295
+            554500 -23500
+          )
+        )
+        (wire
+          (path "Analog_Signals" 2000
+            503597 -206142
+            503597 -76198
+            548623 -31172
+          )
+        )
+        (via "Via[0-5]_300:300_um" 548623 -31172
+        )
+        (via "Via[0-5]_300:300_um" 503597 -206142
+        )
+        (wire
+          (path "GND_Plane" 2000
+            192896 -264448
+            228553 -264448
+            286859 -206142
+            503597 -206142
+          )
+        )
+        (via "Via[0-5]_300:300_um" 192896 -264448
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            180150 -305000
+            180150 -277194
+            192896 -264448
+          )
+        )
+      )
+      (net "TFT_RST"
+        (wire
+          (path "Power_Planes" 2000
+            206037 -292750
+            268567 -230220
+            916977 -230220
+            933887 -213310
+            933887 -212537
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            937500 -201500
+            937500 -210517
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            206037 -292750
+            205550 -293237
+            205550 -305000
+          )
+        )
+        (via "Via[0-5]_300:300_um" 206037 -292750
+        )
+        (via "Via[0-5]_300:300_um" 933887 -212537
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            937500 -210517
+            935907 -210517
+            933887 -212537
+          )
+        )
+      )
+      (net "TFT_BL"
+        (wire
+          (path "GND_Plane" 2000
+            949937 -221062
+            945717 -216842
+            364913 -216842
+            360547 -212476
+            357220 -212476
+            351539 -218157
+            351539 -218158
+            294555 -218158
+            219963 -292750
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            219963 -292750
+            218250 -294463
+            218250 -305000
+          )
+        )
+        (via "Via[0-5]_300:300_um" 219963 -292750
+        )
+        (via "Via[0-5]_300:300_um" 949937 -221062
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            952500 -201500
+            952500 -218499
+            949937 -221062
+          )
+        )
+      )
+      (net "SPI0_MOSI"
+        (wire
+          (path "Digital_Signals" 2000
+            230950 -315017
+            231468 -315017
+            232232 -315781
+          )
+        )
+        (wire
+          (path "Power_Planes" 2000
+            945081 -231081
+            860381 -315781
+            232232 -315781
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            230950 -305000
+            230950 -315017
+          )
+        )
+        (via "Via[0-5]_300:300_um" 232232 -315781
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            942500 -210517
+            941153 -211864
+            941153 -227153
+            945081 -231081
+          )
+        )
+        (wire
+          (path HighSpeed 2000
+            904102 -516763
+            904102 -272060
+            945081 -231081
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            942500 -201500
+            942500 -210517
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            904102 -516763
+            903382 -517483
+            899950 -517483
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            899950 -525500
+            899950 -517483
+          )
+        )
+        (via "Via[0-5]_300:300_um" 904102 -516763
+        )
+        (via "Via[0-5]_300:300_um" 945081 -231081
+        )
+      )
+      (net "SPI0_SCK"
+        (wire
+          (path "GND_Plane" 2000
+            945720 -224616
+            906684 -263652
+            906684 -264717
+            903501 -267900
+            848360 -267900
+            847455 -266995
+            844128 -266995
+            843238 -267885
+            640916 -267885
+            632631 -259600
+            283821 -259600
+            250671 -292750
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            932950 -525500
+            932950 -516881
+          )
+        )
+        (wire
+          (path "Analog_Signals" 2000
+            945720 -224616
+            932950 -237386
+            932950 -516881
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            243650 -294983
+            248438 -294983
+            250671 -292750
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            243650 -305000
+            243650 -294983
+          )
+        )
+        (via "Via[0-5]_300:300_um" 250671 -292750
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            947500 -201500
+            947500 -215817
+            945720 -217597
+            945720 -224616
+          )
+        )
+        (via "Via[0-5]_300:300_um" 932950 -516881
+        )
+        (via "Via[0-5]_300:300_um" 945720 -224616
+        )
+      )
+      (net "SPI0_MISO"
+        (wire
+          (path "Digital_Signals" 2000
+            256350 -305000
+            256350 -318498
+            263055 -325203
+          )
+        )
+        (wire
+          (path "Power_Planes" 2000
+            949937 -459062
+            832368 -341493
+            632749 -341493
+            629628 -344614
+            282466 -344614
+            263055 -325203
+          )
+        )
+        (via "Via[0-5]_300:300_um" 263055 -325203
+        )
+        (via "Via[0-5]_300:300_um" 949937 -459062
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            954950 -525500
+            954950 -464075
+            949937 -459062
+          )
+        )
+      )
+      (net "SD_CS"
+        (wire
+          (path "Digital_Signals" 2000
+            269050 -294983
+            269050 -293093
+            268707 -292750
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            883361 -504752
+            744419 -365810
+            341767 -365810
+            268707 -292750
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            269050 -305000
+            269050 -294983
+          )
+        )
+        (via "Via[0-5]_300:300_um" 268707 -292750
+        )
+        (via "Via[0-5]_300:300_um" 883361 -504752
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            888950 -525500
+            888950 -510341
+            883361 -504752
+          )
+        )
+      )
+      (net "ESP_UART_RX"
+        (wire
+          (path "Digital_Signals" 2000
+            615625 -182000
+            586471 -182000
+            583787 -184684
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            337500 -152800
+            347517 -152800
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            350039 -157216
+            347517 -154694
+            347517 -152800
+          )
+        )
+        (via "Via[0-5]_300:300_um" 350039 -157216
+        )
+        (wire
+          (path "GND_Plane" 2000
+            583787 -184684
+            377507 -184684
+            350039 -157216
+          )
+        )
+        (via "Via[0-5]_300:300_um" 583787 -184684
+        )
+      )
+      (net "ESP_UART_TX"
+        (wire
+          (path "Digital_Signals" 2000
+            615625 -178000
+            597598 -178000
+            592782 -173184
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            592782 -173184
+            397236 -173184
+            354687 -130635
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            337500 -140100
+            347517 -140100
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            354687 -130635
+            347517 -137805
+            347517 -140100
+          )
+        )
+        (via "Via[0-5]_300:300_um" 354687 -130635
+        )
+        (via "Via[0-5]_300:300_um" 592782 -173184
+        )
+      )
+      (net "Net-(J6-Pin_1)"
+        (wire
+          (path HighSpeed 2000
+            614134 -608089
+            520000 -702223
+            520000 -950000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            617500 -615550
+            617500 -611455
+            614134 -608089
+          )
+        )
+        (via "Via[0-5]_300:300_um" 614134 -608089
+        )
+      )
+      (net "Net-(U9-VDD)"
+        (wire
+          (path "Digital_Signals" 2000
+            765400 -350000
+            735200 -350000
+            715200 -330000
+          )
+        )
+      )
+      (net "Net-(C6-Pad1)"
+        (wire
+          (path "Digital_Signals" 2000
+            330500 -380000
+            344800 -394300
+            344800 -400000
+          )
+        )
+      )
+      (net "Net-(U14-VOUT_5)"
+        (wire
+          (path "Digital_Signals" 2500
+            339939 -414437
+            350384 -403992
+            350384 -380884
+            349500 -380000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2500
+            339939 -414437
+            349500 -423998
+            349500 -430000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2500
+            280333 -405000
+            280333 -405677
+            278564 -407446
+          )
+        )
+        (wire
+          (path "GND_Plane" 2500
+            339939 -414437
+            285555 -414437
+            278564 -407446
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2500
+            286000 -405000
+            280333 -405000
+          )
+        )
+        (via "Via[0-5]_500:300_um" 339939 -414437
+        )
+        (via "Via[0-5]_500:300_um" 278564 -407446
+        )
+      )
+      (net "Net-(LED1-A)"
+        (wire
+          (path "Digital_Signals" 2000
+            849375 -420000
+            849375 -435725
+            845100 -440000
+          )
+        )
+      )
+      (net "Net-(C8-Pad1)"
+        (wire
+          (path "Digital_Signals" 2000
+            330500 -430000
+            293450 -430000
+            264800 -401350
+            264800 -380000
+          )
+        )
+      )
+      (net "Net-(U5-DVDD_REG_1V8)"
+        (wire
+          (path "Digital_Signals" 2000
+            577500 -684450
+            577500 -688385
+            569785 -696100
+            541300 -696100
+            535200 -690000
+          )
+        )
+      )
+      (net "Net-(J1-CC1)"
+        (wire
+          (path "GND_Plane" 2000
+            115863 -412027
+            87920 -384084
+            5073 -384084
+            4470 -384687
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            2500 -399550
+            2500 -386657
+            4470 -384687
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            115863 -412027
+            114900 -412990
+            114900 -420000
+          )
+        )
+        (via "Via[0-5]_300:300_um" 115863 -412027
+        )
+        (via "Via[0-5]_300:300_um" 4470 -384687
+        )
+      )
+      (net "Net-(U2-VREG_VOUT)"
+        (wire
+          (path "Analog_Signals" 2500
+            655603 -225081
+            655603 -227561
+            658497 -230455
+            666176 -230455
+            698288 -262567
+          )
+        )
+        (wire
+          (path "Analog_Signals" 2500
+            656733 -174256
+            655603 -175386
+            655603 -225081
+          )
+        )
+        (wire
+          (path "Analog_Signals" 2500
+            655603 -225081
+            653211 -225081
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2500
+            656000 -234375
+            656000 -227870
+            653211 -225081
+          )
+        )
+        (via "Via[0-5]_500:300_um" 653211 -225081
+        )
+        (wire
+          (path "Digital_Signals" 2500
+            656733 -173118
+            650001 -173118
+            648000 -171117
+            648000 -165625
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2500
+            668000 -165625
+            668000 -170859
+            665741 -173118
+            656733 -173118
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2500
+            656733 -173118
+            656733 -174256
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2500
+            698288 -262567
+            702633 -262567
+            705200 -260000
+          )
+        )
+        (via "Via[0-5]_500:300_um" 698288 -262567
+        )
+        (via "Via[0-5]_500:300_um" 656733 -174256
+        )
+      )
+      (net "Net-(Q4-G)"
+        (wire
+          (path "Digital_Signals" 2000
+            870625 -350500
+            874900 -346225
+            874900 -340000
+          )
+        )
+      )
+      (net "Net-(LED2-K)"
+        (wire
+          (path "Digital_Signals" 2000
+            870625 -420000
+            889375 -401250
+            889375 -360000
+          )
+        )
+      )
+      (net "AD5941_1_CS"
+        (wire
+          (path "Digital_Signals" 2000
+            605590 -186247
+            606318 -185519
+            615144 -185519
+            615625 -186000
+          )
+        )
+        (wire
+          (path HighSpeed 2000
+            334375 -692661
+            345778 -692661
+            582766 -455673
+            582766 -209071
+            605590 -186247
+          )
+        )
+        (via "Via[0-5]_300:300_um" 605590 -186247
+        )
+        (via "Via[0-5]_300:300_um" 334375 -692661
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            332500 -684450
+            332500 -690786
+            334375 -692661
+          )
+        )
+      )
+      (net "AD5941_1_RST"
+        (wire
+          (path "Digital_Signals" 2000
+            615625 -190000
+            608227 -190000
+          )
+        )
+        (wire
+          (path HighSpeed 2000
+            368018 -691803
+            608647 -451174
+            608647 -190420
+            608227 -190000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            367500 -684450
+            367500 -691285
+            368018 -691803
+          )
+        )
+        (via "Via[0-5]_300:300_um" 608227 -190000
+        )
+        (via "Via[0-5]_300:300_um" 368018 -691803
+        )
+      )
+      (net "AD5941_2_CS"
+        (wire
+          (path "Analog_Signals" 2000
+            604630 -200134
+            581832 -222932
+            581832 -691781
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            582500 -684450
+            581832 -685118
+            581832 -691781
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            604630 -200134
+            610764 -194000
+            615625 -194000
+          )
+        )
+        (via "Via[0-5]_300:300_um" 604630 -200134
+        )
+        (via "Via[0-5]_300:300_um" 581832 -691781
+        )
+      )
+      (net "AD5941_2_RST"
+        (wire
+          (path "Analog_Signals" 2000
+            623080 -200148
+            606600 -216628
+            606600 -680835
+            617500 -691735
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            615625 -198000
+            620932 -198000
+            623080 -200148
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            617500 -684450
+            617500 -691735
+          )
+        )
+        (via "Via[0-5]_300:300_um" 623080 -200148
+        )
+        (via "Via[0-5]_300:300_um" 617500 -691735
+        )
+      )
+      (net "SPI1_SCK"
+        (wire
+          (path "Digital_Signals" 2002
+            615625 -202000
+            609228 -202000
+            608882 -202346
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2500
+            340439 -711937
+            337500 -708998
+            337500 -695571
+            338642 -694429
+            338642 -690893
+            337500 -689751
+            337500 -684450
+          )
+        )
+        (wire
+          (path "Analog_Signals" 2500
+            588752 -692626
+            588752 -710233
+            587048 -711937
+          )
+        )
+        (wire
+          (path "Power_Planes" 2500
+            340439 -711937
+            587048 -711937
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2500
+            602745 -211109
+            602745 -208483
+            608882 -202346
+          )
+        )
+        (via "Via[0-5]_500:300_um" 602745 -211109
+        )
+        (wire
+          (path "Analog_Signals" 2500
+            588752 -692626
+            602745 -678633
+            602745 -211109
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2500
+            587500 -684450
+            587500 -691374
+            588752 -692626
+          )
+        )
+        (via "Via[0-5]_500:300_um" 340439 -711937
+        )
+        (via "Via[0-5]_500:300_um" 587048 -711937
+        )
+        (via "Via[0-5]_500:300_um" 588752 -692626
+        )
+      )
+      (net "SPI1_MOSI"
+        (wire
+          (path "Digital_Signals" 2500
+            597210 -700505
+            597210 -693510
+            592500 -688800
+            592500 -684450
+          )
+        )
+        (via "Via[0-5]_500:300_um" 597210 -700505
+        )
+        (wire
+          (path "Power_Planes" 2500
+            343064 -697898
+            348107 -702941
+            594774 -702941
+            597210 -700505
+          )
+        )
+        (via "Via[0-5]_500:300_um" 343064 -697898
+        )
+        (wire
+          (path "Digital_Signals" 2500
+            342500 -684450
+            343064 -685014
+            343064 -697898
+          )
+        )
+      )
+      (net "AD5941_1_INT"
+        (wire
+          (path "Digital_Signals" 2000
+            352500 -684450
+            352500 -688321
+            355895 -691716
+          )
+        )
+        (wire
+          (path "Analog_Signals" 2000
+            369695 -250812
+            369695 -590395
+            355895 -604195
+            355895 -691716
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            629484 -225465
+            629484 -222295
+            625189 -218000
+            615625 -218000
+          )
+        )
+        (via "Via[0-5]_300:300_um" 629484 -225465
+        )
+        (wire
+          (path "GND_Plane" 2000
+            369695 -250812
+            604137 -250812
+            629484 -225465
+          )
+        )
+        (via "Via[0-5]_300:300_um" 369695 -250812
+        )
+        (via "Via[0-5]_300:300_um" 355895 -691716
+        )
+      )
+      (net "AD5941_2_INT"
+        (wire
+          (path "Analog_Signals" 2000
+            623272 -222306
+            610117 -235461
+            610117 -613452
+            621620 -624955
+            621620 -693492
+            619359 -695753
+            609651 -695753
+            605620 -691722
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            615625 -222000
+            622966 -222000
+            623272 -222306
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            605620 -691722
+            602500 -688602
+            602500 -684450
+          )
+        )
+        (via "Via[0-5]_300:300_um" 623272 -222306
+        )
+        (via "Via[0-5]_300:300_um" 605620 -691722
+        )
+      )
+      (net "UV_LED_EN"
+        (wire
+          (path "Digital_Signals" 2000
+            634019 -308828
+            632412 -307221
+            632412 -234787
+            632000 -234375
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            634019 -308828
+            814491 -308828
+            840671 -335008
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            840671 -335008
+            845100 -339437
+            845100 -340000
+          )
+        )
+        (via "Via[0-5]_300:300_um" 840671 -335008
+        )
+        (via "Via[0-5]_300:300_um" 634019 -308828
+        )
+      )
+      (net "BLUE_LED_EN"
+        (wire
+          (path "Digital_Signals" 2000
+            637499 -298312
+            636000 -296813
+            636000 -234375
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            890425 -325187
+            885100 -330512
+            885100 -340000
+          )
+        )
+        (via "Via[0-5]_300:300_um" 890425 -325187
+        )
+        (wire
+          (path "GND_Plane" 2000
+            637499 -298312
+            863550 -298312
+            890425 -325187
+          )
+        )
+        (via "Via[0-5]_300:300_um" 637499 -298312
+        )
+      )
+      (net "Net-(U2-XIN)"
+        (wire
+          (path "Digital_Signals" 2000
+            644000 -234375
+            644000 -226806
+            643381 -226187
+          )
+        )
+        (wire
+          (path HighSpeed 2000
+            577987 -157216
+            591631 -157216
+            643381 -208966
+            643381 -226187
+          )
+        )
+        (via "Via[0-5]_300:300_um" 643381 -226187
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            582500 -170000
+            582500 -158483
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            549692 -144846
+            545200 -149338
+            545200 -150000
+          )
+        )
+        (via "Via[0-5]_300:300_um" 549692 -144846
+        )
+        (wire
+          (path "GND_Plane" 2000
+            577987 -157216
+            562062 -157216
+            549692 -144846
+          )
+        )
+        (via "Via[0-5]_300:300_um" 577987 -157216
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            582500 -158483
+            579254 -158483
+            577987 -157216
+          )
+        )
+      )
+      (net "Net-(U2-XOUT)"
+        (wire
+          (path "Digital_Signals" 2000
+            648000 -234375
+            648000 -241124
+            649084 -242208
+          )
+        )
+        (wire
+          (path "Power_Planes" 2000
+            563109 -236434
+            643310 -236434
+            649084 -242208
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            557915 -195840
+            560508 -193247
+            560508 -184525
+            557500 -181517
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            545200 -190000
+            551040 -195840
+            557915 -195840
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            557915 -195840
+            557915 -231240
+            563109 -236434
+          )
+        )
+        (via "Via[0-5]_300:300_um" 649084 -242208
+        )
+        (via "Via[0-5]_300:300_um" 563109 -236434
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            557500 -170000
+            557500 -181517
+          )
+        )
+      )
+      (net "Net-(J13-Pin_4)"
+        (wire
+          (path "Digital_Signals" 2000
+            660000 -234375
+            660000 -225635
+          )
+        )
+        (wire
+          (path "Analog_Signals" 2000
+            747591 -131490
+            736441 -142640
+            736441 -149194
+            660000 -225635
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            752700 -126350
+            752700 -126381
+            747591 -131490
+          )
+        )
+        (via "Via[0-5]_300:300_um" 660000 -225635
+        )
+        (via "Via[0-5]_300:300_um" 747591 -131490
+        )
+      )
+      (net "Net-(J13-Pin_2)"
+        (wire
+          (path "Digital_Signals" 2000
+            664000 -234375
+            664000 -227322
+            665444 -225878
+          )
+        )
+        (wire
+          (path HighSpeed 2000
+            665444 -225878
+            724846 -166476
+            724846 -135764
+            727300 -133310
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            727300 -126350
+            727300 -133310
+          )
+        )
+        (via "Via[0-5]_300:300_um" 665444 -225878
+        )
+        (via "Via[0-5]_300:300_um" 727300 -133310
+        )
+      )
+      (net "WHITE_LED_EN"
+        (wire
+          (path "Digital_Signals" 2000
+            672000 -234375
+            672000 -246886
+            672578 -247464
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            902667 -263053
+            887078 -247464
+            672578 -247464
+          )
+        )
+        (via "Via[0-5]_300:300_um" 672578 -247464
+        )
+        (via "Via[0-5]_300:300_um" 902667 -263053
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            925100 -340000
+            925100 -285486
+            902667 -263053
+          )
+        )
+      )
+      (net "Net-(U2-QSPI_SD3)"
+        (wire
+          (path "GND_Plane" 2000
+            775882 -201968
+            669106 -201968
+            642749 -175611
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            642749 -175611
+            644000 -174360
+            644000 -165625
+          )
+        )
+        (via "Via[0-5]_300:300_um" 642749 -175611
+        )
+        (via "Via[0-5]_300:300_um" 775882 -201968
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            804750 -193650
+            784200 -193650
+            775882 -201968
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            804750 -193650
+            827966 -193650
+            830713 -196397
+            830713 -214387
+            825100 -220000
+          )
+        )
+      )
+      (net "Net-(U2-QSPI_SCLK)"
+        (wire
+          (path "GND_Plane" 2000
+            786279 -206187
+            667110 -206187
+            637877 -176954
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            640000 -165625
+            640000 -172680
+            637877 -174803
+            637877 -176954
+          )
+        )
+        (via "Via[0-5]_300:300_um" 637877 -176954
+        )
+        (via "Via[0-5]_300:300_um" 786279 -206187
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            804750 -206350
+            786442 -206350
+            786279 -206187
+          )
+        )
+      )
+      (net "Net-(U2-QSPI_SD0)"
+        (wire
+          (path "Power_Planes" 2000
+            632033 -175257
+            627620 -175257
+            625022 -177855
+            621888 -177855
+            619485 -175452
+            619485 -171932
+            626450 -164967
+            734010 -164967
+            771865 -202822
+            771865 -210348
+            771923 -210406
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            636000 -165625
+            636000 -171290
+            632033 -175257
+          )
+        )
+        (via "Via[0-5]_300:300_um" 632033 -175257
+        )
+        (via "Via[0-5]_300:300_um" 771923 -210406
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            804750 -219050
+            780567 -219050
+            771923 -210406
+          )
+        )
+      )
+      (net "Net-(U2-QSPI_SD1)"
+        (wire
+          (path "Power_Planes" 2000
+            629975 -179588
+            639154 -188767
+            737904 -188767
+            739661 -190524
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            628000 -165625
+            628001 -165625
+            628001 -177614
+            629975 -179588
+          )
+        )
+        (via "Via[0-5]_300:300_um" 629975 -179588
+        )
+        (via "Via[0-5]_300:300_um" 739661 -190524
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            755250 -193650
+            742787 -193650
+            739661 -190524
+          )
+        )
+      )
+      (net "Net-(U2-~{QSPI_SS})"
+        (wire
+          (path "Digital_Signals" 2000
+            624000 -165625
+            623502 -166123
+            623502 -173647
+          )
+        )
+        (wire
+          (path "Power_Planes" 2000
+            733830 -170468
+            731902 -168540
+            628609 -168540
+            623502 -173647
+          )
+        )
+        (via "Via[0-5]_300:300_um" 623502 -173647
+        )
+        (via "Via[0-5]_300:300_um" 733830 -170468
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            755250 -180950
+            744768 -170468
+            733830 -170468
+          )
+        )
+      )
+      (net "Net-(U5-VBIAS_CAP)"
+        (wire
+          (path "Digital_Signals" 2000
+            533353 -622687
+            535200 -620840
+            535200 -610000
+          )
+        )
+        (via "Via[0-5]_300:300_um" 533353 -622687
+        )
+        (wire
+          (path "Power_Planes" 2000
+            637363 -682759
+            593425 -682759
+            533353 -622687
+          )
+        )
+        (via "Via[0-5]_300:300_um" 637363 -682759
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            634450 -647500
+            638499 -647500
+            641327 -650328
+            641327 -679860
+            638428 -682759
+            637363 -682759
+          )
+        )
+      )
+      (net "Net-(U4-VREF_2V5)"
+        (wire
+          (path "Digital_Signals" 2000
+            285200 -610000
+            285200 -612640
+            310060 -637500
+            315550 -637500
+          )
+        )
+      )
+      (net "Net-(U4-DVDD_REG_1V8)"
+        (wire
+          (path "Power_Planes" 2000
+            402975 -681527
+            396825 -687677
+            333679 -687677
+            325874 -695482
+            325874 -695502
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            405200 -690000
+            405200 -683752
+            402975 -681527
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            327500 -684450
+            327500 -693876
+            325874 -695502
+          )
+        )
+        (via "Via[0-5]_300:300_um" 402975 -681527
+        )
+        (via "Via[0-5]_300:300_um" 325874 -695502
+        )
+      )
+      (net "Net-(U4-VBIAS_CAP)"
+        (wire
+          (path "Digital_Signals" 2000
+            384450 -647500
+            388618 -647500
+            391437 -650319
+            391437 -679963
+            388014 -683386
+            383824 -683386
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            287177 -680822
+            381260 -680822
+            383824 -683386
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            285200 -690000
+            285200 -682799
+            287177 -680822
+          )
+        )
+        (via "Via[0-5]_300:300_um" 287177 -680822
+        )
+        (via "Via[0-5]_300:300_um" 383824 -683386
+        )
+      )
+      (net "Net-(U4-RCAL0)"
+        (wire
+          (path "Digital_Signals" 2000
+            384450 -642500
+            388628 -642500
+            394969 -648841
+            394969 -682188
+            370556 -706601
+            368299 -706601
+            344900 -730000
+          )
+        )
+      )
+      (net "Net-(U4-RCAL1)"
+        (wire
+          (path "Digital_Signals" 2000
+            384450 -637500
+            388626 -637500
+            398958 -647832
+            398958 -686142
+            355100 -730000
+          )
+        )
+      )
+      (net "Net-(J5-Pin_1)"
+        (wire
+          (path "Digital_Signals" 2000
+            384450 -622500
+            391856 -622500
+          )
+        )
+        (wire
+          (path "Analog_Signals" 2000
+            400000 -950000
+            391856 -941856
+            391856 -622500
+          )
+        )
+        (via "Via[0-5]_300:300_um" 391856 -622500
+        )
+      )
+      (net "Net-(J4-Pin_1)"
+        (wire
+          (path HighSpeed 2000
+            320000 -950000
+            320000 -675471
+            381978 -613493
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            377500 -615550
+            379921 -615550
+            381978 -613493
+          )
+        )
+        (via "Via[0-5]_300:300_um" 381978 -613493
+        )
+      )
+      (net "Net-(J3-Pin_1)"
+        (wire
+          (path "Digital_Signals" 2000
+            375827 -608114
+            372500 -611441
+            372500 -615550
+          )
+        )
+        (wire
+          (path HighSpeed 2000
+            240000 -950000
+            240000 -743941
+            375827 -608114
+          )
+        )
+        (via "Via[0-5]_300:300_um" 375827 -608114
+        )
+      )
+      (net "Net-(J2-Pin_1)"
+        (wire
+          (path "Digital_Signals" 2000
+            367500 -615550
+            367500 -610507
+            369716 -608291
+          )
+        )
+        (wire
+          (path HighSpeed 2000
+            160000 -950000
+            160000 -818007
+            369716 -608291
+          )
+        )
+        (via "Via[0-5]_300:300_um" 369716 -608291
+        )
+      )
+      (net "Net-(U4-VREF_1V8)"
+        (wire
+          (path "Digital_Signals" 2000
+            405200 -610000
+            404561 -610639
+            404561 -616382
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            348730 -608052
+            358272 -617594
+            403349 -617594
+            404561 -616382
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            348730 -608052
+            347500 -609282
+            347500 -615550
+          )
+        )
+        (via "Via[0-5]_300:300_um" 348730 -608052
+        )
+        (via "Via[0-5]_300:300_um" 404561 -616382
+        )
+      )
+      (net "unconnected-(U4-DE0-Pad46)"
+        (wire
+          (path "Digital_Signals" 2000
+            332500 -615550
+            337500 -615550
+          )
+        )
+      )
+      (net "Net-(LED2-A)"
+        (wire
+          (path "Digital_Signals" 2000
+            889375 -420000
+            889375 -435725
+            885100 -440000
+          )
+        )
+      )
+      (net "Net-(Q1-G)"
+        (wire
+          (path "Digital_Signals" 2000
+            860625 -150500
+            834600 -150500
+            825100 -160000
+          )
+        )
+      )
+      (net "MUX_SDA0"
+        (wire
+          (path "GND_Plane" 2000
+            592849 -384687
+            553570 -384687
+            506054 -432203
+            469022 -432203
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            588000 -342000
+            588974 -342000
+            594601 -347627
+            594601 -382935
+            592849 -384687
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            480625 -437500
+            473034 -437500
+            469022 -433488
+            469022 -432203
+          )
+        )
+        (via "Via[0-5]_300:300_um" 469022 -432203
+        )
+        (via "Via[0-5]_300:300_um" 592849 -384687
+        )
+      )
+      (net "MUX_SCL1"
+        (wire
+          (path "Digital_Signals" 2000
+            480625 -452500
+            475796 -452500
+            473387 -450091
+          )
+        )
+        (wire
+          (path "Power_Planes" 2000
+            706093 -350000
+            704151 -350000
+            604060 -450091
+            473387 -450091
+          )
+        )
+        (wire
+          (path "Power_Planes" 2000
+            714600 -350000
+            706093 -350000
+          )
+        )
+        (via "Via[0-5]_300:300_um" 473387 -450091
+        )
+      )
+      (net "MUX_SDA2"
+        (wire
+          (path "Power_Planes" 2000
+            640865 -441997
+            623036 -459826
+            473130 -459826
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            480625 -457500
+            475456 -457500
+            473130 -459826
+          )
+        )
+        (via "Via[0-5]_300:300_um" 473130 -459826
+        )
+        (via "Via[0-5]_300:300_um" 640865 -441997
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            646500 -448250
+            646500 -447632
+            640865 -441997
+          )
+        )
+      )
+      (net "MUX_SCL2"
+        (wire
+          (path "Digital_Signals" 2000
+            646500 -435550
+            641632 -435550
+            633727 -443455
+            633727 -451991
+            636520 -454784
+            641032 -454784
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            473841 -473937
+            480625 -467153
+            480625 -462500
+          )
+        )
+        (via "Via[0-5]_300:300_um" 473841 -473937
+        )
+        (wire
+          (path "GND_Plane" 2000
+            641032 -454784
+            492994 -454784
+            473841 -473937
+          )
+        )
+        (via "Via[0-5]_300:300_um" 641032 -454784
+        )
+      )
+      (net "MUX_SDA3"
+        (wire
+          (path "GND_Plane" 2000
+            734802 -477662
+            733141 -476001
+            487999 -476001
+            486437 -477563
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            735000 -470900
+            735000 -477464
+            734802 -477662
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            486437 -477563
+            487500 -476500
+            487500 -469375
+          )
+        )
+        (via "Via[0-5]_300:300_um" 486437 -477563
+        )
+        (via "Via[0-5]_300:300_um" 734802 -477662
+        )
+      )
+      (net "MUX_SCL3"
+        (wire
+          (path "Digital_Signals" 2000
+            492500 -469375
+            492500 -479732
+            492786 -480018
+          )
+        )
+        (wire
+          (path "Power_Planes" 2000
+            741645 -459062
+            720689 -480018
+            492786 -480018
+          )
+        )
+        (via "Via[0-5]_300:300_um" 492786 -480018
+        )
+        (via "Via[0-5]_300:300_um" 741645 -459062
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            740000 -470900
+            740000 -460707
+            741645 -459062
+          )
+        )
+      )
+      (net "Net-(U15-OUT)"
+        (wire
+          (path "Digital_Signals" 2000
+            311375 -490500
+            324800 -503925
+            324800 -530000
+          )
+        )
+      )
+      (net "Net-(LED3-A)"
+        (wire
+          (path "Digital_Signals" 2000
+            929375 -420000
+            925100 -424275
+            925100 -440000
+          )
+        )
+      )
+      (net "Net-(U5-RCAL0)"
+        (wire
+          (path "Digital_Signals" 2000
+            594900 -730000
+            633434 -691466
+            635920 -691466
+            644844 -682542
+            644844 -647692
+            639652 -642500
+            634450 -642500
+          )
+        )
+      )
+      (net "Net-(U5-RCAL1)"
+        (wire
+          (path "Digital_Signals" 2000
+            605100 -730000
+            648361 -686739
+            648361 -645791
+            640070 -637500
+            634450 -637500
+          )
+        )
+      )
+      (net "Net-(Q3-G)"
+        (wire
+          (path "Digital_Signals" 2000
+            830625 -350500
+            834900 -346225
+            834900 -340000
+          )
+        )
+      )
+      (net "Net-(LED1-K)"
+        (wire
+          (path "Digital_Signals" 2000
+            830625 -420000
+            849375 -401250
+            849375 -360000
+          )
+        )
+      )
+      (net "Net-(LED3-K)"
+        (wire
+          (path "Digital_Signals" 2000
+            910625 -420000
+            929375 -401250
+            929375 -360000
+          )
+        )
+      )
+      (net "Net-(BZ1--)"
+        (wire
+          (path "Digital_Signals" 2000
+            946000 -70000
+            879375 -136625
+            879375 -160000
+          )
+        )
+      )
+      (net "Net-(U11-VDD)"
+        (wire
+          (path "Digital_Signals" 2000
+            751600 -487500
+            757167 -487500
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            576272 -507115
+            575200 -506043
+            575200 -500000
+          )
+        )
+        (via "Via[0-5]_300:300_um" 576272 -507115
+        )
+        (wire
+          (path "GND_Plane" 2000
+            751867 -492750
+            737502 -507115
+            576272 -507115
+          )
+        )
+        (via "Via[0-5]_300:300_um" 751867 -492750
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            757167 -487500
+            757167 -490453
+            754870 -492750
+            751867 -492750
+          )
+        )
+      )
+      (net "Net-(U5-VREF_1V8)"
+        (wire
+          (path "Digital_Signals" 2000
+            597500 -615550
+            597500 -611099
+            594674 -608273
+            591891 -608273
+          )
+        )
+        (wire
+          (path "GND_Plane" 2000
+            654322 -637536
+            621154 -637536
+            591891 -608273
+          )
+        )
+        (via "Via[0-5]_300:300_um" 591891 -608273
+        )
+        (via "Via[0-5]_300:300_um" 654322 -637536
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            655200 -690000
+            655200 -638414
+            654322 -637536
+          )
+        )
+      )
+      (net "Net-(U5-VREF_2V5)"
+        (wire
+          (path "Digital_Signals" 2000
+            652377 -622687
+            655200 -619864
+            655200 -610000
+          )
+        )
+        (via "Via[0-5]_300:300_um" 652377 -622687
+        )
+        (wire
+          (path "Power_Planes" 2000
+            557800 -624181
+            563502 -618479
+            648169 -618479
+            652377 -622687
+          )
+        )
+        (via "Via[0-5]_300:300_um" 557800 -624181
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            565550 -637500
+            561361 -637500
+            557800 -633939
+            557800 -624181
+          )
+        )
+      )
+      (net "Net-(Q5-G)"
+        (wire
+          (path "Digital_Signals" 2000
+            910625 -350500
+            914900 -346225
+            914900 -340000
+          )
+        )
+      )
+      (net "Net-(U16-VO)"
+        (wire
+          (path "Digital_Signals" 2000
+            148500 -500000
+            211500 -500000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            211500 -500000
+            211500 -511000
+            230500 -530000
+          )
+        )
+      )
+      (net "Net-(U14-L2_6)"
+        (wire
+          (path "Digital_Signals" 2000
+            286000 -415000
+            286000 -410000
+          )
+        )
+      )
+      (net "Net-(D3-DOUT)"
+        (wire
+          (path "Digital_Signals" 2000
+            760744 -31564
+            764500 -27808
+            764500 -23500
+          )
+        )
+        (via "Via[0-5]_300:300_um" 760744 -31564
+        )
+        (wire
+          (path "Power_Planes" 2000
+            656410 -57437
+            734871 -57437
+            760744 -31564
+          )
+        )
+        (via "Via[0-5]_300:300_um" 656410 -57437
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            645500 -56500
+            655473 -56500
+            656410 -57437
+          )
+        )
+      )
+      (net "Net-(J1-CC2)"
+        (wire
+          (path "Digital_Signals" 2000
+            101891 -448406
+            103306 -448406
+            114900 -460000
+          )
+        )
+        (via "Via[0-5]_300:300_um" 101891 -448406
+        )
+        (wire
+          (path "GND_Plane" 2000
+            40080 -388101
+            53731 -388101
+            101891 -436261
+            101891 -448406
+          )
+        )
+        (via "Via[0-5]_300:300_um" 40080 -388101
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            32500 -399550
+            32500 -393036
+            37435 -388101
+            40080 -388101
+          )
+        )
+      )
+      (net "Net-(J8-Pin_1)"
+        (wire
+          (path "Analog_Signals" 2000
+            634583 -611681
+            633346 -612918
+            633346 -903346
+            680000 -950000
+          )
+        )
+        (wire
+          (path "Digital_Signals" 2000
+            627500 -615550
+            630714 -615550
+            634583 -611681
+          )
+        )
+        (via "Via[0-5]_300:300_um" 634583 -611681
+        )
+      )
+      (net "Net-(J9-Pin_1)"
+        (wire
+          (path "Digital_Signals" 2000
+            634450 -622500
+            641760 -622500
+          )
+        )
+        (wire
+          (path "Analog_Signals" 2000
+            760000 -950000
+            641760 -831760
+            641760 -622500
+          )
+        )
+        (via "Via[0-5]_300:300_um" 641760 -622500
+        )
+      )
+      (net "unconnected-(U5-DE0-Pad46)"
+        (wire
+          (path "Digital_Signals" 2000
+            582500 -615550
+            587500 -615550
+          )
+        )
+      )
+    )
+  )
+)

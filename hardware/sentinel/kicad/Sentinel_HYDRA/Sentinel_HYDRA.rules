@@ -1,0 +1,223 @@
+
+(rules PCB Sentinel_HYDRA.dsn
+  (snap_angle 
+    fortyfive_degree
+  )
+  (rule
+    (width 200.0)
+    (clearance 150.0)
+    (clearance 100.0 (type smd_to_turn_gap))
+    (clearance 37.6 (type smd))
+    (clearance 150.0 (type "kicad_default"))
+    (clearance 150.0 (type "USB_DP ,Default"))
+    (clearance 140.0 (type Power,Default))
+    (clearance 140.0 (type Analog,Default))
+  )
+  (padstack "Via[0-5]_300:300_um"
+    (shape
+      (circle "Digital_Signals" 300.0 0.0 0.0)
+    )
+    (shape
+      (circle "GND_Plane" 300.0 0.0 0.0)
+    )
+    (shape
+      (circle "Analog_Signals" 300.0 0.0 0.0)
+    )
+    (shape
+      (circle "Power_Planes" 300.0 0.0 0.0)
+    )
+    (shape
+      (circle HighSpeed 300.0 0.0 0.0)
+    )
+    (shape
+      (circle "Bottom_GND" 300.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (padstack "Via[0-5]_600:400_um"
+    (shape
+      (circle "Digital_Signals" 600.0 0.0 0.0)
+    )
+    (shape
+      (circle "GND_Plane" 600.0 0.0 0.0)
+    )
+    (shape
+      (circle "Analog_Signals" 600.0 0.0 0.0)
+    )
+    (shape
+      (circle "Power_Planes" 600.0 0.0 0.0)
+    )
+    (shape
+      (circle HighSpeed 600.0 0.0 0.0)
+    )
+    (shape
+      (circle "Bottom_GND" 600.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (padstack "Via[0-5]_500:300_um"
+    (shape
+      (circle "Digital_Signals" 500.0 0.0 0.0)
+    )
+    (shape
+      (circle "GND_Plane" 500.0 0.0 0.0)
+    )
+    (shape
+      (circle "Analog_Signals" 500.0 0.0 0.0)
+    )
+    (shape
+      (circle "Power_Planes" 500.0 0.0 0.0)
+    )
+    (shape
+      (circle HighSpeed 500.0 0.0 0.0)
+    )
+    (shape
+      (circle "Bottom_GND" 500.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-5]_300:300_um" "Via[0-5]_300:300_um" default
+  )
+  (via 
+    "Via[0-5]_600:400_um" "Via[0-5]_600:400_um" default
+  )
+  (via 
+    "Via[0-5]_500:300_um" "Via[0-5]_500:300_um" default
+  )
+  (via 
+    "Via[0-5]_300:300_um-kicad_default" "Via[0-5]_300:300_um" "kicad_default"
+  )
+  (via 
+    "Via[0-5]_600:400_um-kicad_default" "Via[0-5]_600:400_um" "kicad_default"
+  )
+  (via 
+    "Via[0-5]_500:300_um-kicad_default" "Via[0-5]_500:300_um" "kicad_default"
+  )
+  (via 
+    "Via[0-5]_300:300_um-USB_DP ,Default" "Via[0-5]_300:300_um" "USB_DP ,Default"
+  )
+  (via 
+    "Via[0-5]_600:400_um-USB_DP ,Default" "Via[0-5]_600:400_um" "USB_DP ,Default"
+  )
+  (via 
+    "Via[0-5]_500:300_um-USB_DP ,Default" "Via[0-5]_500:300_um" "USB_DP ,Default"
+  )
+  (via 
+    "Via[0-5]_300:300_um-Power,Default" "Via[0-5]_300:300_um" Power,Default
+  )
+  (via 
+    "Via[0-5]_600:400_um-Power,Default" "Via[0-5]_600:400_um" Power,Default
+  )
+  (via 
+    "Via[0-5]_500:300_um-Power,Default" "Via[0-5]_500:300_um" Power,Default
+  )
+  (via 
+    "Via[0-5]_300:300_um-Analog,Default" "Via[0-5]_300:300_um" Analog,Default
+  )
+  (via 
+    "Via[0-5]_600:400_um-Analog,Default" "Via[0-5]_600:400_um" Analog,Default
+  )
+  (via 
+    "Via[0-5]_500:300_um-Analog,Default" "Via[0-5]_500:300_um" Analog,Default
+  )
+  (via_rule
+    default "Via[0-5]_300:300_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-5]_300:300_um-kicad_default"
+  )
+  (via_rule
+    "USB_DP ,Default" "Via[0-5]_300:300_um-USB_DP ,Default"
+  )
+  (via_rule
+    Power,Default "Via[0-5]_600:400_um-Power,Default"
+  )
+  (via_rule
+    Analog,Default "Via[0-5]_500:300_um-Analog,Default"
+  )
+  (class default
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 200.0)
+    )
+    (circuit 
+      (use_layer Digital_Signals GND_Plane Analog_Signals Power_Planes HighSpeed Bottom_GND)
+    )
+  )
+  (class "kicad_default"
+    +3V3 "Net-(C16-Pad2)" "Net-(C5-Pad1)" "Net-(U13-BTST)" "Net-(C14-Pad1)" "Net-(C10-Pad1)" "HEATER_PWM" "Net-(Q2-G)"
+    "Net-(U1-EN)" "Net-(C12-Pad1)" "Net-(U14-EN)" "unconnected-(U17-CTG-Pad1)" "BATT_ALT" "Net-(U17-QSTRT)" "I2C_SCL" "I2C_SDA"
+    "unconnected-(U17-EP-Pad9)" VBUS "unconnected-(U13-D+-Pad2)" "unconnected-(U13-D--Pad3)" "unconnected-(U13-STAT-Pad4)" "CHG_INT" "Net-(U13-OTG)" "Net-(U13-~{CE})"
+    "unconnected-(U13-ILIM-Pad10)" "unconnected-(U13-TS-Pad11)" "Net-(U13-~{QON})" "unconnected-(U13-PGND-Pad17)_9" "unconnected-(U13-PGND-Pad17)_5" "Net-(U13-REGN)" "Net-(U13-PMID)" "unconnected-(U13-DSEL-Pad24)"
+    "unconnected-(U13-PGND-Pad17)" "unconnected-(U13-PGND-Pad17)_1" "unconnected-(U13-PGND-Pad17)_7" "unconnected-(U13-PGND-Pad17)_6" "unconnected-(U13-PGND-Pad17)_4" "unconnected-(U13-PGND-Pad17)_3" "unconnected-(U13-PGND-Pad17)_2" "unconnected-(U13-PGND-Pad17)_10"
+    "unconnected-(U13-PGND-Pad17)_12" "unconnected-(U13-PGND-Pad17)_8" "unconnected-(U13-PGND-Pad17)_11" "Net-(U14-L1_9)" "Net-(U14-L1_8)" "Net-(D2-DOUT)" "Net-(D1-DOUT)" "Net-(U1-IO0)"
+    "Net-(U2-QSPI_SD2)" "Net-(J7-Pin_1)" "RE_BUS" "CE_BUS" "I2C1_SCL" "unconnected-(U6-LDR-Pad4)" "unconnected-(U6-PGND-Pad5)" "unconnected-(U6-GPIO-Pad6)"
+    "SPEC_INT" "I2C1_SDA" BUZZER "TFT_DC" "PG_3V3" "unconnected-(U1-IO18-Pad11)" "TFT_CS" "LED_DATA"
+    "unconnected-(U1-IO46-Pad16)" "TFT_RST" "TFT_BL" "SPI0_MOSI" "SPI0_SCK" "SPI0_MISO" "SD_CS" "unconnected-(U1-IO21-Pad23)"
+    "unconnected-(U1-IO47-Pad24)" "unconnected-(U1-IO48-Pad25)" "unconnected-(U1-IO45-Pad26)" "unconnected-(U1-IO35-Pad28)" "unconnected-(U1-IO36-Pad29)" "unconnected-(U1-IO37-Pad30)" "unconnected-(U1-IO38-Pad31)" "unconnected-(U1-IO39-Pad32)"
+    "unconnected-(U1-IO40-Pad33)" "unconnected-(U1-IO41-Pad34)" "unconnected-(U1-IO42-Pad35)" "unconnected-(U1-RXD0-Pad36)" "unconnected-(U1-TXD0-Pad37)" "ESP_UART_RX" "ESP_UART_TX" "Net-(J6-Pin_1)"
+    "Net-(U9-VDD)" "Net-(C6-Pad1)" "Net-(LED1-A)" "Net-(C8-Pad1)" "Net-(U5-DVDD_REG_1V8)" "Net-(J1-CC1)" "Net-(Q4-G)" "Net-(LED2-K)"
+    "AD5941_1_CS" "AD5941_1_RST" "AD5941_2_CS" "AD5941_2_RST" "AD5941_1_INT" "AD5941_2_INT" "UV_LED_EN" "BLUE_LED_EN"
+    "unconnected-(U2-TESTEN-Pad19)" "Net-(U2-XIN)" "Net-(U2-XOUT)" "Net-(J13-Pin_4)" "Net-(J13-Pin_2)" "Net-(U2-RUN)" "WHITE_LED_EN" "unconnected-(U2-GPIO18-Pad29)"
+    "unconnected-(U2-GPIO19-Pad30)" "unconnected-(U2-GPIO20-Pad31)" "unconnected-(U2-GPIO21-Pad32)" "unconnected-(U2-GPIO22-Pad34)" "unconnected-(U2-GPIO23-Pad35)" "unconnected-(U2-GPIO24-Pad36)" "unconnected-(U2-GPIO25-Pad37)" "unconnected-(U2-GPIO26{slash}ADC0-Pad38)"
+    "unconnected-(U2-GPIO27{slash}ADC1-Pad39)" "unconnected-(U2-GPIO28{slash}ADC2-Pad40)" "unconnected-(U2-GPIO29{slash}ADC3-Pad41)" "unconnected-(U2-USB_DM-Pad46)" "unconnected-(U2-USB_DP-Pad47)" "Net-(U2-QSPI_SD3)" "Net-(U2-QSPI_SCLK)" "Net-(U2-QSPI_SD0)"
+    "Net-(U2-QSPI_SD1)" "Net-(U2-~{QSPI_SS})" "Net-(U5-VBIAS_CAP)" "unconnected-(J13-Pin_5-Pad5)" "unconnected-(U4-RC0_2-Pad1)" "unconnected-(U4-RC0_1-Pad2)" "unconnected-(U4-RC0_0-Pad3)" "Net-(U4-VREF_2V5)"
+    "unconnected-(U4-AVDD_REG-Pad5)" "unconnected-(U4-DNC-Pad7)" "unconnected-(U4-VBIAS0-Pad8)" "unconnected-(U4-VZERO0-Pad9)" "unconnected-(U4-DNC-Pad10)" "unconnected-(U4-XTALI-Pad11)" "unconnected-(U4-XTALO-Pad12)" "Net-(U4-DVDD_REG_1V8)"
+    "unconnected-(U4-GPIO1-Pad20)" "unconnected-(U4-GPIO2-Pad21)" "unconnected-(U4-DNC-Pad24)" "unconnected-(U4-AFE3-Pad27)" "unconnected-(U4-AFE4-Pad28)" "Net-(U4-VBIAS_CAP)" "Net-(U4-RCAL0)" "Net-(U4-RCAL1)"
+    "unconnected-(U4-AFE1-Pad34)" "unconnected-(U4-AFE2-Pad35)" "Net-(J5-Pin_1)" "Net-(J4-Pin_1)" "Net-(J3-Pin_1)" "Net-(J2-Pin_1)" "unconnected-(U4-AIN4{slash}LPF0-Pad40)" "Net-(U4-VREF_1V8)"
+    "unconnected-(U4-AGND_REF-Pad44)" "unconnected-(U4-DE0-Pad46)" "Net-(LED2-A)" "Net-(Q1-G)" "MUX_SDA0" "MUX_SCL0" "MUX_SDA1" "MUX_SCL1"
+    "MUX_SDA2" "MUX_SCL2" "MUX_SDA3" "MUX_SCL3" "unconnected-(U7-SD4-Pad10)" "unconnected-(U7-SC4-Pad11)" "unconnected-(U7-SD5-Pad12)" "unconnected-(U7-SC5-Pad13)"
+    "unconnected-(U7-SD6-Pad14)" "unconnected-(U7-SC6-Pad15)" "unconnected-(U7-SD7-Pad16)" "unconnected-(U7-SC7-Pad17)" "unconnected-(U7-1EP-Pad25)" "Net-(U15-OUT)" "Net-(LED3-A)" "unconnected-(U15-NC-Pad4)"
+    "Net-(U5-RCAL0)" "Net-(U5-RCAL1)" "Net-(Q3-G)" "Net-(LED1-K)" "Net-(LED3-K)" "Net-(BZ1--)" "unconnected-(U11-SDO{slash}SA0-Pad1)" "unconnected-(U11-SDX-Pad2)"
+    "unconnected-(U11-SCX-Pad3)" "unconnected-(U11-INT1-Pad4)" "unconnected-(U11-VDDIO-Pad5)" "Net-(U11-VDD)" "unconnected-(U11-INT2-Pad9)" "unconnected-(U11-OCS_AUX-Pad10)" "unconnected-(U11-SDO_AUX-Pad11)" "unconnected-(U11-CS-Pad12)"
+    "unconnected-(U10-32KHZ-Pad1)" "unconnected-(U10-~{INT}{slash}SQW-Pad3)" "unconnected-(U10-~{RST}-Pad4)" "Net-(U5-VREF_1V8)" "Net-(U5-VREF_2V5)" "Net-(Q5-G)" "Net-(U16-VO)" "unconnected-(U14-FB-Pad3)"
+    "Net-(U14-L2_6)" "unconnected-(D4-DOUT-Pad2)" "Net-(D3-DOUT)" "Net-(J1-CC2)" "Net-(J8-Pin_1)" "unconnected-(U8-NC-Pad1)" "unconnected-(U8-PGND-Pad4)" "unconnected-(U8-NC-Pad5)"
+    "unconnected-(U8-NC-Pad6)" "unconnected-(U8-NC-Pad7)" "unconnected-(U8-NC-Pad8)" "unconnected-(U8-~{INT}-Pad13)" "unconnected-(U8-NC-Pad14)" "unconnected-(U5-RC0_2-Pad1)" "unconnected-(U5-RC0_1-Pad2)" "unconnected-(U5-RC0_0-Pad3)"
+    "unconnected-(U5-AVDD_REG-Pad5)" "unconnected-(U5-DNC-Pad7)" "unconnected-(U5-VBIAS0-Pad8)" "unconnected-(U5-VZERO0-Pad9)" "unconnected-(U5-DNC-Pad10)" "unconnected-(U5-XTALI-Pad11)" "unconnected-(U5-XTALO-Pad12)" "unconnected-(U5-GPIO1-Pad20)"
+    "unconnected-(U5-GPIO2-Pad21)" "unconnected-(U5-DNC-Pad24)" "unconnected-(U5-AFE3-Pad27)" "unconnected-(U5-AFE4-Pad28)" "unconnected-(U5-AFE1-Pad34)" "unconnected-(U5-AFE2-Pad35)" "Net-(J9-Pin_1)" "unconnected-(U5-AIN4{slash}LPF0-Pad40)"
+    "unconnected-(U5-AGND_REF-Pad44)" "unconnected-(U5-DE0-Pad46)" "TEMP_ALERT"
+    (clearance_class "kicad_default")
+    (via_rule "kicad_default")
+    (rule
+      (width 200.0)
+    )
+    (circuit 
+      (use_layer Digital_Signals GND_Plane Analog_Signals Power_Planes HighSpeed Bottom_GND)
+    )
+  )
+  (class "USB_DP ,Default"
+    "USB_DM" "USB_DP"
+    (clearance_class "USB_DP ,Default")
+    (via_rule "USB_DP ,Default")
+    (rule
+      (width 180.0)
+    )
+    (circuit 
+      (use_layer Digital_Signals GND_Plane Analog_Signals Power_Planes HighSpeed Bottom_GND)
+    )
+  )
+  (class Power,Default
+    "VSYS_3V3" GND VBAT "3V3_D" "3V3_A"
+    (clearance_class Power,Default)
+    (via_rule Power,Default)
+    (rule
+      (width 500.0)
+    )
+    (circuit 
+      (use_layer Digital_Signals GND_Plane Analog_Signals Power_Planes HighSpeed Bottom_GND)
+    )
+  )
+  (class Analog,Default
+    "Net-(U14-VOUT_5)" "Net-(U2-VREG_VOUT)" "SPI1_SCK" "SPI1_MOSI" "SPI1_MISO"
+    (clearance_class Analog,Default)
+    (via_rule Analog,Default)
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer Digital_Signals GND_Plane Analog_Signals Power_Planes HighSpeed Bottom_GND)
+    )
+  )
+)

@@ -1,0 +1,2544 @@
+(pcb "C:\Users\dhruv\CARVanta\hardware\sentinel\kicad\CARVanta_Sentinel_v2\temp-freerouting.dsn"
+  (parser
+    (string_quote ")
+    (space_in_quoted_tokens on)
+    (host_cad "KiCad's Pcbnew")
+    (host_version "10.0.3")
+  )
+  (resolution um 10)
+  (unit um)
+  (structure
+    (layer Digital_Signals
+      (type signal)
+      (property
+        (index 0)
+      )
+    )
+    (layer GND_Plane
+      (type signal)
+      (property
+        (index 1)
+      )
+    )
+    (layer Analog_Signals
+      (type signal)
+      (property
+        (index 2)
+      )
+    )
+    (layer Power_Planes
+      (type signal)
+      (property
+        (index 3)
+      )
+    )
+    (layer HighSpeed
+      (type signal)
+      (property
+        (index 4)
+      )
+    )
+    (layer Bottom_GND
+      (type signal)
+      (property
+        (index 5)
+      )
+    )
+    (boundary
+      (path pcb 0  269924 -158933  169924 -158933  169924 -58933  269924 -58933
+            269924 -158933)
+    )
+    (via "Via[0-5]_300:300_um" "Via[0-5]_500:300_um" "Via[0-5]_600:400_um")
+    (rule
+      (width 200)
+      (clearance 150)
+      (clearance 37.5 (type smd_smd))
+    )
+  )
+  (placement
+    (component Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical
+      (place J7 260050 -99500 front 0 (PN Conn_01x06))
+    )
+    (component Resistor_SMD:R_0402_1005Metric
+      (place R5 198050 -104500 front 0 (PN 10k))
+      (place R15 253050 -132500 front 0 (PN 0.1k))
+      (place R13 233050 -132500 front 0 (PN 0.1k))
+      (place R10 218050 -70000 front 0 (PN 0.1k))
+      (place R11 258050 -117500 front 0 (PN 0.1k))
+      (place R3 195050 -104500 front 0 (PN 1.5k))
+      (place R2 182050 -97500 front 0 (PN 5.1k))
+      (place R14 243050 -132500 front 0 (PN 0.1k))
+      (place R4 195050 -94500 front 0 (PN 1.5k))
+      (place R6 210050 -76500 front 0 (PN 10k))
+      (place R7 210050 -79500 front 0 (PN 10k))
+      (place R12 223050 -132500 front 0 (PN 0.1k))
+      (place R1 182050 -94500 front 0 (PN 5.1k))
+      (place R8 183050 -86500 front 0 (PN 10k))
+      (place R9 183050 -91500 front 0 (PN 10k))
+    )
+    (component Capacitor_SMD:C_0805_2012Metric
+      (place C38 238050 -102500 front 0 (PN 100n))
+      (place C7 190050 -82500 front 0 (PN 100n))
+      (place C15 233050 -136500 front 0 (PN 100n))
+      (place C39 242050 -102500 front 0 (PN 10u))
+      (place C3 202050 -106500 front 0 (PN 10u))
+      (place C17 237050 -138500 front 0 (PN 10nF))
+      (place C21 262050 -117500 front 0 (PN 10nF))
+      (place C1 202050 -92500 front 0 (PN 10u))
+      (place C27 264050 -117500 front 0 (PN 100n))
+      (place C5 185050 -99500 front 0 (PN 10u))
+      (place C29 262000 -67500 front 0 (PN 100n))
+      (place C23 257050 -138500 front 0 (PN 100n))
+      (place C16 227050 -138500 front 0 (PN 100n))
+      (place C9 194050 -82500 front 0 (PN 22u))
+      (place C11 183050 -84500 front 0 (PN 100n))
+      (place C13 223050 -136500 front 0 (PN 10nF))
+      (place C10 212050 -84500 front 0 (PN 100n))
+      (place C20 262050 -121500 front 0 (PN 100n))
+      (place C34 238050 -92500 front 0 (PN 100n))
+      (place C2 208050 -92500 front 0 (PN 22u))
+      (place C37 252050 -92500 front 0 (PN 100n))
+      (place C28 264050 -121500 front 0 (PN 1uF))
+      (place C18 247050 -138500 front 0 (PN 100n))
+      (place C8 192050 -82500 front 0 (PN 100n))
+      (place C40 258050 -97500 front 0 (PN 100n))
+      (place C6 195050 -99500 front 0 (PN 10u))
+      (place C14 227050 -136500 front 0 (PN 100n))
+      (place C26 262050 -115500 front 0 (PN 10u))
+      (place C22 262050 -123500 front 0 (PN 100n))
+      (place C19 258050 -121500 front 0 (PN 10nF))
+      (place C35 242050 -92500 front 0 (PN 1u))
+      (place C36 248050 -92500 front 0 (PN 100n))
+      (place C12 223050 -122500 front 0 (PN 100n))
+      (place C24 243050 -136500 front 0 (PN 100n))
+      (place C4 208050 -106500 front 0 (PN 22u))
+      (place C25 253050 -136500 front 0 (PN 100n))
+    )
+    (component Button_Switch_SMD:SW_SPST_PTS645Sx43SMTR92
+      (place SW2 185050 -89500 front 0 (PN SW_Push))
+      (place SW1 185050 -84500 front 0 (PN SW_Push))
+    )
+    (component "Package_TO_SOT_SMD:SOT-23"
+      (place Q1 220050 -70000 front 0 (PN 2N7002))
+    )
+    (component Capacitor_SMD:C_0805_2012Metric::1
+      (place C33 255000 -67500 front 0 (PN 100n))
+      (place C31 241000 -67500 front 0 (PN 100n))
+      (place C32 247000 -67500 front 0 (PN 100n))
+      (place C30 234000 -67500 front 0 (PN 100n))
+    )
+    (component "Package_LGA:Bosch_LGA-14_3x2.5mm_P0.5mm"
+      (place U14 250050 -104500 front 0 (PN LIS2DH))
+    )
+    (component "Package_SO:SOIC-16W_7.5x10.3mm_P1.27mm"
+      (place U13 240050 -104500 front 0 (PN DS3231M))
+    )
+    (component "Connector_USB:USB_C_Receptacle_HCTL_HC-TYPE-C-16P-01A"
+      (place J1 175050 -104500 front 0 (PN USB_C_Receptacle_USB2.0_16P))
+    )
+    (component Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical
+      (place J6 264000 -69500 front 0 (PN Conn_01x08))
+    )
+    (component "OptoDevice:Maxim_OLGA-14_3.3x5.6mm_P0.8mm"
+      (place U11 240050 -94500 front 0 (PN MAX30102))
+    )
+    (component "Package_DFN_QFN:VQFN-16-1EP_3x3mm_P0.5mm_EP1.8x1.8mm"
+      (place U1 190050 -99500 front 0 (PN BQ24075RGT))
+    )
+    (component Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical
+      (place J5 255050 -149500 front 0 (PN Conn_01x03_Pin))
+      (place J2 225050 -149500 front 0 (PN Conn_01x03_Pin))
+      (place J4 245050 -149500 front 0 (PN Conn_01x03_Pin))
+      (place J3 235050 -149500 front 0 (PN Conn_01x03_Pin))
+    )
+    (component "Package_SO:TSSOP-14_4.4x5mm_P0.65mm"
+      (place U9 255050 -134500 front 0 (PN LMP91000))
+      (place U7 235050 -134500 front 0 (PN LMP91000))
+      (place U8 245050 -134500 front 0 (PN LMP91000))
+      (place U6 225050 -134500 front 0 (PN LMP91000))
+    )
+    (component LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm
+      (place D2 241000 -64500 front 0 (PN WS2812B))
+      (place D3 248000 -64500 front 0 (PN WS2812B))
+      (place D4 255000 -64500 front 0 (PN WS2812B))
+    )
+    (component Resistor_SMD:R_Array_Convex_2x0402
+      (place RN1 210050 -84500 front 0 (PN 100k))
+    )
+    (component "Package_SO:TSSOP-24_4.4x7.8mm_P0.65mm"
+      (place U5 225050 -124500 front 0 (PN TCA9548AMRGER))
+    )
+    (component "Package_TO_SOT_SMD:SOT-223-3_TabPin2"
+      (place U2 205050 -94500 front 0 (PN "AMS1117-3.3"))
+      (place U3 204050 -104500 front 0 (PN "AMS1117-3.3"))
+    )
+    (component Inductor_SMD:L_0402_1005Metric
+      (place FB1 203050 -109500 front 0 (PN 600R))
+    )
+    (component "RF_Module:ESP32-S3-WROOM-1"
+      (place U4 195050 -74500 front 0 (PN "ESP32-S3-WROOM-1"))
+    )
+    (component "Package_TO_SOT_THT:TO-39-4"
+      (place U12 250050 -94500 front 0 (PN MLX90614))
+    )
+    (component LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm::1
+      (place D1 234000 -64500 front 0 (PN WS2812B))
+    )
+    (component Buzzer_Beeper:Buzzer_12x9.5RM7.6
+      (place BZ1 221900 -57500 front 0 (PN Buzzer))
+    )
+    (component "Package_SO:TSSOP-28_4.4x9.7mm_P0.65mm"
+      (place U10 260050 -119500 front 0 (PN ADS1256))
+    )
+  )
+  (library
+    (image Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical
+      (outline (polygon signal 0  1765 -14465  -1765 -14465  -1765 1765  1765 1765))
+      (outline (path signal 120  -1380 1380  0 1380))
+      (outline (path signal 120  -1380 0  -1380 1380))
+      (outline (path signal 120  -1380 -1270  -1380 -14080))
+      (outline (path signal 120  -1380 -1270  1380 -1270))
+      (outline (path signal 120  -1380 -14080  1380 -14080))
+      (outline (path signal 120  1380 -1270  1380 -14080))
+      (outline (path signal 100  -1270 635  -635 1270))
+      (outline (path signal 100  -1270 -13970  -1270 635))
+      (outline (path signal 100  -635 1270  1270 1270))
+      (outline (path signal 100  1270 1270  1270 -13970))
+      (outline (path signal 100  1270 -13970  -1270 -13970))
+      (pin Rect[A]Pad_1700.000000x1700.000000_um 1 0 0)
+      (pin Round[A]Pad_1700.000000_um 2 0 -2540)
+      (pin Round[A]Pad_1700.000000_um 3 0 -5080)
+      (pin Round[A]Pad_1700.000000_um 4 0 -7620)
+      (pin Round[A]Pad_1700.000000_um 5 0 -10160)
+      (pin Round[A]Pad_1700.000000_um 6 0 -12700)
+    )
+    (image Resistor_SMD:R_0402_1005Metric
+      (outline (polygon signal 0  925 -465  -925 -465  -925 465  925 465))
+      (outline (path signal 120  -153.641 380  153.641 380))
+      (outline (path signal 120  -153.641 -380  153.641 -380))
+      (outline (path signal 100  -525 270  525 270  525 -270  -525 -270  -525 270))
+      (pin RoundRect[T]Pad_540.000000x640.000000_135.514000_um_0.000000_0 1 -510 0)
+      (pin RoundRect[T]Pad_540.000000x640.000000_135.514000_um_0.000000_0 2 510 0)
+    )
+    (image Capacitor_SMD:C_0805_2012Metric
+      (outline (polygon signal 0  1695 -975  -1695 -975  -1695 975  1695 975))
+      (outline (path signal 120  -261.252 735  261.252 735))
+      (outline (path signal 120  -261.252 -735  261.252 -735))
+      (outline (path signal 100  -1000 625  1000 625  1000 -625  -1000 -625  -1000 625))
+      (pin RoundRect[T]Pad_1000.000000x1450.000000_250.951000_um_0.000000_0 1 -950 0)
+      (pin RoundRect[T]Pad_1000.000000x1450.000000_250.951000_um_0.000000_0 2 950 0)
+    )
+    (image Button_Switch_SMD:SW_SPST_PTS645Sx43SMTR92
+      (outline (polygon signal 0  5045 -3395  -5045 -3395  -5045 3395  5045 3395))
+      (outline (path signal 120  -3230 3230  3230 3230))
+      (outline (path signal 120  -3230 3200  -3230 3230))
+      (outline (path signal 120  -3230 1300  -3230 -1300))
+      (outline (path signal 120  -3230 -3230  -3230 -3200))
+      (outline (path signal 120  -3230 -3230  3230 -3230))
+      (outline (path signal 120  3230 3230  3230 3200))
+      (outline (path signal 120  3230 1300  3230 -1300))
+      (outline (path signal 120  3230 -3230  3230 -3200))
+      (outline (path signal 100  -3000 3000  -3000 -3000))
+      (outline (path signal 100  -3000 -3000  3000 -3000))
+      (outline (path signal 100  3000 3000  -3000 3000))
+      (outline (path signal 100  3000 -3000  3000 3000))
+      (outline (path signal 100  1750 0  1731.35 -254.802  1675.8 -504.173  1584.53 -742.799
+            1459.5 -965.594  1303.35 -1167.81  1119.43 -1345.13  911.646 -1493.79
+            684.433 -1610.61  442.633 -1693.1  191.4 -1739.5  -63.914 -1748.83
+            -317.864 -1720.89  -565.041 -1656.27  -800.174 -1556.35  -1018.25 -1423.26
+            -1214.63 -1259.83  -1385.12 -1069.55  -1526.09 -856.481  -1634.53 -625.154
+            -1708.13 -380.503  -1745.33 -127.742  -1745.33 127.742  -1708.13 380.503
+            -1634.53 625.154  -1526.09 856.481  -1385.12 1069.55  -1214.63 1259.83
+            -1018.25 1423.26  -800.174 1556.35  -565.041 1656.27  -317.864 1720.89
+            -63.914 1748.83  191.4 1739.5  442.633 1693.1  684.433 1610.61
+            911.646 1493.79  1119.43 1345.13  1303.35 1167.81  1459.5 965.594
+            1584.53 742.799  1675.8 504.173  1731.35 254.802  1750 0))
+      (pin RoundRect[T]Pad_1550.000000x1300.000000_250.951000_um_0.000000_0 1 -3980 2250)
+      (pin RoundRect[T]Pad_1550.000000x1300.000000_250.951000_um_0.000000_0 1@1 3980 2250)
+      (pin RoundRect[T]Pad_1550.000000x1300.000000_250.951000_um_0.000000_0 2 -3980 -2250)
+      (pin RoundRect[T]Pad_1550.000000x1300.000000_250.951000_um_0.000000_0 2@1 3980 -2250)
+    )
+    (image "Package_TO_SOT_SMD:SOT-23"
+      (outline (polygon signal 0  895 545  1925 545  1925 -545  895 -545  895 -1695  -895 -1695
+            -895 -1495  -1925 -1495  -1925 -395  -895 -395  -895 395  -1925 395
+            -1925 1495  -895 1495  -895 1695  895 1695))
+      (outline (path signal 120  760 -1560  -760 -1560))
+      (outline (path signal 120  760 -560  760 -1560))
+      (outline (path signal 120  760 1560  760 560))
+      (outline (path signal 120  -760 -1560  -760 -1510))
+      (outline (path signal 120  -760 -390  -760 390))
+      (outline (path signal 120  -760 1510  -760 1560))
+      (outline (path signal 120  -760 1560  760 1560))
+      (pin RoundRect[T]Pad_1475.000000x600.000000_150.571000_um_0.000000_0 3 937.5 0)
+      (pin RoundRect[T]Pad_1475.000000x600.000000_150.571000_um_0.000000_0 2 -937.5 -950)
+      (pin RoundRect[T]Pad_1475.000000x600.000000_150.571000_um_0.000000_0 1 -937.5 950)
+    )
+    (image Capacitor_SMD:C_0805_2012Metric::1
+      (outline (polygon signal 0  1695 -975  -1695 -975  -1695 975  1695 975))
+      (outline (path signal 100  -1000 625  1000 625  1000 -625  -1000 -625  -1000 625))
+      (outline (path signal 120  -261.252 -735  261.252 -735))
+      (outline (path signal 120  -261.252 735  261.252 735))
+      (pin RoundRect[T]Pad_1000.000000x1450.000000_250.951000_um_0.000000_0 2 950 0)
+      (pin RoundRect[T]Pad_1000.000000x1450.000000_250.951000_um_0.000000_0 1 -950 0)
+    )
+    (image "Package_LGA:Bosch_LGA-14_3x2.5mm_P0.5mm"
+      (outline (polygon signal 0  1845 -1595  -1845 -1595  -1845 1595  1845 1595))
+      (outline (path signal 100  -1600 -1350  -1600 -1130))
+      (outline (path signal 100  -1600 -1350  -880 -1350))
+      (outline (path signal 100  -1400 1350  -880 1350))
+      (outline (path signal 100  880 1350  1600 1350))
+      (outline (path signal 100  1600 1350  1600 1130))
+      (outline (path signal 100  1600 -1130  1600 -1350))
+      (outline (path signal 100  1600 -1350  880 -1350))
+      (outline (path signal 100  -1500 -1250  -1500 500))
+      (outline (path signal 100  -750 1250  -1500 500))
+      (outline (path signal 100  -750 1250  1500 1250))
+      (outline (path signal 100  1500 1250  1500 -1250))
+      (outline (path signal 100  1500 -1250  -1500 -1250))
+      (pin Rect[T]Pad_675.000000x250.000000_um 1 -1262.5 750)
+      (pin Rect[T]Pad_675.000000x250.000000_um 2 -1262.5 250)
+      (pin Rect[T]Pad_675.000000x250.000000_um 3 -1262.5 -250)
+      (pin Rect[T]Pad_675.000000x250.000000_um 4 -1262.5 -750)
+      (pin Rect[T]Pad_250.000000x675.000000_um 5 -500 -1012.5)
+      (pin Rect[T]Pad_250.000000x675.000000_um 6 0 -1012.5)
+      (pin Rect[T]Pad_250.000000x675.000000_um 7 500 -1012.5)
+      (pin Rect[T]Pad_675.000000x250.000000_um 8 1262.5 -750)
+      (pin Rect[T]Pad_675.000000x250.000000_um 9 1262.5 -250)
+      (pin Rect[T]Pad_675.000000x250.000000_um 10 1262.5 250)
+      (pin Rect[T]Pad_675.000000x250.000000_um 11 1262.5 750)
+      (pin Rect[T]Pad_250.000000x675.000000_um 12 500 1012.5)
+      (pin Rect[T]Pad_250.000000x675.000000_um 13 0 1012.5)
+      (pin Rect[T]Pad_250.000000x675.000000_um 14 -500 1012.5)
+    )
+    (image "Package_SO:SOIC-16W_7.5x10.3mm_P1.27mm"
+      (outline (polygon signal 0  3995 4995  5925 4995  5925 -4995  3995 -4995  3995 -5395
+            -3995 -5395  -3995 -4995  -5925 -4995  -5925 4995  -3995 4995
+            -3995 5395  3995 5395))
+      (outline (path signal 120  -3860 5260  3860 5260))
+      (outline (path signal 120  -3860 5005  -3860 5260))
+      (outline (path signal 120  -3860 -5260  -3860 -5005))
+      (outline (path signal 120  3860 5260  3860 5005))
+      (outline (path signal 120  3860 -5005  3860 -5260))
+      (outline (path signal 120  3860 -5260  -3860 -5260))
+      (pin RoundRect[T]Pad_2050.000000x600.000000_150.571000_um_0.000000_0 1 -4650 4445)
+      (pin RoundRect[T]Pad_2050.000000x600.000000_150.571000_um_0.000000_0 2 -4650 3175)
+      (pin RoundRect[T]Pad_2050.000000x600.000000_150.571000_um_0.000000_0 3 -4650 1905)
+      (pin RoundRect[T]Pad_2050.000000x600.000000_150.571000_um_0.000000_0 4 -4650 635)
+      (pin RoundRect[T]Pad_2050.000000x600.000000_150.571000_um_0.000000_0 5 -4650 -635)
+      (pin RoundRect[T]Pad_2050.000000x600.000000_150.571000_um_0.000000_0 6 -4650 -1905)
+      (pin RoundRect[T]Pad_2050.000000x600.000000_150.571000_um_0.000000_0 7 -4650 -3175)
+      (pin RoundRect[T]Pad_2050.000000x600.000000_150.571000_um_0.000000_0 8 -4650 -4445)
+      (pin RoundRect[T]Pad_2050.000000x600.000000_150.571000_um_0.000000_0 9 4650 -4445)
+      (pin RoundRect[T]Pad_2050.000000x600.000000_150.571000_um_0.000000_0 10 4650 -3175)
+      (pin RoundRect[T]Pad_2050.000000x600.000000_150.571000_um_0.000000_0 11 4650 -1905)
+      (pin RoundRect[T]Pad_2050.000000x600.000000_150.571000_um_0.000000_0 12 4650 -635)
+      (pin RoundRect[T]Pad_2050.000000x600.000000_150.571000_um_0.000000_0 13 4650 635)
+      (pin RoundRect[T]Pad_2050.000000x600.000000_150.571000_um_0.000000_0 14 4650 1905)
+      (pin RoundRect[T]Pad_2050.000000x600.000000_150.571000_um_0.000000_0 15 4650 3175)
+      (pin RoundRect[T]Pad_2050.000000x600.000000_150.571000_um_0.000000_0 16 4650 4445)
+    )
+    (image "Connector_USB:USB_C_Receptacle_HCTL_HC-TYPE-C-16P-01A"
+      (outline (polygon signal 0  5315 -4175  -5315 -4175  -5315 4895  5315 4895))
+      (outline (path signal 120  -4700 1780  -4700 0))
+      (outline (path signal 120  -2800 4700  -3600 4700))
+      (outline (path signal 120  4700 1780  4700 0))
+      (outline (path signal 120  -500 -2500  0 -1500))
+      (outline (path signal 120  0 -1500  500 -2500))
+      (outline (path signal 120  0 -3500  0 -1500))
+      (outline (path signal 120  500 -2500  -500 -2500))
+      (outline (path signal 100  -4470 3675  -4470 -3675))
+      (outline (path signal 100  -4470 3675  4470 3675))
+      (outline (path signal 100  -4470 -3675  4470 -3675))
+      (outline (path signal 100  -3200 2675  -4200 3675))
+      (outline (path signal 100  -3200 2675  -2200 3675))
+      (outline (path signal 100  4470 3675  4470 -3675))
+      (pin RoundRect[T]Pad_600.000000x1300.000000_150.571000_um_0.000000_0 A1 -3200 3745)
+      (pin RoundRect[T]Pad_600.000000x1300.000000_150.571000_um_0.000000_0 A4 -2400 3745)
+      (pin RoundRect[T]Pad_300.000000x1300.000000_75.285000_um_0.000000_0 A5 -1250 3745)
+      (pin RoundRect[T]Pad_300.000000x1300.000000_75.285000_um_0.000000_0 A6 -250 3745)
+      (pin RoundRect[T]Pad_300.000000x1300.000000_75.285000_um_0.000000_0 A7 250 3745)
+      (pin RoundRect[T]Pad_300.000000x1300.000000_75.285000_um_0.000000_0 A8 1250 3745)
+      (pin RoundRect[T]Pad_600.000000x1300.000000_150.571000_um_0.000000_0 A9 2400 3745)
+      (pin RoundRect[T]Pad_600.000000x1300.000000_150.571000_um_0.000000_0 A12 3200 3745)
+      (pin RoundRect[T]Pad_600.000000x1300.000000_150.571000_um_0.000000_0 B1 3200 3745)
+      (pin RoundRect[T]Pad_600.000000x1300.000000_150.571000_um_0.000000_0 B4 2400 3745)
+      (pin RoundRect[T]Pad_300.000000x1300.000000_75.285000_um_0.000000_0 B5 1750 3745)
+      (pin RoundRect[T]Pad_300.000000x1300.000000_75.285000_um_0.000000_0 B6 750 3745)
+      (pin RoundRect[T]Pad_300.000000x1300.000000_75.285000_um_0.000000_0 B7 -750 3745)
+      (pin RoundRect[T]Pad_300.000000x1300.000000_75.285000_um_0.000000_0 B8 -1750 3745)
+      (pin RoundRect[T]Pad_600.000000x1300.000000_150.571000_um_0.000000_0 B9 -2400 3745)
+      (pin RoundRect[T]Pad_600.000000x1300.000000_150.571000_um_0.000000_0 B12 -3200 3745)
+      (pin Oval[A]Pad_1000.000000x2100.000000_um SH -4320 3105)
+      (pin Oval[A]Pad_1000.000000x1600.000000_um SH@1 -4320 -1075)
+      (pin Oval[A]Pad_1000.000000x2100.000000_um SH@2 4320 3105)
+      (pin Oval[A]Pad_1000.000000x1600.000000_um SH@3 4320 -1075)
+      (keepout "" (circle Digital_Signals 1150 -2890 2605))
+      (keepout "" (circle GND_Plane 1150 -2890 2605))
+      (keepout "" (circle Analog_Signals 1150 -2890 2605))
+      (keepout "" (circle Power_Planes 1150 -2890 2605))
+      (keepout "" (circle HighSpeed 1150 -2890 2605))
+      (keepout "" (circle Bottom_GND 1150 -2890 2605))
+      (keepout "" (circle Digital_Signals 1150 2890 2605))
+      (keepout "" (circle GND_Plane 1150 2890 2605))
+      (keepout "" (circle Analog_Signals 1150 2890 2605))
+      (keepout "" (circle Power_Planes 1150 2890 2605))
+      (keepout "" (circle HighSpeed 1150 2890 2605))
+      (keepout "" (circle Bottom_GND 1150 2890 2605))
+    )
+    (image Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical
+      (outline (polygon signal 0  1765 -19545  -1765 -19545  -1765 1765  1765 1765))
+      (outline (path signal 120  -1380 1380  0 1380))
+      (outline (path signal 120  -1380 0  -1380 1380))
+      (outline (path signal 120  -1380 -1270  -1380 -19160))
+      (outline (path signal 120  -1380 -1270  1380 -1270))
+      (outline (path signal 120  -1380 -19160  1380 -19160))
+      (outline (path signal 120  1380 -1270  1380 -19160))
+      (outline (path signal 100  -1270 635  -635 1270))
+      (outline (path signal 100  -1270 -19050  -1270 635))
+      (outline (path signal 100  -635 1270  1270 1270))
+      (outline (path signal 100  1270 1270  1270 -19050))
+      (outline (path signal 100  1270 -19050  -1270 -19050))
+      (pin Rect[A]Pad_1700.000000x1700.000000_um 1 0 0)
+      (pin Round[A]Pad_1700.000000_um 2 0 -2540)
+      (pin Round[A]Pad_1700.000000_um 3 0 -5080)
+      (pin Round[A]Pad_1700.000000_um 4 0 -7620)
+      (pin Round[A]Pad_1700.000000_um 5 0 -10160)
+      (pin Round[A]Pad_1700.000000_um 6 0 -12700)
+      (pin Round[A]Pad_1700.000000_um 7 0 -15240)
+      (pin Round[A]Pad_1700.000000_um 8 0 -17780)
+    )
+    (image "OptoDevice:Maxim_OLGA-14_3.3x5.6mm_P0.8mm"
+      (outline (polygon signal 0  1895 -3035  -1895 -3035  -1895 3055  1895 3055))
+      (outline (path signal 120  -1250 2920  1640 2920))
+      (outline (path signal 120  1660 -2900  -1650 -2900))
+      (outline (path signal 100  -1650 2010  -850 2810))
+      (outline (path signal 100  -1650 -2790  -1650 2010))
+      (outline (path signal 100  -1650 -2790  1650 -2790))
+      (outline (path signal 100  -850 2810  1650 2810))
+      (outline (path signal 100  1650 -2790  1650 2810))
+      (pin RoundRect[T]Pad_750.000000x350.000000_87.833000_um_0.000000_0 1 -1200 2400)
+      (pin RoundRect[T]Pad_750.000000x350.000000_87.833000_um_0.000000_0 2 -1200 1600)
+      (pin RoundRect[T]Pad_750.000000x350.000000_87.833000_um_0.000000_0 3 -1200 800)
+      (pin RoundRect[T]Pad_750.000000x350.000000_87.833000_um_0.000000_0 4 -1200 0)
+      (pin RoundRect[T]Pad_750.000000x350.000000_87.833000_um_0.000000_0 5 -1200 -800)
+      (pin RoundRect[T]Pad_750.000000x350.000000_87.833000_um_0.000000_0 6 -1200 -1600)
+      (pin RoundRect[T]Pad_750.000000x350.000000_87.833000_um_0.000000_0 7 -1200 -2400)
+      (pin RoundRect[T]Pad_750.000000x350.000000_87.833000_um_0.000000_0 8 1200 -2400)
+      (pin RoundRect[T]Pad_750.000000x350.000000_87.833000_um_0.000000_0 9 1200 -1600)
+      (pin RoundRect[T]Pad_750.000000x350.000000_87.833000_um_0.000000_0 10 1200 -800)
+      (pin RoundRect[T]Pad_750.000000x350.000000_87.833000_um_0.000000_0 11 1200 0)
+      (pin RoundRect[T]Pad_750.000000x350.000000_87.833000_um_0.000000_0 12 1200 800)
+      (pin RoundRect[T]Pad_750.000000x350.000000_87.833000_um_0.000000_0 13 1200 1600)
+      (pin RoundRect[T]Pad_750.000000x350.000000_87.833000_um_0.000000_0 14 1200 2400)
+    )
+    (image "Package_DFN_QFN:VQFN-16-1EP_3x3mm_P0.5mm_EP1.8x1.8mm"
+      (outline (polygon signal 0  1125 1745  1745 1745  1745 1125  2125 1125  2125 -1125
+            1745 -1125  1745 -1745  1125 -1745  1125 -2125  -1125 -2125
+            -1125 -1745  -1745 -1745  -1745 -1125  -2125 -1125  -2125 1125
+            -1745 1125  -1745 1745  -1125 1745  -1125 2125  1125 2125))
+      (outline (path signal 120  1610 -1610  1135 -1610))
+      (outline (path signal 120  1610 -1135  1610 -1610))
+      (outline (path signal 120  1610 1610  1610 1135))
+      (outline (path signal 120  1135 1610  1610 1610))
+      (outline (path signal 120  -1135 -1610  -1610 -1610))
+      (outline (path signal 120  -1610 -1610  -1610 -1135))
+      (outline (path signal 120  -1610 1135  -1610 1610))
+      (outline (path signal 120  -1610 1610  -1135 1610))
+      (pin Rect[T]Pad_1800.000000x1800.000000_um 17 0 0)
+      (pin RoundRect[T]Pad_250.000000x775.000000_62.738000_um_0.000000_0 16 -750 1487.5)
+      (pin RoundRect[T]Pad_250.000000x775.000000_62.738000_um_0.000000_0 15 -250 1487.5)
+      (pin RoundRect[T]Pad_250.000000x775.000000_62.738000_um_0.000000_0 14 250 1487.5)
+      (pin RoundRect[T]Pad_250.000000x775.000000_62.738000_um_0.000000_0 13 750 1487.5)
+      (pin RoundRect[T]Pad_775.000000x250.000000_62.738000_um_0.000000_0 12 1487.5 750)
+      (pin RoundRect[T]Pad_775.000000x250.000000_62.738000_um_0.000000_0 11 1487.5 250)
+      (pin RoundRect[T]Pad_775.000000x250.000000_62.738000_um_0.000000_0 10 1487.5 -250)
+      (pin RoundRect[T]Pad_775.000000x250.000000_62.738000_um_0.000000_0 9 1487.5 -750)
+      (pin RoundRect[T]Pad_250.000000x775.000000_62.738000_um_0.000000_0 8 750 -1487.5)
+      (pin RoundRect[T]Pad_250.000000x775.000000_62.738000_um_0.000000_0 7 250 -1487.5)
+      (pin RoundRect[T]Pad_250.000000x775.000000_62.738000_um_0.000000_0 6 -250 -1487.5)
+      (pin RoundRect[T]Pad_250.000000x775.000000_62.738000_um_0.000000_0 5 -750 -1487.5)
+      (pin RoundRect[T]Pad_775.000000x250.000000_62.738000_um_0.000000_0 4 -1487.5 -750)
+      (pin RoundRect[T]Pad_775.000000x250.000000_62.738000_um_0.000000_0 3 -1487.5 -250)
+      (pin RoundRect[T]Pad_775.000000x250.000000_62.738000_um_0.000000_0 2 -1487.5 250)
+      (pin RoundRect[T]Pad_775.000000x250.000000_62.738000_um_0.000000_0 1 -1487.5 750)
+    )
+    (image Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical
+      (outline (polygon signal 0  1765 -6845  -1765 -6845  -1765 1765  1765 1765))
+      (outline (path signal 120  -1380 1380  0 1380))
+      (outline (path signal 120  -1380 0  -1380 1380))
+      (outline (path signal 120  -1380 -1270  -1380 -6460))
+      (outline (path signal 120  -1380 -1270  1380 -1270))
+      (outline (path signal 120  -1380 -6460  1380 -6460))
+      (outline (path signal 120  1380 -1270  1380 -6460))
+      (outline (path signal 100  -1270 635  -635 1270))
+      (outline (path signal 100  -1270 -6350  -1270 635))
+      (outline (path signal 100  -635 1270  1270 1270))
+      (outline (path signal 100  1270 1270  1270 -6350))
+      (outline (path signal 100  1270 -6350  -1270 -6350))
+      (pin Rect[A]Pad_1700.000000x1700.000000_um 1 0 0)
+      (pin Round[A]Pad_1700.000000_um 2 0 -2540)
+      (pin Round[A]Pad_1700.000000_um 3 0 -5080)
+    )
+    (image "Package_SO:TSSOP-14_4.4x5mm_P0.65mm"
+      (outline (polygon signal 0  2445 2395  3845 2395  3845 -2395  2445 -2395  2445 -2745
+            -2445 -2745  -2445 -2395  -3845 -2395  -3845 2395  -2445 2395
+            -2445 2745  2445 2745))
+      (outline (path signal 120  -2310 2610  2310 2610))
+      (outline (path signal 120  -2310 2410  -2310 2610))
+      (outline (path signal 120  -2310 -2610  -2310 -2410))
+      (outline (path signal 120  2310 2610  2310 2410))
+      (outline (path signal 120  2310 -2410  2310 -2610))
+      (outline (path signal 120  2310 -2610  -2310 -2610))
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 1 -2862.5 1950)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 2 -2862.5 1300)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 3 -2862.5 650)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 4 -2862.5 0)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 5 -2862.5 -650)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 6 -2862.5 -1300)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 7 -2862.5 -1950)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 8 2862.5 -1950)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 9 2862.5 -1300)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 10 2862.5 -650)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 11 2862.5 0)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 12 2862.5 650)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 13 2862.5 1300)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 14 2862.5 1950)
+    )
+    (image LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm
+      (outline (polygon signal 0  3445 -2745  -3445 -2745  -3445 2745  3445 2745))
+      (outline (path signal 100  2000 0  1980.54 -278.346  1922.52 -551.275  1827.09 -813.473
+            1696.1 -1059.84  1532.09 -1285.58  1338.26 -1486.29  1118.39 -1658.08
+            876.742 -1797.59  618.034 -1902.11  347.296 -1969.62  69.799 -1998.78
+            -209.057 -1989.04  -483.844 -1940.59  -749.213 -1854.37  -1000 -1732.05
+            -1231.32 -1576.02  -1438.68 -1389.32  -1618.03 -1175.57  -1765.89 -938.943
+            -1879.38 -684.04  -1956.3 -415.823  -1995.13 -139.513  -1995.13 139.513
+            -1956.3 415.823  -1879.38 684.04  -1765.89 938.943  -1618.03 1175.57
+            -1438.68 1389.32  -1231.32 1576.02  -1000 1732.05  -749.213 1854.37
+            -483.844 1940.59  -209.057 1989.04  69.799 1998.78  347.296 1969.62
+            618.034 1902.11  876.742 1797.59  1118.39 1658.08  1338.26 1486.29
+            1532.09 1285.58  1696.1 1059.84  1827.09 813.473  1922.52 551.275
+            1980.54 278.346  2000 0))
+      (outline (path signal 100  2500 -2500  2500 2500))
+      (outline (path signal 100  2500 -1500  1500 -2500))
+      (outline (path signal 100  2500 2500  -2500 2500))
+      (outline (path signal 100  -2500 -2500  2500 -2500))
+      (outline (path signal 100  -2500 2500  -2500 -2500))
+      (outline (path signal 120  3500 -2300  3500 2750))
+      (outline (path signal 120  3050 -2750  3500 -2300))
+      (outline (path signal 120  2700 -900  2700 900))
+      (outline (path signal 120  -2700 -900  -2700 900))
+      (outline (path signal 120  -3500 -2750  3050 -2750))
+      (outline (path signal 120  -3500 2750  3500 2750))
+      (outline (path signal 120  -3500 2750  -3500 -2750))
+      (pin RoundRect[T]Pad_1500.000000x900.000000_90.342000_um_0.000000_0 4 2450 1650)
+      (pin RoundRect[T]Pad_1500.000000x900.000000_90.342000_um_0.000000_0 3 2450 -1650)
+      (pin RoundRect[T]Pad_1500.000000x900.000000_90.342000_um_0.000000_0 2 -2450 -1650)
+      (pin RoundRect[T]Pad_1500.000000x900.000000_90.342000_um_0.000000_0 1 -2450 1650)
+    )
+    (image Resistor_SMD:R_Array_Convex_2x0402
+      (outline (polygon signal 0  995 -945  -995 -945  -995 945  995 945))
+      (outline (path signal 120  250 780  -250 780))
+      (outline (path signal 120  250 -780  -250 -780))
+      (outline (path signal 100  -500 700  -500 -700))
+      (outline (path signal 100  -500 -700  500 -700))
+      (outline (path signal 100  500 700  -500 700))
+      (outline (path signal 100  500 -700  500 700))
+      (pin Rect[T]Pad_500.000000x400.000000_um 1 -500 350)
+      (pin Rect[T]Pad_500.000000x400.000000_um 2 -500 -350)
+      (pin Rect[T]Pad_500.000000x400.000000_um 3 500 -350)
+      (pin Rect[T]Pad_500.000000x400.000000_um 4 500 350)
+    )
+    (image "Package_SO:TSSOP-24_4.4x7.8mm_P0.65mm"
+      (outline (polygon signal 0  2445 4025  3845 4025  3845 -4025  2445 -4025  2445 -4145
+            -2445 -4145  -2445 -4025  -3845 -4025  -3845 4025  -2445 4025
+            -2445 4145  2445 4145))
+      (outline (path signal 120  -2310 4035  2310 4035))
+      (outline (path signal 120  2310 -4035  -2310 -4035))
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 1 -2862.5 3575)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 2 -2862.5 2925)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 3 -2862.5 2275)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 4 -2862.5 1625)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 5 -2862.5 975)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 6 -2862.5 325)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 7 -2862.5 -325)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 8 -2862.5 -975)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 9 -2862.5 -1625)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 10 -2862.5 -2275)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 11 -2862.5 -2925)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 12 -2862.5 -3575)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 13 2862.5 -3575)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 14 2862.5 -2925)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 15 2862.5 -2275)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 16 2862.5 -1625)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 17 2862.5 -975)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 18 2862.5 -325)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 19 2862.5 325)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 20 2862.5 975)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 21 2862.5 1625)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 22 2862.5 2275)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 23 2862.5 2925)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 24 2862.5 3575)
+    )
+    (image "Package_TO_SOT_SMD:SOT-223-3_TabPin2"
+      (outline (polygon signal 0  4395 -3595  -4395 -3595  -4395 3595  4395 3595))
+      (outline (path signal 120  -1850 3410  1910 3410))
+      (outline (path signal 120  -1850 -3410  1910 -3410))
+      (outline (path signal 120  1910 3410  1910 2150))
+      (outline (path signal 120  1910 -3410  1910 -2150))
+      (outline (path signal 100  -1850 2350  -1850 -3350))
+      (outline (path signal 100  -1850 2350  -850 3350))
+      (outline (path signal 100  -1850 -3350  1850 -3350))
+      (outline (path signal 100  -850 3350  1850 3350))
+      (outline (path signal 100  1850 3350  1850 -3350))
+      (pin RoundRect[T]Pad_2000.000000x1500.000000_376.427000_um_0.000000_0 1 -3150 2300)
+      (pin RoundRect[T]Pad_2000.000000x1500.000000_376.427000_um_0.000000_0 2 -3150 0)
+      (pin RoundRect[T]Pad_2000.000000x3800.000000_501.903000_um_0.000000_0 2@1 3150 0)
+      (pin RoundRect[T]Pad_2000.000000x1500.000000_376.427000_um_0.000000_0 3 -3150 -2300)
+    )
+    (image Inductor_SMD:L_0402_1005Metric
+      (outline (polygon signal 0  925 -465  -925 -465  -925 465  925 465))
+      (outline (path signal 100  -500 250  500 250  500 -250  -500 -250  -500 250))
+      (pin RoundRect[T]Pad_590.000000x640.000000_148.061000_um_0.000000_0 1 -485 0)
+      (pin RoundRect[T]Pad_590.000000x640.000000_148.061000_um_0.000000_0 2 485 0)
+    )
+    (image "RF_Module:ESP32-S3-WROOM-1"
+      (outline (polygon signal 0  23995 6755  9745 6755  9745 -13445  -9745 -13445  -9745 6755
+            -23995 6755  -23995 27745  23995 27745))
+      (outline (path signal 100  9000 -12750  9000 12750))
+      (outline (path signal 100  -9000 -12750  9000 -12750))
+      (outline (path signal 100  -9000 -12750  -9000 12750))
+      (outline (path signal 100  -9000 6750  9000 6750))
+      (outline (path signal 100  -9000 12750  9000 12750))
+      (outline (path signal 120  9200 -12950  9200 -11950))
+      (outline (path signal 120  9200 -12950  7700 -12950))
+      (outline (path signal 120  9200 12900  9200 6700))
+      (outline (path signal 120  -9200 -12950  -7700 -12950))
+      (outline (path signal 120  -9200 -11950  -9200 -12950))
+      (outline (path signal 120  -9200 12900  9200 12900))
+      (outline (path signal 120  -9200 12900  -9200 6700))
+      (pin Round[A]Pad_600.000000_um 41 -100 -3160)
+      (pin Round[A]Pad_600.000000_um 41@1 -100 -1760)
+      (pin Round[A]Pad_600.000000_um 41@2 -800 -3860)
+      (pin Round[A]Pad_600.000000_um 41@3 -800 -2460)
+      (pin Round[A]Pad_600.000000_um 41@4 -800 -1060)
+      (pin Round[A]Pad_600.000000_um 41@5 -1500 -3160)
+      (pin Rect[T]Pad_3900.000000x3900.000000_um (rotate 270) 41@6 -1500 -2460)
+      (pin Round[A]Pad_600.000000_um 41@7 -1500 -1760)
+      (pin Round[A]Pad_600.000000_um 41@8 -2200 -3860)
+      (pin Round[A]Pad_600.000000_um 41@9 -2200 -2460)
+      (pin Round[A]Pad_600.000000_um 41@10 -2200 -1060)
+      (pin Round[A]Pad_600.000000_um 41@11 -2900 -3160)
+      (pin Round[A]Pad_600.000000_um (rotate 90) 41@12 -2900 -1760)
+      (pin Rect[T]Pad_1500.000000x900.000000_um 40 8750 5260)
+      (pin Rect[T]Pad_1500.000000x900.000000_um 39 8750 3990)
+      (pin Rect[T]Pad_1500.000000x900.000000_um 38 8750 2720)
+      (pin Rect[T]Pad_1500.000000x900.000000_um 37 8750 1450)
+      (pin Rect[T]Pad_1500.000000x900.000000_um 36 8750 180)
+      (pin Rect[T]Pad_1500.000000x900.000000_um 35 8750 -1090)
+      (pin Rect[T]Pad_1500.000000x900.000000_um 34 8750 -2360)
+      (pin Rect[T]Pad_1500.000000x900.000000_um 33 8750 -3630)
+      (pin Rect[T]Pad_1500.000000x900.000000_um 32 8750 -4900)
+      (pin Rect[T]Pad_1500.000000x900.000000_um 31 8750 -6170)
+      (pin Rect[T]Pad_1500.000000x900.000000_um 30 8750 -7440)
+      (pin Rect[T]Pad_1500.000000x900.000000_um 29 8750 -8710)
+      (pin Rect[T]Pad_1500.000000x900.000000_um 28 8750 -9980)
+      (pin Rect[T]Pad_1500.000000x900.000000_um 27 8750 -11250)
+      (pin Rect[T]Pad_1500.000000x900.000000_um (rotate 270) 26 6985 -12500)
+      (pin Rect[T]Pad_1500.000000x900.000000_um (rotate 270) 25 5715 -12500)
+      (pin Rect[T]Pad_1500.000000x900.000000_um (rotate 270) 24 4445 -12500)
+      (pin Rect[T]Pad_1500.000000x900.000000_um (rotate 270) 23 3175 -12500)
+      (pin Rect[T]Pad_1500.000000x900.000000_um (rotate 270) 22 1905 -12500)
+      (pin Rect[T]Pad_1500.000000x900.000000_um (rotate 270) 21 635 -12500)
+      (pin Rect[T]Pad_1500.000000x900.000000_um (rotate 270) 20 -635 -12500)
+      (pin Rect[T]Pad_1500.000000x900.000000_um (rotate 270) 19 -1905 -12500)
+      (pin Rect[T]Pad_1500.000000x900.000000_um (rotate 270) 18 -3175 -12500)
+      (pin Rect[T]Pad_1500.000000x900.000000_um (rotate 270) 17 -4445 -12500)
+      (pin Rect[T]Pad_1500.000000x900.000000_um (rotate 270) 16 -5715 -12500)
+      (pin Rect[T]Pad_1500.000000x900.000000_um (rotate 270) 15 -6985 -12500)
+      (pin Rect[T]Pad_1500.000000x900.000000_um (rotate 180) 14 -8750 -11250)
+      (pin Rect[T]Pad_1500.000000x900.000000_um 13 -8750 -9980)
+      (pin Rect[T]Pad_1500.000000x900.000000_um 12 -8750 -8710)
+      (pin Rect[T]Pad_1500.000000x900.000000_um 11 -8750 -7440)
+      (pin Rect[T]Pad_1500.000000x900.000000_um 10 -8750 -6170)
+      (pin Rect[T]Pad_1500.000000x900.000000_um 9 -8750 -4900)
+      (pin Rect[T]Pad_1500.000000x900.000000_um 8 -8750 -3630)
+      (pin Rect[T]Pad_1500.000000x900.000000_um 7 -8750 -2360)
+      (pin Rect[T]Pad_1500.000000x900.000000_um 6 -8750 -1090)
+      (pin Rect[T]Pad_1500.000000x900.000000_um 5 -8750 180)
+      (pin Rect[T]Pad_1500.000000x900.000000_um 4 -8750 1450)
+      (pin Rect[T]Pad_1500.000000x900.000000_um 3 -8750 2720)
+      (pin Rect[T]Pad_1500.000000x900.000000_um 2 -8750 3990)
+      (pin Rect[T]Pad_1500.000000x900.000000_um 1 -8750 5260)
+      (keepout "" (polygon Digital_Signals 0  -24000 6750  24000 6750  24000 27750  -24000 27750
+            -24000 6750))
+      (keepout "" (polygon GND_Plane 0  -24000 6750  24000 6750  24000 27750  -24000 27750
+            -24000 6750))
+      (keepout "" (polygon Analog_Signals 0  -24000 6750  24000 6750  24000 27750  -24000 27750
+            -24000 6750))
+      (keepout "" (polygon Power_Planes 0  -24000 6750  24000 6750  24000 27750  -24000 27750
+            -24000 6750))
+      (keepout "" (polygon HighSpeed 0  -24000 6750  24000 6750  24000 27750  -24000 27750
+            -24000 6750))
+      (keepout "" (polygon Bottom_GND 0  -24000 6750  24000 6750  24000 27750  -24000 27750
+            -24000 6750))
+    )
+    (image "Package_TO_SOT_THT:TO-39-4"
+      (outline (polygon signal 0  3105.57 4915.06  3543.42 4844.67  3973.2 4735.35  4391.48 4587.99
+            4794.86 4403.78  5180.14 4184.17  5544.21 3930.95  5884.14 3646.14
+            6197.2 3332.05  6480.88 2991.18  6732.89 2626.28  6951.22 2240.27
+            7134.1 1836.27  7280.07 1417.52  7387.97 987.366  7456.9 549.295
+            7486.34 106.804  7476.03 -336.555  7426.06 -777.189  7336.84 -1211.6
+            7209.08 -1636.26  7043.8 -2047.79  6842.34 -2442.84  6606.32 -2818.28
+            6337.61 -3171.09  6038.4 -3498.4  5711.09 -3797.61  5358.28 -4066.32
+            4982.84 -4302.34  4587.79 -4503.8  4176.26 -4669.08  3751.6 -4796.84
+            3317.19 -4886.06  2876.55 -4936.03  2433.2 -4946.34  1990.7 -4916.9
+            1552.63 -4847.97  1122.48 -4740.07  703.733 -4594.1  299.729 -4411.22
+            -86.281 -4192.89  -451.178 -3940.88  -792.045 -3657.2  -1106.14 -3344.14
+            -1390.95 -3004.21  -1644.17 -2640.14  -1863.78 -2254.86  -2047.99 -1851.47
+            -2195.35 -1433.2  -2304.67 -1003.42  -2375.06 -565.567  -2405.96 -123.178
+            -2397.12 320.201  -2348.61 761.01  -2260.83 1195.7  -2134.47 1620.79
+            -1970.56 2032.85  -1770.41 2428.59  -1535.61 2804.83  -1401.25 2986.65
+            -2224.43 3809.83  -1269.83 4764.43  -446.653 3941.25  -264.831 4075.61
+            111.411 4310.41  507.148 4510.56  919.207 4674.47  1344.3 4800.83
+            1778.99 4888.61  2219.8 4937.12  2663.18 4945.96))
+      (outline (path signal 120  -2034.69 3811.02  -1221.52 2997.84))
+      (outline (path signal 120  -1271.02 4574.69  -2034.69 3811.02))
+      (outline (path signal 120  -457.844 3761.52  -1271.02 4574.69))
+      (outline (polygon signal 0  -420.449 3714.6  -455.17 3701.58  -490.913 3711.46  -514.024 3740.45
+            -515.677 3777.5  -495.239 3808.44  -144.353 4063.39  227.826 4286.11
+            618.344 4474.83  1024.11 4628.06  1441.89 4744.58  1868.38 4823.47
+            2300.21 4864.09  2733.93 4866.14  3166.12 4829.58  3593.34 4754.72
+            4012.2 4642.15  4419.39 4492.75  4811.67 4307.72  5185.93 4088.51
+            5539.2 3836.88  5868.69 3554.82  6171.77 3244.56  6446.05 2908.56
+            6689.34 2549.49  6899.72 2170.2  7075.52 1773.7  7215.34 1363.12
+            7318.08 941.738  7382.92 512.883  7409.34 79.96  7397.15 -353.598
+            7346.42 -784.351  7257.57 -1208.88  7131.31 -1623.83  6968.62 -2025.89
+            6770.81 -2411.88  6539.44 -2778.74  6276.34 -3123.57  5983.61 -3443.61
+            5663.56 -3736.34  5318.74 -3999.44  4951.88 -4230.81  4565.89 -4428.62
+            4163.82 -4591.31  3748.88 -4717.57  3324.35 -4806.42  2893.6 -4857.15
+            2460.04 -4869.34  2027.12 -4842.92  1598.26 -4778.08  1176.88 -4675.34
+            766.304 -4535.52  369.799 -4359.72  -9.491 -4149.34  -368.559 -3906.05
+            -704.557 -3631.77  -1014.82 -3328.69  -1296.88 -2999.2  -1548.52 -2645.93
+            -1767.72 -2271.67  -1952.75 -1879.39  -2102.15 -1472.2  -2214.72 -1053.34
+            -2289.58 -626.117  -2326.14 -193.931  -2324.09 239.793  -2283.47 671.615
+            -2204.58 1098.11  -2088.06 1515.89  -1934.83 1921.66  -1746.11 2312.17
+            -1523.39 2684.35  -1268.44 3035.24  -1237.5 3055.68  -1200.45 3054.02
+            -1171.46 3030.91  -1161.58 2995.17  -1174.6 2960.45  -1308.59 2792.44
+            -1545.02 2433.51  -1748.07 2054.7  -1916.09 1659.11  -2047.69 1249.96
+            -2141.82 830.595  -2197.7 404.445  -2214.86 -25.009  -2193.18 -454.258
+            -2132.83 -879.797  -2034.29 -1298.15  -1898.39 -1705.89  -1726.22 -2099.7
+            -1519.19 -2476.35  -1279 -2832.77  -1007.61 -3166.04  -707.232 -3473.45
+            -380.324 -3752.47  -29.555 -4000.84  342.207 -4216.52  731.927 -4397.75
+            1136.42 -4543.05  1552.38 -4651.23  1976.41 -4721.41  2405.04 -4753.01
+            2834.78 -4745.78  3262.1 -4699.78  3683.53 -4615.37  4095.62 -4493.26
+            4494.99 -4334.44  4878.39 -4140.2  5242.69 -3912.14  5584.9 -3652.11
+            5902.24 -3362.24  6192.11 -3044.91  6452.14 -2702.69  6680.2 -2338.39
+            6874.44 -1954.99  7033.26 -1555.62  7155.37 -1143.53  7239.78 -722.104
+            7285.78 -294.776  7293.01 134.96  7261.41 563.593  7191.23 987.622
+            7083.05 1403.58  6937.75 1808.07  6756.52 2197.79  6540.84 2569.55
+            6292.47 2920.32  6013.45 3247.23  5706.04 3547.61  5372.77 3819
+            5016.35 4059.19  4639.7 4266.22  4245.89 4438.39  3838.15 4574.29
+            3419.8 4672.83  2994.26 4733.18  2565.01 4754.86  2135.55 4737.7
+            1709.4 4681.82  1290.04 4587.69  880.891 4456.09  485.296 4288.07
+            106.488 4085.02  -252.437 3848.59  -420.449 3714.6))
+      (outline (path signal 100  -1879.62 3811.51  -1073.52 3005.41))
+      (outline (path signal 100  -1271.51 4419.62  -1879.62 3811.51))
+      (outline (path signal 100  -465.408 3613.52  -1271.51 4419.62))
+      (outline (polygon signal 0  -433.436 3575.08  -462.137 3563.63  -492.088 3571.23
+            -511.848 3594.99  -513.87 3625.83  -497.38 3651.96  -152.77 3912.99
+            214.144 4141.61  600.325 4335.92  1002.57 4494.31  1417.56 4615.48
+            1841.84 4698.41  2271.9 4742.43  2704.18 4747.16  3135.11 4712.57
+            3561.1 4638.95  3978.64 4526.9  4384.26 4377.35  4774.6 4191.55
+            5146.43 3971.02  5496.68 3717.6  5822.43 3433.39  6120.99 3120.74
+            6389.89 2782.23  6626.9 2420.68  6830.06 2039.08  6997.69 1640.59
+            7128.38 1228.51  7221.07 806.257  7274.99 377.323  7289.69 -54.737
+            7265.04 -486.344  7201.25 -913.922  7098.85 -1333.93  6958.69 -1742.89
+            6781.93 -2137.41  6570.03 -2514.23  6324.75 -2870.22  6048.12 -3202.43
+            5742.43 -3508.12  5410.22 -3784.75  5054.23 -4030.03  4677.41 -4241.93
+            4282.89 -4418.69  3873.93 -4558.85  3453.92 -4661.25  3026.34 -4725.04
+            2594.74 -4749.69  2162.68 -4734.99  1733.74 -4681.07  1311.49 -4588.38
+            899.406 -4457.69  500.916 -4290.06  119.316 -4086.91  -242.233 -3849.89
+            -580.736 -3580.99  -893.389 -3282.43  -1177.6 -2956.68  -1431.02 -2606.43
+            -1651.55 -2234.6  -1837.35 -1844.26  -1986.9 -1438.64  -2098.95 -1021.1
+            -2172.57 -595.106  -2207.16 -164.182  -2202.43 268.102  -2158.41 698.165
+            -2075.48 1122.44  -1954.31 1537.43  -1795.92 1939.67  -1601.61 2325.86
+            -1372.99 2692.77  -1111.96 3037.38  -1085.83 3053.87  -1054.99 3051.85
+            -1031.23 3032.09  -1023.63 3002.14  -1035.08 2973.44  -1170.53 2810.58
+            -1410.7 2461.58  -1618.14 2092.2  -1791.13 1705.48  -1928.26 1304.64
+            -2028.37 892.99  -2090.63 473.944  -2114.55 50.971  -2099.9 -372.423
+            -2046.83 -792.733  -1955.75 -1206.48  -1827.44 -1610.23  -1662.96 -2000.64
+            -1463.65 -2374.48  -1231.19 -2728.65  -967.486 -3060.22  -674.73 -3366.44
+            -355.345 -3644.77  -11.977 -3892.92  352.53 -4108.82  735.156 -4290.68
+            1132.73 -4437  1541.97 -4546.57  1959.47 -4618.48  2381.78 -4652.13
+            2805.39 -4647.25  3226.82 -4603.88  3642.55 -4522.36  4049.15 -4403.39
+            4443.25 -4247.95  4821.58 -4057.31  5181.01 -3833.07  5518.57 -3577.08
+            5831.46 -3291.46  6117.08 -2978.57  6373.07 -2641.01  6597.31 -2281.58
+            6787.95 -1903.25  6943.39 -1509.15  7062.36 -1102.55  7143.88 -686.816
+            7187.25 -265.394  7192.13 158.225  7158.48 580.534  7086.57 998.034
+            6977 1407.27  6830.68 1804.84  6648.82 2187.47  6432.92 2551.98
+            6184.77 2895.34  5906.44 3214.73  5600.22 3507.49  5268.65 3771.19
+            4914.48 4003.66  4540.64 4202.96  4150.23 4367.44  3746.48 4495.75
+            3332.73 4586.82  2912.42 4639.9  2489.03 4654.55  2066.06 4630.63
+            1647.01 4568.36  1235.36 4468.26  834.518 4331.13  447.802 4158.14
+            78.416 3950.7  -270.579 3710.53  -433.436 3575.08))
+      (outline (path signal 100  6790 0  6770.76 -403.988  6713.2 -804.318  6617.85 -1197.36
+            6485.56 -1579.57  6317.55 -1947.46  6115.33 -2297.72  5880.73 -2627.18
+            5615.87 -2932.84  5323.16 -3211.94  5005.24 -3461.95  4665 -3680.61
+            4305.51 -3865.94  3930.04 -4016.25  3541.97 -4130.2  3144.84 -4206.74
+            2742.22 -4245.19  2337.78 -4245.19  1935.16 -4206.74  1538.03 -4130.2
+            1149.96 -4016.25  774.486 -3865.94  415 -3680.61  74.758 -3461.95
+            -243.158 -3211.94  -535.87 -2932.84  -800.726 -2627.18  -1035.33 -2297.72
+            -1237.55 -1947.46  -1405.56 -1579.57  -1537.85 -1197.36  -1633.2 -804.318
+            -1690.76 -403.988  -1710 0  -1690.76 403.988  -1633.2 804.318
+            -1537.85 1197.36  -1405.56 1579.57  -1237.55 1947.46  -1035.33 2297.72
+            -800.726 2627.18  -535.87 2932.84  -243.158 3211.94  74.758 3461.95
+            415 3680.61  774.486 3865.94  1149.96 4016.25  1538.03 4130.2
+            1935.16 4206.74  2337.78 4245.19  2742.22 4245.19  3144.84 4206.74
+            3541.97 4130.2  3930.04 4016.25  4305.51 3865.94  4665 3680.61
+            5005.24 3461.95  5323.16 3211.94  5615.87 2932.84  5880.73 2627.18
+            6115.33 2297.72  6317.55 1947.46  6485.56 1579.57  6617.85 1197.36
+            6713.2 804.318  6770.76 403.988  6790 0))
+      (pin Oval[A]Pad_1600.000000x1200.000000_um 1 0 0)
+      (pin Round[A]Pad_1200.000000_um 2 2540 -2540)
+      (pin Round[A]Pad_1200.000000_um 3 5080 0)
+      (pin Round[A]Pad_1200.000000_um 4 2540 2540)
+    )
+    (image LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm::1
+      (outline (polygon signal 0  3445 -2745  -3445 -2745  -3445 2745  3445 2745))
+      (outline (path signal 120  -3500 2750  -3500 -2750))
+      (outline (path signal 120  -3500 2750  3500 2750))
+      (outline (path signal 120  -3500 -2750  3050 -2750))
+      (outline (path signal 120  -2700 -900  -2700 900))
+      (outline (path signal 120  2700 -900  2700 900))
+      (outline (path signal 120  3050 -2750  3500 -2300))
+      (outline (path signal 120  3500 -2300  3500 2750))
+      (outline (path signal 100  -2500 2500  -2500 -2500))
+      (outline (path signal 100  -2500 -2500  2500 -2500))
+      (outline (path signal 100  2500 2500  -2500 2500))
+      (outline (path signal 100  2500 -1500  1500 -2500))
+      (outline (path signal 100  2500 -2500  2500 2500))
+      (outline (path signal 100  2000 0  1980.54 -278.346  1922.52 -551.275  1827.09 -813.473
+            1696.1 -1059.84  1532.09 -1285.58  1338.26 -1486.29  1118.39 -1658.08
+            876.742 -1797.59  618.034 -1902.11  347.296 -1969.62  69.799 -1998.78
+            -209.057 -1989.04  -483.844 -1940.59  -749.213 -1854.37  -1000 -1732.05
+            -1231.32 -1576.02  -1438.68 -1389.32  -1618.03 -1175.57  -1765.89 -938.943
+            -1879.38 -684.04  -1956.3 -415.823  -1995.13 -139.513  -1995.13 139.513
+            -1956.3 415.823  -1879.38 684.04  -1765.89 938.943  -1618.03 1175.57
+            -1438.68 1389.32  -1231.32 1576.02  -1000 1732.05  -749.213 1854.37
+            -483.844 1940.59  -209.057 1989.04  69.799 1998.78  347.296 1969.62
+            618.034 1902.11  876.742 1797.59  1118.39 1658.08  1338.26 1486.29
+            1532.09 1285.58  1696.1 1059.84  1827.09 813.473  1922.52 551.275
+            1980.54 278.346  2000 0))
+      (pin RoundRect[T]Pad_1500.000000x900.000000_90.342000_um_0.000000_0 1 -2450 1650)
+      (pin RoundRect[T]Pad_1500.000000x900.000000_90.342000_um_0.000000_0 2 -2450 -1650)
+      (pin RoundRect[T]Pad_1500.000000x900.000000_90.342000_um_0.000000_0 3 2450 -1650)
+      (pin RoundRect[T]Pad_1500.000000x900.000000_90.342000_um_0.000000_0 4 2450 1650)
+    )
+    (image Buzzer_Beeper:Buzzer_12x9.5RM7.6
+      (outline (polygon signal 0  4420.08 6216.62  4912.04 6147.7  5396.96 6039.91  5871.78 5893.94
+            6333.5 5710.71  6779.21 5491.37  7206.09 5237.31  7611.43 4950.14
+            7992.66 4631.68  8347.4 4283.93  8673.38 3909.09  8968.56 3509.54
+            9231.05 3087.8  9459.21 2646.55  9651.59 2188.55  9806.97 1716.73
+            9924.38 1234.05  10003.1 743.559  10042.5 248.36  10045 0  10042.5 -248.359
+            10003.1 -743.558  9924.38 -1234.05  9806.97 -1716.72  9651.59 -2188.55
+            9459.21 -2646.55  9231.05 -3087.8  8968.56 -3509.54  8673.38 -3909.09
+            8347.4 -4283.92  7992.66 -4631.68  7611.43 -4950.14  7206.09 -5237.31
+            6779.21 -5491.37  6333.5 -5710.71  5871.78 -5893.94  5396.96 -6039.91
+            4912.04 -6147.7  4420.08 -6216.62  3924.21 -6246.23  3427.55 -6236.36
+            2933.26 -6187.05  2444.43 -6098.63  1964.18 -5971.65  1495.53 -5806.92
+            1041.46 -5605.47  604.828 -5368.59  188.384 -5097.75  -205.215 -4794.7
+            -573.489 -4461.33  -914.119 -4099.75  -1224.94 -3712.26  -1504 -3301.28
+            -1749.52 -2869.44  -1959.95 -2419.47  -2133.97 -1954.19  -2270.48 -1476.54
+            -2368.6 -989.585  -2427.72 -496.367  -2447.47 0  -2427.72 496.368
+            -2368.6 989.586  -2270.48 1476.54  -2133.97 1954.19  -1959.95 2419.47
+            -1749.52 2869.44  -1504 3301.28  -1224.94 3712.26  -914.119 4099.75
+            -573.489 4461.33  -205.215 4794.7  188.384 5097.75  604.828 5368.59
+            1041.46 5605.47  1495.53 5806.92  1964.18 5971.65  2444.43 6098.63
+            2933.26 6187.05  3427.55 6236.36  3924.21 6246.23))
+      (outline (path signal 120  9900 0  9880.72 -484.646  9822.99 -966.228  9727.18 -1441.7
+            9593.9 -1908.06  9423.99 -2362.35  9218.52 -2801.71  8978.8 -3223.36
+            8706.33 -3624.63  8402.84 -4002.98  8070.26 -4356.02  7710.67 -4681.52
+            7326.36 -4977.43  6919.76 -5241.86  6493.43 -5473.16  6050.07 -5669.85
+            5592.49 -5830.69  5123.57 -5954.68  4646.29 -6041.01  4163.65 -6089.15
+            3678.72 -6098.79  3194.55 -6069.88  2714.21 -6002.59  2240.74 -5897.35
+            1777.12 -5754.82  1326.3 -5575.91  891.108 -5361.75  474.312 -5113.69
+            78.542 -4833.3  -293.7 -4522.35  -640.061 -4182.81  -958.35 -3816.82
+            -1246.56 -3426.7  -1502.85 -3014.92  -1725.63 -2584.08  -1913.46 -2136.9
+            -2065.18 -1676.2  -2179.81 -1204.92  -2256.64 -726.011  -2295.18 -242.515
+            -2295.18 242.515  -2256.64 726.011  -2179.81 1204.92  -2065.18 1676.2
+            -1913.46 2136.9  -1725.63 2584.08  -1502.85 3014.92  -1246.56 3426.7
+            -958.35 3816.82  -640.061 4182.81  -293.7 4522.35  78.542 4833.3
+            474.312 5113.69  891.108 5361.75  1326.3 5575.91  1777.12 5754.82
+            2240.74 5897.35  2714.21 6002.59  3194.55 6069.88  3678.72 6098.79
+            4163.65 6089.15  4646.29 6041.01  5123.57 5954.68  5592.49 5830.69
+            6050.07 5669.85  6493.43 5473.16  6919.76 5241.86  7326.36 4977.43
+            7710.67 4681.52  8070.26 4356.02  8402.84 4002.98  8706.33 3624.63
+            8978.8 3223.36  9218.52 2801.71  9423.99 2362.35  9593.9 1908.06
+            9727.18 1441.7  9822.99 966.228  9880.72 484.646  9900 0))
+      (outline (path signal 100  4800 0  4780.78 -195.09  4723.88 -382.683  4631.47 -555.57
+            4507.11 -707.107  4355.57 -831.47  4182.68 -923.88  3995.09 -980.785
+            3800 -1000  3604.91 -980.785  3417.32 -923.88  3244.43 -831.47
+            3092.89 -707.107  2968.53 -555.57  2876.12 -382.683  2819.22 -195.09
+            2800 0  2819.22 195.09  2876.12 382.683  2968.53 555.57  3092.89 707.107
+            3244.43 831.47  3417.32 923.88  3604.91 980.785  3800 1000  3995.09 980.785
+            4182.68 923.88  4355.57 831.47  4507.11 707.107  4631.47 555.57
+            4723.88 382.683  4780.78 195.09  4800 0))
+      (outline (path signal 100  9800 0  9780.54 -482.799  9722.3 -962.468  9625.65 -1435.89
+            9491.22 -1900.01  9319.88 -2351.8  9112.74 -2788.34  8871.14 -3206.8
+            8596.66 -3604.45  8291.06 -3978.74  7956.35 -4327.22  7594.67 -4647.63
+            7208.39 -4937.9  6800 -5196.15  6372.15 -5420.7  5927.63 -5610.1
+            5469.31 -5763.11  5000.15 -5878.74  4523.22 -5956.25  4041.6 -5995.13
+            3558.4 -5995.13  3076.78 -5956.25  2599.85 -5878.74  2130.7 -5763.11
+            1672.37 -5610.1  1227.85 -5420.7  800 -5196.15  391.612 -4937.9
+            5.328 -4647.63  -356.346 -4327.22  -691.064 -3978.74  -996.657 -3604.45
+            -1271.14 -3206.8  -1512.74 -2788.34  -1719.88 -2351.8  -1891.22 -1900.01
+            -2025.65 -1435.89  -2122.3 -962.468  -2180.54 -482.799  -2200 0
+            -2180.54 482.799  -2122.3 962.468  -2025.65 1435.89  -1891.22 1900.01
+            -1719.88 2351.8  -1512.74 2788.34  -1271.14 3206.8  -996.657 3604.45
+            -691.064 3978.74  -356.346 4327.22  5.328 4647.63  391.612 4937.9
+            800 5196.15  1227.85 5420.7  1672.37 5610.1  2130.7 5763.11
+            2599.85 5878.74  3076.78 5956.25  3558.4 5995.13  4041.6 5995.13
+            4523.22 5956.25  5000.15 5878.74  5469.31 5763.11  5927.63 5610.1
+            6372.15 5420.7  6800 5196.15  7208.39 4937.9  7594.67 4647.63
+            7956.35 4327.22  8291.06 3978.74  8596.66 3604.45  8871.14 3206.8
+            9112.74 2788.34  9319.88 2351.8  9491.22 1900.01  9625.65 1435.89
+            9722.3 962.468  9780.54 482.799  9800 0))
+      (pin Rect[A]Pad_2000.000000x2000.000000_um 1 0 0)
+      (pin Round[A]Pad_2000.000000_um 2 7600 0)
+    )
+    (image "Package_SO:TSSOP-28_4.4x9.7mm_P0.65mm"
+      (outline (polygon signal 0  2445 4675  3845 4675  3845 -4675  2445 -4675  2445 -5095
+            -2445 -5095  -2445 -4675  -3845 -4675  -3845 4675  -2445 4675
+            -2445 5095  2445 5095))
+      (outline (path signal 120  -2310 4960  2310 4960))
+      (outline (path signal 120  -2310 4685  -2310 4960))
+      (outline (path signal 120  -2310 -4960  -2310 -4685))
+      (outline (path signal 120  2310 4960  2310 4685))
+      (outline (path signal 120  2310 -4685  2310 -4960))
+      (outline (path signal 120  2310 -4960  -2310 -4960))
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 1 -2862.5 4225)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 2 -2862.5 3575)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 3 -2862.5 2925)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 4 -2862.5 2275)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 5 -2862.5 1625)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 6 -2862.5 975)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 7 -2862.5 325)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 8 -2862.5 -325)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 9 -2862.5 -975)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 10 -2862.5 -1625)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 11 -2862.5 -2275)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 12 -2862.5 -2925)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 13 -2862.5 -3575)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 14 -2862.5 -4225)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 15 2862.5 -4225)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 16 2862.5 -3575)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 17 2862.5 -2925)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 18 2862.5 -2275)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 19 2862.5 -1625)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 20 2862.5 -975)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 21 2862.5 -325)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 22 2862.5 325)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 23 2862.5 975)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 24 2862.5 1625)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 25 2862.5 2275)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 26 2862.5 2925)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 27 2862.5 3575)
+      (pin RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0 28 2862.5 4225)
+    )
+    (padstack Round[A]Pad_1200.000000_um
+      (shape (circle Digital_Signals 1200))
+      (shape (circle GND_Plane 1200))
+      (shape (circle Analog_Signals 1200))
+      (shape (circle Power_Planes 1200))
+      (shape (circle HighSpeed 1200))
+      (shape (circle Bottom_GND 1200))
+      (attach off)
+    )
+    (padstack Round[A]Pad_1700.000000_um
+      (shape (circle Digital_Signals 1700))
+      (shape (circle GND_Plane 1700))
+      (shape (circle Analog_Signals 1700))
+      (shape (circle Power_Planes 1700))
+      (shape (circle HighSpeed 1700))
+      (shape (circle Bottom_GND 1700))
+      (attach off)
+    )
+    (padstack Round[A]Pad_2000.000000_um
+      (shape (circle Digital_Signals 2000))
+      (shape (circle GND_Plane 2000))
+      (shape (circle Analog_Signals 2000))
+      (shape (circle Power_Planes 2000))
+      (shape (circle HighSpeed 2000))
+      (shape (circle Bottom_GND 2000))
+      (attach off)
+    )
+    (padstack Round[A]Pad_600.000000_um
+      (shape (circle Digital_Signals 600))
+      (shape (circle GND_Plane 600))
+      (shape (circle Analog_Signals 600))
+      (shape (circle Power_Planes 600))
+      (shape (circle HighSpeed 600))
+      (shape (circle Bottom_GND 600))
+      (attach off)
+    )
+    (padstack Oval[A]Pad_1000.000000x1600.000000_um
+      (shape (path Digital_Signals 1000  0 -300  0 300))
+      (shape (path GND_Plane 1000  0 -300  0 300))
+      (shape (path Analog_Signals 1000  0 -300  0 300))
+      (shape (path Power_Planes 1000  0 -300  0 300))
+      (shape (path HighSpeed 1000  0 -300  0 300))
+      (shape (path Bottom_GND 1000  0 -300  0 300))
+      (attach off)
+    )
+    (padstack Oval[A]Pad_1000.000000x2100.000000_um
+      (shape (path Digital_Signals 1000  0 -550  0 550))
+      (shape (path GND_Plane 1000  0 -550  0 550))
+      (shape (path Analog_Signals 1000  0 -550  0 550))
+      (shape (path Power_Planes 1000  0 -550  0 550))
+      (shape (path HighSpeed 1000  0 -550  0 550))
+      (shape (path Bottom_GND 1000  0 -550  0 550))
+      (attach off)
+    )
+    (padstack Oval[A]Pad_1600.000000x1200.000000_um
+      (shape (path Digital_Signals 1200  -200 0  200 0))
+      (shape (path GND_Plane 1200  -200 0  200 0))
+      (shape (path Analog_Signals 1200  -200 0  200 0))
+      (shape (path Power_Planes 1200  -200 0  200 0))
+      (shape (path HighSpeed 1200  -200 0  200 0))
+      (shape (path Bottom_GND 1200  -200 0  200 0))
+      (attach off)
+    )
+    (padstack RoundRect[T]Pad_2000.000000x1500.000000_376.427000_um_0.000000_0
+      (shape (polygon Digital_Signals 0  -1001.43 375  -985.778 482.408  -931.355 593.733
+            -843.733 681.355  -732.408 735.778  -624.999 751.426  625 751.427
+            732.408 735.778  843.733 681.355  931.355 593.733  985.778 482.408
+            1001.43 374.999  1001.43 -375  985.778 -482.408  931.355 -593.733
+            843.733 -681.355  732.408 -735.778  624.999 -751.426  -625 -751.427
+            -732.408 -735.778  -843.733 -681.355  -931.355 -593.733  -985.778 -482.408
+            -1001.43 -374.999  -1001.43 375))
+      (attach off)
+    )
+    (padstack RoundRect[T]Pad_2000.000000x3800.000000_501.903000_um_0.000000_0
+      (shape (polygon Digital_Signals 0  -1001.9 1400  -990.433 1506.69  -940.51 1640.54
+            -854.899 1754.9  -740.537 1840.51  -606.687 1890.43  -499.999 1901.9
+            500 1901.9  606.687 1890.43  740.537 1840.51  854.899 1754.9
+            940.51 1640.54  990.433 1506.69  1001.9 1400  1001.9 -1400  990.433 -1506.69
+            940.51 -1640.54  854.899 -1754.9  740.537 -1840.51  606.687 -1890.43
+            499.999 -1901.9  -500 -1901.9  -606.687 -1890.43  -740.537 -1840.51
+            -854.899 -1754.9  -940.51 -1640.54  -990.433 -1506.69  -1001.9 -1400
+            -1001.9 1400))
+      (attach off)
+    )
+    (padstack RoundRect[T]Pad_2050.000000x600.000000_150.571000_um_0.000000_0
+      (shape (polygon Digital_Signals 0  -1025.57 150  -1014.11 207.621  -981.47 256.47
+            -932.621 289.109  -874.999 300.57  875 300.571  932.621 289.109
+            981.47 256.47  1014.11 207.621  1025.57 149.999  1025.57 -150
+            1014.11 -207.621  981.47 -256.47  932.621 -289.109  874.999 -300.57
+            -875 -300.571  -932.621 -289.109  -981.47 -256.47  -1014.11 -207.621
+            -1025.57 -149.999  -1025.57 150))
+      (attach off)
+    )
+    (padstack RoundRect[T]Pad_250.000000x775.000000_62.738000_um_0.000000_0
+      (shape (polygon Digital_Signals 0  -125.238 325  -120.462 349.009  -106.862 369.362
+            -86.509 382.962  -62.5 387.738  62.5 387.738  86.509 382.962
+            106.862 369.362  120.462 349.009  125.238 325  125.238 -325
+            120.462 -349.009  106.862 -369.362  86.509 -382.962  62.5 -387.738
+            -62.5 -387.738  -86.509 -382.962  -106.862 -369.362  -120.462 -349.009
+            -125.238 -325  -125.238 325))
+      (attach off)
+    )
+    (padstack RoundRect[T]Pad_300.000000x1300.000000_75.285000_um_0.000000_0
+      (shape (polygon Digital_Signals 0  -150.285 575  -144.554 603.81  -128.235 628.235
+            -103.81 644.554  -74.999 650.284  75 650.285  103.81 644.554
+            128.235 628.235  144.554 603.81  150.284 574.999  150.285 -575
+            144.554 -603.81  128.235 -628.235  103.81 -644.554  74.999 -650.284
+            -75 -650.285  -103.81 -644.554  -128.235 -628.235  -144.554 -603.81
+            -150.284 -574.999  -150.285 575))
+      (attach off)
+    )
+    (padstack RoundRect[T]Pad_540.000000x640.000000_135.514000_um_0.000000_0
+      (shape (polygon Digital_Signals 0  -270.514 185  -260.199 236.859  -230.823 280.823
+            -186.859 310.199  -135 320.514  135 320.514  186.859 310.199
+            230.823 280.823  260.199 236.859  270.514 185  270.514 -185
+            260.199 -236.859  230.823 -280.823  186.859 -310.199  135 -320.514
+            -135 -320.514  -186.859 -310.199  -230.823 -280.823  -260.199 -236.859
+            -270.514 -185  -270.514 185))
+      (attach off)
+    )
+    (padstack RoundRect[T]Pad_590.000000x640.000000_148.061000_um_0.000000_0
+      (shape (polygon Digital_Signals 0  -295.561 172.5  -284.291 229.16  -252.195 277.195
+            -204.16 309.291  -147.499 320.56  147.5 320.561  204.16 309.291
+            252.195 277.195  284.291 229.16  295.56 172.499  295.561 -172.5
+            284.291 -229.16  252.195 -277.195  204.16 -309.291  147.499 -320.56
+            -147.5 -320.561  -204.16 -309.291  -252.195 -277.195  -284.291 -229.16
+            -295.56 -172.499  -295.561 172.5))
+      (attach off)
+    )
+    (padstack RoundRect[T]Pad_600.000000x1300.000000_150.571000_um_0.000000_0
+      (shape (polygon Digital_Signals 0  -300.571 500  -289.109 557.621  -256.47 606.47
+            -207.621 639.109  -149.999 650.57  150 650.571  207.621 639.109
+            256.47 606.47  289.109 557.621  300.57 499.999  300.571 -500
+            289.109 -557.621  256.47 -606.47  207.621 -639.109  149.999 -650.57
+            -150 -650.571  -207.621 -639.109  -256.47 -606.47  -289.109 -557.621
+            -300.57 -499.999  -300.571 500))
+      (attach off)
+    )
+    (padstack RoundRect[T]Pad_750.000000x350.000000_87.833000_um_0.000000_0
+      (shape (polygon Digital_Signals 0  -375.333 87.5  -368.647 121.112  -349.607 149.607
+            -321.112 168.647  -287.499 175.332  287.5 175.333  321.112 168.647
+            349.607 149.607  368.647 121.112  375.332 87.499  375.333 -87.5
+            368.647 -121.112  349.607 -149.607  321.112 -168.647  287.499 -175.332
+            -287.5 -175.333  -321.112 -168.647  -349.607 -149.607  -368.647 -121.112
+            -375.332 -87.499  -375.333 87.5))
+      (attach off)
+    )
+    (padstack RoundRect[T]Pad_775.000000x250.000000_62.738000_um_0.000000_0
+      (shape (polygon Digital_Signals 0  -387.738 62.5  -382.962 86.509  -369.362 106.862
+            -349.009 120.462  -325 125.238  325 125.238  349.009 120.462
+            369.362 106.862  382.962 86.509  387.738 62.5  387.738 -62.5
+            382.962 -86.509  369.362 -106.862  349.009 -120.462  325 -125.238
+            -325 -125.238  -349.009 -120.462  -369.362 -106.862  -382.962 -86.509
+            -387.738 -62.5  -387.738 62.5))
+      (attach off)
+    )
+    (padstack RoundRect[T]Pad_1000.000000x1450.000000_250.951000_um_0.000000_0
+      (shape (polygon Digital_Signals 0  -500.951 475  -481.848 571.035  -427.449 652.449
+            -346.035 706.848  -249.999 725.95  250 725.951  346.035 706.848
+            427.449 652.449  481.848 571.035  500.95 474.999  500.951 -475
+            481.848 -571.035  427.449 -652.449  346.035 -706.848  249.999 -725.95
+            -250 -725.951  -346.035 -706.848  -427.449 -652.449  -481.848 -571.035
+            -500.95 -474.999  -500.951 475))
+      (attach off)
+    )
+    (padstack RoundRect[T]Pad_1475.000000x400.000000_100.381000_um_0.000000_0
+      (shape (polygon Digital_Signals 0  -737.881 100  -730.24 138.414  -708.48 170.98
+            -675.914 192.74  -637.499 200.38  637.5 200.381  675.914 192.74
+            708.48 170.98  730.24 138.414  737.88 99.999  737.881 -100  730.24 -138.414
+            708.48 -170.98  675.914 -192.74  637.499 -200.38  -637.5 -200.381
+            -675.914 -192.74  -708.48 -170.98  -730.24 -138.414  -737.88 -99.999
+            -737.881 100))
+      (attach off)
+    )
+    (padstack RoundRect[T]Pad_1475.000000x600.000000_150.571000_um_0.000000_0
+      (shape (polygon Digital_Signals 0  -738.071 150  -726.609 207.621  -693.97 256.47
+            -645.121 289.109  -587.499 300.57  587.5 300.571  645.121 289.109
+            693.97 256.47  726.609 207.621  738.07 149.999  738.071 -150
+            726.609 -207.621  693.97 -256.47  645.121 -289.109  587.499 -300.57
+            -587.5 -300.571  -645.121 -289.109  -693.97 -256.47  -726.609 -207.621
+            -738.07 -149.999  -738.071 150))
+      (attach off)
+    )
+    (padstack RoundRect[T]Pad_1500.000000x900.000000_90.342000_um_0.000000_0
+      (shape (polygon Digital_Signals 0  -750.342 360  -743.465 394.572  -723.881 423.881
+            -694.572 443.465  -660 450.342  660 450.342  694.572 443.465
+            723.881 423.881  743.465 394.572  750.342 360  750.342 -360
+            743.465 -394.572  723.881 -423.881  694.572 -443.465  660 -450.342
+            -660 -450.342  -694.572 -443.465  -723.881 -423.881  -743.465 -394.572
+            -750.342 -360  -750.342 360))
+      (attach off)
+    )
+    (padstack RoundRect[T]Pad_1550.000000x1300.000000_250.951000_um_0.000000_0
+      (shape (polygon Digital_Signals 0  -775.951 400  -756.848 496.035  -702.449 577.449
+            -621.035 631.848  -524.999 650.95  525 650.951  621.035 631.848
+            702.449 577.449  756.848 496.035  775.95 399.999  775.951 -400
+            756.848 -496.035  702.449 -577.449  621.035 -631.848  524.999 -650.95
+            -525 -650.951  -621.035 -631.848  -702.449 -577.449  -756.848 -496.035
+            -775.95 -399.999  -775.951 400))
+      (attach off)
+    )
+    (padstack Rect[A]Pad_2000.000000x2000.000000_um
+      (shape (rect Digital_Signals -1000 -1000 1000 1000))
+      (shape (rect GND_Plane -1000 -1000 1000 1000))
+      (shape (rect Analog_Signals -1000 -1000 1000 1000))
+      (shape (rect Power_Planes -1000 -1000 1000 1000))
+      (shape (rect HighSpeed -1000 -1000 1000 1000))
+      (shape (rect Bottom_GND -1000 -1000 1000 1000))
+      (attach off)
+    )
+    (padstack Rect[T]Pad_250.000000x675.000000_um
+      (shape (rect Digital_Signals -125 -337.5 125 337.5))
+      (attach off)
+    )
+    (padstack Rect[T]Pad_3900.000000x3900.000000_um
+      (shape (rect Digital_Signals -1950 -1950 1950 1950))
+      (attach off)
+    )
+    (padstack Rect[T]Pad_500.000000x400.000000_um
+      (shape (rect Digital_Signals -250 -200 250 200))
+      (attach off)
+    )
+    (padstack Rect[T]Pad_675.000000x250.000000_um
+      (shape (rect Digital_Signals -337.5 -125 337.5 125))
+      (attach off)
+    )
+    (padstack Rect[T]Pad_1500.000000x900.000000_um
+      (shape (rect Digital_Signals -750 -450 750 450))
+      (attach off)
+    )
+    (padstack Rect[A]Pad_1700.000000x1700.000000_um
+      (shape (rect Digital_Signals -850 -850 850 850))
+      (shape (rect GND_Plane -850 -850 850 850))
+      (shape (rect Analog_Signals -850 -850 850 850))
+      (shape (rect Power_Planes -850 -850 850 850))
+      (shape (rect HighSpeed -850 -850 850 850))
+      (shape (rect Bottom_GND -850 -850 850 850))
+      (attach off)
+    )
+    (padstack Rect[T]Pad_1800.000000x1800.000000_um
+      (shape (rect Digital_Signals -900 -900 900 900))
+      (attach off)
+    )
+    (padstack "Via[0-5]_300:300_um"
+      (shape (circle Digital_Signals 300))
+      (shape (circle GND_Plane 300))
+      (shape (circle Analog_Signals 300))
+      (shape (circle Power_Planes 300))
+      (shape (circle HighSpeed 300))
+      (shape (circle Bottom_GND 300))
+      (attach off)
+    )
+    (padstack "Via[0-5]_500:300_um"
+      (shape (circle Digital_Signals 500))
+      (shape (circle GND_Plane 500))
+      (shape (circle Analog_Signals 500))
+      (shape (circle Power_Planes 500))
+      (shape (circle HighSpeed 500))
+      (shape (circle Bottom_GND 500))
+      (attach off)
+    )
+    (padstack "Via[0-5]_600:400_um"
+      (shape (circle Digital_Signals 600))
+      (shape (circle GND_Plane 600))
+      (shape (circle Analog_Signals 600))
+      (shape (circle Power_Planes 600))
+      (shape (circle HighSpeed 600))
+      (shape (circle Bottom_GND 600))
+      (attach off)
+    )
+  )
+  (network
+    (net /Sensors/SD_CS
+      (pins J7-1)
+    )
+    (net /Sensors/SPI_MOSI
+      (pins J7-2)
+    )
+    (net 3V3
+      (pins J7-3 J7-4 R5-2 C38-1 C7-1 C7-2 C15-2 SW2-2 SW2-2@1 Q1-2 C39-2 C3-2 C33-2
+        C33-1 U14-4 U14-7 U14-8 U14-9 U14-10 U14-11 U14-12 U14-13 U14-14 U13-2 U13-4
+        U13-5 U13-6 U13-7 U13-8 U13-9 U13-10 U13-11 U13-12 U13-13 U13-14 J1-A1 J1-A12
+        J1-B1 J1-B12 J1-SH J1-SH@1 J1-SH@2 J1-SH@3 C31-2 C31-1 C1-2 C27-1 C27-2 C5-2
+        J6-1 J6-2 U11-9 U11-10 U11-11 U11-12 U1-17 U1-15 U1-8 U9-6 U9-10 U9-14 R3-2
+        R2-2 D2-3 D2-1 C29-1 C29-2 C23-2 RN1-3 C16-2 U5-9 U5-18 U5-22 U5-23 C9-1 C9-2
+        D3-3 D3-1 U2-1 U2-2 U2-2@1 C11-2 C10-2 C20-2 R6-2 C34-1 U7-6 U7-10 U7-14 C2-1
+        C2-2 R7-2 C37-1 C37-2 C28-2 SW1-2 SW1-2@1 U3-1 R1-2 C18-2 C32-2 C32-1 C8-1
+        C8-2 U4-41 U4-41@1 U4-41@2 U4-41@3 U4-41@4 U4-41@5 U4-41@6 U4-41@7 U4-41@8
+        U4-41@9 U4-41@10 U4-41@11 U4-41@12 U4-40 U4-2 U4-1 C40-1 C40-2 C6-2 R8-1 R9-1
+        C30-2 C30-1 C14-2 D4-3 D4-1 C26-2 U12-1 U12-2 D1-1 D1-3 BZ1-1 C22-2 U8-6 U8-10
+        U8-14 U10-2 U10-3 U10-4 U10-13 U10-15 U10-25 U10-26 U10-27 U10-28 C35-2 C36-1
+        C36-2 C12-2 C24-2 C4-2 C25-2 U6-6 U6-10 U6-14)
+    )
+    (net /Sensors/SPI_SCK
+      (pins J7-5)
+    )
+    (net /Sensors/SPI_MISO
+      (pins J7-6)
+    )
+    (net "Net-(U1-TS)"
+      (pins R5-1 U1-1)
+    )
+    (net "Net-(C38-Pad2)"
+      (pins C38-2 C39-1)
+    )
+    (net 3V3_A
+      (pins C15-1 R10-2 J5-1 R11-2 C16-1 U5-21 U5-24 R14-2 J2-1 U7-1 U7-7 R12-2 U3-2
+        U3-2@1 C18-1 C14-1 C26-1 J3-1 C22-1 U8-1 U8-7 U10-1 U10-21 U10-22 C12-1 C24-1
+        C4-1 C25-1 U6-1 U6-7)
+    )
+    (net "Net-(U4-IO0)"
+      (pins SW2-1 SW2-1@1 U4-27 R9-2)
+    )
+    (net "Net-(Q1-G)"
+      (pins Q1-1 R15-1)
+    )
+    (net "Net-(BZ1--)"
+      (pins Q1-3 BZ1-2)
+    )
+    (net VSYS_FILTERED
+      (pins C3-1 J1-A4 J1-A9 J1-B4 J1-B9 C5-1 U1-14 U1-13 U1-6 U1-5 U1-4 FB1-2 R4-1
+        U3-3)
+    )
+    (net /Sensors/I2C_SCL
+      (pins U14-1 U13-16 U11-2 U12-4)
+    )
+    (net /Sensors/I2C_SDA
+      (pins U14-2 U13-15 U11-3 U12-3)
+    )
+    (net "unconnected-(U14-SDO-Pad3)"
+      (pins U14-3)
+    )
+    (net "unconnected-(U14-INT2-Pad5)"
+      (pins U14-5)
+    )
+    (net /Sensors/IMU_INT
+      (pins U14-6)
+    )
+    (net "unconnected-(U13-32KHZ-Pad1)"
+      (pins U13-1)
+    )
+    (net "unconnected-(U13-~{INT}{slash}SQW-Pad3)"
+      (pins U13-3)
+    )
+    (net "Net-(J1-CC1)"
+      (pins J1-A5 R1-1)
+    )
+    (net USB_DP
+      (pins J1-A6 J1-B6 U4-14)
+    )
+    (net USB_DM
+      (pins J1-A7 J1-B7 U4-13)
+    )
+    (net "unconnected-(J1-SBU1-PadA8)"
+      (pins J1-A8)
+    )
+    (net "Net-(J1-CC2)"
+      (pins J1-B5 R2-1)
+    )
+    (net "unconnected-(J1-SBU2-PadB8)"
+      (pins J1-B8)
+    )
+    (net /Display_UI/BUZZER
+      (pins R15-2)
+    )
+    (net "Net-(U7-Pin_12)"
+      (pins C17-1 U7-12)
+    )
+    (net "Net-(U7-Pin_13)"
+      (pins C17-2 U7-13)
+    )
+    (net "Net-(U9-Pin_12)"
+      (pins C21-1 U9-12)
+    )
+    (net "Net-(U9-Pin_13)"
+      (pins C21-2 U9-13)
+    )
+    (net VSYS
+      (pins C1-1 U1-11 U1-10 U2-3 FB1-1)
+    )
+    (net "Net-(J4-Pin_2)"
+      (pins R13-1 U9-2 U9-8 J4-2)
+    )
+    (net "Net-(J4-Pin_1)"
+      (pins R13-2 U9-1 U9-7 C23-1 C20-1 J4-1)
+    )
+    (net "Net-(J2-Pin_2)"
+      (pins R10-1 J2-2 U6-2 U6-8)
+    )
+    (net SPI_SCK
+      (pins J6-3 U4-20)
+    )
+    (net /Display_UI/SPI_MOSI
+      (pins J6-4)
+    )
+    (net /Display_UI/TFT_RST
+      (pins J6-5)
+    )
+    (net /Display_UI/TFT_DC
+      (pins J6-6)
+    )
+    (net /Display_UI/TFT_CS
+      (pins J6-7)
+    )
+    (net /Display_UI/TFT_BL
+      (pins J6-8)
+    )
+    (net "unconnected-(U11-NC-Pad1)"
+      (pins U11-1)
+    )
+    (net "unconnected-(U11-PGND-Pad4)"
+      (pins U11-4)
+    )
+    (net "unconnected-(U11-NC-Pad5)"
+      (pins U11-5)
+    )
+    (net "unconnected-(U11-NC-Pad6)"
+      (pins U11-6)
+    )
+    (net "unconnected-(U11-NC-Pad7)"
+      (pins U11-7)
+    )
+    (net "unconnected-(U11-NC-Pad8)"
+      (pins U11-8)
+    )
+    (net /Sensors/SPO2_INT
+      (pins U11-13)
+    )
+    (net "unconnected-(U11-NC-Pad14)"
+      (pins U11-14)
+    )
+    (net VBAT
+      (pins U1-3 U1-2 RN1-1 C6-1)
+    )
+    (net "unconnected-(U1-~{PGOOD}-Pad7)"
+      (pins U1-7)
+    )
+    (net "unconnected-(U1-~{CHG}-Pad9)"
+      (pins U1-9)
+    )
+    (net "Net-(U1-ILIM)"
+      (pins U1-12 R4-2)
+    )
+    (net "Net-(U1-ISET)"
+      (pins U1-16 R3-1)
+    )
+    (net "Net-(J5-Pin_2)"
+      (pins J5-2 R12-1 U8-2 U8-8)
+    )
+    (net MENB2
+      (pins J5-3 U4-30 U8-3 U8-9)
+    )
+    (net "Net-(J3-Pin_2)"
+      (pins R11-1 U7-2 U7-8 J3-2)
+    )
+    (net MENB3
+      (pins U9-3 U9-9 J4-3 U4-31)
+    )
+    (net "Net-(U5-SC3)"
+      (pins U9-4 U5-8)
+    )
+    (net "Net-(U5-SD3)"
+      (pins U9-5 U5-7)
+    )
+    (net CH4_VOUT
+      (pins U9-11 U10-8)
+    )
+    (net "Net-(D2-DOUT)"
+      (pins D2-2 D3-4)
+    )
+    (net "Net-(D1-DOUT)"
+      (pins D2-4 D1-2)
+    )
+    (net "Net-(U4-IO15)"
+      (pins RN1-2 C10-1 U4-8)
+    )
+    (net "Net-(U5-SD0)"
+      (pins U5-1 U6-5)
+    )
+    (net "Net-(U5-SC0)"
+      (pins U5-2 U6-4)
+    )
+    (net "Net-(U5-SD1)"
+      (pins U5-3 U7-5)
+    )
+    (net "Net-(U5-SC1)"
+      (pins U5-4 U7-4)
+    )
+    (net "Net-(U5-SD2)"
+      (pins U5-5 U8-5)
+    )
+    (net "Net-(U5-SC2)"
+      (pins U5-6 U8-4)
+    )
+    (net "unconnected-(U5-SD4-Pad10)"
+      (pins U5-10)
+    )
+    (net "unconnected-(U5-SC4-Pad11)"
+      (pins U5-11)
+    )
+    (net "unconnected-(U5-SD5-Pad12)"
+      (pins U5-12)
+    )
+    (net "unconnected-(U5-SC5-Pad13)"
+      (pins U5-13)
+    )
+    (net "unconnected-(U5-SD6-Pad14)"
+      (pins U5-14)
+    )
+    (net "unconnected-(U5-SC6-Pad15)"
+      (pins U5-15)
+    )
+    (net "unconnected-(U5-SD7-Pad16)"
+      (pins U5-16)
+    )
+    (net "unconnected-(U5-SC7-Pad17)"
+      (pins U5-17)
+    )
+    (net I2C_SCL
+      (pins U5-19 R7-1 U4-6)
+    )
+    (net I2C_SDA
+      (pins U5-20 R6-1 U4-5)
+    )
+    (net "Net-(U10-Pin_14)"
+      (pins R14-1 C28-1 U10-14)
+    )
+    (net MENB0
+      (pins J2-3 U4-28 U6-3 U6-9)
+    )
+    (net "Net-(D3-DOUT)"
+      (pins D3-2 D4-4)
+    )
+    (net "Net-(U4-EN)"
+      (pins C11-1 SW1-1 SW1-1@1 U4-3 R8-2)
+    )
+    (net "Net-(U6-Pin_12)"
+      (pins C13-1 U6-12)
+    )
+    (net "Net-(U6-Pin_13)"
+      (pins C13-2 U6-13)
+    )
+    (net "Net-(C34-Pad2)"
+      (pins C34-2 C35-1)
+    )
+    (net /AnalogFrontEnd/MENB1
+      (pins U7-3 U7-9 J3-3)
+    )
+    (net /AnalogFrontEnd/CH2_VOUT
+      (pins U7-11 U10-6)
+    )
+    (net BUZZER
+      (pins U4-4)
+    )
+    (net TFT_DC
+      (pins U4-7)
+    )
+    (net SPO2_INT
+      (pins U4-9)
+    )
+    (net IMU_INT
+      (pins U4-10)
+    )
+    (net "unconnected-(U4-IO18-Pad11)"
+      (pins U4-11)
+    )
+    (net TFT_CS
+      (pins U4-12)
+    )
+    (net LED_DATA
+      (pins U4-15 D1-4)
+    )
+    (net "unconnected-(U4-IO46-Pad16)"
+      (pins U4-16)
+    )
+    (net TFT_RST
+      (pins U4-17)
+    )
+    (net TFT_BL
+      (pins U4-18)
+    )
+    (net SPI_MOSI
+      (pins U4-19)
+    )
+    (net SPI_MISO
+      (pins U4-21)
+    )
+    (net SD_CS
+      (pins U4-22)
+    )
+    (net "unconnected-(U4-IO21-Pad23)"
+      (pins U4-23)
+    )
+    (net "unconnected-(U4-IO47-Pad24)"
+      (pins U4-24)
+    )
+    (net "unconnected-(U4-IO48-Pad25)"
+      (pins U4-25)
+    )
+    (net "unconnected-(U4-IO45-Pad26)"
+      (pins U4-26)
+    )
+    (net MENB1
+      (pins U4-29)
+    )
+    (net "unconnected-(U4-IO39-Pad32)"
+      (pins U4-32)
+    )
+    (net "unconnected-(U4-IO40-Pad33)"
+      (pins U4-33)
+    )
+    (net "unconnected-(U4-IO41-Pad34)"
+      (pins U4-34)
+    )
+    (net "unconnected-(U4-IO42-Pad35)"
+      (pins U4-35)
+    )
+    (net "unconnected-(U4-RXD0-Pad36)"
+      (pins U4-36)
+    )
+    (net "unconnected-(U4-TXD0-Pad37)"
+      (pins U4-37)
+    )
+    (net ADC_CS
+      (pins U4-38)
+    )
+    (net ADC_DRDY
+      (pins U4-39)
+    )
+    (net "unconnected-(D4-DOUT-Pad2)"
+      (pins D4-2)
+    )
+    (net CH3_VOUT
+      (pins U8-11 U10-7)
+    )
+    (net "Net-(U8-Pin_12)"
+      (pins U8-12 C19-1)
+    )
+    (net "Net-(U8-Pin_13)"
+      (pins U8-13 C19-2)
+    )
+    (net CH1_VOUT
+      (pins U10-5 U6-11)
+    )
+    (net "unconnected-(U10-Pin_9-Pad9)"
+      (pins U10-9)
+    )
+    (net "unconnected-(U10-Pin_10-Pad10)"
+      (pins U10-10)
+    )
+    (net "unconnected-(U10-Pin_11-Pad11)"
+      (pins U10-11)
+    )
+    (net "unconnected-(U10-Pin_12-Pad12)"
+      (pins U10-12)
+    )
+    (net /AnalogFrontEnd/SPI_SCK
+      (pins U10-16)
+    )
+    (net /AnalogFrontEnd/SPI_MOSI
+      (pins U10-17)
+    )
+    (net /AnalogFrontEnd/SPI_MISO
+      (pins U10-18)
+    )
+    (net /AnalogFrontEnd/ADC_CS
+      (pins U10-19)
+    )
+    (net /AnalogFrontEnd/ADC_DRDY
+      (pins U10-20)
+    )
+    (net "unconnected-(U10-Pin_23-Pad23)"
+      (pins U10-23)
+    )
+    (net "unconnected-(U10-Pin_24-Pad24)"
+      (pins U10-24)
+    )
+    (class kicad_default +3V3 /AnalogFrontEnd/ADC_CS /AnalogFrontEnd/ADC_DRDY
+      /AnalogFrontEnd/MENB1 /AnalogFrontEnd/SPI_MISO /AnalogFrontEnd/SPI_MOSI
+      /AnalogFrontEnd/SPI_SCK /Display_UI/BUZZER /Display_UI/SPI_MOSI /Display_UI/TFT_BL
+      /Display_UI/TFT_CS /Display_UI/TFT_DC /Display_UI/TFT_RST /Sensors/I2C_SCL
+      /Sensors/I2C_SDA /Sensors/IMU_INT /Sensors/SD_CS /Sensors/SPI_MISO /Sensors/SPI_MOSI
+      /Sensors/SPI_SCK /Sensors/SPO2_INT ADC_CS ADC_DRDY BUZZER GND I2C_SCL
+      I2C_SDA IMU_INT LED_DATA MENB0 MENB1 MENB2 MENB3 "Net-(BZ1--)" "Net-(C34-Pad2)"
+      "Net-(C38-Pad2)" "Net-(D1-DOUT)" "Net-(D2-DOUT)" "Net-(D3-DOUT)" "Net-(J1-CC1)"
+      "Net-(J1-CC2)" "Net-(J2-Pin_2)" "Net-(J3-Pin_2)" "Net-(J4-Pin_1)" "Net-(J4-Pin_2)"
+      "Net-(J5-Pin_2)" "Net-(Q1-G)" "Net-(U1-ILIM)" "Net-(U1-ISET)" "Net-(U1-TS)"
+      "Net-(U10-Pin_14)" "Net-(U4-EN)" "Net-(U4-IO0)" "Net-(U4-IO15)" "Net-(U5-SC0)"
+      "Net-(U5-SC1)" "Net-(U5-SC2)" "Net-(U5-SC3)" "Net-(U5-SD0)" "Net-(U5-SD1)"
+      "Net-(U5-SD2)" "Net-(U5-SD3)" "Net-(U6-Pin_12)" "Net-(U6-Pin_13)" "Net-(U7-Pin_12)"
+      "Net-(U7-Pin_13)" "Net-(U8-Pin_12)" "Net-(U8-Pin_13)" "Net-(U9-Pin_12)"
+      "Net-(U9-Pin_13)" SD_CS SPI_MISO SPI_MOSI SPI_SCK SPO2_INT TFT_BL TFT_CS
+      TFT_DC TFT_RST VSYS VSYS_FILTERED "unconnected-(D4-DOUT-Pad2)" "unconnected-(J1-SBU1-PadA8)"
+      "unconnected-(J1-SBU2-PadB8)" "unconnected-(U1-~{CHG}-Pad9)" "unconnected-(U1-~{PGOOD}-Pad7)"
+      "unconnected-(U10-Pin_10-Pad10)" "unconnected-(U10-Pin_11-Pad11)" "unconnected-(U10-Pin_12-Pad12)"
+      "unconnected-(U10-Pin_23-Pad23)" "unconnected-(U10-Pin_24-Pad24)" "unconnected-(U10-Pin_9-Pad9)"
+      "unconnected-(U11-NC-Pad1)" "unconnected-(U11-NC-Pad14)" "unconnected-(U11-NC-Pad5)"
+      "unconnected-(U11-NC-Pad6)" "unconnected-(U11-NC-Pad7)" "unconnected-(U11-NC-Pad8)"
+      "unconnected-(U11-PGND-Pad4)" "unconnected-(U13-32KHZ-Pad1)" "unconnected-(U13-~{INT}{slash}SQW-Pad3)"
+      "unconnected-(U14-INT2-Pad5)" "unconnected-(U14-SDO-Pad3)" "unconnected-(U4-IO18-Pad11)"
+      "unconnected-(U4-IO21-Pad23)" "unconnected-(U4-IO39-Pad32)" "unconnected-(U4-IO40-Pad33)"
+      "unconnected-(U4-IO41-Pad34)" "unconnected-(U4-IO42-Pad35)" "unconnected-(U4-IO45-Pad26)"
+      "unconnected-(U4-IO46-Pad16)" "unconnected-(U4-IO47-Pad24)" "unconnected-(U4-IO48-Pad25)"
+      "unconnected-(U4-RXD0-Pad36)" "unconnected-(U4-TXD0-Pad37)" "unconnected-(U5-SC4-Pad11)"
+      "unconnected-(U5-SC5-Pad13)" "unconnected-(U5-SC6-Pad15)" "unconnected-(U5-SC7-Pad17)"
+      "unconnected-(U5-SD4-Pad10)" "unconnected-(U5-SD5-Pad12)" "unconnected-(U5-SD6-Pad14)"
+      "unconnected-(U5-SD7-Pad16)"
+      (circuit
+        (use_via "Via[0-5]_300:300_um")
+      )
+      (rule
+        (width 200)
+        (clearance 150)
+      )
+    )
+    (class Analog,Default /AnalogFrontEnd/CH2_VOUT CH1_VOUT CH3_VOUT CH4_VOUT
+      (circuit
+        (use_via "Via[0-5]_500:300_um")
+      )
+      (rule
+        (width 250)
+        (clearance 200)
+      )
+    )
+    (class USB_DP,Default USB_DM USB_DP
+      (circuit
+        (use_via "Via[0-5]_300:300_um")
+      )
+      (rule
+        (width 180)
+        (clearance 150)
+      )
+    )
+    (class Power,Default 3V3 3V3_A VBAT
+      (circuit
+        (use_via "Via[0-5]_600:400_um")
+      )
+      (rule
+        (width 500)
+        (clearance 200)
+      )
+    )
+  )
+  (wiring
+    (wire (path GND_Plane 200  255050 -152040  248174 -145164)(net "Net-(J5-Pin_2)")(type route))
+    (wire (path Digital_Signals 200  227912 -124175  226871 -124175)(net I2C_SCL)(type route))
+    (wire (path Digital_Signals 500  210560 -74798.3  210560 -76500)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  222014 -134976  221142 -134976)(net "Net-(U5-SD0)")(type route))
+    (wire (path Digital_Signals 500  223560 -132500  226100 -135040)(net 3V3_A)(type route))
+    (wire (path HighSpeed 200  246863 -135731  243022 -135731)(net MENB2)(type route))
+    (wire (path Digital_Signals 500  186000 -97174.6  188758 -97174.6)(net 3V3)(type route))
+    (wire (path Analog_Signals 500  228818 -115118  228818 -120202)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 500  254000 -136500  256000 -136500)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  194100 -99500  193565 -100035)(net VBAT)(type route))
+    (wire (path HighSpeed 500  244100 -148198  244100 -138500)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 400.6  228751 -132550  227912 -132550)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  256475 -138875  256100 -138500)(net "Net-(J4-Pin_1)")(type route))
+    (wire (path Digital_Signals 200  223162 -133200  223296 -133333)(net "Net-(J2-Pin_2)")(type route))
+    (wire (path Digital_Signals 200  194501 -85911.9  194501 -84038.4)(net SPI_SCK)(type route))
+    (wire (path Digital_Signals 500  171850 -100755  171370 -100755)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  207771 -107729  204229 -107729)(net 3V3)(type route))
+    (wire (path Analog_Signals 500  193550 -76260  193550 -75560)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  203388 -102145  200955 -102145)(net 3V3)(type route))
+    (wire (path GND_Plane 200  236772 -152858  236772 -135743)(net /AnalogFrontEnd/MENB1)(type route))
+    (wire (path Digital_Signals 500  251312 -104250  251312 -104580)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  248659 -66150  245550 -66150)(net "Net-(D3-DOUT)")(type route))
+    (wire (path Digital_Signals 500  242100 -67500  241950 -67500)(net 3V3)(type route))
+    (wire (path Digital_Signals 400.6  239102 -135843  239102 -135494)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  209000 -103034  208112 -102145)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  255992 -124056  256674 -124738)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  249037 -106238  248975 -106238)(net 3V3)(type route))
+    (wire (path Analog_Signals 200  239786 -93551.4  239536 -93801.3)(net /Sensors/I2C_SDA)(type route))
+    (wire (path Power_Planes 500  186612 -92890.3  184032 -95470)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  191447 -98012.5  191503 -98067.7)(net VSYS_FILTERED)(type route))
+    (wire (path Digital_Signals 200  197540 -104500  197402 -104638)(net "Net-(U1-TS)")(type route))
+    (wire (path Digital_Signals 180  175050 -101688  175050 -101650)(net USB_DP)(type route))
+    (wire (path GND_Plane 500  264000 -72040  264000 -69500)(net 3V3)(type route))
+    (wire (path Power_Planes 200  226870 -133200  226398 -133672)(net "Net-(U6-Pin_13)")(type route))
+    (wire (path Digital_Signals 500  261392 -114280  261917 -114280)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  252550 -64050  250450 -66150)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  184639 -100039  184100 -99500)(net VSYS_FILTERED)(type route))
+    (wire (path Digital_Signals 249.8  249098 -106177  249037 -106238)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  201900 -94500  203000 -93400)(net 3V3)(type route))
+    (wire (path GND_Plane 200  255130 -99225.7  249856 -104500)(net /Sensors/I2C_SDA)(type route))
+    (wire (path Digital_Signals 200  236100 -138500  235940 -138340)(net "Net-(U7-Pin_12)")(type route))
+    (wire (path Digital_Signals 500  259289 -137211  258000 -138500)(net 3V3)(type route))
+    (wire (path Analog_Signals 500  216445 -115118  228818 -115118)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 200  257912 -133850  257307 -133850)(net "Net-(U9-Pin_12)")(type route))
+    (wire (path HighSpeed 200  251114 -134411  243193 -134411)(net "Net-(U5-SC3)")(type route))
+    (wire (path Digital_Signals 200  192344 -99750  191538 -99750)(net VSYS)(type route))
+    (wire (path Digital_Signals 500  225050 -148198  226100 -147148)(net 3V3_A)(type route))
+    (wire (path Power_Planes 200  213693 -110356  226862 -123525)(net I2C_SDA)(type route))
+    (wire (path Digital_Signals 200  244700 -100055  245485 -100055)(net /Sensors/I2C_SCL)(type route))
+    (wire (path Digital_Signals 400.6  257724 -132361  257912 -132549)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  237912 -135800  236829 -135800)(net /AnalogFrontEnd/MENB1)(type route))
+    (wire (path Analog_Signals 200  254181 -93551.4  239786 -93551.4)(net /Sensors/I2C_SDA)(type route))
+    (wire (path Digital_Signals 500  184032 -95595.2  185612 -97174.6)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  260145 -122545  260145 -119428)(net 3V3_A)(type route))
+    (wire (path Analog_Signals 500  193072 -100035  188016 -100035)(net VBAT)(type route))
+    (wire (path Digital_Signals 500  245550 -64050  243450 -66150)(net 3V3)(type route))
+    (wire (path Analog_Signals 200  187356 -74477.1  187411 -74531.5)(net I2C_SDA)(type route))
+    (wire (path Power_Planes 200  226136 -133672  225812 -133995)(net "Net-(U6-Pin_13)")(type route))
+    (wire (path Power_Planes 200  213693 -91234  213693 -110356)(net I2C_SDA)(type route))
+    (wire (path Digital_Signals 400.6  226780 -122875  227912 -122875)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 500  218560 -70000  219712 -70000)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 500  252550 -64050  255350 -64050)(net 3V3)(type route))
+    (wire (path Digital_Signals 400.6  227912 -120923  227912 -120925)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 350.4  240050 -93166.5  240199 -93315.5)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  235400 -101325  236044 -101325)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  244475 -62282  244475 -63391.9)(net "Net-(D2-DOUT)")(type route))
+    (wire (path Digital_Signals 500  256000 -136500  258000 -138500)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  249856 -104500  249606 -104250)(net /Sensors/I2C_SDA)(type route))
+    (wire (path Power_Planes 200  222151 -122028  222151 -133964)(net "Net-(U5-SD0)")(type route))
+    (wire (path Digital_Signals 200  242164 -134523  241122 -134523)(net "Net-(U5-SC2)")(type route))
+    (wire (path Digital_Signals 500  241800 -93700  243000 -92500)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  251125 -134421  252109 -134421)(net "Net-(U5-SC3)")(type route))
+    (wire (path Digital_Signals 200  182100 -82250  182100 -84500)(net "Net-(U4-EN)")(type route))
+    (wire (path Digital_Signals 200  177450 -100258  177450 -100755)(net VSYS_FILTERED)(type route))
+    (wire (path Power_Planes 200  225812 -133995  225812 -134258)(net "Net-(U6-Pin_13)")(type route))
+    (wire (path GND_Plane 500  216740 -69648.2  214919 -71468.9)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 249.8  250550 -105512  250550 -106177)(net 3V3)(type route))
+    (wire (path GND_Plane 500  225870 -123398  225870 -123151)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 200  173800 -100755  173800 -100092)(net "Net-(J1-CC1)")(type route))
+    (wire (path Power_Planes 200  250671 -133680  251000 -133351)(net MENB3)(type route))
+    (wire (path Power_Planes 200  260297 -129989  256871 -133414)(net "Net-(U9-Pin_12)")(type route))
+    (wire (path GND_Plane 200  252590 -91960  252590 -95759.2)(net /Sensors/I2C_SCL)(type route))
+    (wire (path GND_Plane 200  223699 -77015.3  216966 -70282)(net "Net-(J2-Pin_2)")(type route))
+    (wire (path Digital_Signals 200  186300 -71780  185298 -71780)(net "Net-(U4-EN)")(type route))
+    (wire (path Digital_Signals 400.6  229046 -135150  227912 -135150)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  179453 -97500  177546 -99406.7)(net "Net-(J1-CC2)")(type route))
+    (wire (path Power_Planes 180  183435 -83481.7  183435 -91520.3)(net USB_DM)(type route))
+    (wire (path Digital_Signals 500  203388 -95988.5  201900 -94500)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  232188 -133200  233058 -133200)(net "Net-(J3-Pin_2)")(type route))
+    (wire (path Digital_Signals 500  220953 -126227  220953 -128402)(net 3V3)(type route))
+    (wire (path Analog_Signals 200  264000 -74580  254542 -84038.4)(net SPI_SCK)(type route))
+    (wire (path Digital_Signals 500  263000 -115362  263000 -115500)(net 3V3)(type route))
+    (wire (path GND_Plane 200  235050 -154580  236772 -152858)(net /AnalogFrontEnd/MENB1)(type route))
+    (wire (path Digital_Signals 200  179392 -94500  181540 -94500)(net "Net-(J1-CC1)")(type route))
+    (wire (path Digital_Signals 500  229102 -122525  228342 -121764)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  186300 -74320  187302 -74320)(net I2C_SDA)(type route))
+    (wire (path Digital_Signals 200  209540 -76500  208985 -76500)(net I2C_SDA)(type route))
+    (wire (path Digital_Signals 500  241250 -95300  241250 -96100)(net 3V3)(type route))
+    (wire (path HighSpeed 200  191382 -101705  191880 -101705)(net VSYS_FILTERED)(type route))
+    (wire (path Digital_Signals 500  183718 -95658.5  182560 -94500)(net 3V3)(type route))
+    (wire (path Digital_Signals 400.6  257251 -115086  257219 -115118)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 400.6  228898 -124825  227912 -124825)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  243095 -102595  243000 -102500)(net 3V3)(type route))
+    (wire (path Digital_Signals 250  254868 -118525  257188 -118525)(net /AnalogFrontEnd/CH2_VOUT)(type route))
+    (wire (path Digital_Signals 200  216966 -70281.9  216966 -70282)(net "Net-(J2-Pin_2)")(type route))
+    (wire (path Digital_Signals 500  262912 -115925  263000 -115838)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  263425 -115925  262912 -115925)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  259700 -66150  261050 -67500)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  257188 -116006  255671 -116006)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  197936 -103717  197936 -102955)(net 3V3)(type route))
+    (wire (path GND_Plane 200  213693 -81272.8  213693 -91234)(net I2C_SDA)(type route))
+    (wire (path Digital_Signals 250  238893 -134500  254868 -118525)(net /AnalogFrontEnd/CH2_VOUT)(type route))
+    (wire (path Analog_Signals 200  247704 -134812  238706 -125814)(net "Net-(U5-SD3)")(type route))
+    (wire (path Digital_Signals 500  228342 -121764  228102 -121764)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  259000 -122494  259000 -121500)(net "Net-(U8-Pin_13)")(type route))
+    (wire (path Digital_Signals 200  203800 -84480  204802 -84480)(net MENB0)(type route))
+    (wire (path Power_Planes 500  252590 -97040  252590 -97120)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  247912 -133200  247941 -133172)(net "Net-(U8-Pin_13)")(type route))
+    (wire (path HighSpeed 200  191357 -101680  191382 -101705)(net VSYS_FILTERED)(type route))
+    (wire (path Digital_Signals 250  250034 -125546  256404 -119175)(net CH3_VOUT)(type route))
+    (wire (path Digital_Signals 500  243000 -92500  247100 -92500)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  221054 -126125  220953 -126227)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  228898 -124825  229046 -124825)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  243450 -66150  242100 -67500)(net 3V3)(type route))
+    (wire (path Digital_Signals 250  256404 -119175  257188 -119175)(net CH3_VOUT)(type route))
+    (wire (path Digital_Signals 500  244700 -105135  244700 -106405)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  229143 -135150  229046 -135150)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  228000 -138500  229143 -137357)(net 3V3)(type route))
+    (wire (path Digital_Signals 250  257912 -134500  257153 -134500)(net CH4_VOUT)(type route))
+    (wire (path Digital_Signals 500  184000 -97500  182560 -97500)(net 3V3)(type route))
+    (wire (path Digital_Signals 180  175300 -99655.2  175381 -99574.4)(net USB_DM)(type route))
+    (wire (path Digital_Signals 200  184007 -91005.5  183560 -91452.7)(net "Net-(U4-IO0)")(type route))
+    (wire (path Digital_Signals 250.2  188758 -97174.6  189620 -97174.6)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  260759 -117841  261100 -117500)(net "Net-(U9-Pin_12)")(type route))
+    (wire (path Digital_Signals 200  177544 -99406.7  177098 -99852.6)(net "Net-(J1-CC2)")(type route))
+    (wire (path Digital_Signals 200  236829 -135800  236772 -135743)(net /AnalogFrontEnd/MENB1)(type route))
+    (wire (path Digital_Signals 500  251312 -104580  260050 -104580)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  228914 -139686  232100 -136500)(net 3V3_A)(type route))
+    (wire (path Analog_Signals 200  172704 -99976.2  172517 -99789.5)(net VSYS_FILTERED)(type route))
+    (wire (path Digital_Signals 250  257153 -134500  255370 -132717)(net CH4_VOUT)(type route))
+    (wire (path Digital_Signals 200  223100 -125475  223246 -125621)(net "Net-(U5-SC3)")(type route))
+    (wire (path Digital_Signals 500  254050 -67500  255950 -67500)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  209550 -84850  209048 -84850)(net "Net-(U4-IO15)")(type route))
+    (wire (path Digital_Signals 249.8  249577 -103488  249550 -103488)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  178250 -100755  178730 -100755)(net 3V3)(type route))
+    (wire (path Digital_Signals 400.6  221054 -126125  222188 -126125)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  182100 -84500  182100 -85040)(net "Net-(U4-EN)")(type route))
+    (wire (path Digital_Signals 500  261902 -124738  262912 -123727)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  186300 -75590  187302 -75590)(net I2C_SCL)(type route))
+    (wire (path HighSpeed 200  233543 -80670  204863 -80670)(net MENB3)(type route))
+    (wire (path Digital_Signals 200  237912 -133200  238507 -133200)(net "Net-(U7-Pin_13)")(type route))
+    (wire (path Digital_Signals 200  248343 -102913  248198 -103057)(net /Sensors/I2C_SCL)(type route))
+    (wire (path Digital_Signals 500  191100 -82500  191000 -82500)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  247100 -92500  249000 -92500)(net 3V3)(type route))
+    (wire (path Digital_Signals 400.6  249046 -135150  247912 -135150)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  237212 -133850  237912 -133850)(net "Net-(U7-Pin_12)")(type route))
+    (wire (path Digital_Signals 500  171370 -100755  170730 -101395)(net 3V3)(type route))
+    (wire (path Digital_Signals 180  175300 -100755  175300 -99859.9)(net USB_DM)(type route))
+    (wire (path Digital_Signals 500  197936 -103717  198560 -104342)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  203388 -102145  203388 -95988.5)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  177098 -99854.6  176800 -100153)(net "Net-(J1-CC2)")(type route))
+    (wire (path Power_Planes 500  186612 -83198.1  186612 -92890.3)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  248788 -103750  248198 -103750)(net /Sensors/I2C_SCL)(type route))
+    (wire (path Digital_Signals 500  228818 -120202  228098 -120923)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 200  251475 -63334.4  248659 -66150)(net "Net-(D3-DOUT)")(type route))
+    (wire (path Analog_Signals 500  192850 -77660  193550 -77660)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  207200 -106400  207100 -106500)(net 3V3_A)(type route))
+    (wire (path Analog_Signals 200  188634 -86378.3  202798 -86378.3)(net "Net-(U4-IO0)")(type route))
+    (wire (path Digital_Signals 200  189764 -101680  189800 -101645)(net VSYS_FILTERED)(type route))
+    (wire (path Digital_Signals 250  237912 -134500  238893 -134500)(net /AnalogFrontEnd/CH2_VOUT)(type route))
+    (wire (path Digital_Signals 200  202798 -85750  202798 -86378.3)(net "Net-(U4-IO0)")(type route))
+    (wire (path Digital_Signals 500  249098 -106177  248788 -105866)(net 3V3)(type route))
+    (wire (path Digital_Signals 400.6  242100 -136500  242150 -136450)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 400.6  227723 -132361  227865 -132503)(net 3V3)(type route))
+    (wire (path Digital_Signals 400.6  257188 -115118  257188 -115275)(net 3V3_A)(type route))
+    (wire (path Power_Planes 200  248968 -132526  248968 -133172)(net "Net-(U8-Pin_13)")(type route))
+    (wire (path Digital_Signals 200  247844 -135731  247912 -135800)(net MENB2)(type route))
+    (wire (path Digital_Signals 500  209000 -106500  207771 -107729)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  260316 -119256  258560 -117500)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 500  205386 -83498.3  205321 -83433.7)(net VBAT)(type route))
+    (wire (path GND_Plane 500  170730 -105575  170730 -101395)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  178730 -100755  179370 -101395)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  235400 -103865  236090 -103865)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  226100 -139686  226100 -138500)(net 3V3_A)(type route))
+    (wire (path Analog_Signals 500  193550 -77660  194950 -77660)(net 3V3)(type route))
+    (wire (path Digital_Signals 400.6  227865 -132503  227912 -132550)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  232504 -61895.7  237596 -61895.7)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  189800 -99250  189800 -98852.1)(net 3V3)(type route))
+    (wire (path Digital_Signals 249.8  250550 -105512  250812 -105250)(net 3V3)(type route))
+    (wire (path GND_Plane 200  261833 -122445  261833 -134060)(net "Net-(J4-Pin_1)")(type route))
+    (wire (path Digital_Signals 500  219112 -70950  213562 -76500)(net 3V3)(type route))
+    (wire (path GND_Plane 200  255130 -94500  255130 -99225.7)(net /Sensors/I2C_SDA)(type route))
+    (wire (path Analog_Signals 200  231044 -134523  221122 -124602)(net "Net-(U5-SC2)")(type route))
+    (wire (path Digital_Signals 500  226100 -135040  226100 -136500)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 500  203800 -69240  205002 -69240)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  186300 -69240  187502 -69240)(net 3V3)(type route))
+    (wire (path Analog_Signals 200  193475 -84489.8  187374 -78388.4)(net "Net-(U4-IO15)")(type route))
+    (wire (path Digital_Signals 400.6  229101 -132900  228751 -132550)(net 3V3)(type route))
+    (wire (path Power_Planes 500  193072 -95201.1  204840 -83433.7)(net VBAT)(type route))
+    (wire (path Digital_Signals 200  222188 -120925  223254 -120925)(net "Net-(U5-SD0)")(type route))
+    (wire (path Digital_Signals 500  238110 -103865  237100 -102855)(net 3V3)(type route))
+    (wire (path HighSpeed 200  189874 -102427  194729 -102427)(net "Net-(U1-TS)")(type route))
+    (wire (path Digital_Signals 400.6  257188 -116006  257188 -116575)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  263648 -68198.3  262950 -67500)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  240050 -67500  241950 -67500)(net 3V3)(type route))
+    (wire (path HighSpeed 200  235531 -134016  233235 -134016)(net /AnalogFrontEnd/MENB1)(type route))
+    (wire (path GND_Plane 500  214919 -95000.9  205624 -104296)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 200  209048 -84591.7  209048 -84850)(net "Net-(U4-IO15)")(type route))
+    (wire (path Analog_Signals 200  206952 -74531.6  208953 -76532)(net I2C_SDA)(type route))
+    (wire (path Digital_Signals 500  213562 -76500  210560 -76500)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  191538 -99750  191538 -99250)(net VSYS)(type route))
+    (wire (path Digital_Signals 200  232188 -133850  232354 -134016)(net /AnalogFrontEnd/MENB1)(type route))
+    (wire (path Digital_Signals 500  209550 -83498.3  205386 -83498.3)(net VBAT)(type route))
+    (wire (path Digital_Signals 500  198560 -104342  198560 -104500)(net 3V3)(type route))
+    (wire (path Digital_Signals 180  175300 -99859.9  175300 -99655.2)(net USB_DM)(type route))
+    (wire (path Analog_Signals 200  187411 -74531.5  187411 -74531.6)(net I2C_SDA)(type route))
+    (wire (path Digital_Signals 200  222188 -124825  223117 -124825)(net "Net-(U5-SD3)")(type route))
+    (wire (path Digital_Signals 500  244805 -106300  244700 -106405)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  172517 -99789.5  172650 -99922.3)(net VSYS_FILTERED)(type route))
+    (wire (path Analog_Signals 200  239590 -65558  242369 -62779.2)(net "Net-(D1-DOUT)")(type route))
+    (wire (path Digital_Signals 200  239536 -93801.3  238951 -93801.3)(net /Sensors/I2C_SDA)(type route))
+    (wire (path Analog_Signals 200  254542 -84038.4  194501 -84038.4)(net SPI_SCK)(type route))
+    (wire (path Digital_Signals 500  240199 -93582.3  240293 -93676.2)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  194415 -87000  194415 -85998.3)(net SPI_SCK)(type route))
+    (wire (path GND_Plane 500  225870 -123151  228818 -120202)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 500  234000 -138120  235558 -139678)(net 3V3)(type route))
+    (wire (path Analog_Signals 200  191212 -79500  208958 -79500)(net I2C_SCL)(type route))
+    (wire (path Digital_Signals 200  222188 -135150  222014 -134976)(net "Net-(U5-SD0)")(type route))
+    (wire (path Digital_Signals 500  236060 -133479  234000 -135538)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  251312 -103750  251312 -104250)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  260050 -107120  261392 -108462)(net 3V3)(type route))
+    (wire (path Digital_Signals 350.4  240293 -93676.2  241226 -93676.2)(net 3V3)(type route))
+    (wire (path GND_Plane 200  205004 -85299  205004 -119433)(net MENB0)(type route))
+    (wire (path Power_Planes 500  190280 -96524.4  190280 -99752.1)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  249651 -62050.7  244706 -62050.7)(net "Net-(D2-DOUT)")(type route))
+    (wire (path Digital_Signals 500  236060 -133479  237178 -132361)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  249000 -92500  249102 -92500)(net 3V3)(type route))
+    (wire (path Digital_Signals 400.6  229241 -133390  229101 -133250)(net 3V3)(type route))
+    (wire (path HighSpeed 200  188261 -98283.5  188261 -100814)(net "Net-(U1-TS)")(type route))
+    (wire (path Digital_Signals 500  228651 -131717  229103 -131717)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  249100 -67500  247950 -67500)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  229143 -137357  229143 -135150)(net 3V3)(type route))
+    (wire (path GND_Plane 200  239012 -136990  239012 -133705)(net "Net-(U7-Pin_13)")(type route))
+    (wire (path Digital_Signals 500  186000 -97174.6  186000 -99500)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  247912 -136450  246384 -136450)(net "Net-(J5-Pin_2)")(type route))
+    (wire (path Digital_Signals 500  198695 -102195  200895 -102195)(net 3V3)(type route))
+    (wire (path Power_Planes 180  175050 -101688  185244 -91494.1)(net USB_DP)(type route))
+    (wire (path Analog_Signals 500  193550 -75560  194250 -75560)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  229046 -124825  229102 -124768)(net 3V3)(type route))
+    (wire (path Power_Planes 200  222896 -121284  222151 -122028)(net "Net-(U5-SD0)")(type route))
+    (wire (path Digital_Signals 500  209550 -84150  209550 -83498.3)(net VBAT)(type route))
+    (wire (path Analog_Signals 500  193550 -77660  193550 -78360)(net 3V3)(type route))
+    (wire (path Digital_Signals 180  184474 -83481.7  183435 -83481.7)(net USB_DM)(type route))
+    (wire (path Digital_Signals 200  185298 -71780  185298 -79051.7)(net "Net-(U4-EN)")(type route))
+    (wire (path Analog_Signals 200  238706 -125814  224106 -125814)(net "Net-(U5-SD3)")(type route))
+    (wire (path Digital_Signals 500  227865 -132503  228651 -131717)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  193000 -78510  193000 -82500)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  240752 -137493  242957 -139698)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  256100 -67500  255950 -67500)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  235400 -107675  235400 -106405)(net 3V3)(type route))
+    (wire (path Power_Planes 200  222151 -133964  221142 -134973)(net "Net-(U5-SD0)")(type route))
+    (wire (path Digital_Signals 500  227912 -122144  224356 -122144)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  239650 -67100.1  240050 -67500)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  253994 -133200  257244 -136450)(net "Net-(J4-Pin_2)")(type route))
+    (wire (path Power_Planes 200  260297 -117841  260297 -129989)(net "Net-(U9-Pin_12)")(type route))
+    (wire (path Digital_Signals 500  193550 -76960  194250 -76960)(net 3V3)(type route))
+    (wire (path Analog_Signals 500  193550 -78360  194250 -78360)(net 3V3)(type route))
+    (wire (path GND_Plane 200  257018 -138875  257018 -137048)(net "Net-(J4-Pin_1)")(type route))
+    (wire (path Digital_Signals 500  238550 -62850  236450 -64950)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  204229 -107729  203000 -106500)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  239215 -137285  239215 -137193)(net "Net-(U7-Pin_13)")(type route))
+    (wire (path Digital_Signals 500  208200 -94500  208200 -93600)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  236370 -135918  236370 -135503)(net "Net-(J3-Pin_2)")(type route))
+    (wire (path Analog_Signals 200  208946 -84489.8  193475 -84489.8)(net "Net-(U4-IO15)")(type route))
+    (wire (path Digital_Signals 500  244581 -137081  246581 -137081)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  262950 -67500  261050 -67500)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  225050 -149500  225050 -148198)(net 3V3_A)(type route))
+    (wire (path Analog_Signals 200  184007 -91005.5  188634 -86378.3)(net "Net-(U4-IO0)")(type route))
+    (wire (path Digital_Signals 500  220953 -128402  224911 -132361)(net 3V3)(type route))
+    (wire (path Digital_Signals 250  255370 -120930  256475 -119825)(net CH4_VOUT)(type route))
+    (wire (path Digital_Signals 500  244700 -103865  244700 -105135)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  251588 -133200  251145 -132757)(net "Net-(J4-Pin_2)")(type route))
+    (wire (path Digital_Signals 200  188261 -98283.5  188261 -98448.5)(net "Net-(U1-TS)")(type route))
+    (wire (path Digital_Signals 400.6  242150 -136450  242188 -136450)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 500  237100 -102855  237100 -102500)(net 3V3)(type route))
+    (wire (path Digital_Signals 250  250034 -133122  250034 -125546)(net CH3_VOUT)(type route))
+    (wire (path Digital_Signals 250  256475 -119825  257188 -119825)(net CH4_VOUT)(type route))
+    (wire (path Digital_Signals 200  184639 -100039  184399 -99799)(net VSYS_FILTERED)(type route))
+    (wire (path GND_Plane 200  219927 -149457  225050 -154580)(net MENB0)(type route))
+    (wire (path GND_Plane 200  252590 -95759.2  248343 -100006)(net /Sensors/I2C_SCL)(type route))
+    (wire (path Digital_Signals 500  240199 -93465.3  240199 -93582.3)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  238000 -138500  239215 -137285)(net "Net-(U7-Pin_13)")(type route))
+    (wire (path Digital_Signals 180  174800 -101400  174800 -100755)(net USB_DP)(type route))
+    (wire (path Power_Planes 200  223254 -120925  223182 -120997)(net "Net-(U5-SD0)")(type route))
+    (wire (path Digital_Signals 500  234950 -67500  236050 -67500)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  196194 -103717  197936 -103717)(net 3V3)(type route))
+    (wire (path Digital_Signals 180  175800 -101366  175516 -101650)(net USB_DP)(type route))
+    (wire (path Digital_Signals 200  200974 -106800  200900 -106800)(net VSYS_FILTERED)(type route))
+    (wire (path Digital_Signals 500  234297 -131717  236060 -133479)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  184032 -95470  184032 -95595.2)(net 3V3)(type route))
+    (wire (path GND_Plane 500  214919 -71468.9  214919 -95000.9)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 500  213000 -81940  210560 -79500)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  183907 -95470  183718 -95658.5)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  195560 -104351  196194 -103717)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  261917 -114280  262912 -115275)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  244475 -63391.9  241717 -66150)(net "Net-(D2-DOUT)")(type route))
+    (wire (path Digital_Signals 500  249102 -92500  250050 -93448.3)(net 3V3)(type route))
+    (wire (path Digital_Signals 350.4  241226 -93676.2  241250 -93700)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  251706 -62050.7  251475 -62282)(net "Net-(D3-DOUT)")(type route))
+    (wire (path Digital_Signals 180  174300 -100755  174300 -100144)(net USB_DM)(type route))
+    (wire (path Digital_Signals 500  190050 -99500  189800 -99250)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  208985 -76500  208953 -76532)(net I2C_SDA)(type route))
+    (wire (path Digital_Signals 500  250998 -92500  251100 -92500)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  231550 -62850  232504 -61895.7)(net 3V3)(type route))
+    (wire (path HighSpeed 200  189764 -101680  189764 -101680)(net VSYS_FILTERED)(type route))
+    (wire (path Digital_Signals 200  257450 -62850  256651 -62050.7)(net "Net-(D3-DOUT)")(type route))
+    (wire (path Analog_Signals 200  255130 -94500  254181 -93551.4)(net /Sensors/I2C_SDA)(type route))
+    (wire (path Digital_Signals 200  234089 -132500  234136 -132453)(net "Net-(J4-Pin_1)")(type route))
+    (wire (path Digital_Signals 500  238567 -139678  240752 -137493)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  249046 -135150  249134 -135238)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  189300 -98012.5  188863 -98012.5)(net "Net-(U1-ISET)")(type route))
+    (wire (path GND_Plane 500  219381 -69648.2  216740 -69648.2)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 200  204802 -84836.7  205134 -85169.2)(net MENB0)(type route))
+    (wire (path Digital_Signals 200  238507 -133200  239012 -133705)(net "Net-(U7-Pin_13)")(type route))
+    (wire (path Digital_Signals 500  213000 -84500  213000 -81940)(net 3V3)(type route))
+    (wire (path Digital_Signals 400.6  227912 -122144  227912 -121575)(net 3V3)(type route))
+    (wire (path Analog_Signals 200  256815 -135359  254808 -133351)(net MENB3)(type route))
+    (wire (path Analog_Signals 200  182898 -101680  181194 -99976.2)(net VSYS_FILTERED)(type route))
+    (wire (path Digital_Signals 500  207200 -104500  207200 -106400)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 500  207200 -104500  200900 -104500)(net 3V3_A)(type route))
+    (wire (path Power_Planes 500  204840 -83433.7  205321 -83433.7)(net VBAT)(type route))
+    (wire (path Digital_Signals 500  248975 -106300  244805 -106300)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  251312 -104750  251312 -105250)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  246863 -135731  247844 -135731)(net MENB2)(type route))
+    (wire (path Digital_Signals 500  241250 -94500  241250 -95300)(net 3V3)(type route))
+    (wire (path Digital_Signals 250  247912 -134500  248655 -134500)(net CH3_VOUT)(type route))
+    (wire (path HighSpeed 200  243193 -134411  241736 -132953)(net "Net-(U5-SC3)")(type route))
+    (wire (path Digital_Signals 200  188562 -100250  189300 -100988)(net VSYS_FILTERED)(type route))
+    (wire (path Digital_Signals 400.6  262912 -119825  262912 -119256)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 500  236050 -67500  236450 -67100.1)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  195294 -96800  192344 -99750)(net VSYS)(type route))
+    (wire (path Digital_Signals 200  232570 -65558  232142 -65558)(net "Net-(D1-DOUT)")(type route))
+    (wire (path Digital_Signals 500  197936 -102955  198695 -102195)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  229241 -135052  229143 -135150)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  227912 -133200  226870 -133200)(net "Net-(U6-Pin_13)")(type route))
+    (wire (path GND_Plane 200  223296 -133333  223296 -150286)(net "Net-(J2-Pin_2)")(type route))
+    (wire (path Digital_Signals 500  193565 -100035  193072 -100035)(net VBAT)(type route))
+    (wire (path Digital_Signals 500  240050 -91807  240050 -93166.5)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  201100 -106600  201100 -106500)(net VSYS_FILTERED)(type route))
+    (wire (path GND_Plane 200  205134 -85169.2  205004 -85299)(net MENB0)(type route))
+    (wire (path Digital_Signals 500  189800 -97174.6  189620 -97174.6)(net 3V3)(type route))
+    (wire (path HighSpeed 200  230578 -132953  223246 -125621)(net "Net-(U5-SC3)")(type route))
+    (wire (path Digital_Signals 500  186000 -99500  184000 -97500)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  246152 -148448  256100 -138500)(net "Net-(J4-Pin_1)")(type route))
+    (wire (path Digital_Signals 500  205002 -69240  210560 -74798.3)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  195000 -82500  193100 -82500)(net 3V3)(type route))
+    (wire (path Digital_Signals 400.6  262912 -123727  262912 -123725)(net 3V3)(type route))
+    (wire (path Power_Planes 200  249867 -133841  249867 -147223)(net "Net-(J4-Pin_2)")(type route))
+    (wire (path Digital_Signals 500  257219 -115118  257188 -115118)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 500  251050 -103488  251312 -103750)(net 3V3)(type route))
+    (wire (path GND_Plane 200  234453 -133586  233444 -133586)(net "Net-(J3-Pin_2)")(type route))
+    (wire (path Digital_Signals 500  208112 -102145  203388 -102145)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  209550 -85301.7  209600 -85351.7)(net "Net-(U4-IO15)")(type route))
+    (wire (path Digital_Signals 400.6  256054 -123075  257188 -123075)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  187667 -90386.6  189030 -91750)(net 3V3)(type route))
+    (wire (path HighSpeed 200  196198 -101680  200247 -105730)(net VSYS_FILTERED)(type route))
+    (wire (path Digital_Signals 500  208200 -93600  208050 -93450)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  261833 -122233  261833 -122445)(net "Net-(J4-Pin_1)")(type route))
+    (wire (path HighSpeed 200  251388 -131418  235171 -131418)(net "Net-(J4-Pin_1)")(type route))
+    (wire (path Digital_Signals 500  234000 -136500  234000 -138120)(net 3V3)(type route))
+    (wire (path Digital_Signals 250.2  191064 -101252  190800 -100988)(net 3V3)(type route))
+    (wire (path GND_Plane 200  205004 -119433  219927 -134356)(net MENB0)(type route))
+    (wire (path GND_Plane 200  189764 -99806.1  189764 -101680)(net VSYS_FILTERED)(type route))
+    (wire (path Digital_Signals 200  242440 -62850  242369 -62779.2)(net "Net-(D1-DOUT)")(type route))
+    (wire (path Analog_Signals 500  235050 -149500  225050 -149500)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 500  251312 -104580  251312 -104750)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  207200 -104500  206996 -104296)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 500  265000 -117500  263425 -115925)(net 3V3)(type route))
+    (wire (path Power_Planes 200  222896 -121233  222896 -121284)(net "Net-(U5-SD0)")(type route))
+    (wire (path Digital_Signals 500  192461 -101252  195560 -104351)(net 3V3)(type route))
+    (wire (path Power_Planes 200  188863 -99346.4  193965 -104449)(net "Net-(U1-ISET)")(type route))
+    (wire (path Digital_Signals 200  248174 -136712  248174 -137148)(net "Net-(J5-Pin_2)")(type route))
+    (wire (path Power_Planes 500  252590 -97120  260050 -104580)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  237178 -132361  237849 -132361)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  184313 -84812.6  184313 -86900.7)(net 3V3)(type route))
+    (wire (path Digital_Signals 400.6  257188 -115925  257188 -116006)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  249134 -137366  249460 -137692)(net 3V3)(type route))
+    (wire (path HighSpeed 200  237874 -85000.8  233543 -80670)(net MENB3)(type route))
+    (wire (path Power_Planes 500  192150 -77660  186612 -83198.1)(net 3V3)(type route))
+    (wire (path Analog_Signals 500  194250 -76960  192850 -76960)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  245099 -101325  248024 -104250)(net /Sensors/I2C_SDA)(type route))
+    (wire (path Digital_Signals 200  223117 -124825  224106 -125814)(net "Net-(U5-SD3)")(type route))
+    (wire (path Analog_Signals 500  192850 -75560  193550 -75560)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  227912 -123525  226862 -123525)(net I2C_SDA)(type route))
+    (wire (path Digital_Signals 200  185194 -100594  184639 -100039)(net VSYS_FILTERED)(type route))
+    (wire (path Digital_Signals 500  235400 -105135  235400 -103865)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  261392 -108462  261392 -114280)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  249606 -104250  248788 -104250)(net /Sensors/I2C_SDA)(type route))
+    (wire (path Digital_Signals 400.6  229101 -133250  229101 -133250)(net 3V3)(type route))
+    (wire (path Power_Planes 200  250671 -148959  250671 -133680)(net MENB3)(type route))
+    (wire (path Digital_Signals 200  182100 -82250  181070 -82250)(net "Net-(U4-EN)")(type route))
+    (wire (path Digital_Signals 249.8  248788 -105327  248788 -105250)(net 3V3)(type route))
+    (wire (path Analog_Signals 200  187371 -75659.7  191212 -79500)(net I2C_SCL)(type route))
+    (wire (path Digital_Signals 500  255992 -123138  255992 -124056)(net 3V3)(type route))
+    (wire (path GND_Plane 200  248174 -145164  248174 -137148)(net "Net-(J5-Pin_2)")(type route))
+    (wire (path Digital_Signals 180  175050 -101650  174800 -101400)(net USB_DP)(type route))
+    (wire (path Power_Planes 200  250951 -132757  249867 -133841)(net "Net-(J4-Pin_2)")(type route))
+    (wire (path Digital_Signals 400.6  237849 -132361  237912 -132424)(net 3V3)(type route))
+    (wire (path Power_Planes 200  204872 -81940  205465 -81940)(net MENB2)(type route))
+    (wire (path Digital_Signals 200  246152 -149500  246152 -148448)(net "Net-(J4-Pin_1)")(type route))
+    (wire (path Digital_Signals 500  235558 -139678  238567 -139678)(net 3V3)(type route))
+    (wire (path GND_Plane 200  219927 -134356  219927 -149457)(net MENB0)(type route))
+    (wire (path Analog_Signals 500  205624 -104296  216445 -115118)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 180  186300 -84480  185308 -84480)(net USB_DM)(type route))
+    (wire (path GND_Plane 200  257018 -137048  251388 -131418)(net "Net-(J4-Pin_1)")(type route))
+    (wire (path Digital_Signals 500  228098 -120923  227912 -120923)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 500  255646 -114280  261392 -114280)(net 3V3)(type route))
+    (wire (path Digital_Signals 400.6  232150 -136450  232188 -136450)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 249.8  250550 -106177  249098 -106177)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  211102 -84501.7  211100 -84500)(net "Net-(U4-IO15)")(type route))
+    (wire (path GND_Plane 200  223296 -150286  225050 -152040)(net "Net-(J2-Pin_2)")(type route))
+    (wire (path Digital_Signals 200  247912 -136450  248174 -136712)(net "Net-(J5-Pin_2)")(type route))
+    (wire (path Digital_Signals 500  252808 -137692  254000 -136500)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  236450 -67100.1  239650 -67100.1)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  257450 -66150  259700 -66150)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  257100 -97500  253050 -97500)(net 3V3)(type route))
+    (wire (path Digital_Signals 180  185308 -84480  185308 -84315.9)(net USB_DM)(type route))
+    (wire (path Digital_Signals 500  192850 -78360  193000 -78510)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  210560 -79500  210560 -76500)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  203800 -85750  202798 -85750)(net "Net-(U4-IO0)")(type route))
+    (wire (path Power_Planes 200  223131 -120997  222896 -121233)(net "Net-(U5-SD0)")(type route))
+    (wire (path Digital_Signals 500  249134 -137366  248000 -138500)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  217540 -70000  217258 -70281.9)(net "Net-(J2-Pin_2)")(type route))
+    (wire (path Digital_Signals 500  187502 -69240  187502 -70510)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  237596 -61895.7  238550 -62850)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  187302 -74422.6  187356 -74477.1)(net I2C_SDA)(type route))
+    (wire (path Digital_Signals 200  252188 -133850  251498 -133850)(net MENB3)(type route))
+    (wire (path Digital_Signals 500  246050 -67500  244800 -67500)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  244700 -106405  244700 -107675)(net 3V3)(type route))
+    (wire (path Power_Planes 500  193072 -100035  193072 -95201.1)(net VBAT)(type route))
+    (wire (path Digital_Signals 180  185308 -84315.9  184474 -83481.7)(net USB_DM)(type route))
+    (wire (path Digital_Signals 500  237100 -92500  238337 -91262.9)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  183122 -87295.1  183122 -90386.6)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  229241 -133390  229241 -135052)(net 3V3)(type route))
+    (wire (path Analog_Signals 500  192850 -76960  192850 -77660)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  238951 -93801.3  238850 -93700)(net /Sensors/I2C_SDA)(type route))
+    (wire (path Digital_Signals 500  208050 -93450  207100 -92500)(net 3V3)(type route))
+    (wire (path HighSpeed 500  236352 -149500  237653 -148198)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 500  262912 -115275  263000 -115362)(net 3V3)(type route))
+    (wire (path GND_Plane 200  255050 -154580  246863 -146393)(net MENB2)(type route))
+    (wire (path GND_Plane 200  210738 -81280.5  210738 -88207)(net I2C_SCL)(type route))
+    (wire (path Digital_Signals 500  259000 -97500  257100 -97500)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  255671 -116006  255126 -115462)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  209540 -79500  208958 -79500)(net I2C_SCL)(type route))
+    (wire (path Digital_Signals 200  242188 -134500  242164 -134523)(net "Net-(U5-SC2)")(type route))
+    (wire (path Power_Planes 500  179609 -99893.3  179370 -99893.3)(net 3V3)(type route))
+    (wire (path HighSpeed 200  194729 -102427  196940 -104638)(net "Net-(U1-TS)")(type route))
+    (wire (path Digital_Signals 400.6  257912 -132549  257912 -132550)(net 3V3)(type route))
+    (wire (path HighSpeed 500  252447 -148198  253748 -149500)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 500  252550 -62850  252550 -64050)(net 3V3)(type route))
+    (wire (path Digital_Signals 249.8  248975 -106238  248975 -106300)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  183918 -87295.1  183122 -87295.1)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  257450 -66150  256100 -67500)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  233058 -133200  233444 -133586)(net "Net-(J3-Pin_2)")(type route))
+    (wire (path Digital_Signals 200  184399 -99799  177909 -99799)(net VSYS_FILTERED)(type route))
+    (wire (path Power_Planes 200  249867 -147223  245050 -152040)(net "Net-(J4-Pin_2)")(type route))
+    (wire (path Digital_Signals 500  205624 -104296  205624 -104296)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 200  187302 -78130  187302 -78316.4)(net "Net-(U4-IO15)")(type route))
+    (wire (path Digital_Signals 200  257307 -133850  256871 -133414)(net "Net-(U9-Pin_12)")(type route))
+    (wire (path Digital_Signals 200  257018 -138875  256475 -138875)(net "Net-(J4-Pin_1)")(type route))
+    (wire (path Power_Planes 200  210738 -88207  211234 -88207)(net I2C_SCL)(type route))
+    (wire (path Power_Planes 200  205465 -81940  241140 -117616)(net MENB2)(type route))
+    (wire (path Digital_Signals 500  229102 -124768  229102 -122525)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  203800 -69240  200570 -69240)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  195560 -104351  195560 -104500)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  208946 -84489.8  209048 -84591.7)(net "Net-(U4-IO15)")(type route))
+    (wire (path Digital_Signals 500  257251 -115086  258146 -115086)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 500  187800 -70510  192850 -75560)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  241717 -66150  238550 -66150)(net "Net-(D2-DOUT)")(type route))
+    (wire (path HighSpeed 200  241736 -132953  230578 -132953)(net "Net-(U5-SC3)")(type route))
+    (wire (path Digital_Signals 200  185298 -79051.7  182100 -82250)(net "Net-(U4-EN)")(type route))
+    (wire (path Analog_Signals 500  179370 -105575  170730 -105575)(net 3V3)(type route))
+    (wire (path Power_Planes 500  255887 -115118  244186 -126819)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 200  195560 -94727.5  195560 -94500)(net "Net-(U1-ILIM)")(type route))
+    (wire (path Analog_Signals 500  194950 -76260  193550 -76260)(net 3V3)(type route))
+    (wire (path Power_Planes 200  251145 -132757  250951 -132757)(net "Net-(J4-Pin_2)")(type route))
+    (wire (path Digital_Signals 500  244700 -102595  243095 -102595)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  209600 -85351.7  210993 -85351.7)(net "Net-(U4-IO15)")(type route))
+    (wire (path Analog_Signals 200  250269 -134812  247704 -134812)(net "Net-(U5-SD3)")(type route))
+    (wire (path Digital_Signals 500  241250 -93700  241250 -94500)(net 3V3)(type route))
+    (wire (path Power_Planes 200  188863 -98012.5  188863 -99346.4)(net "Net-(U1-ISET)")(type route))
+    (wire (path Digital_Signals 400.6  237912 -132424  237912 -132550)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  201900 -98381.8  201900 -96800)(net VSYS)(type route))
+    (wire (path Digital_Signals 200  200900 -106800  201100 -106600)(net VSYS_FILTERED)(type route))
+    (wire (path Digital_Signals 400.6  227912 -122225  227912 -122144)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  184313 -86900.7  183918 -87295.1)(net 3V3)(type route))
+    (wire (path Power_Planes 200  225812 -134258  224831 -135239)(net "Net-(U6-Pin_13)")(type route))
+    (wire (path Digital_Signals 500  200895 -102195  200900 -102200)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  251498 -133850  251000 -133351)(net MENB3)(type route))
+    (wire (path Digital_Signals 200  246384 -136450  243134 -133200)(net "Net-(J5-Pin_2)")(type route))
+    (wire (path Digital_Signals 180  174300 -100144  174584 -99859.9)(net USB_DM)(type route))
+    (wire (path GND_Plane 200  223699 -132930  223699 -77015.3)(net "Net-(J2-Pin_2)")(type route))
+    (wire (path Digital_Signals 200  177546 -99406.7  177544 -99406.7)(net "Net-(J1-CC2)")(type route))
+    (wire (path Digital_Signals 500  261100 -123500  260145 -122545)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 200  235940 -138340  235940 -135122)(net "Net-(U7-Pin_12)")(type route))
+    (wire (path Digital_Signals 500  249134 -135238  249134 -137366)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  172650 -99922.3  172650 -100755)(net VSYS_FILTERED)(type route))
+    (wire (path Digital_Signals 500  246802 -139698  248000 -138500)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  248788 -105866  248788 -105327)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  255350 -64050  257450 -66150)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  202565 -109500  202441 -109376)(net VSYS)(type route))
+    (wire (path Digital_Signals 500  255126 -114800  255646 -114280)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  250050 -103488  250550 -103488)(net 3V3)(type route))
+    (wire (path Analog_Signals 200  187411 -74531.6  206952 -74531.6)(net I2C_SDA)(type route))
+    (wire (path Digital_Signals 500  182290 -91750  182290 -94230)(net 3V3)(type route))
+    (wire (path Digital_Signals 350.4  240199 -93315.5  240199 -93465.3)(net 3V3)(type route))
+    (wire (path Analog_Signals 500  192150 -77660  192850 -77660)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  191538 -98750  195560 -94727.5)(net "Net-(U1-ILIM)")(type route))
+    (wire (path Digital_Signals 200  201979 -98461.2  201900 -98381.8)(net VSYS)(type route))
+    (wire (path Digital_Signals 200  241100 -102500  239000 -102500)(net "Net-(C38-Pad2)")(type route))
+    (wire (path GND_Plane 200  246863 -146393  246863 -135731)(net MENB2)(type route))
+    (wire (path Power_Planes 500  260050 -107120  260050 -104580)(net 3V3)(type route))
+    (wire (path Analog_Signals 200  181194 -99976.2  172704 -99976.2)(net VSYS_FILTERED)(type route))
+    (wire (path Digital_Signals 200  209550 -84850  209550 -85301.7)(net "Net-(U4-IO15)")(type route))
+    (wire (path Analog_Signals 500  188016 -100035  187656 -99674.6)(net VBAT)(type route))
+    (wire (path Digital_Signals 500  236450 -66150  236450 -67100.1)(net 3V3)(type route))
+    (wire (path Power_Planes 500  186645 -92890.3  190280 -96524.4)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  191447 -98012.5  191447 -97592.6)(net VSYS_FILTERED)(type route))
+    (wire (path Digital_Signals 500  182290 -94230  182560 -94500)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  242957 -139698  246802 -139698)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  244000 -136500  244581 -137081)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  245050 -149500  246152 -149500)(net "Net-(J4-Pin_1)")(type route))
+    (wire (path Power_Planes 180  183435 -91520.3  175381 -99574.4)(net USB_DM)(type route))
+    (wire (path Digital_Signals 500  256054 -123075  255992 -123138)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  250050 -103488  249577 -103488)(net 3V3)(type route))
+    (wire (path Digital_Signals 400.6  259289 -135688  258751 -135150)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  236090 -103865  237100 -102855)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  181070 -91750  182290 -91750)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  190800 -98012.5  190300 -98012.5)(net VSYS_FILTERED)(type route))
+    (wire (path Digital_Signals 200  245485 -100055  248343 -102913)(net /Sensors/I2C_SCL)(type route))
+    (wire (path HighSpeed 500  244100 -148198  252447 -148198)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 200  203800 -81940  204872 -81940)(net MENB2)(type route))
+    (wire (path Digital_Signals 250.2  190916 -101103  190800 -100988)(net 3V3)(type route))
+    (wire (path HighSpeed 200  189764 -101680  191357 -101680)(net VSYS_FILTERED)(type route))
+    (wire (path Digital_Signals 200  250269 -134812  250607 -135150)(net "Net-(U5-SD3)")(type route))
+    (wire (path Digital_Signals 200  189800 -101645  189800 -100988)(net VSYS_FILTERED)(type route))
+    (wire (path Digital_Signals 200  190800 -98012.5  191447 -98012.5)(net VSYS_FILTERED)(type route))
+    (wire (path Digital_Signals 200  221549 -124175  221122 -124602)(net "Net-(U5-SC2)")(type route))
+    (wire (path Digital_Signals 200  203535 -109500  203535 -109361)(net VSYS_FILTERED)(type route))
+    (wire (path Digital_Signals 500  244100 -138500  246100 -138500)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 500  182290 -91750  182540 -91500)(net 3V3)(type route))
+    (wire (path GND_Plane 200  223296 -133333  223699 -132930)(net "Net-(J2-Pin_2)")(type route))
+    (wire (path GND_Plane 200  202441 -108835  202441 -98922.9)(net VSYS)(type route))
+    (wire (path Power_Planes 180  185244 -91494.1  185244 -85750)(net USB_DP)(type route))
+    (wire (path Digital_Signals 500  193000 -82500  191100 -82500)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  238337 -91262.9  239506 -91262.9)(net 3V3)(type route))
+    (wire (path Digital_Signals 250  255370 -132717  255370 -120930)(net CH4_VOUT)(type route))
+    (wire (path Analog_Signals 500  228818 -115118  255887 -115118)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 200  189300 -100988  189800 -100988)(net VSYS_FILTERED)(type route))
+    (wire (path Digital_Signals 500  251312 -105250  250812 -105250)(net 3V3)(type route))
+    (wire (path Digital_Signals 400.6  232100 -136500  232150 -136450)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 500  183122 -87295.1  182540 -86713)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  234000 -135538  234000 -136500)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  246050 -67500  247950 -67500)(net 3V3)(type route))
+    (wire (path HighSpeed 200  191880 -101705  191905 -101680)(net VSYS_FILTERED)(type route))
+    (wire (path Analog_Signals 500  192850 -78360  193550 -78360)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  187371 -75659.7  187302 -75590)(net I2C_SCL)(type route))
+    (wire (path Digital_Signals 500  186300 -70510  187502 -70510)(net 3V3)(type route))
+    (wire (path Power_Planes 200  241140 -117616  241140 -133850)(net MENB2)(type route))
+    (wire (path Analog_Signals 500  252590 -97040  251102 -95551.7)(net 3V3)(type route))
+    (wire (path Power_Planes 200  221142 -134973  221142 -134976)(net "Net-(U5-SD0)")(type route))
+    (wire (path Digital_Signals 500  257724 -132361  257724 -124738)(net 3V3)(type route))
+    (wire (path Digital_Signals 400.6  239102 -135494  238758 -135150)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  255126 -115462  255126 -114800)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  252188 -133200  253994 -133200)(net "Net-(J4-Pin_2)")(type route))
+    (wire (path Digital_Signals 500  184000 -84500  184313 -84812.6)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  244706 -62050.7  244475 -62282)(net "Net-(D2-DOUT)")(type route))
+    (wire (path Digital_Signals 200  235940 -135122  237212 -133850)(net "Net-(U7-Pin_12)")(type route))
+    (wire (path Digital_Signals 200  233560 -132500  234089 -132500)(net "Net-(J4-Pin_1)")(type route))
+    (wire (path Digital_Signals 500  241250 -93700  241800 -93700)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  256674 -124738  257724 -124738)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  183122 -90386.6  187667 -90386.6)(net 3V3)(type route))
+    (wire (path GND_Plane 200  236370 -135503  234453 -133586)(net "Net-(J3-Pin_2)")(type route))
+    (wire (path GND_Plane 500  179370 -105575  179370 -101395)(net 3V3)(type route))
+    (wire (path GND_Plane 200  191503 -98067.7  189764 -99806.1)(net VSYS_FILTERED)(type route))
+    (wire (path Digital_Signals 250.2  188562 -99750  188562 -99250)(net VBAT)(type route))
+    (wire (path Power_Planes 200  235050 -152040  236370 -150720)(net "Net-(J3-Pin_2)")(type route))
+    (wire (path Digital_Signals 500  182540 -86713  182540 -86500)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  202441 -109376  202441 -108835)(net VSYS)(type route))
+    (wire (path Power_Planes 200  258953 -122541  248968 -132526)(net "Net-(U8-Pin_13)")(type route))
+    (wire (path Digital_Signals 250.2  188487 -99674.6  188562 -99750)(net VBAT)(type route))
+    (wire (path Digital_Signals 200  210993 -85351.7  211102 -85242.8)(net "Net-(U4-IO15)")(type route))
+    (wire (path Digital_Signals 200  224831 -136260  224240 -136260)(net "Net-(U6-Pin_13)")(type route))
+    (wire (path Digital_Signals 200  188261 -98448.5  188562 -98750)(net "Net-(U1-TS)")(type route))
+    (wire (path HighSpeed 200  236772 -135257  235531 -134016)(net /AnalogFrontEnd/MENB1)(type route))
+    (wire (path Power_Planes 200  211234 -88207  227264 -104237)(net I2C_SCL)(type route))
+    (wire (path Digital_Signals 500  209000 -92500  208050 -93450)(net 3V3)(type route))
+    (wire (path Power_Planes 500  244184 -138416  244100 -138500)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 200  204802 -84480  204802 -84836.7)(net MENB0)(type route))
+    (wire (path Digital_Signals 500  237100 -102381  237100 -102500)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  248024 -104250  248788 -104250)(net /Sensors/I2C_SDA)(type route))
+    (wire (path Analog_Signals 200  232570 -65558  239590 -65558)(net "Net-(D1-DOUT)")(type route))
+    (wire (path Digital_Signals 400.6  262912 -119256  262912 -119175)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 500  233050 -67500  229600 -70950)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  183560 -91452.7  183560 -91500)(net "Net-(U4-IO0)")(type route))
+    (wire (path Analog_Signals 200  254808 -133351  251000 -133351)(net MENB3)(type route))
+    (wire (path Power_Planes 500  190280 -99752.1  191541 -101014)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  244700 -107675  244700 -108945)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  177909 -99799  177450 -100258)(net VSYS_FILTERED)(type route))
+    (wire (path Digital_Signals 200  252109 -134421  252188 -134500)(net "Net-(U5-SC3)")(type route))
+    (wire (path HighSpeed 200  188261 -100814  189874 -102427)(net "Net-(U1-TS)")(type route))
+    (wire (path Digital_Signals 200  191447 -97592.6  194540 -94500)(net VSYS_FILTERED)(type route))
+    (wire (path Power_Planes 500  184032 -95470  179609 -99893.3)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  258560 -115500  258560 -117500)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 500  224911 -132361  227723 -132361)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  257256 -135800  257912 -135800)(net MENB3)(type route))
+    (wire (path Power_Planes 500  244184 -133124  244184 -138416)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 500  250450 -66150  249100 -67500)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  235400 -106405  235400 -105135)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  222188 -124175  221549 -124175)(net "Net-(U5-SC2)")(type route))
+    (wire (path Digital_Signals 200  222188 -125475  223100 -125475)(net "Net-(U5-SC3)")(type route))
+    (wire (path Digital_Signals 500  196000 -99500  198695 -102195)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  249460 -137692  252808 -137692)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  237912 -136450  236902 -136450)(net "Net-(J3-Pin_2)")(type route))
+    (wire (path Digital_Signals 500  236044 -101325  237100 -102381)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  188562 -100250  188218 -100594)(net VSYS_FILTERED)(type route))
+    (wire (path Digital_Signals 200  182100 -85040  183560 -86500)(net "Net-(U4-EN)")(type route))
+    (wire (path Digital_Signals 500  184032 -95470  183907 -95470)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  217258 -70281.9  216966 -70281.9)(net "Net-(J2-Pin_2)")(type route))
+    (wire (path Digital_Signals 180  174584 -99859.9  175300 -99859.9)(net USB_DM)(type route))
+    (wire (path Digital_Signals 400.6  229101 -133250  229101 -132900)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  207100 -92500  203000 -92500)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  197402 -104638  196940 -104638)(net "Net-(U1-TS)")(type route))
+    (wire (path Digital_Signals 500  200955 -102145  200900 -102200)(net 3V3)(type route))
+    (wire (path Digital_Signals 250.2  189800 -98852.1  189800 -98012.5)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  229103 -131717  234297 -131717)(net 3V3)(type route))
+    (wire (path GND_Plane 200  237874 -85000.8  237874 -120226)(net MENB3)(type route))
+    (wire (path Power_Planes 200  236370 -150720  236370 -135503)(net "Net-(J3-Pin_2)")(type route))
+    (wire (path Digital_Signals 200  244700 -101325  245099 -101325)(net /Sensors/I2C_SDA)(type route))
+    (wire (path Digital_Signals 500  246581 -137081  248000 -138500)(net 3V3)(type route))
+    (wire (path Power_Planes 200  245050 -154580  250671 -148959)(net MENB3)(type route))
+    (wire (path Digital_Signals 500  182540 -91500  182540 -90968.7)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  193000 -82500  193100 -82500)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  261100 -121500  261833 -122233)(net "Net-(J4-Pin_1)")(type route))
+    (wire (path Digital_Signals 500  250550 -103488  251050 -103488)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  251475 -62282  251475 -63334.4)(net "Net-(D3-DOUT)")(type route))
+    (wire (path Analog_Signals 200  241122 -134523  231044 -134523)(net "Net-(U5-SC2)")(type route))
+    (wire (path Digital_Signals 200  176800 -100153  176800 -100755)(net "Net-(J1-CC2)")(type route))
+    (wire (path Analog_Signals 200  189764 -101680  182898 -101680)(net VSYS_FILTERED)(type route))
+    (wire (path Digital_Signals 500  226100 -139686  228914 -139686)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 500  191064 -101252  192461 -101252)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  187502 -70510  187800 -70510)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  256651 -62050.7  251706 -62050.7)(net "Net-(D3-DOUT)")(type route))
+    (wire (path Digital_Signals 500  236450 -64950  236450 -66150)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  252188 -133200  251588 -133200)(net "Net-(J4-Pin_2)")(type route))
+    (wire (path Digital_Signals 200  257244 -136450  257912 -136450)(net "Net-(J4-Pin_2)")(type route))
+    (wire (path Digital_Signals 500  200570 -69240  194250 -75560)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  209000 -106500  209000 -103034)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  194415 -85998.3  194501 -85911.9)(net SPI_SCK)(type route))
+    (wire (path Digital_Signals 200  187302 -74320  187302 -74422.6)(net I2C_SDA)(type route))
+    (wire (path Digital_Signals 500  259289 -135688  259289 -137211)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  211102 -85242.8  211102 -84501.7)(net "Net-(U4-IO15)")(type route))
+    (wire (path Digital_Signals 250.2  190800 -100988  190800 -100988)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  229103 -124883  229103 -131717)(net 3V3)(type route))
+    (wire (path GND_Plane 200  237874 -120226  251000 -133351)(net MENB3)(type route))
+    (wire (path Digital_Signals 500  226100 -147148  226100 -139686)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 500  257188 -115118  255887 -115118)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 200  188218 -100594  185194 -100594)(net VSYS_FILTERED)(type route))
+    (wire (path Digital_Signals 500  191452 -101103  191541 -101014)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  250050 -94500  250050 -93448.3)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  220432 -133850  222188 -133850)(net MENB0)(type route))
+    (wire (path Digital_Signals 200  177098 -99852.6  177098 -99854.6)(net "Net-(J1-CC2)")(type route))
+    (wire (path Digital_Signals 200  232354 -134016  233235 -134016)(net /AnalogFrontEnd/MENB1)(type route))
+    (wire (path Digital_Signals 200  256815 -135359  257256 -135800)(net MENB3)(type route))
+    (wire (path HighSpeed 200  251125 -134421  251114 -134411)(net "Net-(U5-SC3)")(type route))
+    (wire (path Digital_Signals 200  247941 -133172  248968 -133172)(net "Net-(U8-Pin_13)")(type route))
+    (wire (path Digital_Signals 500  242100 -136500  244100 -138500)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 500  239506 -91262.9  240050 -91807)(net 3V3)(type route))
+    (wire (path GND_Plane 500  194250 -75560  194250 -76960)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  201100 -106500  201018 -106500)(net VSYS_FILTERED)(type route))
+    (wire (path Power_Planes 200  226398 -133672  226136 -133672)(net "Net-(U6-Pin_13)")(type route))
+    (wire (path Digital_Signals 250.2  189800 -97174.6  189800 -98012.5)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  245550 -62850  245550 -64050)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  222188 -133200  223162 -133200)(net "Net-(J2-Pin_2)")(type route))
+    (wire (path Digital_Signals 250.2  187758 -99674.6  188487 -99674.6)(net VBAT)(type route))
+    (wire (path Digital_Signals 500  264000 -68198.3  263648 -68198.3)(net 3V3)(type route))
+    (wire (path GND_Plane 200  208953 -76532  213693 -81272.8)(net I2C_SDA)(type route))
+    (wire (path Digital_Signals 200  203800 -80670  204863 -80670)(net MENB3)(type route))
+    (wire (path Digital_Signals 500  244700 -103865  244700 -102595)(net 3V3)(type route))
+    (wire (path HighSpeed 200  236772 -135743  236772 -135257)(net /AnalogFrontEnd/MENB1)(type route))
+    (wire (path Power_Planes 500  186612 -92890.3  186645 -92890.3)(net 3V3)(type route))
+    (wire (path Power_Planes 200  224831 -135239  224831 -136260)(net "Net-(U6-Pin_13)")(type route))
+    (wire (path Digital_Signals 200  194489 -104449  193965 -104449)(net "Net-(U1-ISET)")(type route))
+    (wire (path Digital_Signals 200  219927 -134356  220432 -133850)(net MENB0)(type route))
+    (wire (path GND_Plane 200  261833 -134060  257018 -138875)(net "Net-(J4-Pin_1)")(type route))
+    (wire (path Digital_Signals 500  206996 -104296  205624 -104296)(net 3V3_A)(type route))
+    (wire (path GND_Plane 500  192150 -76260  192150 -77660)(net 3V3)(type route))
+    (wire (path Power_Planes 200  223182 -120997  223131 -120997)(net "Net-(U5-SD0)")(type route))
+    (wire (path Digital_Signals 500  226393 -122875  225870 -123398)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 200  236902 -136450  236370 -135918)(net "Net-(J3-Pin_2)")(type route))
+    (wire (path Digital_Signals 500  239102 -135843  240752 -137493)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  173800 -100092  179392 -94500)(net "Net-(J1-CC1)")(type route))
+    (wire (path Digital_Signals 500  229046 -124825  229103 -124883)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  243560 -132500  244184 -133124)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 200  201018 -106500  200247 -105730)(net VSYS_FILTERED)(type route))
+    (wire (path HighSpeed 500  255050 -149500  253748 -149500)(net 3V3_A)(type route))
+    (wire (path Power_Planes 200  227264 -104237  227264 -123782)(net I2C_SCL)(type route))
+    (wire (path Digital_Signals 200  258953 -122541  259000 -122494)(net "Net-(U8-Pin_13)")(type route))
+    (wire (path Digital_Signals 180  175800 -100755  175800 -101366)(net USB_DP)(type route))
+    (wire (path Digital_Signals 200  243134 -133200  242188 -133200)(net "Net-(J5-Pin_2)")(type route))
+    (wire (path Digital_Signals 180  175516 -101650  175050 -101650)(net USB_DP)(type route))
+    (wire (path Digital_Signals 200  224240 -136260  224000 -136500)(net "Net-(U6-Pin_13)")(type route))
+    (wire (path Digital_Signals 400.6  258751 -135150  257912 -135150)(net 3V3)(type route))
+    (wire (path HighSpeed 200  191905 -101680  196198 -101680)(net VSYS_FILTERED)(type route))
+    (wire (path Digital_Signals 500  264000 -69500  264000 -68198.3)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  248198 -103057  248198 -103750)(net /Sensors/I2C_SCL)(type route))
+    (wire (path Analog_Signals 500  250050 -94500  250050 -95551.7)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  226780 -122875  226393 -122875)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 400.6  238758 -135150  237912 -135150)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  250050 -93448.3  250998 -92500)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  253050 -97500  252590 -97040)(net 3V3)(type route))
+    (wire (path GND_Plane 200  202441 -98922.9  201979 -98461.2)(net VSYS)(type route))
+    (wire (path Digital_Signals 500  260145 -119428  260316 -119256)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 200  232142 -65558  231550 -66150)(net "Net-(D1-DOUT)")(type route))
+    (wire (path Digital_Signals 400.6  228102 -121764  227912 -121575)(net 3V3)(type route))
+    (wire (path Analog_Signals 500  251102 -95551.7  250050 -95551.7)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  243450 -62850  242440 -62850)(net "Net-(D1-DOUT)")(type route))
+    (wire (path Digital_Signals 500  263000 -115838  263000 -115500)(net 3V3)(type route))
+    (wire (path GND_Plane 200  248343 -100006  248343 -102913)(net /Sensors/I2C_SCL)(type route))
+    (wire (path HighSpeed 500  237653 -148198  244100 -148198)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 500  224356 -122144  224000 -122500)(net 3V3)(type route))
+    (wire (path HighSpeed 500  235050 -149500  236352 -149500)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 500  258146 -115086  258560 -115500)(net 3V3_A)(type route))
+    (wire (path GND_Plane 500  219722 -69989.4  219381 -69648.2)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 500  203000 -93400  203000 -92500)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  250450 -62850  249651 -62050.7)(net "Net-(D2-DOUT)")(type route))
+    (wire (path Digital_Signals 500  235400 -108945  235400 -107675)(net 3V3)(type route))
+    (wire (path GND_Plane 200  239215 -137193  239012 -136990)(net "Net-(U7-Pin_13)")(type route))
+    (wire (path GND_Plane 200  208958 -79500  210738 -81280.5)(net I2C_SCL)(type route))
+    (wire (path Digital_Signals 250  248655 -134500  250034 -133122)(net CH3_VOUT)(type route))
+    (wire (path Digital_Signals 200  186300 -78130  187302 -78130)(net "Net-(U4-IO15)")(type route))
+    (wire (path Digital_Signals 500  229600 -70950  219112 -70950)(net 3V3)(type route))
+    (wire (path Power_Planes 200  227264 -123782  226871 -124175)(net I2C_SCL)(type route))
+    (wire (path HighSpeed 200  243022 -135731  241140 -133850)(net MENB2)(type route))
+    (wire (path Digital_Signals 200  242188 -133850  241140 -133850)(net MENB2)(type route))
+    (wire (path Digital_Signals 500  233050 -67500  234950 -67500)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  182540 -90968.7  183122 -90386.6)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  257724 -124738  261902 -124738)(net 3V3)(type route))
+    (wire (path Digital_Signals 180  185308 -85750  185244 -85750)(net USB_DP)(type route))
+    (wire (path Digital_Signals 500  226100 -136500  226100 -138500)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 500  262912 -119256  260316 -119256)(net 3V3_A)(type route))
+    (wire (path HighSpeed 200  235171 -131418  234136 -132453)(net "Net-(J4-Pin_1)")(type route))
+    (wire (path Power_Planes 500  244186 -126819  244186 -133124)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 200  203535 -109361  200974 -106800)(net VSYS_FILTERED)(type route))
+    (wire (path Digital_Signals 500  244800 -67500  243450 -66150)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  219712 -70000  219722 -69989.4)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 180  186300 -85750  185308 -85750)(net USB_DP)(type route))
+    (wire (path Digital_Signals 500  185612 -97174.6  186000 -97174.6)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  190916 -101103  191452 -101103)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  260297 -117841  260759 -117841)(net "Net-(U9-Pin_12)")(type route))
+    (wire (path Digital_Signals 500  258560 -115500  261100 -115500)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 500  244700 -103865  238110 -103865)(net 3V3)(type route))
+    (wire (path Digital_Signals 500  187656 -99674.6  187758 -99674.6)(net VBAT)(type route))
+    (wire (path Digital_Signals 200  181540 -97500  179453 -97500)(net "Net-(J1-CC2)")(type route))
+    (wire (path Power_Planes 500  244186 -133124  244184 -133124)(net 3V3_A)(type route))
+    (wire (path Digital_Signals 200  250607 -135150  252188 -135150)(net "Net-(U5-SD3)")(type route))
+    (wire (path Digital_Signals 200  201900 -96800  195294 -96800)(net VSYS)(type route))
+    (wire (path Digital_Signals 200  194540 -104500  194489 -104449)(net "Net-(U1-ISET)")(type route))
+    (wire (path Power_Planes 500  179370 -101395  179370 -99893.3)(net 3V3)(type route))
+    (wire (path Digital_Signals 200  187302 -78316.4  187374 -78388.4)(net "Net-(U4-IO15)")(type route))
+    (via "Via[0-5]_300:300_um"  172517 -99789.5 (net VSYS_FILTERED)(type route))
+    (via "Via[0-5]_300:300_um"  187356 -74477.1 (net I2C_SDA)(type route))
+    (via "Via[0-5]_300:300_um"  201979 -98461.2 (net VSYS)(type route))
+    (via "Via[0-5]_300:300_um"  183435 -83481.7 (net USB_DM)(type route))
+    (via "Via[0-5]_600:400_um"  225870 -123398 (net 3V3_A)(type route))
+    (via "Via[0-5]_300:300_um"  194501 -84038.4 (net SPI_SCK)(type route))
+    (via "Via[0-5]_600:400_um"  244100 -138500 (net 3V3_A)(type route))
+    (via "Via[0-5]_300:300_um"  208946 -84489.8 (net "Net-(U4-IO15)")(type route))
+    (via "Via[0-5]_300:300_um"  251388 -131418 (net "Net-(J4-Pin_1)")(type route))
+    (via "Via[0-5]_300:300_um"  210738 -88207 (net I2C_SCL)(type route))
+    (via "Via[0-5]_300:300_um"  223246 -125621 (net "Net-(U5-SC3)")(type route))
+    (via "Via[0-5]_300:300_um"  213693 -91234 (net I2C_SDA)(type route))
+    (via "Via[0-5]_300:300_um"  175050 -101688 (net USB_DP)(type route))
+    (via "Via[0-5]_300:300_um"  260297 -117841 (net "Net-(U9-Pin_12)")(type route))
+    (via "Via[0-5]_300:300_um"  221122 -124602 (net "Net-(U5-SC2)")(type route))
+    (via "Via[0-5]_300:300_um"  187374 -78388.4 (net "Net-(U4-IO15)")(type route))
+    (via "Via[0-5]_300:300_um"  249856 -104500 (net /Sensors/I2C_SDA)(type route))
+    (via "Via[0-5]_300:300_um"  246863 -135731 (net MENB2)(type route))
+    (via "Via[0-5]_300:300_um"  205134 -85169.2 (net MENB0)(type route))
+    (via "Via[0-5]_300:300_um"  202441 -108835 (net VSYS)(type route))
+    (via "Via[0-5]_300:300_um"  239012 -133705 (net "Net-(U7-Pin_13)")(type route))
+    (via "Via[0-5]_600:400_um"  255887 -115118 (net 3V3_A)(type route))
+    (via "Via[0-5]_600:400_um"  184032 -95470 (net 3V3)(type route))
+    (via "Via[0-5]_300:300_um"  208953 -76532 (net I2C_SDA)(type route))
+    (via "Via[0-5]_300:300_um"  202798 -86378.3 (net "Net-(U4-IO0)")(type route))
+    (via "Via[0-5]_300:300_um"  236370 -135503 (net "Net-(J3-Pin_2)")(type route))
+    (via "Via[0-5]_300:300_um"  233444 -133586 (net "Net-(J3-Pin_2)")(type route))
+    (via "Via[0-5]_300:300_um"  239215 -137193 (net "Net-(U7-Pin_13)")(type route))
+    (via "Via[0-5]_300:300_um"  234136 -132453 (net "Net-(J4-Pin_1)")(type route))
+    (via "Via[0-5]_300:300_um"  242369 -62779.2 (net "Net-(D1-DOUT)")(type route))
+    (via "Via[0-5]_300:300_um"  256815 -135359 (net MENB3)(type route))
+    (via "Via[0-5]_300:300_um"  241140 -133850 (net MENB2)(type route))
+    (via "Via[0-5]_300:300_um"  237874 -85000.8 (net MENB3)(type route))
+    (via "Via[0-5]_300:300_um"  204863 -80670 (net MENB3)(type route))
+    (via "Via[0-5]_300:300_um"  216966 -70282 (net "Net-(J2-Pin_2)")(type route))
+    (via "Via[0-5]_600:400_um"  205321 -83433.7 (net VBAT)(type route))
+    (via "Via[0-5]_300:300_um"  219927 -134356 (net MENB0)(type route))
+    (via "Via[0-5]_300:300_um"  261833 -122445 (net "Net-(J4-Pin_1)")(type route))
+    (via "Via[0-5]_300:300_um"  184007 -91005.5 (net "Net-(U4-IO0)")(type route))
+    (via "Via[0-5]_300:300_um"  251145 -132757 (net "Net-(J4-Pin_2)")(type route))
+    (via "Via[0-5]_300:300_um"  257018 -138875 (net "Net-(J4-Pin_1)")(type route))
+    (via "Via[0-5]_300:300_um"  251000 -133351 (net MENB3)(type route))
+    (via "Via[0-5]_300:300_um"  191503 -98067.7 (net VSYS_FILTERED)(type route))
+    (via "Via[0-5]_600:400_um"  228818 -120202 (net 3V3_A)(type route))
+    (via "Via[0-5]_300:300_um"  208958 -79500 (net I2C_SCL)(type route))
+    (via "Via[0-5]_300:300_um"  188261 -98283.5 (net "Net-(U1-TS)")(type route))
+    (via "Via[0-5]_300:300_um"  226862 -123525 (net I2C_SDA)(type route))
+    (via "Via[0-5]_300:300_um"  189764 -101680 (net VSYS_FILTERED)(type route))
+    (via "Via[0-5]_300:300_um"  233235 -134016 (net /AnalogFrontEnd/MENB1)(type route))
+    (via "Via[0-5]_300:300_um"  200247 -105730 (net VSYS_FILTERED)(type route))
+    (via "Via[0-5]_300:300_um"  248968 -133172 (net "Net-(U8-Pin_13)")(type route))
+    (via "Via[0-5]_300:300_um"  239536 -93801.3 (net /Sensors/I2C_SDA)(type route))
+    (via "Via[0-5]_600:400_um"  244184 -133124 (net 3V3_A)(type route))
+    (via "Via[0-5]_600:400_um"  205624 -104296 (net 3V3_A)(type route))
+    (via "Via[0-5]_300:300_um"  256871 -133414 (net "Net-(U9-Pin_12)")(type route))
+    (via "Via[0-5]_300:300_um"  241122 -134523 (net "Net-(U5-SC2)")(type route))
+    (via "Via[0-5]_300:300_um"  204872 -81940 (net MENB2)(type route))
+    (via "Via[0-5]_300:300_um"  188863 -98012.5 (net "Net-(U1-ISET)")(type route))
+    (via "Via[0-5]_300:300_um"  187371 -75659.7 (net I2C_SCL)(type route))
+    (via "Via[0-5]_600:400_um"  187656 -99674.6 (net VBAT)(type route))
+    (via "Via[0-5]_300:300_um"  224106 -125814 (net "Net-(U5-SD3)")(type route))
+    (via "Via[0-5]_300:300_um"  248343 -102913 (net /Sensors/I2C_SCL)(type route))
+    (via "Via[0-5]_300:300_um"  251125 -134421 (net "Net-(U5-SC3)")(type route))
+    (via "Via[0-5]_600:400_um"  193072 -100035 (net VBAT)(type route))
+    (via "Via[0-5]_300:300_um"  258953 -122541 (net "Net-(U8-Pin_13)")(type route))
+    (via "Via[0-5]_600:400_um"  191541 -101014 (net 3V3)(type route))
+    (via "Via[0-5]_300:300_um"  193965 -104449 (net "Net-(U1-ISET)")(type route))
+    (via "Via[0-5]_300:300_um"  250269 -134812 (net "Net-(U5-SD3)")(type route))
+    (via "Via[0-5]_300:300_um"  223296 -133333 (net "Net-(J2-Pin_2)")(type route))
+    (via "Via[0-5]_300:300_um"  223254 -120925 (net "Net-(U5-SD0)")(type route))
+    (via "Via[0-5]_300:300_um"  236772 -135743 (net /AnalogFrontEnd/MENB1)(type route))
+    (via "Via[0-5]_300:300_um"  232570 -65558 (net "Net-(D1-DOUT)")(type route))
+    (via "Via[0-5]_300:300_um"  196940 -104638 (net "Net-(U1-TS)")(type route))
+    (via "Via[0-5]_300:300_um"  226871 -124175 (net I2C_SCL)(type route))
+    (via "Via[0-5]_300:300_um"  221142 -134976 (net "Net-(U5-SD0)")(type route))
+    (via "Via[0-5]_300:300_um"  248174 -137148 (net "Net-(J5-Pin_2)")(type route))
+    (via "Via[0-5]_600:400_um"  219722 -69989.4 (net 3V3_A)(type route))
+    (via "Via[0-5]_300:300_um"  226870 -133200 (net "Net-(U6-Pin_13)")(type route))
+    (via "Via[0-5]_300:300_um"  175381 -99574.4 (net USB_DM)(type route))
+    (via "Via[0-5]_300:300_um"  224831 -136260 (net "Net-(U6-Pin_13)")(type route))
+    (via "Via[0-5]_300:300_um"  185244 -85750 (net USB_DP)(type route))
+  )
+)

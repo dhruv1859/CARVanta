@@ -1,62 +1,52 @@
 {
   "gene": "GPC3",
   "total_trials": 50,
-  "car_t_trials": 32,
+  "car_t_trials": 42,
   "phase_distribution": {
-    "PHASE1": 33,
-    "PHASE2": 13,
-    "EARLY_PHASE1": 6,
-    "NA": 5
+    "PHASE1": 40,
+    "PHASE2": 10,
+    "EARLY_PHASE1": 7,
+    "NA": 3
   },
   "status_distribution": {
-    "RECRUITING": 15,
     "NOT_YET_RECRUITING": 3,
-    "UNKNOWN": 10,
-    "COMPLETED": 11,
-    "WITHDRAWN": 2,
-    "ENROLLING_BY_INVITATION": 1,
-    "SUSPENDED": 1,
+    "RECRUITING": 21,
     "TERMINATED": 2,
-    "ACTIVE_NOT_RECRUITING": 4,
-    "AVAILABLE": 1
+    "UNKNOWN": 11,
+    "COMPLETED": 4,
+    "WITHDRAWN": 2,
+    "SUSPENDED": 3,
+    "ACTIVE_NOT_RECRUITING": 4
   },
   "recent_trials": [
     {
-      "nct_id": "NCT06395103",
-      "title": "Substudy 01A: Zilovertamab Vedotin in Pediatric and Young Adult Participants With Hematologic Malignancies or Solid Tumors (MK-9999-01A/LIGHTBEAM-U01)",
-      "status": "RECRUITING",
+      "nct_id": "NCT06641453",
+      "title": "CAR-T Cell Therapy Targeting GPC3 in Patients with Advanced GPC3-Positive Hepatocellular Carcinoma",
+      "status": "NOT_YET_RECRUITING",
       "phases": [
         "PHASE1",
         "PHASE2"
       ]
     },
     {
-      "nct_id": "NCT07394205",
-      "title": "Clinical Study of CBG131 CAR-T Cell Injection for the Treatment of CLDN18.2-Positive Advanced Gastric and Pancreatic Cancer",
-      "status": "NOT_YET_RECRUITING",
-      "phases": [
-        "EARLY_PHASE1"
-      ]
-    },
-    {
-      "nct_id": "NCT04803929",
-      "title": "Clinical Study of Anti-ILT3 CAR-T Therapy for R/R AML(M4/M5)",
+      "nct_id": "NCT06196294",
+      "title": "GPC3/Mesothelin-CAR-\u03b3\u03b4T Cells Against Cancers",
       "status": "RECRUITING",
       "phases": [
-        "EARLY_PHASE1"
+        "PHASE1"
       ]
     },
     {
-      "nct_id": "NCT05822037",
-      "title": "CT0594CP CAR-T Cells in Patients With Relapsed/Refractory Multiple Myeloma or Plasma Cell Leukemia",
-      "status": "RECRUITING",
+      "nct_id": "NCT04405778",
+      "title": "A Study of TAK-102 in Adult With Previously-Treated Solid Tumors",
+      "status": "TERMINATED",
       "phases": [
-        "NA"
+        "PHASE1"
       ]
     },
     {
-      "nct_id": "NCT05639179",
-      "title": "Novel Anti-CD19 Universal CAR-T Cells for r/r CD19+ B-ALL",
+      "nct_id": "NCT02715362",
+      "title": "A Study of GPC3 Redirected Autologous T Cells for Advanced HCC",
       "status": "UNKNOWN",
       "phases": [
         "PHASE1",
@@ -64,43 +54,51 @@
       ]
     },
     {
-      "nct_id": "NCT04213469",
-      "title": "PD1-CD19-CART in Patients With r/r B-cell Lymphoma",
+      "nct_id": "NCT02395250",
+      "title": "Anti-GPC3 CAR T for Treating Patients With Advanced HCC",
       "status": "COMPLETED",
       "phases": [
-        "NA"
+        "PHASE1"
       ]
     },
     {
-      "nct_id": "NCT05336383",
-      "title": "Phase II Study of Salvage Radiation Treatment After B-cell Maturation Antigen Chimeric Antigen Receptor T-cell Therapy for Relapsed Refractory Multiple Myeloma",
+      "nct_id": "NCT06652243",
+      "title": "Clinical Study of SN301A Injection in the Treatment of Hepatocellular Carcinoma",
       "status": "RECRUITING",
-      "phases": [
-        "PHASE2"
-      ]
-    },
-    {
-      "nct_id": "NCT05923541",
-      "title": "RD13-02 for Patients With r/r CD7+ T Cell Hematologic Malignancies",
-      "status": "COMPLETED",
       "phases": [
         "EARLY_PHASE1"
       ]
     },
     {
-      "nct_id": "NCT06087341",
-      "title": "A Phase I Trial of Memory T Cells Expressing an NKG2D Chimeric Antigen Receptor in Children, Adolescents and Young Adults With Advanced Sarcoma",
+      "nct_id": "NCT06461624",
+      "title": "Clinical Trial of Autologous GPC3 CAR-T Cells (CBG166) Therapy for Advanced Hepatocellular Carcinoma",
       "status": "RECRUITING",
       "phases": [
         "PHASE1"
       ]
     },
     {
-      "nct_id": "NCT04036019",
-      "title": "A Study of C-CAR066 in Subjects With r/r B Cell Lymphoma Who Received CD19 CAR-T Therapy",
-      "status": "COMPLETED",
+      "nct_id": "NCT07039201",
+      "title": "A Study to Evaluate CG-102-12C in Glypican-3 (GPC3) Positive Advanced Hepatocellular Carcinoma (HCC)",
+      "status": "RECRUITING",
+      "phases": [
+        "NA"
+      ]
+    },
+    {
+      "nct_id": "NCT07148050",
+      "title": "Immunotherapy for Solid Tumor Malignancies in Pediatrics Using Interleukin-15 and -21 Armored Glypican-3-specific Chimeric Antigen Receptor T Cells",
+      "status": "RECRUITING",
       "phases": [
         "PHASE1"
+      ]
+    },
+    {
+      "nct_id": "NCT03302403",
+      "title": "Clinical Study of Redirected Autologous T Cells With a Chimeric Antigen Receptor in Patients With Malignant Tumors",
+      "status": "UNKNOWN",
+      "phases": [
+        "NA"
       ]
     }
   ],

@@ -1,0 +1,244 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "4f3dd9b5-6625-419b-85f6-a4ddefe954f3")
+	(paper "A4")
+	(lib_symbols)
+	(sheet
+		(at 233.68 102.87)
+		(size 24.13 27.94)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "2a159f5e-5384-4249-84b0-1e6a082fbd15")
+		(property "Sheetname" "Sensors"
+			(at 233.68 102.1584 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Sensors.kicad_sch"
+			(at 233.68 131.3946 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "CARVanta_Sentinel_v2"
+				(path "/4f3dd9b5-6625-419b-85f6-a4ddefe954f3"
+					(page "6")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 165.1 132.08)
+		(size 22.86 15.24)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "8dc080a7-320e-4dd4-ae88-8fdfb7245d77")
+		(property "Sheetname" "Display_UI"
+			(at 165.1 131.3684 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Display_UI.kicad_sch"
+			(at 165.1 147.9046 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "CARVanta_Sentinel_v2"
+				(path "/4f3dd9b5-6625-419b-85f6-a4ddefe954f3"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 88.9 66.04)
+		(size 29.21 21.59)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "bf362261-95e0-4661-97aa-3f3967f21ddb")
+		(property "Sheetname" "Power"
+			(at 88.9 65.3284 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Power.kicad_sch"
+			(at 88.9 88.2146 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "CARVanta_Sentinel_v2"
+				(path "/4f3dd9b5-6625-419b-85f6-a4ddefe954f3"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 166.37 62.23)
+		(size 35.56 43.18)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "ce7ec9ac-2b7d-4eb2-b4de-d306e40ca2c5")
+		(property "Sheetname" "AnalogFrontEnd"
+			(at 166.37 61.5184 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "AnalogFrontEnd.kicad_sch"
+			(at 166.37 105.9946 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "CARVanta_Sentinel_v2"
+				(path "/4f3dd9b5-6625-419b-85f6-a4ddefe954f3"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 99.06 111.76)
+		(size 12.7 24.13)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "e140a164-e5ff-42d9-bfd7-4ceb5592062f")
+		(property "Sheetname" "MCU"
+			(at 99.06 111.0484 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "MCU.kicad_sch"
+			(at 99.06 136.4746 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "CARVanta_Sentinel_v2"
+				(path "/4f3dd9b5-6625-419b-85f6-a4ddefe954f3"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)

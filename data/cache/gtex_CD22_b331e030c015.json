@@ -1,9 +1,255 @@
 {
   "gene": "CD22",
-  "tissues": {},
-  "organ_summary": {},
-  "critical_organ_flags": [],
-  "overall_mean_normal": 0.0,
+  "tissues": {
+    "Adipose_Subcutaneous": {
+      "median_tpm": 1.349,
+      "n_samples": 0
+    },
+    "Adipose_Visceral_Omentum": {
+      "median_tpm": 1.511,
+      "n_samples": 0
+    },
+    "Adrenal_Gland": {
+      "median_tpm": 4.066,
+      "n_samples": 0
+    },
+    "Artery_Aorta": {
+      "median_tpm": 0.687,
+      "n_samples": 0
+    },
+    "Artery_Coronary": {
+      "median_tpm": 1.096,
+      "n_samples": 0
+    },
+    "Artery_Tibial": {
+      "median_tpm": 0.315,
+      "n_samples": 0
+    },
+    "Bladder": {
+      "median_tpm": 2.71,
+      "n_samples": 0
+    },
+    "Brain_Amygdala": {
+      "median_tpm": 13.15,
+      "n_samples": 0
+    },
+    "Brain_Anterior_cingulate_cortex_BA24": {
+      "median_tpm": 3.987,
+      "n_samples": 0
+    },
+    "Brain_Caudate_basal_ganglia": {
+      "median_tpm": 14.845,
+      "n_samples": 0
+    },
+    "Brain_Cerebellar_Hemisphere": {
+      "median_tpm": 2.737,
+      "n_samples": 0
+    },
+    "Brain_Cerebellum": {
+      "median_tpm": 3.956,
+      "n_samples": 0
+    },
+    "Brain_Cortex": {
+      "median_tpm": 9.52,
+      "n_samples": 0
+    },
+    "Brain_Frontal_Cortex_BA9": {
+      "median_tpm": 6.385,
+      "n_samples": 0
+    },
+    "Brain_Hippocampus": {
+      "median_tpm": 21.96,
+      "n_samples": 0
+    },
+    "Brain_Hypothalamus": {
+      "median_tpm": 10.079,
+      "n_samples": 0
+    },
+    "Brain_Nucleus_accumbens_basal_ganglia": {
+      "median_tpm": 8.248,
+      "n_samples": 0
+    },
+    "Brain_Putamen_basal_ganglia": {
+      "median_tpm": 16.652,
+      "n_samples": 0
+    },
+    "Brain_Spinal_cord_cervical_c-1": {
+      "median_tpm": 54.111,
+      "n_samples": 0
+    },
+    "Brain_Substantia_nigra": {
+      "median_tpm": 21.781,
+      "n_samples": 0
+    },
+    "Breast_Mammary_Tissue": {
+      "median_tpm": 1.387,
+      "n_samples": 0
+    },
+    "Cells_Cultured_fibroblasts": {
+      "median_tpm": 0.225,
+      "n_samples": 0
+    },
+    "Cells_EBV-transformed_lymphocytes": {
+      "median_tpm": 266.368,
+      "n_samples": 0
+    },
+    "Cervix_Ectocervix": {
+      "median_tpm": 2.537,
+      "n_samples": 0
+    },
+    "Cervix_Endocervix": {
+      "median_tpm": 1.952,
+      "n_samples": 0
+    },
+    "Colon_Sigmoid": {
+      "median_tpm": 1.268,
+      "n_samples": 0
+    },
+    "Colon_Transverse": {
+      "median_tpm": 2.258,
+      "n_samples": 0
+    },
+    "Esophagus_Gastroesophageal_Junction": {
+      "median_tpm": 2.452,
+      "n_samples": 0
+    },
+    "Esophagus_Mucosa": {
+      "median_tpm": 1.575,
+      "n_samples": 0
+    },
+    "Esophagus_Muscularis": {
+      "median_tpm": 2.406,
+      "n_samples": 0
+    },
+    "Fallopian_Tube": {
+      "median_tpm": 7.788,
+      "n_samples": 0
+    },
+    "Heart_Atrial_Appendage": {
+      "median_tpm": 0.312,
+      "n_samples": 0
+    },
+    "Heart_Left_Ventricle": {
+      "median_tpm": 0.135,
+      "n_samples": 0
+    },
+    "Kidney_Cortex": {
+      "median_tpm": 0.881,
+      "n_samples": 0
+    },
+    "Kidney_Medulla": {
+      "median_tpm": 0.364,
+      "n_samples": 0
+    },
+    "Liver": {
+      "median_tpm": 0.521,
+      "n_samples": 0
+    },
+    "Lung": {
+      "median_tpm": 7.271,
+      "n_samples": 0
+    },
+    "Minor_Salivary_Gland": {
+      "median_tpm": 1.397,
+      "n_samples": 0
+    },
+    "Muscle_Skeletal": {
+      "median_tpm": 0.118,
+      "n_samples": 0
+    },
+    "Nerve_Tibial": {
+      "median_tpm": 14.459,
+      "n_samples": 0
+    },
+    "Ovary": {
+      "median_tpm": 201.146,
+      "n_samples": 0
+    },
+    "Pancreas": {
+      "median_tpm": 0.279,
+      "n_samples": 0
+    },
+    "Pituitary": {
+      "median_tpm": 1.132,
+      "n_samples": 0
+    },
+    "Prostate": {
+      "median_tpm": 3.024,
+      "n_samples": 0
+    },
+    "Skin_Not_Sun_Exposed_Suprapubic": {
+      "median_tpm": 0.312,
+      "n_samples": 0
+    },
+    "Skin_Sun_Exposed_Lower_leg": {
+      "median_tpm": 0.255,
+      "n_samples": 0
+    },
+    "Small_Intestine_Terminal_Ileum": {
+      "median_tpm": 25.011,
+      "n_samples": 0
+    },
+    "Spleen": {
+      "median_tpm": 190.937,
+      "n_samples": 0
+    },
+    "Stomach": {
+      "median_tpm": 1.683,
+      "n_samples": 0
+    },
+    "Testis": {
+      "median_tpm": 5.983,
+      "n_samples": 0
+    },
+    "Thyroid": {
+      "median_tpm": 4.833,
+      "n_samples": 0
+    },
+    "Uterus": {
+      "median_tpm": 2.544,
+      "n_samples": 0
+    },
+    "Vagina": {
+      "median_tpm": 1.689,
+      "n_samples": 0
+    },
+    "Whole_Blood": {
+      "median_tpm": 11.603,
+      "n_samples": 0
+    }
+  },
+  "organ_summary": {
+    "Brain": 14.416,
+    "Heart": 0.224,
+    "Lung": 7.271,
+    "Liver": 0.521,
+    "Kidney": 0.623,
+    "GI Tract": 5.236,
+    "Blood": 138.986,
+    "Skin": 0.283,
+    "Muscle": 0.118,
+    "Nerve": 14.459,
+    "Adipose": 1.43,
+    "Breast": 1.387,
+    "Reproductive": 37.029,
+    "Endocrine": 2.578,
+    "Immune": 96.167,
+    "Vascular": 0.699,
+    "Bladder": 2.71
+  },
+  "critical_organ_flags": [
+    {
+      "organ": "Brain",
+      "mean_tpm": 14.416,
+      "risk": "MODERATE"
+    },
+    {
+      "organ": "Lung",
+      "mean_tpm": 7.271,
+      "risk": "MODERATE"
+    }
+  ],
+  "overall_mean_normal": 17.875,
   "source": "GTEx",
   "status": "fetched"
 }

@@ -1,37 +1,45 @@
 """
-CARVanta – CVS (CAR-T Viability Score) Engine v3
-====================================================
+CARVanta – CVS (CAR-T Viability Score) Engine v3.1
+=====================================================
 CARVanta-Original: Adaptive Weighted Scoring Algorithm
 
-8-feature weighted scoring formula with confidence-adjusted weights.
-Multi-source consensus scoring combining TCGA, GTEx, HPA, UniProt data.
+8-feature weighted scoring formula calibrated against FDA-approved CAR-T
+targets (CD19, BCMA) and validated negative controls (TP53, KRAS, MYC).
 
-Features:
-    1. Tumor Specificity        (0.25) – TCGA differential expression
-    2. Safety Score             (0.20) – GTEx normal tissue risk (inverted)
-    3. Stability Score          (0.12) – Expression consistency across samples
-    4. Literature/Evidence      (0.10) – Published clinical support + trial data
-    5. Immunogenicity Score     (0.10) – Immune recognition potential
-    6. Surface Accessibility    (0.08) – Membrane localization (UniProt/HPA)
-    7. Tissue Risk Score        (0.08) – GTEx organ-level risk heatmap
-    8. Protein Validation       (0.07) – HPA protein-level confirmation
+Features (re-weighted based on May 2026 validation benchmark):
+    1. Surface Accessibility    (0.20) – THE defining feature: if not surface, not a target
+    2. Tumor Specificity        (0.20) – TCGA differential expression
+    3. Safety Score             (0.15) – GTEx normal tissue risk (inverted)
+    4. Literature/Evidence      (0.15) – Real ClinicalTrials.gov trial phase maturity
+    5. Stability Score          (0.10) – Expression consistency across samples
+    6. Immunogenicity Score     (0.08) – Immune recognition potential
+    7. Tissue Risk Score        (0.07) – GTEx critical organ expression
+    8. Protein Validation       (0.05) – HPA protein-level confirmation
 
-Adaptive Weight Adjustment:
-    When real data is available, weights shift to give more credence to
-    features backed by real data vs estimated values.
+Calibration rationale:
+    - Surface accessibility raised from 0.08→0.20: Intracellular proteins
+      (TP53, KRAS, MYC) cannot be CAR-T targets regardless of other scores.
+      This single feature separates viable from impossible targets.
+    - Evidence raised from 0.10→0.15: FDA-approved targets have extensive
+      trial data. This rewards proven clinical candidates.
+    - Safety reduced from 0.20→0.15: GTEx data shows most surface antigens
+      have SOME normal tissue expression. Overly penalizing this pushes
+      proven targets like CD19 (B-cell aplasia is manageable) too low.
+    - Protein validation reduced from 0.07→0.05: HPA data is often
+      unavailable; this feature should not heavily influence the score.
 """
 
 
-# ─── Default v3 weights ────────────────────────────────────────────────────────
+# ─── Default v3.1 weights (calibrated May 2026) ───────────────────────────────
 DEFAULT_WEIGHTS = {
-    "tumor_specificity":    0.25,
-    "safety":               0.20,
-    "stability":            0.12,
-    "evidence":             0.10,
-    "immunogenicity":       0.10,
-    "surface_accessibility": 0.08,
-    "tissue_risk":          0.08,
-    "protein_validation":   0.07,
+    "surface_accessibility": 0.20,
+    "tumor_specificity":    0.20,
+    "safety":               0.15,
+    "evidence":             0.15,
+    "stability":            0.10,
+    "immunogenicity":       0.08,
+    "tissue_risk":          0.07,
+    "protein_validation":   0.05,
 }
 
 

@@ -1,7 +1,90 @@
 {
   "gene": "EPCAM",
-  "cancer_types": {},
-  "overall_mean_tumor": 0.0,
-  "source": "TCGA-GDC",
-  "status": "partial"
+  "cancer_types": {
+    "Breast Cancer": {
+      "median_expression": 4394.1,
+      "mean_expression": 5222.0,
+      "sample_count": 1082
+    },
+    "Leukemia": {
+      "median_expression": 13.0,
+      "mean_expression": 110.8,
+      "sample_count": 173
+    },
+    "Lymphoma": {
+      "median_expression": 18.5,
+      "mean_expression": 95.1,
+      "sample_count": 48
+    },
+    "Glioblastoma": {
+      "median_expression": 4.7,
+      "mean_expression": 11.4,
+      "sample_count": 160
+    },
+    "Lung Adenocarcinoma": {
+      "median_expression": 9736.8,
+      "mean_expression": 10463.1,
+      "sample_count": 510
+    },
+    "Melanoma": {
+      "median_expression": 2.4,
+      "mean_expression": 17.5,
+      "sample_count": 443
+    },
+    "Prostate Cancer": {
+      "median_expression": 5652.4,
+      "mean_expression": 6133.8,
+      "sample_count": 493
+    },
+    "Ovarian Cancer": {
+      "median_expression": 9476.0,
+      "mean_expression": 10475.9,
+      "sample_count": 300
+    },
+    "Liver Cancer": {
+      "median_expression": 35.6,
+      "mean_expression": 1419.5,
+      "sample_count": 366
+    },
+    "Renal Cancer": {
+      "median_expression": 805.7,
+      "mean_expression": 1080.7,
+      "sample_count": 510
+    },
+    "Gastric Cancer": {
+      "median_expression": 13924.7,
+      "mean_expression": 15363.3,
+      "sample_count": 412
+    },
+    "Pancreatic Cancer": {
+      "median_expression": 8299.4,
+      "mean_expression": 8732.3,
+      "sample_count": 177
+    },
+    "Bladder Cancer": {
+      "median_expression": 2756.8,
+      "mean_expression": 3368.2,
+      "sample_count": 407
+    },
+    "Head & Neck Cancer": {
+      "median_expression": 772.0,
+      "mean_expression": 1556.7,
+      "sample_count": 515
+    },
+    "Endometrial Cancer": {
+      "median_expression": 11441.4,
+      "mean_expression": 12181.5,
+      "sample_count": 527
+    },
+    "Thyroid Cancer": {
+      "median_expression": 10043.6,
+      "mean_expression": 10303.3,
+      "sample_count": 498
+    }
+  },
+  "overall_mean_tumor": 4836.1,
+  "max_expression_cancer": "Gastric Cancer",
+  "max_expression_value": 13924.7,
+  "source": "TCGA-cBioPortal",
+  "status": "fetched"
 }

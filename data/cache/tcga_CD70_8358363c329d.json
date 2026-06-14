@@ -1,7 +1,90 @@
 {
   "gene": "CD70",
-  "cancer_types": {},
-  "overall_mean_tumor": 0.0,
-  "source": "TCGA-GDC",
-  "status": "partial"
+  "cancer_types": {
+    "Breast Cancer": {
+      "median_expression": 6.8,
+      "mean_expression": 13.7,
+      "sample_count": 1082
+    },
+    "Leukemia": {
+      "median_expression": 5.8,
+      "mean_expression": 40.8,
+      "sample_count": 173
+    },
+    "Lymphoma": {
+      "median_expression": 551.2,
+      "mean_expression": 839.0,
+      "sample_count": 48
+    },
+    "Glioblastoma": {
+      "median_expression": 6.8,
+      "mean_expression": 41.3,
+      "sample_count": 160
+    },
+    "Lung Adenocarcinoma": {
+      "median_expression": 10.6,
+      "mean_expression": 22.5,
+      "sample_count": 510
+    },
+    "Melanoma": {
+      "median_expression": 15.4,
+      "mean_expression": 65.1,
+      "sample_count": 443
+    },
+    "Prostate Cancer": {
+      "median_expression": 1.2,
+      "mean_expression": 2.1,
+      "sample_count": 493
+    },
+    "Ovarian Cancer": {
+      "median_expression": 6.1,
+      "mean_expression": 14.4,
+      "sample_count": 300
+    },
+    "Liver Cancer": {
+      "median_expression": 2.8,
+      "mean_expression": 11.0,
+      "sample_count": 366
+    },
+    "Renal Cancer": {
+      "median_expression": 683.4,
+      "mean_expression": 1089.2,
+      "sample_count": 510
+    },
+    "Gastric Cancer": {
+      "median_expression": 14.3,
+      "mean_expression": 48.3,
+      "sample_count": 412
+    },
+    "Pancreatic Cancer": {
+      "median_expression": 13.3,
+      "mean_expression": 35.8,
+      "sample_count": 177
+    },
+    "Bladder Cancer": {
+      "median_expression": 6.5,
+      "mean_expression": 42.9,
+      "sample_count": 407
+    },
+    "Head & Neck Cancer": {
+      "median_expression": 30.2,
+      "mean_expression": 87.1,
+      "sample_count": 515
+    },
+    "Endometrial Cancer": {
+      "median_expression": 7.2,
+      "mean_expression": 20.9,
+      "sample_count": 527
+    },
+    "Thyroid Cancer": {
+      "median_expression": 9.3,
+      "mean_expression": 40.7,
+      "sample_count": 498
+    }
+  },
+  "overall_mean_tumor": 85.7,
+  "max_expression_cancer": "Renal Cancer",
+  "max_expression_value": 683.4,
+  "source": "TCGA-cBioPortal",
+  "status": "fetched"
 }

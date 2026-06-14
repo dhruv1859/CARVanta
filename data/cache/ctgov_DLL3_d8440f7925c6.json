@@ -1,29 +1,23 @@
 {
   "gene": "DLL3",
-  "total_trials": 50,
-  "car_t_trials": 32,
+  "total_trials": 12,
+  "car_t_trials": 8,
   "phase_distribution": {
-    "PHASE1": 33,
-    "PHASE2": 13,
-    "EARLY_PHASE1": 6,
-    "NA": 5
+    "PHASE1": 10,
+    "PHASE2": 4,
+    "EARLY_PHASE1": 2
   },
   "status_distribution": {
-    "RECRUITING": 15,
-    "NOT_YET_RECRUITING": 3,
-    "UNKNOWN": 10,
-    "COMPLETED": 11,
-    "WITHDRAWN": 2,
-    "ENROLLING_BY_INVITATION": 1,
+    "RECRUITING": 8,
+    "NOT_YET_RECRUITING": 1,
     "SUSPENDED": 1,
-    "TERMINATED": 2,
-    "ACTIVE_NOT_RECRUITING": 4,
-    "AVAILABLE": 1
+    "ACTIVE_NOT_RECRUITING": 1,
+    "UNKNOWN": 1
   },
   "recent_trials": [
     {
-      "nct_id": "NCT06395103",
-      "title": "Substudy 01A: Zilovertamab Vedotin in Pediatric and Young Adult Participants With Hematologic Malignancies or Solid Tumors (MK-9999-01A/LIGHTBEAM-U01)",
+      "nct_id": "NCT07564401",
+      "title": "A Study to Evaluate DJI136, a DLL3-targeted CAR-T Therapy",
       "status": "RECRUITING",
       "phases": [
         "PHASE1",
@@ -31,74 +25,75 @@
       ]
     },
     {
-      "nct_id": "NCT07394205",
-      "title": "Clinical Study of CBG131 CAR-T Cell Injection for the Treatment of CLDN18.2-Positive Advanced Gastric and Pancreatic Cancer",
+      "nct_id": "NCT07488923",
+      "title": "A First-in-human (FIH), Phase 1 Study of ML261, an Autologous Potency Enhanced Anti-DLL3 CAR T Cell Therapy, in Participants With R/R SCLC or Select NECs (SPECTRAL-1)",
       "status": "NOT_YET_RECRUITING",
       "phases": [
-        "EARLY_PHASE1"
+        "PHASE1"
       ]
     },
     {
-      "nct_id": "NCT04803929",
-      "title": "Clinical Study of Anti-ILT3 CAR-T Therapy for R/R AML(M4/M5)",
-      "status": "RECRUITING",
-      "phases": [
-        "EARLY_PHASE1"
-      ]
-    },
-    {
-      "nct_id": "NCT05822037",
-      "title": "CT0594CP CAR-T Cells in Patients With Relapsed/Refractory Multiple Myeloma or Plasma Cell Leukemia",
-      "status": "RECRUITING",
-      "phases": [
-        "NA"
-      ]
-    },
-    {
-      "nct_id": "NCT05639179",
-      "title": "Novel Anti-CD19 Universal CAR-T Cells for r/r CD19+ B-ALL",
-      "status": "UNKNOWN",
-      "phases": [
-        "PHASE1",
-        "PHASE2"
-      ]
-    },
-    {
-      "nct_id": "NCT04213469",
-      "title": "PD1-CD19-CART in Patients With r/r B-cell Lymphoma",
-      "status": "COMPLETED",
-      "phases": [
-        "NA"
-      ]
-    },
-    {
-      "nct_id": "NCT05336383",
-      "title": "Phase II Study of Salvage Radiation Treatment After B-cell Maturation Antigen Chimeric Antigen Receptor T-cell Therapy for Relapsed Refractory Multiple Myeloma",
-      "status": "RECRUITING",
-      "phases": [
-        "PHASE2"
-      ]
-    },
-    {
-      "nct_id": "NCT05923541",
-      "title": "RD13-02 for Patients With r/r CD7+ T Cell Hematologic Malignancies",
-      "status": "COMPLETED",
-      "phases": [
-        "EARLY_PHASE1"
-      ]
-    },
-    {
-      "nct_id": "NCT06087341",
-      "title": "A Phase I Trial of Memory T Cells Expressing an NKG2D Chimeric Antigen Receptor in Children, Adolescents and Young Adults With Advanced Sarcoma",
+      "nct_id": "NCT06348797",
+      "title": "Phase I Clinical Study of \u03b1-PD-L1/DLL3 CAR-T in Patients With R/R SCLC",
       "status": "RECRUITING",
       "phases": [
         "PHASE1"
       ]
     },
     {
-      "nct_id": "NCT04036019",
-      "title": "A Study of C-CAR066 in Subjects With r/r B Cell Lymphoma Who Received CD19 CAR-T Therapy",
-      "status": "COMPLETED",
+      "nct_id": "NCT07193966",
+      "title": "NG2 and DLL3 CAR-T Cells Targeting Melanoma",
+      "status": "RECRUITING",
+      "phases": [
+        "PHASE1",
+        "PHASE2"
+      ]
+    },
+    {
+      "nct_id": "NCT07480213",
+      "title": "Adaptive Phase 1/2 Study of Dual-Target CAR-NK Cells in Relapsed/Refractory Small Cell Lung Cancer (SCLC)",
+      "status": "RECRUITING",
+      "phases": [
+        "PHASE1",
+        "PHASE2"
+      ]
+    },
+    {
+      "nct_id": "NCT03392064",
+      "title": "A Phase 1 Study Evaluating the Safety, Tolerability and Efficacy of AMG 119 in Subjects With RR SCLC",
+      "status": "SUSPENDED",
+      "phases": [
+        "PHASE1"
+      ]
+    },
+    {
+      "nct_id": "NCT07395479",
+      "title": "A Platform Study of In Vivo CAR-T for Treating Advanced Malignant Tumors Based on Target Screening",
+      "status": "RECRUITING",
+      "phases": [
+        "EARLY_PHASE1"
+      ]
+    },
+    {
+      "nct_id": "NCT05680922",
+      "title": "DLL3-Directed Chimeric Antigen Receptor T-cells in Subjects With Extensive Stage Small Cell Lung Cancer",
+      "status": "ACTIVE_NOT_RECRUITING",
+      "phases": [
+        "PHASE1"
+      ]
+    },
+    {
+      "nct_id": "NCT06384482",
+      "title": "SNC115 Injections in Patients With Recurrent/Refractory Small Cell Lung Cancer and Lung Large Cell Neuroendocrine Carcinoma",
+      "status": "UNKNOWN",
+      "phases": [
+        "PHASE1"
+      ]
+    },
+    {
+      "nct_id": "NCT07249879",
+      "title": "This Study is an Open-lable, Early Study to Evaluate the Safety, Feasibility, Cytokinetics, and Preliminary Efficacy of GC511B in DLL3+ Relapsed/Refractory Small Cell Lung Cancer.",
+      "status": "RECRUITING",
       "phases": [
         "PHASE1"
       ]

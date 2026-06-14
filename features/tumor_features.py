@@ -54,7 +54,11 @@ def compute_clinical_evidence_boost(lit_support: float, clinical_trials: int) ->
 
 
 def generate_features(antigen_name: str) -> dict:
-    """Generate the full feature vector for a given antigen (v2: 6 features)."""
+    """Generate the full feature vector for a given antigen (v2: 6 features).
+    
+    v6 Enhancement: Enriches base CSV features with real data from
+    GTEx, UniProt, and ClinicalTrials.gov when available.
+    """
     antigen_name = antigen_name.upper()
 
     match = antigen_df[
@@ -84,7 +88,7 @@ def generate_features(antigen_name: str) -> dict:
         raw_lit = float(row["literature_support"])
         boosted_lit = compute_clinical_evidence_boost(raw_lit, clinical_trials)
 
-        return {
+        base_features = {
             "tumor_specificity": round(tumor_specificity, 3),
             "normal_expression_risk": round(normal_expression_risk, 3),
             "stability_score": float(row["stability_score"]),
@@ -101,8 +105,16 @@ def generate_features(antigen_name: str) -> dict:
             "evidence_level": str(row.get("evidence_level", "predicted")),
         }
 
-    # Fallback for unknown antigens
-    return {
+        # v6: Enrich with real data from GTEx, UniProt, ClinicalTrials.gov
+        try:
+            from data.real_data_integrator import enrich_features
+            return enrich_features(antigen_name, base_features)
+        except Exception:
+            # Graceful fallback — return base features if enrichment fails
+            return base_features
+
+    # Fallback for unknown antigens — also try real data enrichment
+    fallback = {
         "tumor_specificity": 0.5,
         "normal_expression_risk": 0.5,
         "stability_score": 0.5,
@@ -116,6 +128,13 @@ def generate_features(antigen_name: str) -> dict:
         "source_database": "Synthetic",
         "evidence_level": "predicted",
     }
+
+    try:
+        from data.real_data_integrator import enrich_features
+        return enrich_features(antigen_name, fallback)
+    except Exception:
+        return fallback
+
 
 
 def precompute_all_scores():
@@ -220,19 +239,47 @@ def precompute_all_scores():
     cancer_types = unique_df["cancer_type"].values
     data_sources = unique_df["data_source"].values if "data_source" in unique_df.columns else ["computationally_derived"] * len(unique_df)
 
+    # v6: Load enrichment cache for real-data overlay
+    _enrichment_overlay = {}
+    try:
+        from data.real_data_integrator import _enrichment_cache, _load_enrichment_cache
+        if not _enrichment_cache:
+            _load_enrichment_cache()
+        _enrichment_overlay = _enrichment_cache
+    except Exception:
+        pass
+
     results = []
     for i in range(len(unique_df)):
+        gene = str(antigen_names[i])
         a_score = float(adaptive_scores[i])
-        results.append({
-            "antigen": str(antigen_names[i]),
-            "cancer_type": str(cancer_types[i]),
-            "data_source": str(data_sources[i]),
-            "CVS": a_score,
-            "cvs_rule": float(cvs_arr[i]),
-            "ml_score": round(float(ml_scores[i]), 3),
-            "confidence": float(conf_arr[i]),
-            "tier": get_tier(a_score),
-            "breakdown": {
+
+        # Check if this gene has real-data enrichment cached
+        cached = _enrichment_overlay.get(gene.upper(), {})
+        if cached and cached.get("data_source") == "real":
+            # Re-score using enriched features from real APIs
+            try:
+                enriched_features = generate_features(gene)
+                from scoring.cvs_engine import compute_cvs
+                cvs_real = compute_cvs(enriched_features)
+                a_score = cvs_real["CVS"]
+                ds = "real"
+                breakdown = cvs_real["breakdown"]
+                conf_val = cvs_real["confidence"]
+            except Exception:
+                ds = str(data_sources[i])
+                breakdown = {
+                    "tumor_specificity": round(float(ts_arr[i]), 3),
+                    "safety_component": round(float(ss_arr[i]), 3),
+                    "stability": float(stab_arr[i]),
+                    "evidence": float(ev_arr[i]),
+                    "immunogenicity": float(im_arr[i]),
+                    "surface_accessibility": float(sa_arr[i]),
+                }
+                conf_val = float(conf_arr[i])
+        else:
+            ds = str(data_sources[i])
+            breakdown = {
                 "tumor_specificity": round(float(ts_arr[i]), 3),
                 "safety_component": round(float(ss_arr[i]), 3),
                 "stability": float(stab_arr[i]),
@@ -240,10 +287,23 @@ def precompute_all_scores():
                 "immunogenicity": float(im_arr[i]),
                 "surface_accessibility": float(sa_arr[i]),
             }
+            conf_val = float(conf_arr[i])
+
+        results.append({
+            "antigen": gene,
+            "cancer_type": str(cancer_types[i]),
+            "data_source": ds,
+            "CVS": a_score,
+            "cvs_rule": float(cvs_arr[i]),
+            "ml_score": round(float(ml_scores[i]), 3),
+            "confidence": conf_val,
+            "tier": get_tier(a_score),
+            "breakdown": breakdown,
         })
 
     # Sort by adaptive score (highest first)
     results.sort(key=lambda x: x["CVS"], reverse=True)
+
     return results
 
 

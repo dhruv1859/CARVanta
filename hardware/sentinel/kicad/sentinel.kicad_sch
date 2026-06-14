@@ -1,0 +1,56 @@
+(kicad_sch (version 20230121) (generator eeschema)
+  (uuid "carvanta-sentinel-v1")
+  (paper "A4")
+
+  (title_block
+    (title "CARVanta Sentinel — Antigen Escape Detector")
+    (date "2026-05-24")
+    (rev "1.0")
+    (company "CARVanta")
+    (comment 1 "World's First Real-Time Antigen Escape Detection System")
+    (comment 2 "Designer: Dhruv / CARVanta")
+    (comment 3 "ESP32-S3 + LMP91000 Potentiostat + ADS1115 ADC")
+    (comment 4 "2-Layer PCB, 80mm x 55mm")
+  )
+
+  ;; ═══════════════════════════════════════════════════════════════
+  ;; NOTE: This is a KiCad 7 schematic template.
+  ;; Open this file in KiCad 7+ EESchema to edit.
+  ;; Component symbols need to be mapped to your KiCad library.
+  ;; ═══════════════════════════════════════════════════════════════
+
+  ;; ─── Power Section ────────────────────────────────────────────
+  ;; USB-C → TP4056 (LiPo Charger) → DW01A (Protection) → AMS1117 (3.3V LDO)
+  ;; 
+  ;; USB-C VBUS (5V) ──┬── TP4056 VIN ── BAT+ ── DW01A ── LiPo+
+  ;;                    │                                    │
+  ;;                    └── AMS1117 VIN ◄────────────────────┘
+  ;;                         │
+  ;;                         └── 3.3V Rail (all ICs)
+  ;;
+  ;; ─── Signal Routing ───────────────────────────────────────────
+  ;; 
+  ;; ESP32-S3 SPI Bus:
+  ;;   GPIO11 (MOSI) ──── LCD SDA
+  ;;   GPIO12 (SCK)  ──── LCD SCK
+  ;;   GPIO8  (CS)   ──── LCD CS
+  ;;   GPIO7  (DC)   ──── LCD D/C
+  ;;   GPIO9  (RST)  ──── LCD RST
+  ;;   GPIO10 (BL)   ──── LCD Backlight (PWM via MOSFET)
+  ;;
+  ;; ESP32-S3 I2C Bus (shared):
+  ;;   GPIO5 (SDA) ──┬── ADS1115 SDA (addr 0x48)
+  ;;                  └── LMP91000 SDA (addr 0x48 — use MENB to select)
+  ;;   GPIO6 (SCL) ──┬── ADS1115 SCL
+  ;;                  └── LMP91000 SCL
+  ;;
+  ;; Electrochemical Sensor Path:
+  ;;   J2 Pin1 (WE)  ──── LMP91000 WE
+  ;;   J2 Pin2 (RE)  ──── LMP91000 RE
+  ;;   J2 Pin3 (CE)  ──── LMP91000 CE
+  ;;   LMP91000 VOUT ──── ADS1115 AIN0
+  ;;
+  ;; Status:
+  ;;   GPIO3 ──── WS2812B Data In (LED1 → LED2 → LED3)
+  ;;   GPIO4 ──── Piezo Buzzer (via N-MOSFET 2N7002)
+)

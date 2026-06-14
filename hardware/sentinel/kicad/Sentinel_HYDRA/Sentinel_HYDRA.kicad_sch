@@ -1,0 +1,339 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "fcff3706-676a-4bcc-a8bc-0627dff9a515")
+	(paper "A3")
+	(title_block
+		(title "Sentinel HYDRA v1.0")
+	)
+	(lib_symbols)
+	(sheet
+		(at 208.28 56.515)
+		(size 23.495 44.45)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "46c3c51f-48db-4538-add0-83b1e262d06f")
+		(property "Sheetname" "Thermal"
+			(at 208.28 55.8034 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Thermal.kicad_sch"
+			(at 208.28 101.5496 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "Sentinel_HYDRA"
+				(path "/fcff3706-676a-4bcc-a8bc-0627dff9a515"
+					(page "7")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 238.76 56.515)
+		(size 46.355 44.45)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "543ba8bc-7177-4b28-9b44-5b1c1b97625d")
+		(property "Sheetname" "Sensors_Display"
+			(at 238.76 55.8034 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Sensors_Display.kicad_sch"
+			(at 238.76 101.5496 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "Sentinel_HYDRA"
+				(path "/fcff3706-676a-4bcc-a8bc-0627dff9a515"
+					(page "8")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 18.415 22.225)
+		(size 35.56 36.195)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "6899a4dc-3f0d-4e78-bfa8-0ac67fe9f004")
+		(property "Sheetname" "Power"
+			(at 18.415 21.5134 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Power.kicad_sch"
+			(at 18.415 59.0046 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "Sentinel_HYDRA"
+				(path "/fcff3706-676a-4bcc-a8bc-0627dff9a515"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 56.515 51.435)
+		(size 35.56 44.45)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "70c1dcc8-4e77-4d7f-8caa-0cefa4618e0b")
+		(property "Sheetname" "ESP32"
+			(at 56.515 50.7234 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "ESP32.kicad_sch"
+			(at 56.515 96.4696 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "Sentinel_HYDRA"
+				(path "/fcff3706-676a-4bcc-a8bc-0627dff9a515"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 164.465 29.21)
+		(size 34.29 50.165)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "83493805-14d9-4968-aa8c-1f74adccdd96")
+		(property "Sheetname" "Optical"
+			(at 164.465 28.4984 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Optical.kicad_sch"
+			(at 164.465 79.9596 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "Sentinel_HYDRA"
+				(path "/fcff3706-676a-4bcc-a8bc-0627dff9a515"
+					(page "6")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 93.98 17.145)
+		(size 29.845 36.195)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "a32bd6da-9fe6-4acc-a662-a8a9d1e60e3a")
+		(property "Sheetname" "RP2040"
+			(at 93.98 16.4334 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "RP2040.kicad_sch"
+			(at 93.98 53.9246 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "Sentinel_HYDRA"
+				(path "/fcff3706-676a-4bcc-a8bc-0627dff9a515"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 125.73 49.53)
+		(size 36.83 44.45)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "e92a35fd-f70c-46f9-9faf-79f551a42407")
+		(property "Sheetname" "Electrochemical"
+			(at 125.73 48.8184 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Electrochemical.kicad_sch"
+			(at 125.73 94.5646 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "Sentinel_HYDRA"
+				(path "/fcff3706-676a-4bcc-a8bc-0627dff9a515"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)

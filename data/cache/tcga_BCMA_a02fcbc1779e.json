@@ -1,7 +1,90 @@
 {
   "gene": "BCMA",
-  "cancer_types": {},
-  "overall_mean_tumor": 0.0,
-  "source": "TCGA-GDC",
-  "status": "partial"
+  "cancer_types": {
+    "Breast Cancer": {
+      "median_expression": 11.8,
+      "mean_expression": 37.8,
+      "sample_count": 1082
+    },
+    "Leukemia": {
+      "median_expression": 31.9,
+      "mean_expression": 52.5,
+      "sample_count": 173
+    },
+    "Lymphoma": {
+      "median_expression": 446.9,
+      "mean_expression": 1231.8,
+      "sample_count": 48
+    },
+    "Glioblastoma": {
+      "median_expression": 0.6,
+      "mean_expression": 1.1,
+      "sample_count": 160
+    },
+    "Lung Adenocarcinoma": {
+      "median_expression": 46.4,
+      "mean_expression": 87.5,
+      "sample_count": 510
+    },
+    "Melanoma": {
+      "median_expression": 6.1,
+      "mean_expression": 46.6,
+      "sample_count": 443
+    },
+    "Prostate Cancer": {
+      "median_expression": 1.7,
+      "mean_expression": 5.9,
+      "sample_count": 493
+    },
+    "Ovarian Cancer": {
+      "median_expression": 5.5,
+      "mean_expression": 22.4,
+      "sample_count": 300
+    },
+    "Liver Cancer": {
+      "median_expression": 1.2,
+      "mean_expression": 10.0,
+      "sample_count": 366
+    },
+    "Renal Cancer": {
+      "median_expression": 4.1,
+      "mean_expression": 17.3,
+      "sample_count": 510
+    },
+    "Gastric Cancer": {
+      "median_expression": 30.5,
+      "mean_expression": 68.6,
+      "sample_count": 412
+    },
+    "Pancreatic Cancer": {
+      "median_expression": 11.9,
+      "mean_expression": 28.5,
+      "sample_count": 177
+    },
+    "Bladder Cancer": {
+      "median_expression": 3.3,
+      "mean_expression": 21.6,
+      "sample_count": 407
+    },
+    "Head & Neck Cancer": {
+      "median_expression": 10.0,
+      "mean_expression": 33.2,
+      "sample_count": 515
+    },
+    "Endometrial Cancer": {
+      "median_expression": 2.8,
+      "mean_expression": 16.1,
+      "sample_count": 527
+    },
+    "Thyroid Cancer": {
+      "median_expression": 2.3,
+      "mean_expression": 35.1,
+      "sample_count": 498
+    }
+  },
+  "overall_mean_tumor": 38.6,
+  "max_expression_cancer": "Lymphoma",
+  "max_expression_value": 446.9,
+  "source": "TCGA-cBioPortal",
+  "status": "fetched"
 }

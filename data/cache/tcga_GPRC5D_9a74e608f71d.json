@@ -1,7 +1,90 @@
 {
   "gene": "GPRC5D",
-  "cancer_types": {},
-  "overall_mean_tumor": 0.0,
-  "source": "TCGA-GDC",
-  "status": "partial"
+  "cancer_types": {
+    "Breast Cancer": {
+      "median_expression": 5.1,
+      "mean_expression": 7.2,
+      "sample_count": 1082
+    },
+    "Leukemia": {
+      "median_expression": 2.3,
+      "mean_expression": 6.8,
+      "sample_count": 173
+    },
+    "Lymphoma": {
+      "median_expression": 0.6,
+      "mean_expression": 2.3,
+      "sample_count": 48
+    },
+    "Glioblastoma": {
+      "median_expression": 0.9,
+      "mean_expression": 1.0,
+      "sample_count": 160
+    },
+    "Lung Adenocarcinoma": {
+      "median_expression": 13.0,
+      "mean_expression": 17.4,
+      "sample_count": 510
+    },
+    "Melanoma": {
+      "median_expression": 0.8,
+      "mean_expression": 11.4,
+      "sample_count": 443
+    },
+    "Prostate Cancer": {
+      "median_expression": 11.1,
+      "mean_expression": 19.1,
+      "sample_count": 493
+    },
+    "Ovarian Cancer": {
+      "median_expression": 5.9,
+      "mean_expression": 9.0,
+      "sample_count": 300
+    },
+    "Liver Cancer": {
+      "median_expression": 3.4,
+      "mean_expression": 5.5,
+      "sample_count": 366
+    },
+    "Renal Cancer": {
+      "median_expression": 2.8,
+      "mean_expression": 3.5,
+      "sample_count": 510
+    },
+    "Gastric Cancer": {
+      "median_expression": 12.5,
+      "mean_expression": 17.8,
+      "sample_count": 412
+    },
+    "Pancreatic Cancer": {
+      "median_expression": 12.8,
+      "mean_expression": 21.2,
+      "sample_count": 177
+    },
+    "Bladder Cancer": {
+      "median_expression": 11.6,
+      "mean_expression": 18.2,
+      "sample_count": 407
+    },
+    "Head & Neck Cancer": {
+      "median_expression": 13.9,
+      "mean_expression": 50.6,
+      "sample_count": 515
+    },
+    "Endometrial Cancer": {
+      "median_expression": 6.5,
+      "mean_expression": 11.8,
+      "sample_count": 527
+    },
+    "Thyroid Cancer": {
+      "median_expression": 5.7,
+      "mean_expression": 6.2,
+      "sample_count": 498
+    }
+  },
+  "overall_mean_tumor": 6.8,
+  "max_expression_cancer": "Head & Neck Cancer",
+  "max_expression_value": 13.9,
+  "source": "TCGA-cBioPortal",
+  "status": "fetched"
 }

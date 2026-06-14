@@ -1,29 +1,59 @@
 {
   "gene": "CD123",
-  "total_trials": 50,
-  "car_t_trials": 32,
+  "total_trials": 48,
+  "car_t_trials": 38,
   "phase_distribution": {
-    "PHASE1": 33,
-    "PHASE2": 13,
-    "EARLY_PHASE1": 6,
-    "NA": 5
+    "PHASE1": 38,
+    "NA": 2,
+    "PHASE2": 18,
+    "EARLY_PHASE1": 7,
+    "PHASE3": 1
   },
   "status_distribution": {
-    "RECRUITING": 15,
-    "NOT_YET_RECRUITING": 3,
-    "UNKNOWN": 10,
-    "COMPLETED": 11,
-    "WITHDRAWN": 2,
-    "ENROLLING_BY_INVITATION": 1,
-    "SUSPENDED": 1,
-    "TERMINATED": 2,
-    "ACTIVE_NOT_RECRUITING": 4,
-    "AVAILABLE": 1
+    "ACTIVE_NOT_RECRUITING": 3,
+    "RECRUITING": 16,
+    "COMPLETED": 2,
+    "UNKNOWN": 12,
+    "TERMINATED": 7,
+    "NOT_YET_RECRUITING": 5,
+    "WITHDRAWN": 3
   },
   "recent_trials": [
     {
-      "nct_id": "NCT06395103",
-      "title": "Substudy 01A: Zilovertamab Vedotin in Pediatric and Young Adult Participants With Hematologic Malignancies or Solid Tumors (MK-9999-01A/LIGHTBEAM-U01)",
+      "nct_id": "NCT03190278",
+      "title": "Study Evaluating Safety and Efficacy of UCART123v1.2 in Patients With Relapsed/Refractory Acute Myeloid Leukemia",
+      "status": "ACTIVE_NOT_RECRUITING",
+      "phases": [
+        "PHASE1"
+      ]
+    },
+    {
+      "nct_id": "NCT05528887",
+      "title": "Study of CAR-T Cell Therapy in the Treatment of Relapsed/Refractory Hematological Malignancies",
+      "status": "RECRUITING",
+      "phases": [
+        "PHASE1"
+      ]
+    },
+    {
+      "nct_id": "NCT04051216",
+      "title": "The SMART CART Study: Health Information Technology",
+      "status": "COMPLETED",
+      "phases": [
+        "NA"
+      ]
+    },
+    {
+      "nct_id": "NCT04014881",
+      "title": "Safety and Efficacy of Anti-CD123 CAR-T Therapy in Patients With Refractory/ Relapsed CD123+ Acute Myeloid Leukemia.",
+      "status": "UNKNOWN",
+      "phases": [
+        "PHASE1"
+      ]
+    },
+    {
+      "nct_id": "NCT07523555",
+      "title": "Adaptive Dual-Target CAR-T Cells for Relapsed or Refractory Hematologic Malignancies",
       "status": "RECRUITING",
       "phases": [
         "PHASE1",
@@ -31,76 +61,46 @@
       ]
     },
     {
-      "nct_id": "NCT07394205",
-      "title": "Clinical Study of CBG131 CAR-T Cell Injection for the Treatment of CLDN18.2-Positive Advanced Gastric and Pancreatic Cancer",
+      "nct_id": "NCT02623582",
+      "title": "CD123 Redirected Autologous T Cells for AML",
+      "status": "TERMINATED",
+      "phases": [
+        "EARLY_PHASE1"
+      ]
+    },
+    {
+      "nct_id": "NCT03222674",
+      "title": "Multi-CAR T Cell Therapy for Acute Myeloid Leukemia",
+      "status": "RECRUITING",
+      "phases": [
+        "PHASE1",
+        "PHASE2"
+      ]
+    },
+    {
+      "nct_id": "NCT07201727",
+      "title": "CD123+CLL-1 CAR-T Sequential Infusion With CD7 CAR-T and Bridging to Allo-HSCT for Relapsed/Refractory Acute Myeloid Leukemia",
       "status": "NOT_YET_RECRUITING",
       "phases": [
         "EARLY_PHASE1"
       ]
     },
     {
-      "nct_id": "NCT04803929",
-      "title": "Clinical Study of Anti-ILT3 CAR-T Therapy for R/R AML(M4/M5)",
-      "status": "RECRUITING",
-      "phases": [
-        "EARLY_PHASE1"
-      ]
-    },
-    {
-      "nct_id": "NCT05822037",
-      "title": "CT0594CP CAR-T Cells in Patients With Relapsed/Refractory Multiple Myeloma or Plasma Cell Leukemia",
-      "status": "RECRUITING",
-      "phases": [
-        "NA"
-      ]
-    },
-    {
-      "nct_id": "NCT05639179",
-      "title": "Novel Anti-CD19 Universal CAR-T Cells for r/r CD19+ B-ALL",
-      "status": "UNKNOWN",
+      "nct_id": "NCT03098355",
+      "title": "Interleukin-2 Following 4SCAR19/22 T Cells Targeting Refractory and/or Recurrent B Cell Malignancies",
+      "status": "WITHDRAWN",
       "phases": [
         "PHASE1",
         "PHASE2"
       ]
     },
     {
-      "nct_id": "NCT04213469",
-      "title": "PD1-CD19-CART in Patients With r/r B-cell Lymphoma",
-      "status": "COMPLETED",
+      "nct_id": "NCT04430530",
+      "title": "4SCAR-T Therapy Post CD19-targeted Immunotherapy",
+      "status": "UNKNOWN",
       "phases": [
-        "NA"
-      ]
-    },
-    {
-      "nct_id": "NCT05336383",
-      "title": "Phase II Study of Salvage Radiation Treatment After B-cell Maturation Antigen Chimeric Antigen Receptor T-cell Therapy for Relapsed Refractory Multiple Myeloma",
-      "status": "RECRUITING",
-      "phases": [
+        "PHASE1",
         "PHASE2"
-      ]
-    },
-    {
-      "nct_id": "NCT05923541",
-      "title": "RD13-02 for Patients With r/r CD7+ T Cell Hematologic Malignancies",
-      "status": "COMPLETED",
-      "phases": [
-        "EARLY_PHASE1"
-      ]
-    },
-    {
-      "nct_id": "NCT06087341",
-      "title": "A Phase I Trial of Memory T Cells Expressing an NKG2D Chimeric Antigen Receptor in Children, Adolescents and Young Adults With Advanced Sarcoma",
-      "status": "RECRUITING",
-      "phases": [
-        "PHASE1"
-      ]
-    },
-    {
-      "nct_id": "NCT04036019",
-      "title": "A Study of C-CAR066 in Subjects With r/r B Cell Lymphoma Who Received CD19 CAR-T Therapy",
-      "status": "COMPLETED",
-      "phases": [
-        "PHASE1"
       ]
     }
   ],

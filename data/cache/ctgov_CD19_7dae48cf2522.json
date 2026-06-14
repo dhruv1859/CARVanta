@@ -1,62 +1,54 @@
 {
   "gene": "CD19",
   "total_trials": 50,
-  "car_t_trials": 32,
+  "car_t_trials": 37,
   "phase_distribution": {
     "PHASE1": 33,
-    "PHASE2": 13,
-    "EARLY_PHASE1": 6,
-    "NA": 5
+    "PHASE2": 17,
+    "EARLY_PHASE1": 9,
+    "NA": 2,
+    "PHASE3": 1
   },
   "status_distribution": {
-    "RECRUITING": 15,
-    "NOT_YET_RECRUITING": 3,
-    "UNKNOWN": 10,
-    "COMPLETED": 11,
+    "ACTIVE_NOT_RECRUITING": 9,
+    "NOT_YET_RECRUITING": 4,
     "WITHDRAWN": 2,
-    "ENROLLING_BY_INVITATION": 1,
-    "SUSPENDED": 1,
-    "TERMINATED": 2,
-    "ACTIVE_NOT_RECRUITING": 4,
-    "AVAILABLE": 1
+    "UNKNOWN": 13,
+    "RECRUITING": 17,
+    "COMPLETED": 3,
+    "TERMINATED": 1,
+    "SUSPENDED": 1
   },
   "recent_trials": [
     {
-      "nct_id": "NCT06395103",
-      "title": "Substudy 01A: Zilovertamab Vedotin in Pediatric and Young Adult Participants With Hematologic Malignancies or Solid Tumors (MK-9999-01A/LIGHTBEAM-U01)",
-      "status": "RECRUITING",
+      "nct_id": "NCT06342960",
+      "title": "KYSA-3: A Study of Anti-CD19 Chimeric Antigen Receptor T-Cell (CD19 CAR T) Therapy, in Subjects With Refractory Lupus Nephritis",
+      "status": "ACTIVE_NOT_RECRUITING",
       "phases": [
         "PHASE1",
         "PHASE2"
       ]
     },
     {
-      "nct_id": "NCT07394205",
-      "title": "Clinical Study of CBG131 CAR-T Cell Injection for the Treatment of CLDN18.2-Positive Advanced Gastric and Pancreatic Cancer",
+      "nct_id": "NCT06631040",
+      "title": "Cell Therapy with Anti-CD19 CAR-NK Cells in Patients with Relapsed or Resistant B-ALL",
       "status": "NOT_YET_RECRUITING",
       "phases": [
-        "EARLY_PHASE1"
+        "PHASE1",
+        "PHASE2"
       ]
     },
     {
-      "nct_id": "NCT04803929",
-      "title": "Clinical Study of Anti-ILT3 CAR-T Therapy for R/R AML(M4/M5)",
-      "status": "RECRUITING",
+      "nct_id": "NCT05037669",
+      "title": "Programmed Allogeneic CRISPR-edited T Cells Engineered to Express Anti-CD19 Chimeric Antigen Receptor (PACE CART19) in Patients With Relapsed Or Refractory CD19+ Leukemia and Lymphoma",
+      "status": "WITHDRAWN",
       "phases": [
-        "EARLY_PHASE1"
+        "PHASE1"
       ]
     },
     {
-      "nct_id": "NCT05822037",
-      "title": "CT0594CP CAR-T Cells in Patients With Relapsed/Refractory Multiple Myeloma or Plasma Cell Leukemia",
-      "status": "RECRUITING",
-      "phases": [
-        "NA"
-      ]
-    },
-    {
-      "nct_id": "NCT05639179",
-      "title": "Novel Anti-CD19 Universal CAR-T Cells for r/r CD19+ B-ALL",
+      "nct_id": "NCT02819583",
+      "title": "CAR-T Cell Immunotherapy in CD19 Positive Relapsed or Refractory Leukemia and Lymphoma",
       "status": "UNKNOWN",
       "phases": [
         "PHASE1",
@@ -64,41 +56,50 @@
       ]
     },
     {
-      "nct_id": "NCT04213469",
-      "title": "PD1-CD19-CART in Patients With r/r B-cell Lymphoma",
-      "status": "COMPLETED",
-      "phases": [
-        "NA"
-      ]
-    },
-    {
-      "nct_id": "NCT05336383",
-      "title": "Phase II Study of Salvage Radiation Treatment After B-cell Maturation Antigen Chimeric Antigen Receptor T-cell Therapy for Relapsed Refractory Multiple Myeloma",
+      "nct_id": "NCT07131254",
+      "title": "A Clinical Study Evaluating the Safety and Efficacy of GT719 Universal Cell Injection in Adult Participants With Relapsed/Refractory CD19-positive B-cell Malignant Hematological Tumors",
       "status": "RECRUITING",
-      "phases": [
-        "PHASE2"
-      ]
-    },
-    {
-      "nct_id": "NCT05923541",
-      "title": "RD13-02 for Patients With r/r CD7+ T Cell Hematologic Malignancies",
-      "status": "COMPLETED",
       "phases": [
         "EARLY_PHASE1"
       ]
     },
     {
-      "nct_id": "NCT06087341",
-      "title": "A Phase I Trial of Memory T Cells Expressing an NKG2D Chimeric Antigen Receptor in Children, Adolescents and Young Adults With Advanced Sarcoma",
-      "status": "RECRUITING",
+      "nct_id": "NCT02782351",
+      "title": "Humanized CAR-T Therapy for Treatment of B Cell Malignancy",
+      "status": "UNKNOWN",
+      "phases": [
+        "PHASE1",
+        "PHASE2"
+      ]
+    },
+    {
+      "nct_id": "NCT03448393",
+      "title": "CD19/CD22 Chimeric Antigen Receptor (CAR) T Cells in Children and Young Adults With Recurrent or Refractory CD19/CD22-expressing B Cell Malignancies",
+      "status": "COMPLETED",
       "phases": [
         "PHASE1"
       ]
     },
     {
-      "nct_id": "NCT04036019",
-      "title": "A Study of C-CAR066 in Subjects With r/r B Cell Lymphoma Who Received CD19 CAR-T Therapy",
+      "nct_id": "NCT03049449",
+      "title": "T Cells Expressing a Fully-Human Anti-CD30 Chimeric Antigen Receptor for Treating CD30-Expressing Lymphomas",
       "status": "COMPLETED",
+      "phases": [
+        "PHASE1"
+      ]
+    },
+    {
+      "nct_id": "NCT05020678",
+      "title": "NKX019, Intravenous Allogeneic Chimeric Antigen Receptor Natural Killer Cells (CAR NK), in Adults With B-cell Cancers",
+      "status": "ACTIVE_NOT_RECRUITING",
+      "phases": [
+        "PHASE1"
+      ]
+    },
+    {
+      "nct_id": "NCT07315087",
+      "title": "CAR T-cell Therapy Targeting CD19 and BCMA(QT-019C) in Patients With Relapse/Refractory Autoimmune Diseases",
+      "status": "RECRUITING",
       "phases": [
         "PHASE1"
       ]

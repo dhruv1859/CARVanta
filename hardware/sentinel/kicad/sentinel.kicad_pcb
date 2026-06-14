@@ -1,0 +1,144 @@
+(kicad_pcb (version 20221018) (generator pcbnew)
+  (general
+    (thickness 1.6)
+  )
+
+  (page "A4")
+
+  (title_block
+    (title "CARVanta Sentinel v2.0 — 6-Layer Medical-Grade")
+    (date "2026-05-26")
+    (rev "2.0")
+    (company "CARVanta")
+    (comment 1 "4-Channel Antigen Escape Detection System")
+    (comment 2 "6-Layer | Impedance Controlled | Split Ground Plane")
+  )
+
+  (layers
+    (0  "F.Cu"    signal "Digital Signals")
+    (1  "In1.Cu"  signal "Ground Plane (Solid)")
+    (2  "In2.Cu"  signal "Analog Signals")
+    (3  "In3.Cu"  signal "Power Planes")
+    (4  "In4.Cu"  signal "High-Speed Signals")
+    (31 "B.Cu"    signal "Bottom Signals + GND Pour")
+    (32 "B.Adhes" user   "B.Adhesive")
+    (33 "F.Adhes" user   "F.Adhesive")
+    (34 "B.Paste" user)
+    (35 "F.Paste" user)
+    (36 "B.SilkS" user   "B.Silkscreen")
+    (37 "F.SilkS" user   "F.Silkscreen")
+    (38 "B.Mask"  user   "B.Mask")
+    (39 "F.Mask"  user   "F.Mask")
+    (40 "Dwgs.User" user "Drawings")
+    (41 "Cmts.User" user "Comments")
+    (42 "Eco1.User" user "Analog Zone Boundary")
+    (43 "Eco2.User" user "Keep-Out Zones")
+    (44 "Edge.Cuts" user)
+    (45 "Margin"    user)
+    (46 "B.CrtYd"   user "B.Courtyard")
+    (47 "F.CrtYd"   user "F.Courtyard")
+    (48 "B.Fab"     user "B.Fabrication")
+    (49 "F.Fab"     user "F.Fabrication")
+  )
+
+  (setup
+    (stackup
+      (layer "F.SilkS"     (type "Top Silk Screen"))
+      (layer "F.Paste"     (type "Top Solder Paste"))
+      (layer "F.Mask"      (type "Top Solder Mask")    (color "black") (thickness 0.01))
+      (layer "F.Cu"        (type "copper")             (thickness 0.035))
+      (layer "dielectric 1" (type "prepreg") (thickness 0.2)  (material "FR4") (epsilon_r 4.5) (loss_tangent 0.02))
+      (layer "In1.Cu"     (type "copper")              (thickness 0.035))
+      (layer "dielectric 2" (type "core")   (thickness 0.36) (material "FR4") (epsilon_r 4.5) (loss_tangent 0.02))
+      (layer "In2.Cu"     (type "copper")              (thickness 0.035))
+      (layer "dielectric 3" (type "prepreg") (thickness 0.2)  (material "FR4") (epsilon_r 4.5) (loss_tangent 0.02))
+      (layer "In3.Cu"     (type "copper")              (thickness 0.035))
+      (layer "dielectric 4" (type "core")   (thickness 0.36) (material "FR4") (epsilon_r 4.5) (loss_tangent 0.02))
+      (layer "In4.Cu"     (type "copper")              (thickness 0.035))
+      (layer "dielectric 5" (type "prepreg") (thickness 0.2)  (material "FR4") (epsilon_r 4.5) (loss_tangent 0.02))
+      (layer "B.Cu"        (type "copper")             (thickness 0.035))
+      (layer "B.Mask"      (type "Bottom Solder Mask") (color "black") (thickness 0.01))
+      (layer "B.Paste"     (type "Bottom Solder Paste"))
+      (layer "B.SilkS"     (type "Bottom Silk Screen"))
+    )
+
+    (pad_to_mask_clearance 0.051)
+    (allow_soldermask_bridges_in_footprints no)
+
+    ;; Design Rules
+    (pcbplotparams
+      (layerselection 0x0001_ffff_ffff)
+      (plot_on_all_layers_selection 0x0000_0000_0000)
+    )
+  )
+
+  ;; ═══════════════════════════════════════════════════════════════
+  ;; BOARD OUTLINE: 95mm × 65mm, 3mm corner radius
+  ;; ═══════════════════════════════════════════════════════════════
+
+  ;; Board edge (Edge.Cuts layer)
+  (gr_line (start 3 0) (end 92 0) (layer "Edge.Cuts") (width 0.05))
+  (gr_line (start 95 3) (end 95 62) (layer "Edge.Cuts") (width 0.05))
+  (gr_line (start 92 65) (end 3 65) (layer "Edge.Cuts") (width 0.05))
+  (gr_line (start 0 62) (end 0 3) (layer "Edge.Cuts") (width 0.05))
+  (gr_arc (start 3 3) (mid 0.88 0.88) (end 0 3) (layer "Edge.Cuts") (width 0.05))
+  (gr_arc (start 92 3) (mid 94.12 0.88) (end 95 3) (layer "Edge.Cuts") (width 0.05))
+  (gr_arc (start 95 62) (mid 94.12 64.12) (end 92 65) (layer "Edge.Cuts") (width 0.05))
+  (gr_arc (start 0 62) (mid 0.88 64.12) (end 3 65) (layer "Edge.Cuts") (width 0.05))
+
+  ;; ═══════════════════════════════════════════════════════════════
+  ;; MOUNTING HOLES (M2.5, 4 corners)
+  ;; ═══════════════════════════════════════════════════════════════
+
+  ;; MH1: Top-Left (4, 4)
+  ;; MH2: Top-Right (91, 4)
+  ;; MH3: Bottom-Left (4, 61)
+  ;; MH4: Bottom-Right (91, 61)
+
+  ;; ═══════════════════════════════════════════════════════════════
+  ;; ZONE DEFINITIONS
+  ;; ═══════════════════════════════════════════════════════════════
+
+  ;; ZONE 1: Digital Ground (In1.Cu) — Full board except analog cutout
+  ;; ZONE 2: Analog Ground (In1.Cu) — Bottom-left quadrant only
+  ;; ZONE 3: Connected via single ferrite bead at (45, 42)
+  ;;
+  ;; ANALOG ZONE BOUNDARY (Eco1.User layer):
+  ;;   Rectangle from (0, 35) to (50, 65)
+  ;;   This area contains: U9-U12 (LMP91000), U13 (ADS1256), U14 (TCA9548A)
+  ;;   Ground plane has a GAP along this boundary on In1.Cu
+  ;;   Connected by L1 ferrite bead at boundary crossing point
+
+  ;; ═══════════════════════════════════════════════════════════════
+  ;; COMPONENT PLACEMENT GUIDE
+  ;; ═══════════════════════════════════════════════════════════════
+  ;;
+  ;; ┌──────────────────────────────────────────────────────────────────┐
+  ;; │ J1(USB-C)   U3(BQ24075)  U4(LDO_D) U5(LDO_A)     LOGO        │
+  ;; │  [5,2]       [18,5]       [30,5]    [40,5]       [75,5]        │
+  ;; │                                                                  │
+  ;; │ J7(BATT)  SW3(PWR)          U1 (ESP32-S3)          J6(TFT FPC) │
+  ;; │  [5,18]   [5,25]            [47,22]                [88,22]     │
+  ;; │                          (center of board)                      │
+  ;; │                                                     J9(SpO2)   │
+  ;; │ U17(RTC) Y1               ┌─ ─ ─ ─ ─ ─ ─ ─┐      [88,35]    │
+  ;; │  [5,35]                   │ ANALOG DOMAIN   │                   │
+  ;; │ ┌─────────────────────────┤                 │  LED1-4  BZ1     │
+  ;; │ │ U14(I2C MUX) [10,42]   │  U13(ADS1256)  │  [75,50] [85,50] │
+  ;; │ │                         │   [30,48]       │                   │
+  ;; │ │ U9  U10  U11  U12      │                 │  SW1 SW2          │
+  ;; │ │ [8,55] [18,55] [28,55] [38,55]           │  [75,58] [82,58] │
+  ;; │ └─────────────────────────┴─ ─ ─ ─ ─ ─ ─ ─┘                   │
+  ;; │ J2(CH1) J3(CH2) J4(CH3) J5(CH4)     J8(JTAG)    U18(SD)      │
+  ;; │ [8,63]  [18,63] [28,63] [38,63]     [60,63]     [88,58]      │
+  ;; └──────────────────────────────────────────────────────────────────┘
+  ;;
+  ;; CRITICAL ROUTING RULES:
+  ;; 1. Analog traces (L3 only) — no digital signals cross analog zone
+  ;; 2. USB D+/D- on L5 — 90Ω differential, length matched ±0.1mm
+  ;; 3. SPI clock on L1 — 3.3V domain, keep under 20mm
+  ;; 4. Ferrite bead L1 bridges AGND↔DGND at (45, 42)
+  ;; 5. No vias in analog zone except analog signal vias
+  ;; 6. Star ground for 4× sensor connectors
+  ;; ═══════════════════════════════════════════════════════════════
+)

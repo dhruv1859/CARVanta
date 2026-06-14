@@ -224,13 +224,10 @@ class RealDataFetcher:
 
     def fetch_tcga_expression(self, gene_symbol: str) -> dict:
         """
-        Fetch tumor expression data from TCGA GDC for a gene.
+        Fetch tumor expression data from TCGA via cBioPortal API.
 
-        Returns dict with:
-            - gene: str
-            - cancer_types: {cancer_name: {mean_expression, median, sample_count}}
-            - overall_mean_tumor: float
-            - source: "TCGA-GDC"
+        cBioPortal hosts all TCGA pan-cancer atlas data with a free REST API.
+        Returns median RNA-seq RSEM values per cancer type.
         """
         gene = gene_symbol.upper()
         cache_path = _cache_key("tcga", gene)
@@ -238,81 +235,98 @@ class RealDataFetcher:
         if cached:
             return cached
 
-        # Query GDC for gene expression data
-        # Use the analysis/top_mutated_genes endpoint as a proxy for
-        # gene-level expression, or gene_expression endpoint
         result = {
             "gene": gene,
             "cancer_types": {},
             "overall_mean_tumor": 0.0,
-            "source": "TCGA-GDC",
+            "max_expression_cancer": "",
+            "max_expression_value": 0.0,
+            "source": "TCGA-cBioPortal",
             "status": "pending",
         }
 
-        # Strategy: query GDC explore endpoint for gene expression
-        url = (
-            f"{TCGA_GDC_BASE}/analysis/top_mutated_genes_by_project?"
-            f"size=1&fields=gene_id,symbol&filters="
-        )
-        filters = {
-            "op": "=",
-            "content": {
-                "field": "symbol",
-                "value": gene,
-            }
+        # Resolve gene aliases
+        CBIO_BASE = "https://www.cbioportal.org/api"
+        gene_aliases = {
+            "BCMA": "TNFRSF17", "GD2": "B4GALNT1", "PSMA": "FOLH1",
+            "CD138": "SDC1", "CD20": "MS4A1", "CD123": "IL3RA",
+            "CAIX": "CA9", "B7H3": "CD276", "MESOTHELIN": "MSLN",
+            "CLDN18.2": "CLDN18", "EGFRVIII": "EGFR",
+        }
+        query_gene = gene_aliases.get(gene, gene)
+
+        gene_url = f"{CBIO_BASE}/genes/{query_gene}"
+        gene_data = _http_get(gene_url)
+
+        if not gene_data or "entrezGeneId" not in gene_data:
+            result["status"] = "gene_not_found"
+            _save_cache(cache_path, result)
+            return result
+
+        entrez_id = gene_data["entrezGeneId"]
+
+        # Query across 18 TCGA pan-cancer studies
+        tcga_studies = {
+            "brca_tcga_pan_can_atlas_2018": "Breast Cancer",
+            "laml_tcga_pan_can_atlas_2018": "Leukemia",
+            "dlbc_tcga_pan_can_atlas_2018": "Lymphoma",
+            "gbm_tcga_pan_can_atlas_2018": "Glioblastoma",
+            "luad_tcga_pan_can_atlas_2018": "Lung Adenocarcinoma",
+            "skcm_tcga_pan_can_atlas_2018": "Melanoma",
+            "prad_tcga_pan_can_atlas_2018": "Prostate Cancer",
+            "ov_tcga_pan_can_atlas_2018": "Ovarian Cancer",
+            "coad_tcga_pan_can_atlas_2018": "Colorectal Cancer",
+            "lihc_tcga_pan_can_atlas_2018": "Liver Cancer",
+            "kirc_tcga_pan_can_atlas_2018": "Renal Cancer",
+            "stad_tcga_pan_can_atlas_2018": "Gastric Cancer",
+            "paad_tcga_pan_can_atlas_2018": "Pancreatic Cancer",
+            "blca_tcga_pan_can_atlas_2018": "Bladder Cancer",
+            "hnsc_tcga_pan_can_atlas_2018": "Head & Neck Cancer",
+            "ucec_tcga_pan_can_atlas_2018": "Endometrial Cancer",
+            "thca_tcga_pan_can_atlas_2018": "Thyroid Cancer",
         }
 
-        # Try the gene expression values endpoint
-        expr_url = (
-            f"{TCGA_GDC_BASE}/gene_expression/availability?"
-            f"gene_ids={gene}"
-        )
-        expr_data = _http_get(expr_url)
+        all_medians = []
+        max_val = 0.0
+        max_cancer = ""
 
-        if expr_data and "data" in expr_data:
-            result["status"] = "fetched"
-            # Parse available cancer types
-            for entry in expr_data.get("data", []):
-                project = entry.get("project_id", "")
-                cancer = TCGA_PROJECT_MAP.get(project, project)
-                result["cancer_types"][cancer] = {
-                    "mean_expression": entry.get("mean", 0.0),
-                    "median_expression": entry.get("median", 0.0),
-                    "sample_count": entry.get("count", 0),
-                }
-        else:
-            # Fallback: try cases endpoint
-            cases_url = (
-                f"{TCGA_GDC_BASE}/cases?"
-                f"filters=%7B%22op%22%3A%22in%22%2C%22content%22%3A"
-                f"%7B%22field%22%3A%22genes.symbol%22%2C%22value%22"
-                f"%3A%5B%22{gene}%22%5D%7D%7D"
-                f"&facets=project.project_id&size=0"
+        for study_id, cancer_name in tcga_studies.items():
+            profile_id = study_id + "_rna_seq_v2_mrna"
+            expr_url = (
+                f"{CBIO_BASE}/molecular-profiles/{profile_id}/molecular-data?"
+                f"entrezGeneId={entrez_id}&sampleListId={study_id}_all"
             )
-            cases_data = _http_get(cases_url)
-            if cases_data and "data" in cases_data:
-                result["status"] = "partial"
-                facets = cases_data.get("data", {}).get("aggregations", {})
-                project_facets = facets.get("project.project_id", {}).get("buckets", [])
-                for bucket in project_facets:
-                    project = bucket.get("key", "")
-                    cancer = TCGA_PROJECT_MAP.get(project, project)
-                    result["cancer_types"][cancer] = {
-                        "case_count": bucket.get("doc_count", 0),
-                    }
-            else:
-                result["status"] = "unavailable"
+            data = _http_get(expr_url, timeout=15)
 
-        # Compute overall mean
-        means = [
-            ct.get("mean_expression", 0)
-            for ct in result["cancer_types"].values()
-            if ct.get("mean_expression")
-        ]
-        result["overall_mean_tumor"] = round(sum(means) / len(means), 3) if means else 0.0
+            if data and isinstance(data, list) and len(data) > 0:
+                values = [d["value"] for d in data if d.get("value") is not None]
+                if values:
+                    import statistics
+                    med = round(statistics.median(values), 1)
+                    mn = round(statistics.mean(values), 1)
+                    result["cancer_types"][cancer_name] = {
+                        "median_expression": med,
+                        "mean_expression": mn,
+                        "sample_count": len(values),
+                    }
+                    all_medians.append(med)
+                    if med > max_val:
+                        max_val = med
+                        max_cancer = cancer_name
+
+        if result["cancer_types"]:
+            result["status"] = "fetched"
+            result["overall_mean_tumor"] = round(
+                sum(all_medians) / len(all_medians), 1
+            ) if all_medians else 0.0
+            result["max_expression_cancer"] = max_cancer
+            result["max_expression_value"] = max_val
+        else:
+            result["status"] = "no_expression_data"
 
         _save_cache(cache_path, result)
         return result
+
 
     # ═══════════════════════════════════════════════════════════════════════════
     # 2. GTEx — Normal tissue expression (critical for safety)
@@ -346,18 +360,35 @@ class RealDataFetcher:
             "status": "pending",
         }
 
-        # Resolve Ensembl ID
-        ensembl_id = GENE_TO_ENSEMBL.get(gene)
+        # ── Step 1: Resolve versioned gencode ID via gene symbol lookup ──
+        # The expression API requires versioned IDs (e.g. ENSG00000177455.12)
+        # Always try the symbol lookup first — it works for ALL genes.
+        gencode_id = None
 
-        if ensembl_id:
-            # Use gencode versioned ID format
-            url = (
+        symbol_url = (
+            f"{GTEX_API_BASE}/reference/gene?"
+            f"geneId={gene}&datasetId=gtex_v8"
+        )
+        gene_data = _http_get(symbol_url)
+        if gene_data and "data" in gene_data and gene_data["data"]:
+            gencode_id = gene_data["data"][0].get("gencodeId", "")
+
+        # Fallback: use static mapping (unversioned — less reliable)
+        if not gencode_id:
+            gencode_id = GENE_TO_ENSEMBL.get(gene)
+
+        if not gencode_id:
+            result["status"] = "gene_not_found"
+
+        # ── Step 2: Fetch expression using resolved gencode ID ────────
+        if gencode_id:
+            expr_url = (
                 f"{GTEX_API_BASE}/expression/medianGeneExpression?"
-                f"gencodeId={ensembl_id}&datasetId=gtex_v8"
+                f"gencodeId={gencode_id}&datasetId=gtex_v8"
             )
-            data = _http_get(url)
+            data = _http_get(expr_url)
 
-            if data and "data" in data:
+            if data and "data" in data and len(data["data"]) > 0:
                 result["status"] = "fetched"
                 for entry in data["data"]:
                     tissue = entry.get("tissueSiteDetailId", "Unknown")
@@ -368,37 +399,8 @@ class RealDataFetcher:
                         "n_samples": n_samples,
                     }
             else:
-                result["status"] = "unavailable"
-        else:
-            # Try searching by gene symbol
-            url = (
-                f"{GTEX_API_BASE}/reference/gene?"
-                f"geneId={gene}&datasetId=gtex_v8"
-            )
-            gene_data = _http_get(url)
-            if gene_data and "data" in gene_data and gene_data["data"]:
-                gencode_id = gene_data["data"][0].get("gencodeId", "")
-                if gencode_id:
-                    expr_url = (
-                        f"{GTEX_API_BASE}/expression/medianGeneExpression?"
-                        f"gencodeId={gencode_id}&datasetId=gtex_v8"
-                    )
-                    expr_data = _http_get(expr_url)
-                    if expr_data and "data" in expr_data:
-                        result["status"] = "fetched"
-                        for entry in expr_data["data"]:
-                            tissue = entry.get("tissueSiteDetailId", "Unknown")
-                            median_tpm = entry.get("median", 0.0)
-                            result["tissues"][tissue] = {
-                                "median_tpm": round(median_tpm, 3),
-                                "n_samples": entry.get("nSamples", 0),
-                            }
-                    else:
-                        result["status"] = "unavailable"
-                else:
-                    result["status"] = "no_ensembl_id"
-            else:
-                result["status"] = "gene_not_found"
+                result["status"] = "no_expression_data"
+
 
         # Compute organ-level summary
         for organ, tissue_list in GTEX_TISSUE_GROUPS.items():
@@ -732,8 +734,24 @@ class RealDataFetcher:
             "status": "pending",
         }
 
-        # Search for CAR-T trials targeting this antigen
-        search_terms = f"{gene} CAR-T OR CAR T-cell OR chimeric antigen receptor"
+        # Search for CAR-T trials specifically targeting this antigen
+        # Must include BOTH gene name AND CAR-T terminology
+        gene_aliases = {
+            "BCMA": "BCMA OR TNFRSF17",
+            "GD2": "GD2 OR B4GALNT1",
+            "PSMA": "PSMA OR FOLH1",
+            "CD138": "CD138 OR SDC1",
+            "CD20": "CD20 OR MS4A1",
+            "CD123": "CD123 OR IL3RA",
+            "B7H3": "B7-H3 OR CD276",
+            "CLDN18.2": "Claudin 18.2 OR CLDN18",
+            "PDL1": "PD-L1 OR CD274",
+            "PD1": "PD-1 OR PDCD1",
+        }
+        gene_term = gene_aliases.get(gene, gene)
+
+        # Primary search: gene + CAR-T specific
+        search_terms = f'({gene_term}) AND (CAR-T OR "CAR T" OR "chimeric antigen receptor" OR "CAR cell")'
         encoded = urllib.parse.quote(search_terms)
         url = (
             f"{CLINICAL_TRIALS_BASE}/studies?"

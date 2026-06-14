@@ -1,0 +1,251 @@
+{
+  "benchmark_date": "2026-05-24",
+  "total_targets": 18,
+  "real_data_pct": 100.0,
+  "fda_check": true,
+  "negative_check": true,
+  "rankings": [
+    {
+      "rank": 1,
+      "gene": "GD2",
+      "cvs": 0.912,
+      "tier_actual": "Tier 1 - Highly Viable",
+      "tier_expected": "Phase I/II",
+      "fda_approved": false,
+      "apis": [
+        "TCGA",
+        "ClinicalTrials.gov"
+      ]
+    },
+    {
+      "rank": 2,
+      "gene": "BCMA",
+      "cvs": 0.907,
+      "tier_actual": "Tier 1 - Highly Viable",
+      "tier_expected": "FDA-approved",
+      "fda_approved": true,
+      "apis": [
+        "TCGA",
+        "UniProt",
+        "ClinicalTrials.gov"
+      ]
+    },
+    {
+      "rank": 3,
+      "gene": "CD19",
+      "cvs": 0.9,
+      "tier_actual": "Tier 1 - Highly Viable",
+      "tier_expected": "FDA-approved",
+      "fda_approved": true,
+      "apis": [
+        "TCGA",
+        "GTEx",
+        "UniProt",
+        "ClinicalTrials.gov"
+      ]
+    },
+    {
+      "rank": 4,
+      "gene": "CD123",
+      "cvs": 0.882,
+      "tier_actual": "Tier 1 - Highly Viable",
+      "tier_expected": "Phase I",
+      "fda_approved": false,
+      "apis": [
+        "TCGA",
+        "ClinicalTrials.gov"
+      ]
+    },
+    {
+      "rank": 5,
+      "gene": "CD20",
+      "cvs": 0.864,
+      "tier_actual": "Tier 1 - Highly Viable",
+      "tier_expected": "Phase I/II",
+      "fda_approved": false,
+      "apis": [
+        "TCGA",
+        "UniProt",
+        "ClinicalTrials.gov"
+      ]
+    },
+    {
+      "rank": 6,
+      "gene": "FLT3",
+      "cvs": 0.825,
+      "tier_actual": "Tier 2 - Promising",
+      "tier_expected": "Phase I",
+      "fda_approved": false,
+      "apis": [
+        "TCGA",
+        "GTEx",
+        "UniProt",
+        "ClinicalTrials.gov"
+      ]
+    },
+    {
+      "rank": 7,
+      "gene": "ROR1",
+      "cvs": 0.821,
+      "tier_actual": "Tier 2 - Promising",
+      "tier_expected": "Phase I",
+      "fda_approved": false,
+      "apis": [
+        "TCGA",
+        "GTEx",
+        "UniProt",
+        "ClinicalTrials.gov"
+      ]
+    },
+    {
+      "rank": 8,
+      "gene": "HER2",
+      "cvs": 0.815,
+      "tier_actual": "Tier 2 - Promising",
+      "tier_expected": "Phase I/II",
+      "fda_approved": false,
+      "apis": [
+        "UniProt",
+        "ClinicalTrials.gov"
+      ]
+    },
+    {
+      "rank": 9,
+      "gene": "GPRC5D",
+      "cvs": 0.794,
+      "tier_actual": "Tier 2 - Promising",
+      "tier_expected": "Phase I/II",
+      "fda_approved": false,
+      "apis": [
+        "TCGA",
+        "GTEx",
+        "UniProt",
+        "ClinicalTrials.gov"
+      ]
+    },
+    {
+      "rank": 10,
+      "gene": "CD22",
+      "cvs": 0.786,
+      "tier_actual": "Tier 2 - Promising",
+      "tier_expected": "Phase II",
+      "fda_approved": false,
+      "apis": [
+        "TCGA",
+        "GTEx",
+        "UniProt",
+        "ClinicalTrials.gov"
+      ]
+    },
+    {
+      "rank": 11,
+      "gene": "CD33",
+      "cvs": 0.771,
+      "tier_actual": "Tier 2 - Promising",
+      "tier_expected": "Phase I",
+      "fda_approved": false,
+      "apis": [
+        "TCGA",
+        "GTEx",
+        "UniProt",
+        "ClinicalTrials.gov"
+      ]
+    },
+    {
+      "rank": 12,
+      "gene": "EGFR",
+      "cvs": 0.724,
+      "tier_actual": "Tier 2 - Promising",
+      "tier_expected": "Phase I",
+      "fda_approved": false,
+      "apis": [
+        "TCGA",
+        "GTEx",
+        "UniProt",
+        "ClinicalTrials.gov"
+      ]
+    },
+    {
+      "rank": 13,
+      "gene": "GPC3",
+      "cvs": 0.722,
+      "tier_actual": "Tier 2 - Promising",
+      "tier_expected": "Phase I/II",
+      "fda_approved": false,
+      "apis": [
+        "TCGA",
+        "GTEx",
+        "UniProt",
+        "ClinicalTrials.gov"
+      ]
+    },
+    {
+      "rank": 14,
+      "gene": "MSLN",
+      "cvs": 0.67,
+      "tier_actual": "Tier 3 - Experimental",
+      "tier_expected": "Phase I/II",
+      "fda_approved": false,
+      "apis": [
+        "TCGA",
+        "GTEx",
+        "UniProt",
+        "ClinicalTrials.gov"
+      ]
+    },
+    {
+      "rank": 15,
+      "gene": "CLDN18.2",
+      "cvs": 0.548,
+      "tier_actual": "Tier 4 - High Risk",
+      "tier_expected": "Phase I/II",
+      "fda_approved": false,
+      "apis": [
+        "TCGA",
+        "ClinicalTrials.gov"
+      ]
+    },
+    {
+      "rank": 16,
+      "gene": "TP53",
+      "cvs": 0.497,
+      "tier_actual": "Tier 4 - High Risk",
+      "tier_expected": "Not applicable",
+      "fda_approved": false,
+      "apis": [
+        "TCGA",
+        "GTEx",
+        "UniProt",
+        "ClinicalTrials.gov"
+      ]
+    },
+    {
+      "rank": 17,
+      "gene": "KRAS",
+      "cvs": 0.49,
+      "tier_actual": "Tier 4 - High Risk",
+      "tier_expected": "Not applicable",
+      "fda_approved": false,
+      "apis": [
+        "TCGA",
+        "GTEx",
+        "UniProt",
+        "ClinicalTrials.gov"
+      ]
+    },
+    {
+      "rank": 18,
+      "gene": "MYC",
+      "cvs": 0.459,
+      "tier_actual": "Tier 4 - High Risk",
+      "tier_expected": "Not applicable",
+      "fda_approved": false,
+      "apis": [
+        "TCGA",
+        "GTEx",
+        "UniProt",
+        "ClinicalTrials.gov"
+      ]
+    }
+  ]
+}

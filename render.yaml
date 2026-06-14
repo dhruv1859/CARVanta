@@ -1,15 +1,27 @@
 # ─── CARVanta Backend — Render Blueprint ────────────────────────────────────
-# NOTE: CARVanta is deployed on Railway. This file is kept for reference only.
-# Railway uses nixpacks.toml + railway.json instead.
-# services:
-#   - type: web
-#     name: carvanta-api
-#     runtime: python
-#     buildCommand: pip install -r requirements-render.txt
-#     startCommand: uvicorn api.main:app --host 0.0.0.0 --port $PORT
-#     envVars:
-#       - key: PYTHON_VERSION
-#         value: "3.12.0"
-#       - key: CARVANTA_ENV
-#         value: production
-#     plan: free
+services:
+  - type: web
+    name: carvanta-api
+    runtime: python
+    buildCommand: pip install -r requirements-render.txt
+    startCommand: uvicorn api.main:app --host 0.0.0.0 --port $PORT --workers 1
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.0"
+      - key: CARVANTA_ENV
+        value: production
+      - key: CORS_ORIGINS
+        value: "*"
+      - key: GNN_ENABLED
+        value: "false"
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: PASSWORD_SALT
+        generateValue: true
+    plan: free
+    healthCheckPath: /api/v5/health
+    autoDeploy: true
