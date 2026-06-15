@@ -2,6 +2,39 @@
 
 All notable changes to the CARVanta platform will be documented in this file.
 
+## [5.1.0] — 2026-06-15
+
+### 🔬 Sentinel HYDRA Hardware Release
+
+#### Gerber Manufacturing Package
+- **Production Gerber files** generated for 6-layer PCB via KiCad CLI
+  - 6 copper layers: Digital_Signals (F.Cu), GND_Plane (In1), Analog_Signals (In2), Power_Planes (In3), HighSpeed (In4), Bottom_GND (B.Cu)
+  - Front/Back solder mask, silkscreen, paste stencil, fabrication layers
+  - Board outline (Edge.Cuts)
+- **Excellon drill files** with PTH and NPTH separated
+- **Drill map files** in Gerber X2 format
+- **`Sentinel_HYDRA_Gerbers.zip`** — manufacturing-ready archive for JLCPCB/PCBWay upload
+
+#### Board Statistics (from KiCad export)
+- 135 components (123 SMD + 11 THT)
+- 641 SMD pads + 72 through-hole pads + 9 NPTH
+- 225 through-hole vias
+- 1.6mm stackup thickness, ENIG surface finish
+
+#### Dual-MCU Firmware (50 files, 114KB)
+- **ESP32-S3 firmware** (`esp32_hydra/`) — WiFi, display, cloud, storage, power management
+- **RP2040 firmware** (`rp2040_hydra/`) — Real-time sensor acquisition, PID control, spectral analysis
+- UART inter-MCU protocol at 921600 baud with CRC
+
+#### Documentation Overhaul
+- **`README.md`** — Complete rewrite with Sentinel HYDRA hardware section, updated stats (117K+ LOC, 778 files), hardware badges, manufacturing files link, firmware build instructions, documentation index
+- **`ARCHITECTURE.md`** — New comprehensive architecture document covering software stack, 6-layer PCB stackup, dual-MCU design, I2C bus topology, SPI bus sharing, power architecture, sensor subsystems, firmware structure, inter-MCU protocol, data flow, and deployment
+- **`CODE_OF_CONDUCT.md`** — Full Contributor Covenant v2.1 with medical-adjacent patient safety commitments and enforcement guidelines
+- **`contributing.md`** — Expanded guide covering software (Python/React), hardware (KiCad PCB design rules), and firmware (PlatformIO ESP32/RP2040) contributions, PR process, commit convention
+- **`security.md`** — Expanded security policy with version support matrix, hardware security considerations, HIPAA alignment, CVSS severity classification, and response timelines
+
+---
+
 ## [5.0.0] — 2026-03-16
 
 ### 🚀 International Recognition Roadmap Release
