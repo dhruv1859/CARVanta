@@ -60,7 +60,7 @@ Patient blood (fingerprick)
         │
         ▼
 ┌───────────────────────┐
-│   SENTINEL HYDRA      │     Bedside device — 95×65mm, ~$79/unit
+│   SENTINEL HYDRA      │     Bedside device — 100×100mm, ~$79/unit
 │   RP2040 + ESP32-S3   │     6-layer medical PCB, ENIG finish
 │                       │
 │   • 4× potentiostat   │     Sensor data
@@ -103,7 +103,7 @@ The **Sentinel HYDRA** is a credit-card-sized medical-grade device that continuo
 
 | Parameter | Value |
 |-----------|-------|
-| Dimensions | 95mm × 65mm |
+| Dimensions | 100mm × 100mm |
 | PCB Layers | **6** (signal/ground/analog/power/high-speed/bottom) |
 | MCUs | **ESP32-S3** (main) + **RP2040** (sensor coprocessor) |
 | Antigen Channels | **4 simultaneous** (CD19, CD22, BCMA, GPRC5D) |
