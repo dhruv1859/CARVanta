@@ -28,7 +28,7 @@ python-dotenv>=1.0.0
 requests>=2.31.0
 
 # PDF Reports
-reportlab>=4.0.0
+reportlab>=4.4.10
 
 # Dev & Testing
 pytest>=7.4.0
