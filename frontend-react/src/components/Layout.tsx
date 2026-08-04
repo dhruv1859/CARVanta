@@ -19,6 +19,8 @@ const NAV_SECTIONS: NavSection[] = [
     {
         title: 'Discovery',
         items: [
+            { path: '/war-game', icon: '🕹️', label: 'In Silico War-Game' },
+            { path: '/voice-copilot', icon: '🎤', label: 'Voice Copilot' },
             { path: '/', icon: '🔬', label: 'Single Antigen' },
             { path: '/compare', icon: '⚖️', label: 'Comparison' },
             { path: '/heatmap', icon: '🧫', label: 'Tissue Heatmap' },
@@ -38,12 +40,12 @@ const NAV_SECTIONS: NavSection[] = [
             { path: '/deep-learning', icon: '🧪', label: 'Deep Learning' },
             { path: '/validation', icon: '🏆', label: 'Model Validation' },
             { path: '/disease-atlas', icon: '🌍', label: 'Disease Atlas' },
+            { path: '/twin', icon: '🧬', label: 'Digital Twin Simulator' },
         ],
     },
     {
         title: 'Clinical',
         items: [
-            { path: '/twin', icon: '🧑‍⚕️', label: 'Digital Twin' },
             { path: '/genomics', icon: '🧬', label: 'Genomic Profiler' },
             { path: '/stratify', icon: '👥', label: 'Stratification' },
             { path: '/wizard', icon: '📝', label: 'Patient Wizard' },
@@ -92,15 +94,24 @@ function getInitialTheme(): 'dark' | 'light' {
     return 'light'; // Default
 }
 
+function getInitialCollapsed(): boolean {
+    return localStorage.getItem('carvanta-sidebar-collapsed') === 'true';
+}
+
 export default function Layout({ children }: { children: React.ReactNode }) {
     const [theme, setTheme] = useState<'dark' | 'light'>(getInitialTheme);
     const [sidebarOpen, setSidebarOpen] = useState(false);
+    const [collapsed, setCollapsed] = useState<boolean>(getInitialCollapsed);
     const { user, logout } = useAuth();
 
     useEffect(() => {
         document.documentElement.setAttribute('data-theme', theme);
         localStorage.setItem('carvanta-theme', theme);
     }, [theme]);
+
+    useEffect(() => {
+        localStorage.setItem('carvanta-sidebar-collapsed', String(collapsed));
+    }, [collapsed]);
 
     // Lock body scroll when mobile sidebar is open
     useEffect(() => {
@@ -117,11 +128,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     };
 
     const closeSidebar = useCallback(() => setSidebarOpen(false), []);
+    const toggleCollapse = () => setCollapsed(prev => !prev);
 
     const initials = user?.full_name?.split(' ').map((w: string) => w[0]).join('').slice(0, 2).toUpperCase() || '??';
 
     return (
-        <div className={`app-layout ${sidebarOpen ? 'sidebar-open' : ''}`}>
+        <div className={`app-layout ${sidebarOpen ? 'sidebar-open' : ''} ${collapsed ? 'sidebar-collapsed' : ''}`}>
             {/* ── Mobile Top Bar ─────────────────────────────────── */}
             <header className="mobile-topbar">
                 <button
@@ -142,7 +154,17 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             )}
 
             {/* ── Sidebar ───────────────────────────────────────── */}
-            <aside className="sidebar">
+            <aside className={`sidebar ${collapsed ? 'sidebar--collapsed' : ''}`}>
+                {/* Collapse toggle button — always visible */}
+                <button
+                    className="sidebar-collapse-btn"
+                    onClick={toggleCollapse}
+                    title={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
+                    aria-label={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
+                >
+                    <span className={`sidebar-collapse-icon ${collapsed ? 'collapsed' : ''}`}>‹</span>
+                </button>
+
                 <div className="sidebar-brand">
                     <h1>◆ CARVanta</h1>
                     <p>AI-Augmented Biomarker Intelligence</p>
@@ -158,9 +180,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                                     end={item.path === '/'}
                                     className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
                                     onClick={closeSidebar}
+                                    title={collapsed ? item.label : undefined}
                                 >
                                     <span className="nav-icon">{item.icon}</span>
-                                    {item.label}
+                                    <span className="nav-label">{item.label}</span>
                                 </NavLink>
                             ))}
                         </div>
@@ -168,7 +191,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 </nav>
                 <button className="theme-toggle" onClick={toggleTheme} title="Toggle theme">
                     <span className="theme-toggle-icon">{theme === 'dark' ? '☀️' : '🌙'}</span>
-                    {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
+                    <span className="nav-label">{theme === 'dark' ? 'Light Mode' : 'Dark Mode'}</span>
                 </button>
                 {user && (
                     <div className="user-menu">

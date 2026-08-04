@@ -324,3 +324,29 @@ async def volcano_chart(n: int = 200) -> Dict[str, Any]:
     from copilot.data_visualizer import generate_volcano_plot
     return await generate_volcano_plot(n_genes=n)
 
+
+class VoiceQueryRequest(BaseModel):
+    transcript: str = Field(..., max_length=1000)
+
+@router.post("/voice-query", summary="Voice Clinical Copilot for ICU emergencies")
+async def voice_query(request: VoiceQueryRequest) -> Dict[str, Any]:
+    """Process voice transcription from ICU doctors and return clinical protocols."""
+    transcript = request.transcript.lower()
+    
+    # Hackathon MVP: Pattern match keywords for CRS shock
+    if any(word in transcript for word in ["fever", "temperature", "blood pressure", "dropping", "shock"]):
+        return {
+            "status": "emergency",
+            "clinical_insight": "Grade 3 CRS detected based on fever and hypotensive shock indicators. Immediate intervention required.",
+            "protocol": "Administer 8mg/kg of Tocilizumab immediately. Monitor via Digital Twin.",
+            "action_trigger": "run_digital_twin_crs_sim",
+            "suggested_dose": "8mg/kg"
+        }
+    
+    return {
+         "status": "standard",
+         "clinical_insight": "Patient vitals received. Monitoring CAR-T expansion.",
+         "protocol": "Continue standard 4-hour vitals check.",
+         "action_trigger": "none",
+         "suggested_dose": "N/A"
+    }

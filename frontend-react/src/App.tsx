@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
 import { AuthProvider } from './context/AuthContext';
 import Layout from './components/Layout';
+import VoiceCopilot from './components/VoiceCopilot';
 
 /* ─── Lazy-loaded pages (code-split for fast initial load) ─── */
 const SingleAnalysis = lazy(() => import('./pages/SingleAnalysis'));
@@ -45,6 +46,9 @@ const DiseaseAtlas = lazy(() => import('./pages/DiseaseAtlas'));
 const RegulatoryCompliance = lazy(() => import('./pages/RegulatoryCompliance'));
 const DeepLearning = lazy(() => import('./pages/DeepLearning'));
 const ModelValidation = lazy(() => import('./pages/ModelValidation'));
+const VoiceCopilotPage = lazy(() => import('./pages/VoiceCopilotPage'));
+const FDAIndPage = lazy(() => import('./pages/FDAIndPage'));
+const WarGame = lazy(() => import('./pages/WarGame'));
 
 /* ─── Loading Spinner ─── */
 function PageLoader() {
@@ -68,9 +72,11 @@ function ProtectedApp() {
   // Auth login bypassed for now — will reconnect later
 
   return (
-    <Layout>
-      <Suspense fallback={<PageLoader />}>
-        <Routes>
+    <>
+      <VoiceCopilot />
+      <Layout>
+        <Suspense fallback={<PageLoader />}>
+          <Routes>
           <Route path="/" element={<SingleAnalysis />} />
           <Route path="/compare" element={<Comparison />} />
           <Route path="/heatmap" element={<TissueHeatmap />} />
@@ -112,9 +118,13 @@ function ProtectedApp() {
           <Route path="/regulatory" element={<RegulatoryCompliance />} />
           <Route path="/deep-learning" element={<DeepLearning />} />
           <Route path="/validation" element={<ModelValidation />} />
+          <Route path="/voice-copilot" element={<VoiceCopilotPage />} />
+          <Route path="/fda-ind" element={<FDAIndPage />} />
+          <Route path="/war-game" element={<WarGame />} />
         </Routes>
       </Suspense>
     </Layout>
+    </>
   );
 }
 
