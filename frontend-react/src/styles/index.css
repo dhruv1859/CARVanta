@@ -165,10 +165,115 @@ body {
   position: fixed;
   top: 0; left: 0; bottom: 0;
   overflow-y: auto;
+  overflow-x: hidden;
   z-index: 50;
+  transition: width 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   /* hide scrollbar */
   scrollbar-width: thin;
   scrollbar-color: rgba(255,255,255,0.06) transparent;
+}
+
+/* ── Collapsed Sidebar ── */
+.sidebar--collapsed {
+  width: 60px;
+}
+
+.sidebar--collapsed .sidebar-brand p,
+.sidebar--collapsed .nav-label,
+.sidebar--collapsed .nav-section-title,
+.sidebar--collapsed .sidebar-footer,
+.sidebar--collapsed .user-info,
+.sidebar--collapsed .user-logout {
+  opacity: 0;
+  pointer-events: none;
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: opacity 0.18s ease;
+}
+
+.sidebar--collapsed .sidebar-brand h1 {
+  font-size: 14px;
+  letter-spacing: 0;
+}
+
+.sidebar--collapsed .sidebar-brand {
+  padding: 0 0 16px;
+  text-align: center;
+}
+
+.sidebar--collapsed .nav-link {
+  justify-content: center;
+  padding: 10px 0;
+  gap: 0;
+}
+
+.sidebar--collapsed .nav-icon {
+  font-size: 18px;
+  width: auto;
+}
+
+.sidebar--collapsed .user-menu {
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.sidebar--collapsed .user-avatar {
+  margin: 0 auto;
+}
+
+.sidebar--collapsed .theme-toggle {
+  justify-content: center;
+  padding: 10px 0;
+}
+
+/* Expand main content when sidebar collapses */
+.sidebar-collapsed .main-content {
+  margin-left: 60px;
+}
+
+/* ── Collapse Toggle Button ── */
+.sidebar-collapse-btn {
+  position: absolute;
+  top: 20px;
+  right: -13px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--bg-sidebar);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 60;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  flex-shrink: 0;
+}
+
+.sidebar-collapse-btn:hover {
+  background: var(--accent-indigo);
+  color: white;
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.25);
+}
+
+.sidebar-collapse-icon {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  display: inline-block;
+  transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-top: -1px;
+}
+
+.sidebar-collapse-icon.collapsed {
+  transform: rotate(180deg);
+}
+
+.nav-label {
+  transition: opacity 0.18s ease;
 }
 
 .sidebar::-webkit-scrollbar { width: 4px; }
@@ -276,6 +381,7 @@ body {
   margin-left: var(--sidebar-width);
   padding: 32px 40px;
   min-height: 100vh;
+  transition: margin-left 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ── Page Header ────────────────────────────────────────────────────────────── */

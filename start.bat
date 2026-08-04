@@ -5,9 +5,16 @@ echo   CARVanta - Starting Servers...
 echo ============================================
 echo.
 
-:: Start backend in a new window
+:: Get the directory of this batch file
+set "PROJECT_DIR=%~dp0"
+
+:: Start backend in a new window using the virtual environment if exists, else global python
 echo [1/2] Starting Backend (port 8001)...
-start "CARVanta Backend" cmd /k "cd /d C:\Users\dhruv\CARVanta && C:\Users\dhruv\carvanta_env\Scripts\python.exe -m uvicorn api.main:app --host 0.0.0.0 --port 8001"
+if exist "%PROJECT_DIR%venv\Scripts\python.exe" (
+    start "CARVanta Backend" cmd /k "cd /d %PROJECT_DIR% && venv\Scripts\python.exe -m uvicorn api.main:app --host 0.0.0.0 --port 8001"
+) else (
+    start "CARVanta Backend" cmd /k "cd /d %PROJECT_DIR% && python -m uvicorn api.main:app --host 0.0.0.0 --port 8001"
+)
 
 :: Wait for backend to initialize
 echo      Waiting for backend to load...
@@ -15,7 +22,7 @@ timeout /t 10 /nobreak > nul
 
 :: Start frontend in a new window
 echo [2/2] Starting Frontend (port 5173)...
-start "CARVanta Frontend" cmd /k "cd /d C:\Users\dhruv\CARVanta\frontend-react && npm run dev"
+start "CARVanta Frontend" cmd /k "cd /d %PROJECT_DIR%frontend-react && npm run dev"
 
 echo.
 echo ============================================

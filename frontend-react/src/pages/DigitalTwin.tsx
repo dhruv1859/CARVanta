@@ -162,6 +162,10 @@ export default function DigitalTwin() {
         finally { setLoading(false); }
     };
 
+    const exportFDAIND = () => {
+        window.open(`http://localhost:8001/api/v5/twin/export-ind?cancer_type=${encodeURIComponent(params.cancer_type)}&patient_age=${params.patient_age}`, '_blank');
+    };
+
     const applyPreset = (preset: any) => setParams((p: any) => ({ ...p, ...preset.params }));
     const upd = (field: string, val: any) => setParams((p: any) => ({ ...p, [field]: val }));
 
@@ -427,6 +431,9 @@ export default function DigitalTwin() {
                     <div className="twin-action-bar">
                         <button className="twin-run-btn primary" onClick={runSimulation} disabled={loading}>
                             {loading ? '⏳ Running...' : '🧬 Run Full Simulation'}
+                        </button>
+                        <button className="twin-run-btn primary" style={{backgroundColor: '#059669', borderColor: '#047857'}} onClick={exportFDAIND} disabled={loading}>
+                            📄 Generate FDA IND
                         </button>
                         <button className="twin-run-btn secondary" onClick={runCancerSim} disabled={loading}>
                             🧫 Cancer-Specific Sim

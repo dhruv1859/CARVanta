@@ -1,0 +1,362 @@
+{
+  "started_at": "2026-07-13T01:35:06.867629+00:00",
+  "classifier": {
+    "model_type": "VotingClassifier",
+    "dataset_size": 1087,
+    "viable_count": 1043,
+    "non_viable_count": 44,
+    "k_folds": 5,
+    "fold_results": [
+      {
+        "fold": 1,
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "roc_auc": 1.0,
+        "train_accuracy": 0.9988
+      },
+      {
+        "fold": 2,
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "roc_auc": 1.0,
+        "train_accuracy": 0.9988
+      },
+      {
+        "fold": 3,
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "roc_auc": 1.0,
+        "train_accuracy": 0.9989
+      },
+      {
+        "fold": 4,
+        "accuracy": 0.9954,
+        "precision": 0.9952,
+        "recall": 1.0,
+        "f1": 0.9976,
+        "roc_auc": 0.9995,
+        "train_accuracy": 1.0
+      },
+      {
+        "fold": 5,
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "roc_auc": 1.0,
+        "train_accuracy": 0.9989
+      }
+    ],
+    "aggregate": {
+      "accuracy": {
+        "mean": 0.9991,
+        "std": 0.0018,
+        "min": 0.9954,
+        "max": 1.0
+      },
+      "precision": {
+        "mean": 0.999,
+        "std": 0.0019,
+        "min": 0.9952,
+        "max": 1.0
+      },
+      "recall": {
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "f1": {
+        "mean": 0.9995,
+        "std": 0.001,
+        "min": 0.9976,
+        "max": 1.0
+      },
+      "roc_auc": {
+        "mean": 0.9999,
+        "std": 0.0002,
+        "min": 0.9995,
+        "max": 1.0
+      }
+    },
+    "overfit_gap": 0.0,
+    "overfit_status": "OK",
+    "confusion_matrix": {
+      "true_negatives": 44,
+      "false_positives": 0,
+      "false_negatives": 763,
+      "true_positives": 280
+    },
+    "brier_score": 0.6963,
+    "log_loss": 7.7225,
+    "calibration_status": "Poor"
+  },
+  "ranker": {
+    "model_type": "XGBRegressor",
+    "k_folds": 5,
+    "cv_r2": {
+      "mean": 0.989,
+      "std": 0.0116
+    },
+    "cv_mae": {
+      "mean": 0.0043,
+      "std": 0.0009
+    },
+    "cv_rmse": {
+      "mean": 0.0111,
+      "std": 0.0059
+    },
+    "spearman_rho": 0.8875,
+    "spearman_p_value": 0.0,
+    "pearson_r": 0.7155,
+    "pearson_p_value": 0.0,
+    "residual_bias": 0.187254,
+    "residual_std": 0.1139,
+    "ranking_quality": "Good"
+  },
+  "fda_validation": {
+    "fda_targets": {
+      "CD19": {
+        "CVS": 0.744,
+        "tier": "Tier 2 - Promising",
+        "confidence": 0.537,
+        "pass": false,
+        "indication": "B-cell ALL/DLBCL",
+        "fda_products": [
+          "Kymriah",
+          "Yescarta",
+          "Tecartus",
+          "Breyanzi"
+        ],
+        "expected": "Tier 1 - Highly Viable"
+      },
+      "BCMA": {
+        "CVS": 0.567,
+        "tier": "Tier 3 - Experimental",
+        "confidence": 0.498,
+        "pass": false,
+        "indication": "Multiple Myeloma",
+        "fda_products": [
+          "Abecma",
+          "Carvykti"
+        ],
+        "expected": "Tier 1 - Highly Viable"
+      },
+      "CD22": {
+        "CVS": 0.712,
+        "tier": "Tier 2 - Promising",
+        "confidence": 0.624,
+        "pass": false,
+        "indication": "B-cell ALL (r/r)",
+        "fda_products": [],
+        "expected": "Tier 1 - Highly Viable"
+      },
+      "GPRC5D": {
+        "CVS": 0.718,
+        "tier": "Tier 2 - Promising",
+        "confidence": 0.582,
+        "pass": false,
+        "indication": "Multiple Myeloma",
+        "fda_products": [],
+        "expected": "Tier 1 - Highly Viable"
+      }
+    },
+    "fda_total": 4,
+    "fda_passed": 0,
+    "fda_pass_rate": 0.0,
+    "all_fda_pass": false,
+    "negative_controls": {
+      "TP53": {
+        "CVS": 0.48,
+        "tier": "Tier 4 - High Risk",
+        "correct_rejection": true
+      },
+      "RB1": {
+        "CVS": 0.467,
+        "tier": "Tier 4 - High Risk",
+        "correct_rejection": true
+      },
+      "BRCA1": {
+        "CVS": 0.502,
+        "tier": "Tier 4 - High Risk",
+        "correct_rejection": true
+      },
+      "PTEN": {
+        "CVS": 0.359,
+        "tier": "Tier 4 - High Risk",
+        "correct_rejection": true
+      },
+      "APC": {
+        "CVS": 0.645,
+        "tier": "Tier 3 - Experimental",
+        "correct_rejection": true
+      }
+    },
+    "negative_correct": 5,
+    "negative_total": 5,
+    "negative_specificity": 100.0
+  },
+  "robustness": {
+    "feature_sensitivity": {
+      "tumor_specificity": {
+        "flip_rate_pct": 0.33,
+        "avg_prob_delta": 0.0033,
+        "stability": "Robust"
+      },
+      "normal_expression_risk": {
+        "flip_rate_pct": 0.09,
+        "avg_prob_delta": 0.0015,
+        "stability": "Robust"
+      },
+      "safety_margin": {
+        "flip_rate_pct": 0.04,
+        "avg_prob_delta": 0.0007,
+        "stability": "Robust"
+      },
+      "stability_score": {
+        "flip_rate_pct": 2.46,
+        "avg_prob_delta": 0.0248,
+        "stability": "Moderate"
+      },
+      "literature_support": {
+        "flip_rate_pct": 2.65,
+        "avg_prob_delta": 0.0269,
+        "stability": "Moderate"
+      },
+      "immunogenicity_score": {
+        "flip_rate_pct": 0.0,
+        "avg_prob_delta": 0.0007,
+        "stability": "Robust"
+      },
+      "surface_accessibility": {
+        "flip_rate_pct": 5.15,
+        "avg_prob_delta": 0.0513,
+        "stability": "Sensitive"
+      },
+      "clinical_boost": {
+        "flip_rate_pct": 0.02,
+        "avg_prob_delta": 0.0004,
+        "stability": "Robust"
+      },
+      "composite_score": {
+        "flip_rate_pct": 0.23,
+        "avg_prob_delta": 0.0044,
+        "stability": "Robust"
+      }
+    },
+    "robustness_score": 87.8,
+    "robustness_grade": "B",
+    "perturbation_level": "\u00b15%",
+    "n_perturbations_per_feature": 10
+  },
+  "statistical_significance": {
+    "model_f1_scores": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.9952,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "model_f1_mean": 0.9995,
+    "model_f1_std": 0.0014,
+    "baselines": {
+      "most_frequent": {
+        "baseline_f1_mean": 0.9793,
+        "model_f1_mean": 0.9995,
+        "improvement": 0.0202,
+        "t_statistic": 28.0472,
+        "t_p_value": 0.0,
+        "wilcoxon_statistic": 0.0,
+        "wilcoxon_p_value": 0.001953,
+        "significant_at_005": true,
+        "significant_at_001": true
+      },
+      "stratified": {
+        "baseline_f1_mean": 0.9608,
+        "model_f1_mean": 0.9995,
+        "improvement": 0.0388,
+        "t_statistic": 45.058,
+        "t_p_value": 0.0,
+        "wilcoxon_statistic": 0.0,
+        "wilcoxon_p_value": 0.001953,
+        "significant_at_005": true,
+        "significant_at_001": true
+      },
+      "uniform": {
+        "baseline_f1_mean": 0.7262,
+        "model_f1_mean": 0.9995,
+        "improvement": 0.2733,
+        "t_statistic": 55.2238,
+        "t_p_value": 0.0,
+        "wilcoxon_statistic": 0.0,
+        "wilcoxon_p_value": 0.001953,
+        "significant_at_005": true,
+        "significant_at_001": true
+      }
+    },
+    "conclusion": "Model significantly outperforms all baselines (p < 0.01)"
+  },
+  "certification": {
+    "certification_id": "CARV-CERT-20260713-013917",
+    "timestamp": "2026-07-13T01:39:17.862535+00:00",
+    "software": "CARVanta CAR-T Viability Scoring Platform",
+    "version": "v5",
+    "criteria": {
+      "accuracy": {
+        "value": 0.9991,
+        "grade": "A",
+        "weight": 0.2
+      },
+      "discrimination": {
+        "value": 0.9999,
+        "grade": "A",
+        "weight": 0.2
+      },
+      "clinical_validity": {
+        "value": 0.0,
+        "grade": "D",
+        "weight": 0.25
+      },
+      "robustness": {
+        "value": 87.8,
+        "grade": "B",
+        "weight": 0.15
+      },
+      "statistical_significance": {
+        "value": 100,
+        "grade": "A",
+        "weight": 0.1
+      },
+      "calibration": {
+        "value": 30.4,
+        "grade": "D",
+        "weight": 0.1
+      }
+    },
+    "overall_score": 70.0,
+    "overall_grade": "C",
+    "certification_status": "NOT CERTIFIED \u2014 Significant improvements needed",
+    "standards_reference": [
+      "ISO/IEC 25010:2023 \u2014 Software Quality Model",
+      "FDA Guidance: Clinical Decision Support Software (2022)",
+      "GAMP 5: Risk-Based Approach to Compliant Systems"
+    ],
+    "recommendations": [
+      "\ud83d\udea8 FDA target validation failures \u2014 critical issue for clinical credibility",
+      "\u26a0\ufe0f Probability calibration poor \u2014 apply Platt scaling or isotonic regression"
+    ]
+  },
+  "completed_at": "2026-07-13T01:39:17.862555+00:00",
+  "elapsed_seconds": 250.99
+}

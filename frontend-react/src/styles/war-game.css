@@ -1,0 +1,317 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   In Silico War-Game — Full-Fit Layout Styles
+   The .wg-root fills exactly the main content area (no overflow, no padding).
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+/* Override the main-content padding only for this page */
+.main-content:has(.wg-root) {
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+.wg-root {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #030712;
+  overflow: hidden;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* ── 3D Canvas fills the entire root ── */
+.wg-canvas-wrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* ── Overlay: pointer-events none so mouse passes through to 3D canvas ── */
+.wg-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 20;
+}
+
+/* ── Panel base ── */
+.wg-hud-panel {
+  pointer-events: auto;
+  background: rgba(10, 17, 35, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 18px 20px;
+  color: white;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* ── Top row: main HUD + safety HUD ── */
+.wg-top-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.wg-main-hud {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 340px;
+  max-width: 440px;
+}
+
+.wg-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 800;
+  background: linear-gradient(90deg, #6ee7b7, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.4px;
+}
+
+.wg-subtitle {
+  margin: 2px 0 0;
+  font-size: 12px;
+  color: #64748b;
+  font-family: monospace;
+  letter-spacing: 0.3px;
+}
+
+/* ── Stats ── */
+.wg-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.wg-stat-box {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+}
+
+.wg-stat-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #94a3b8;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.wg-stat-value {
+  font-size: 26px;
+  font-weight: 800;
+  margin-top: 2px;
+  line-height: 1;
+}
+
+.wg-stat-value.tumor   { color: #ef4444; }
+.wg-stat-value.cart    { color: #06b6d4; }
+.wg-stat-value.healthy { color: #10b981; }
+
+/* ── Legend ── */
+.wg-legend {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.wg-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: #cbd5e1;
+}
+
+.wg-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ── Controls ── */
+.wg-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.wg-btn {
+  flex: 1;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.18s;
+  white-space: nowrap;
+}
+
+.wg-btn:disabled { cursor: not-allowed; }
+
+.wg-btn.primary {
+  background: linear-gradient(135deg, #3b82f6, #06b6d4);
+  color: white;
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+}
+.wg-btn.primary:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(59,130,246,0.55); }
+
+.wg-btn.success {
+  background: linear-gradient(135deg, #059669, #10b981);
+  color: white;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
+}
+.wg-btn.success:hover:not(:disabled) { transform: translateY(-1px); }
+
+.wg-btn.ghost {
+  background: rgba(255,255,255,0.06);
+  color: #94a3b8;
+  border: 1px solid rgba(255,255,255,0.1);
+  flex: 0 0 auto;
+  padding: 10px 16px;
+}
+.wg-btn.ghost:hover { background: rgba(255,255,255,0.12); color: white; }
+
+.wg-btn.danger {
+  background: rgba(239, 68, 68, 0.18);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+}
+.wg-btn.danger:hover { background: rgba(239, 68, 68, 0.3); }
+
+/* ── Safety HUD ── */
+.wg-safety-hud {
+  min-width: 260px;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.wg-safety-hud.critical {
+  border-color: rgba(239, 68, 68, 0.55);
+  animation: pulse-border 1.5s infinite;
+}
+
+@keyframes pulse-border {
+  0%   { box-shadow: 0 0 0 0 rgba(239,68,68,0.45); }
+  70%  { box-shadow: 0 0 0 12px rgba(239,68,68,0); }
+  100% { box-shadow: 0 0 0 0 rgba(239,68,68,0); }
+}
+
+.wg-safety-title {
+  margin: 0;
+  font-size: 13px;
+  color: #eab308;
+  font-weight: 700;
+}
+
+.wg-safety-label {
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+.wg-bar-track {
+  height: 7px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.wg-bar-fill {
+  height: 100%;
+  background: #10b981;
+  border-radius: 4px;
+  transition: width 0.35s ease, background 0.35s ease;
+}
+.wg-bar-fill.warn   { background: #eab308; }
+.wg-bar-fill.danger { background: #ef4444; }
+
+.wg-bar-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #64748b;
+}
+
+.wg-agent-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.wg-agent-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+/* ── Terminal ── */
+.wg-bottom-row {
+  display: flex;
+}
+
+.wg-terminal {
+  width: 380px;
+  height: 190px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px 16px;
+}
+
+.wg-terminal-title {
+  font-family: monospace;
+  font-size: 11px;
+  color: #64748b;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+}
+
+.wg-terminal-body {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  scrollbar-width: thin;
+  scrollbar-color: #1e293b transparent;
+}
+
+.wg-log {
+  font-family: monospace;
+  font-size: 11px;
+  line-height: 1.4;
+  animation: wg-slide-in 0.25s ease-out;
+}
+
+.wg-log.tumor    { color: #fca5a5; }
+.wg-log.cart     { color: #67e8f9; }
+.wg-log.safety   { color: #86efac; }
+.wg-log.critical { color: #fbbf24; font-weight: 700; }
+
+.wg-log-ts { color: #374151; }
+
+@keyframes wg-slide-in {
+  from { opacity: 0; transform: translateX(-8px); }
+  to   { opacity: 1; transform: translateX(0); }
+}

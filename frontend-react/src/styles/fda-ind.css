@@ -1,0 +1,231 @@
+/* ═══════════════════════════════════════════════════════════════════════════════
+   FDA IND Generator Styles (Vanilla CSS)
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+.fda-page {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    color: var(--text-primary, #f0f0f5);
+    font-family: system-ui, -apple-system, sans-serif;
+    animation: vcFadeIn 0.3s ease-out;
+}
+
+.fda-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.fda-title {
+    font-size: 28px;
+    font-weight: 800;
+    margin: 5px 0;
+}
+
+.fda-subtitle {
+    font-size: 14px;
+    color: #94a3b8;
+    margin: 0;
+}
+
+.fda-btn {
+    background: #059669;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+    font-size: 14px;
+    box-shadow: 0 4px 14px rgba(5, 150, 105, 0.3);
+}
+
+.fda-btn:hover { background: #047857; }
+
+.fda-grid {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 30px;
+}
+
+@media (max-width: 900px) {
+    .fda-grid { grid-template-columns: 1fr; }
+}
+
+.fda-controls {
+    background: rgba(24, 24, 32, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 25px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+}
+
+.fda-controls-title {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #cbd5e1;
+    margin: 0 0 20px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 10px;
+}
+
+.fda-input-group {
+    margin-bottom: 15px;
+}
+
+.fda-input-group label {
+    display: block;
+    font-size: 12px;
+    color: #94a3b8;
+    margin-bottom: 5px;
+}
+
+.fda-input-group input {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 6px;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+.fda-input-group input:focus {
+    outline: none;
+    border-color: #6366f1;
+}
+
+.fda-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.fda-metrics-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.fda-metric {
+    padding: 10px;
+    border-radius: 6px;
+    font-family: monospace;
+}
+.fda-metric-orange { background: rgba(249, 115, 22, 0.1); border: 1px solid rgba(249, 115, 22, 0.2); color: #fdba74; }
+.fda-metric-emerald { background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.2); color: #6ee7b7; }
+.fda-metric .label { font-size: 10px; margin-bottom: 4px; }
+.fda-metric .value { font-size: 16px; font-weight: bold; }
+
+.fda-notice {
+    padding: 15px;
+    border-radius: 8px;
+    background: rgba(99, 102, 241, 0.1);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    color: #a5b4fc;
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+.fda-document-container {
+    background: #fff;
+    color: #1e293b;
+    padding: 50px;
+    border-radius: 8px;
+    font-family: 'Times New Roman', Times, serif;
+    min-height: 800px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.fda-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.fda-tab {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: #94a3b8;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.fda-tab.active {
+    border-bottom: 2px solid #34d399;
+    color: #34d399;
+}
+
+.fda-doc-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #000;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+.fda-doc-title { font-size: 20px; font-weight: bold; margin: 5px 0; color: #000; }
+.fda-doc-meta { font-family: sans-serif; font-size: 12px; font-weight: bold; color: #475569; }
+
+.fda-doc-confidential {
+    display: inline-block;
+    padding: 4px 8px;
+    background: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #f87171;
+    font-size: 10px;
+    font-weight: bold;
+    font-family: sans-serif;
+    border-radius: 4px;
+}
+
+.fda-section { margin-bottom: 30px; }
+.fda-section-title {
+    font-family: sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    color: #334155;
+    border-bottom: 1px solid #cbd5e1;
+    padding-bottom: 4px;
+    margin-bottom: 15px;
+}
+
+.fda-kv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; font-family: sans-serif; font-size: 13px; }
+.fda-kv .key { color: #64748b; display: block; margin-bottom: 2px; }
+.fda-kv .val { font-weight: bold; color: #000; }
+
+.fda-table { width: 100%; border-collapse: collapse; font-family: sans-serif; font-size: 12px; margin-top: 15px; }
+.fda-table th, .fda-table td { border: 1px solid #cbd5e1; padding: 10px; text-align: left; }
+.fda-table th { background: #f1f5f9; color: #334155; }
+.fda-table td.passed { color: #15803d; font-weight: bold; }
+
+.fda-signoff {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #cbd5e1;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-family: sans-serif;
+    font-size: 12px;
+}
+
+.fda-signature-box { border-bottom: 2px solid #000; width: 200px; text-align: center; padding-bottom: 5px; color: #94a3b8; font-family: monospace; }
+
+@media print {
+    .fda-header, .fda-controls, .fda-tabs, .sidebar, .mobile-topbar { display: none !important; }
+    .fda-grid { display: block; }
+    .fda-document-container { padding: 0; box-shadow: none; border: none; min-height: auto; }
+    body { background: #fff; color: #000; }
+    .app-layout { display: block; }
+}
