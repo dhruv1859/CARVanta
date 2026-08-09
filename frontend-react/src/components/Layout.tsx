@@ -17,6 +17,12 @@ interface NavSection {
 
 const NAV_SECTIONS: NavSection[] = [
     {
+        title: 'ImmunoGate',
+        items: [
+            { path: '/immuno-gate-pdac', icon: '🧬', label: 'ImmunoGate PDAC' },
+        ],
+    },
+    {
         title: 'Discovery',
         items: [
             { path: '/war-game', icon: '🕹️', label: 'In Silico War-Game' },
