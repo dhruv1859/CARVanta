@@ -49,6 +49,7 @@ const ModelValidation = lazy(() => import('./pages/ModelValidation'));
 const VoiceCopilotPage = lazy(() => import('./pages/VoiceCopilotPage'));
 const FDAIndPage = lazy(() => import('./pages/FDAIndPage'));
 const WarGame = lazy(() => import('./pages/WarGame'));
+const ImmunoGatePDAC = lazy(() => import('./pages/ImmunoGatePDAC'));
 
 /* ─── Loading Spinner ─── */
 function PageLoader() {
@@ -121,6 +122,7 @@ function ProtectedApp() {
           <Route path="/voice-copilot" element={<VoiceCopilotPage />} />
           <Route path="/fda-ind" element={<FDAIndPage />} />
           <Route path="/war-game" element={<WarGame />} />
+          <Route path="/immuno-gate-pdac" element={<ImmunoGatePDAC />} />
         </Routes>
       </Suspense>
     </Layout>
